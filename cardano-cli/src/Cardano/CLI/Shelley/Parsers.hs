@@ -552,7 +552,9 @@ pTransaction :: Parser TransactionCmd
 pTransaction =
   asum
     [ subParser "build-raw"
-        (Opt.info pTransactionBuild $ Opt.progDesc "Build a transaction (low-level, inconvenient)")
+        (Opt.info pTransactionBuildRaw $ Opt.progDesc "Build a transaction (low-level, inconvenient)")
+    , subParser "build"
+        (Opt.info pTransactionBuild $ Opt.progDesc "Build a balanced transaction (automatically calculates fees)")
     , subParser "sign"
         (Opt.info pTransactionSign $ Opt.progDesc "Sign a transaction")
     , subParser "witness"
@@ -594,25 +596,66 @@ pTransaction =
       $ Opt.command "sign-witness" assembleInfo <> Opt.internal
 
   pTransactionBuild :: Parser TransactionCmd
-  pTransactionBuild = TxBuildRaw <$> pCardanoEra
-                                 <*> some pTxIn
-                                 <*> many pTxInCollateral
-                                 <*> many pTxOut
-                                 <*> optional pMintMultiAsset
-                                 <*> optional pInvalidBefore
-                                 <*> optional pInvalidHereafter
-                                 <*> optional pTxFee
-                                 <*> many pCertificateFile
-                                 <*> many pWithdrawal
-                                 <*> pTxMetadataJsonSchema
-                                 <*> many (pScriptFor
-                                             "auxiliary-script-file"
-                                             Nothing
-                                             "Filepath of auxiliary script(s)")
-                                 <*> many pMetadataFile
-                                 <*> optional pProtocolParamsSourceSpec
-                                 <*> optional pUpdateProposalFile
-                                 <*> pTxBodyFile Output
+  pTransactionBuild =
+    TxBuild <$> pCardanoEra
+            <*> some pTxIn
+            <*> many pCollateralTxIn
+            <*> many pTxOut
+            <*> pChangeAddress
+            <*> optional pMintMultiAsset
+            <*> optional pInvalidBefore
+            <*> optional pInvalidHereafter
+            <*> many pCertificateFile
+            <*> many pWithdrawal
+            <*> pTxMetadataJsonSchema
+            <*> many (pScriptFor
+                        "auxiliary-script-file"
+                        Nothing
+                        "Filepath of auxiliary script(s)")
+            <*> many pMetadataFile
+            <*> optional pProtocolParamsSourceSpec
+            <*> optional pUpdateProposalFile
+            <*> pTxBodyFile Output
+
+  pCollateralTxIn :: Parser TxIn
+  pCollateralTxIn =
+    Opt.option (readerFromParsecParser parseTxIn)
+                 (   Opt.long "tx-in"
+                  <> Opt.metavar "TX-IN"
+                  <> Opt.help "TxId#TxIx"
+                 )
+               )
+
+  pChangeAddress :: Parser AddressAny
+  pChangeAddress =
+    TxOutChangeAddress <$>
+      Opt.option (readerFromParsecParser parseAddressAny)
+        (  Opt.long "change-address"
+        <> Opt.metavar "ADDRESS"
+        <> Opt.help "Address where ADA in excess of the tx fee will go to."
+        )
+
+  pTransactionBuildRaw :: Parser TransactionCmd
+  pTransactionBuildRaw =
+    TxBuildRaw <$> pCardanoEra
+               <*> some pTxIn
+               <*> many pTxInCollateral
+               <*> many pTxOut
+               <*> optional pMintMultiAsset
+               <*> optional pInvalidBefore
+               <*> optional pInvalidHereafter
+               <*> optional pTxFee
+               <*> many pCertificateFile
+               <*> many pWithdrawal
+               <*> pTxMetadataJsonSchema
+               <*> many (pScriptFor
+                           "auxiliary-script-file"
+                           Nothing
+                           "Filepath of auxiliary script(s)")
+               <*> many pMetadataFile
+               <*> optional pProtocolParamsSourceSpec
+               <*> optional pUpdateProposalFile
+               <*> pTxBodyFile Output
 
   pTransactionSign  :: Parser TransactionCmd
   pTransactionSign = TxSign <$> pTxBodyFile Input
