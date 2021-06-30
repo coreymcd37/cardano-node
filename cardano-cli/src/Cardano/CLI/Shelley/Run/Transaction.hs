@@ -92,6 +92,8 @@ data ShelleyTxCmdError
   | ShelleyTxCmdGenesisCmdError !ShelleyGenesisCmdError
   | ShelleyTxCmdPolicyIdsMissing [PolicyId]
   | ShelleyTxCmdPolicyIdsExcess  [PolicyId]
+  | ShelleyTxCmdAcquireFailure !AcquireFailure
+
   deriving Show
 
 data SomeTxBodyError where
@@ -234,7 +236,13 @@ renderFeature TxFeatureTxOutDatum           = "Transaction output datums"
 runTransactionCmd :: TransactionCmd -> ExceptT ShelleyTxCmdError IO ()
 runTransactionCmd cmd =
   case cmd of
-    TxBuildRaw era txins txinsc txouts mValue mLowBound mUpperBound
+    TxBuild era consensusModeParams nid txins txinsc txouts changeAddr mValue mLowBound
+            mUpperBound certs wdrls metadataSchema scriptFiles
+            metadataFiles mpparams mUpProp out ->
+      runTxBuild era consensusModeParams nid txins txinsc txouts changeAddr mValue mLowBound
+                 mUpperBound certs wdrls metadataSchema scriptFiles
+                 metadataFiles mpparams mUpProp out
+    TxBuildRaw era txins txouts mValue mLowBound mUpperBound
                fee certs wdrls metadataSchema scriptFiles
                metadataFiles mpparams mUpProp out ->
       runTxBuildRaw era txins txinsc txouts mLowBound mUpperBound
@@ -321,45 +329,105 @@ runTxBuildRaw (AnyCardanoEra era)
     firstExceptT ShelleyTxCmdWriteFileError . newExceptT $
       writeFileTextEnvelope fpath Nothing txBody
 
-runTxBuild = do
-    SocketPath sockPath <- firstExceptT ShelleyTxCmdSocketEnvError readEnvSocketPath
+runTxBuild
+  :: AnyCardanoEra
+  -> AnyConsensusModeParams
+  -> NetworkId
+  -> [(TxIn, Maybe (ScriptWitnessFiles WitCtxTxIn))]
+  -- ^ TxIn with potential script witness
+  -> [TxIn]
+  -- ^ TxIn for collateral
+  -> [TxOutAnyEra]
+  -- ^ Normal outputs
+  -> TxOutChangeAddress
+  -- ^ A change output
+  -> Maybe (Value, [ScriptWitnessFiles WitCtxMint])
+  -- ^ Multi-Asset value(s)
+  -> Maybe SlotNo
+  -- ^ Tx lower bound
+  -> Maybe SlotNo
+  -- ^ Tx upper bound
+  -> [(CertificateFile, Maybe (ScriptWitnessFiles WitCtxStake))]
+  -- ^ Certificate with potential script witness
+  -> [(StakeAddress, Lovelace, Maybe (ScriptWitnessFiles WitCtxStake))]
+  -> TxMetadataJsonSchema
+  -> [ScriptFile]
+  -> [MetadataFile]
+  -> Maybe ProtocolParamsSourceSpec
+  -> Maybe UpdateProposalFile
+  -> TxBodyFile
+  -> ExceptT ShelleyTxCmdError IO ()
+runTxBuild era (AnyConsensusModeParams cModeParams) nid txins txinsc txouts changeAddr
+           mValue mLowBound mUpperBound certs wdrls metadataSchema scriptFiles
+           metadataFiles mpparams mUpProp out = do
+  SocketPath sockPath <- firstExceptT ShelleyTxCmdSocketEnvError readEnvSocketPath
 
-    txBodyContent <-
-      TxBodyContent ...
+  txBodyContent <-
+    TxBodyContent
+      <$> validateTxIns  era inputsAndScripts
+      <*> validateTxInsCollateral
+                         era inputsCollateral
+      <*> validateTxOuts era txouts
+      <*> validateTxFee  era mFee
+      <*> ((,) <$> validateTxValidityLowerBound era mLowerBound
+               <*> validateTxValidityUpperBound era mUpperBound)
+      <*> validateTxMetadataInEra  era metadataSchema metadataFiles
+      <*> validateTxAuxScripts     era scriptFiles
+      <*> pure (BuildTxWith TxExtraScriptDataNone) --TODO alonzo: support this
+      <*> pure TxExtraKeyWitnessesNone --TODO alonzo: support this
+      <*> validateProtocolParameters era mpparams
+      <*> validateTxWithdrawals    era withdrawals
+      <*> validateTxCertificates   era certFiles
+      <*> validateTxUpdateProposal era mUpdatePropFile
+      <*> validateTxMintValue      era mValue
 
-    txBody <-
-      firstExceptT (ShelleyTxCmdTxBodyError . SomeTxBodyError) . hoistEither $
-        makeTransactionBody txBodyContent
 
-    let txins :: Set TxIn
-        txins = Set.fromList [ txin | (txin, _) <- txIns txBodyContent ]
-        query = QueryUTxO (QueryUTxOByTxIn txins)
+  txBody <-
+    firstExceptT (ShelleyTxCmdTxBodyError . SomeTxBodyError) . hoistEither $
+      makeTransactionBody txBodyContent
 
-    utxo <- executeQuery
-              era
-              cModeParams
-              LocalNodeConnectInfo {
-                localConsensusModeParams = cModeParams,
-                localNodeNetworkId       = network,
-                localNodeSocketPath      = sockPath
-              }
-              (QueryInEra eraInMode (QueryInShelleyBasedEra era query))
+  let txins :: Set TxIn
+      txins = Set.fromList [ txin | (txin, _) <- txIns txBodyContent ]
+      query = QueryUTxO (QueryUTxOByTxIn txins)
 
-    pparams <- 
-    
+
+  -- TODO: Probably should query the UTxO at the relevant address
+  -- TODO: Combine queries
+  let cMode = consensusModeOnly cModeParams
+      localConnInfo = LocalNodeConnectInfo
+                        { localConsensusModeParams = cModeParams
+                        , localNodeNetworkId       = nid
+                        , localNodeSocketPath      = sockPath
+                        }
+  (utxo, pparams, eraHistory, systemStart) <-
+    case toEraInMode era cMode of
+      Just eInMode -> do
+        let utxoQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe (QueryUTxO QueryUTxOWhole)
+            pParamsQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe QueryProtocolParameters
+
+        utxo' <- executeQuery era cModeParams localConnInfo utxoQuery
+        pparams' <- executeQuery era cModeParams localConnInfo pParamsQuery
+        (eraHistory', systemStart') <- firstExceptT ShelleyTxCmdAcquireFailure $ newExceptT $ queryEraHistoryAndSystemStart localConnInfo Nothing
+
+        return (utxo', pparams',eraHistory', systemStart')
+
+      Nothing -> left $ ShelleyTxCmdEraConsensusModeMismatch (AnyConsensusMode cMode) era
+
+
     -- Steps:
     -- 1. evaluate all the scripts to get the exec units, update with ex units
     -- 2. figure out the overall min fees
     -- 3. update tx with fees
     -- 4. balance the transaction and update tx change output
 
-    case makeTransactionBodyAutoBalance pparams utxo txBody of
+    let poolIdSet = mempty -- TODO: Not sure about the relevance of the pool ids
+    case makeTransactionBodyAutoBalance systemStart eraHistory pparams poolIdSet utxo txBody changeAddr of
       Right v
         | Just l <- valueToLovelace v ->
-          
+
 
         | Nothing -> .. -- mismatch in non-ada assets
-          
+
 
 
 

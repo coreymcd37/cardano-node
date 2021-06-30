@@ -598,6 +598,8 @@ pTransaction =
   pTransactionBuild :: Parser TransactionCmd
   pTransactionBuild =
     TxBuild <$> pCardanoEra
+            <*> pConsensusModeParams
+            <*> pNetworkId
             <*> some pTxIn
             <*> many pCollateralTxIn
             <*> many pTxOut
