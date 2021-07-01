@@ -32,7 +32,7 @@ import           Data.Map (Map)
 import qualified Data.Map as Map
 import           GHC.Records (HasField (..))
 import           Numeric.Natural
-import           Data.Sequence.Strict (StrictSeq)
+import           Data.Sequence.Strict (StrictSeq(..))
 
 import           Control.Monad.Trans.Except
 
@@ -41,6 +41,7 @@ import           Cardano.Slotting.EpochInfo (EpochInfo, hoistEpochInfo)
 
 import qualified Cardano.Chain.Common as Byron
 
+import qualified Cardano.Ledger.Alonzo.TxBody as Alonzo
 import qualified Cardano.Ledger.Coin as Ledger
 import qualified Cardano.Ledger.Core as Ledger
 import qualified Cardano.Ledger.Era  as Ledger
@@ -81,7 +82,6 @@ import qualified Cardano.Ledger.Alonzo.Scripts as Alonzo
 import qualified Cardano.Ledger.Alonzo.TxWitness as Alonzo
 
 import qualified Ouroboros.Consensus.HardFork.History as Consensus
-
 
 -- ----------------------------------------------------------------------------
 -- Transaction fees
@@ -194,6 +194,8 @@ data BalanceTxBodyError era =
      | BalanceMoreInputsNeeded
      | BalanceMinUTxONotMet
      | BalanceByronEraNotSupported
+     | BalanceMinUTxOPParamNotFound
+     | BalanceCostPerWordPParamNotFound
 
 
 -- Steps:
@@ -254,32 +256,47 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
     let balance = evaluateTransactionBalance sbe pparams poolids utxo txbody2
     -- check if the balance is positive or negative
     -- in one case we can produce change, in the other the inputs are insufficient
+    minUTxOValue <- getMinUTxOValue pparams
     case balance of
-      TxOutAdaOnly _ _ -> return ()
-        --TODO: do the same negative and minUTxOValue checks
+      TxOutAdaOnly _ l -> balanceCheck minUTxOValue l
       TxOutValue _ v   ->
         case valueToLovelace v of
           Nothing -> Left $ error "TODO: non-ada assets not balanced"
-          Just c
-            | c < 0 -> Left BalanceMoreInputsNeeded
-              -- check the change is over the min utxo threshold
-            | c < minUTxOValue -> Left BalanceMinUTxONotMet --TODO: not enough inputs to cover change min utxo
-            | otherwise -> return ()
-            where
-              minUTxOValue = undefined
+          Just c -> balanceCheck minUTxOValue c
 
     --TODO: we could add the extra fee for the CBOR encoding of the change,
     -- now that we know the magnitude of the change: i.e. 1-8 bytes extra.
 
     txbody3 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
                makeTransactionBody txbodycontent {
-                 txFee  = TxFeeExplicit undefined fee,
+                 txFee  = TxFeeExplicit explicitInE fee,
                  txOuts = TxOut changeaddr balance TxOutDatumHashNone
                         : txOuts txbodycontent
                }
 
     return txbody3
+ where
+   balanceCheck :: Lovelace -> Lovelace -> Either (BalanceTxBodyError era) ()
+   balanceCheck minUTxOValue balance
+    | balance < 0 = Left BalanceMoreInputsNeeded
+      -- check the change is over the min utxo threshold
+    | balance < minUTxOValue = Left BalanceMinUTxONotMet
+    | otherwise = return ()
 
+   getMinUTxOValue :: ProtocolParameters ->  Either (BalanceTxBodyError era) Lovelace
+   getMinUTxOValue pparams' =
+     case sbe of
+       ShelleyBasedEraShelley -> minUTxOHelper pparams'
+       ShelleyBasedEraAllegra -> minUTxOHelper pparams'
+       ShelleyBasedEraMary -> minUTxOHelper pparams'
+       ShelleyBasedEraAlonzo -> case protocolParamUTxOCostPerWord pparams' of
+                                  Just minUtxo -> Right minUtxo
+                                  Nothing -> Left BalanceCostPerWordPParamNotFound
+
+   minUTxOHelper :: ProtocolParameters -> Either (BalanceTxBodyError era) Lovelace
+   minUTxOHelper pparams' = case protocolParamMinUTxOValue pparams' of
+                             Just minUtxo -> Right minUtxo
+                             Nothing -> Left BalanceMinUTxOPParamNotFound
 
 substituteExecutionUnits :: Map ScriptWitnessIndex ExecutionUnits
                          -> TxBodyContent BuildTx era
@@ -395,8 +412,35 @@ evaluateTransactionFee sbe pparams txbody =
             evalAlonzo era (toTxInBlock tx')
           _ -> error "TODO: evaluateTransactionFee can support pre-Alonzo eras with a different (simpler) code path"
   where
-    numberOfKeyWitnesses :: Word
-    numberOfKeyWitnesses = error "TODO: evaluateTransactionFee need to compute the number of key witnesses we need, this may require more help from the ledger to find all the places that need it"
+      -- TODO: evaluateTransactionFee need to compute the number of key witnesses we need,
+      -- this may require more help from the ledger to find all the places that need it
+    reqKeyWits :: HasField "certs" (Ledger.TxBody ledgerera) (StrictSeq (Shelley.DCert Ledger.StandardCrypto))
+               => TxBody era -> Word
+    reqKeyWits (ByronTxBody _) = 0 -- TODO: Handle Byron case
+    reqKeyWits (ShelleyTxBody _ txbody' _ _ _) =
+      -- TODO: What about tx in key witnesses?
+      countCertKeyWitnesses $ getField @"certs" txbody'
+
+    stakeCredKeyWit :: StakeCredential -> Word
+    stakeCredKeyWit (StakeCredentialByKey _) = 1
+    stakeCredKeyWit (StakeCredentialByScript _) = 0
+
+    certKeyWit :: Certificate -> Word
+    certKeyWit StakeAddressRegistrationCertificate {} = 0
+    certKeyWit (StakeAddressDeregistrationCertificate sCred) =
+      stakeCredKeyWit sCred
+    certKeyWit (StakeAddressDelegationCertificate sCred _) =
+      stakeCredKeyWit sCred
+    certKeyWit (StakePoolRegistrationCertificate poolParams) =
+      fromIntegral $ length (stakePoolOwners poolParams) + 1
+    certKeyWit StakePoolRetirementCertificate {} = 1
+    certKeyWit GenesisKeyDelegationCertificate {} = 1 --TODO: Double check this
+    certKeyWit (MIRCertificate _ _) = 0 -- TODO: Double check this
+
+    countCertKeyWitnesses :: StrictSeq (Shelley.DCert Ledger.StandardCrypto) -> Word
+    countCertKeyWitnesses Empty = 0
+    countCertKeyWitnesses (cert :<| rest) =
+      certKeyWit (fromShelleyCertificate cert) + countCertKeyWitnesses rest
 
     --TODO: this conversion can be eliminted once the ledger function is adjusted
     -- to take a Ledger.Tx rather than a Ledger.TxInBlock
@@ -417,7 +461,10 @@ evaluateTransactionFee sbe pparams txbody =
         Ledger.evaluateTransactionFee
           (toLedgerPParams era pparams)
           tx
-          numberOfKeyWitnesses
+          (reqKeyWits $ error "getField \"body\" tx")
+
+
+
 
 --data TxBalanceError = TxBalanceErrorMissingTxIns [TxIn]
 --                    | TxBalanceErrorInvalidProtocolParameters
@@ -461,8 +508,22 @@ evaluateTransactionBalance sbe pparams poolids utxo
            isNewPool
            txbody
 
-    evalAdaOnly =
-      error "TODO: evalAdaOnly case in evaluateTransactionBalance"
+    evalAdaOnly ::
+             --forall ledgerera. ShelleyLedgerEra era ~ ledgerera
+             --   => LedgerAdaOnlyConstraints ledgerera
+             --   => LedgerEraConstraints ledgerera
+             --   => LedgerPParamsConstraints ledgerera
+             --   => LedgerTxBodyConstraints ledgerera
+                 OnlyAdaSupportedInEra era -> TxOutValue era
+    evalAdaOnly evidence =
+      TxOutAdaOnly evidence $
+        fromShelleyLovelace
+          $ error "We need a separate evaluateTransactionBalance function for Shelley and Allegra"
+          --Ledger.evaluateTransactionBalance
+          --  (toLedgerPParams era pparams)
+          --  (toLedgerUTxO era utxo)
+          --  isNewPool
+          --  txbody
 
     -- Conjur up all the necessary class instances and evidence
     withLedgerConstraints
