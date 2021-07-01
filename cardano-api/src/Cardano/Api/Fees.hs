@@ -15,7 +15,6 @@
 module Cardano.Api.Fees (
     transactionFee,
     estimateTransactionFee,
-    
     makeTransactionBodyAutoBalance,
     evaluateTransactionExecutionUnits,
     evaluateTransactionFee,
@@ -188,6 +187,14 @@ estimateTransactionFee _ _ _ (ByronTx _) =
 -- Script execution units
 --
 
+data BalanceTxBodyError era =
+       BalanceTxBodyErr (TxBodyError era)
+     | BalancePastHorizonErr PastHorizonException
+     | BalanceScriptFailure ScriptFailure
+     | BalanceMoreInputsNeeded
+     | BalanceMinUTxONotMet
+     | BalanceByronEraNotSupported
+
 
 -- Steps:
 -- 1. evaluate all the scripts to get the exec units, update with ex units
@@ -195,8 +202,8 @@ estimateTransactionFee _ _ _ (ByronTx _) =
 -- 3. update tx with fees
 -- 4. balance the transaction and update tx change output
 
-makeTransactionBodyAutoBalance :: IsShelleyBasedEra era   --TODO eliminate
-                               => CardanoEra era
+makeTransactionBodyAutoBalance :: IsCardanoEra era
+                               => ShelleyBasedEra era
                                -> EraInMode era mode
                                -> SystemStart
                                -> EraHistory mode
@@ -205,24 +212,30 @@ makeTransactionBodyAutoBalance :: IsShelleyBasedEra era   --TODO eliminate
                                -> UTxO era
                                -> TxBodyContent BuildTx era
                                -> AddressInEra era
-                               -> Either () (TxBody era)
-makeTransactionBodyAutoBalance _era eraInMode systemstart history pparams
+                               -> Either (BalanceTxBodyError era) (TxBody era)
+makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
                             poolids utxo txbodycontent changeaddr = do
-    txbody0 <- first (const ()) $
-               makeTransactionBody txbodycontent
+    txbody0 <- first BalanceTxBodyErr $
+                 makeTransactionBody txbodycontent
 
-    exUnitsMap <- first (const ()) $
-                  evaluateTransactionExecutionUnits
-                    eraInMode
-                    systemstart history
-                    pparams utxo
-                    txbody0
-    exUnitsMap' <- traverse (first (const ())) exUnitsMap
+    exUnitsMap <- first BalancePastHorizonErr $
+                    evaluateTransactionExecutionUnits
+                      eraInMode
+                      systemstart history
+                      pparams utxo
+                      txbody0
+
+    exUnitsMap' <- traverse (first BalanceScriptFailure) exUnitsMap
 
     let txbodycontent1 = substituteExecutionUnits exUnitsMap' txbodycontent
-    txbody1 <- first (const ()) $ -- TODO: impossible to fail now
+
+    explicitInE <- first (const BalanceByronEraNotSupported)
+                     $ txFeesExplicitInEra (shelleyBasedToCardanoEra sbe)
+
+    -- Insert change address and set tx fee to 0
+    txbody1 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
                makeTransactionBody txbodycontent1 {
-                 txFee  = TxFeeExplicit undefined 0,
+                 txFee  = TxFeeExplicit explicitInE 0,
                  txOuts = TxOut changeaddr
                                 (lovelaceToTxOutValue 0)
                                 TxOutDatumHashNone
@@ -231,13 +244,14 @@ makeTransactionBodyAutoBalance _era eraInMode systemstart history pparams
                  -- 1,2,4 or 8 bytes?
                }
 
-    let fee = evaluateTransactionFee pparams txbody1
-    txbody2 <- first (const ()) $ -- TODO: impossible to fail now
+    let fee = evaluateTransactionFee sbe pparams txbody1
+
+    txbody2 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
                makeTransactionBody txbodycontent1 {
-                 txFee = TxFeeExplicit undefined fee
+                 txFee = TxFeeExplicit explicitInE fee
                }
 
-    let balance = evaluateTransactionBalance pparams poolids utxo txbody2
+    let balance = evaluateTransactionBalance sbe pparams poolids utxo txbody2
     -- check if the balance is positive or negative
     -- in one case we can produce change, in the other the inputs are insufficient
     case balance of
@@ -245,11 +259,11 @@ makeTransactionBodyAutoBalance _era eraInMode systemstart history pparams
         --TODO: do the same negative and minUTxOValue checks
       TxOutValue _ v   ->
         case valueToLovelace v of
-          Nothing -> Left () -- TODO: non-ada assets not balanced
+          Nothing -> Left $ error "TODO: non-ada assets not balanced"
           Just c
-            | c < 0 -> Left () --TODO: not enough inputs to cover outputs
+            | c < 0 -> Left BalanceMoreInputsNeeded
               -- check the change is over the min utxo threshold
-            | c < minUTxOValue -> Left () --TODO: not enough inputs to cover change min utxo
+            | c < minUTxOValue -> Left BalanceMinUTxONotMet --TODO: not enough inputs to cover change min utxo
             | otherwise -> return ()
             where
               minUTxOValue = undefined
@@ -257,7 +271,7 @@ makeTransactionBodyAutoBalance _era eraInMode systemstart history pparams
     --TODO: we could add the extra fee for the CBOR encoding of the change,
     -- now that we know the magnitude of the change: i.e. 1-8 bytes extra.
 
-    txbody3 <- first (const ()) $ -- TODO: impossible to fail now
+    txbody3 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
                makeTransactionBody txbodycontent {
                  txFee  = TxFeeExplicit undefined fee,
                  txOuts = TxOut changeaddr balance TxOutDatumHashNone
@@ -366,13 +380,13 @@ evaluateTransactionExecutionUnits _eraInMode systemstart history pparams utxo tx
 
 evaluateTransactionFee :: forall era ledgerera.
                           ShelleyLedgerEra era ~ ledgerera
-                       => IsShelleyBasedEra era
-                       => ProtocolParameters
+                       => ShelleyBasedEra era
+                       -> ProtocolParameters
                        -> TxBody era
                        -> Lovelace
-evaluateTransactionFee pparams txbody =
+evaluateTransactionFee sbe pparams txbody =
     case makeSignedTransaction [] txbody of
-      ByronTx{} -> case shelleyBasedEra :: ShelleyBasedEra era of {}
+      ByronTx{} -> case sbe :: ShelleyBasedEra era of {}
       --TODO: we could actually support Byron here, it'd be different but simpler
 
       ShelleyTx era tx' ->
@@ -414,20 +428,19 @@ evaluateTransactionFee pparams txbody =
 -- Finding the (non-zero) balance of partially constructed transaction is
 -- useful for adjusting a transaction to be fully balanced.
 --
-evaluateTransactionBalance :: forall era.
-                              IsShelleyBasedEra era
-                           => ProtocolParameters
+evaluateTransactionBalance :: forall era. ShelleyBasedEra era
+                           -> ProtocolParameters
                            -> Set PoolId
                            -> UTxO era
                            -> TxBody era
                            -> TxOutValue era
-evaluateTransactionBalance _ _ _ (ByronTxBody _) =
-    case shelleyBasedEra :: ShelleyBasedEra era of {}
+evaluateTransactionBalance sbe _ _ _ (ByronTxBody _) =
+    case sbe :: ShelleyBasedEra era of {}
     --TODO: we could actually support Byron here, it'd be different but simpler
 
-evaluateTransactionBalance pparams poolids utxo
+evaluateTransactionBalance sbe pparams poolids utxo
                            (ShelleyTxBody era txbody _ _ _) =
-    withLedgerConstraints era evalAdaOnly evalMultiAsset
+    withLedgerConstraints sbe evalAdaOnly evalMultiAsset
   where
     isNewPool :: Ledger.KeyHash Ledger.StakePool Ledger.StandardCrypto -> Bool
     isNewPool kh = StakePoolKeyHash kh `Set.notMember` poolids
