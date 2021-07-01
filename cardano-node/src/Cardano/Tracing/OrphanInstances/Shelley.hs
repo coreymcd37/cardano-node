@@ -322,6 +322,11 @@ instance ToObject (AlonzoPredFail (Alonzo.AlonzoEra StandardCrypto)) where
     mkObject [ "kind" .= String "MissingRequiredSigners"
              , "txins" .= Set.toList txins
              ]
+  toObject _ (NonOutputSupplimentaryDatums unallowedDataHashes acceptedDataHashes) =
+    mkObject [ "kind" .= String "NonOutputSupplimentaryDatums"
+             , "unallowedDataHashes" .= unallowedDataHashes
+             , "acceptedDataHashes" .= acceptedDataHashes
+             ]
 
 renderWitnessPPDataHash :: Maybe (Alonzo.WitnessPPDataHash StandardCrypto) -> Aeson.Value
 renderWitnessPPDataHash (Just witPPDataHash) =

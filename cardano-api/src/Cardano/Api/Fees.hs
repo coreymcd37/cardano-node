@@ -53,6 +53,7 @@ import           Cardano.Api.Address
 import           Cardano.Api.Certificate
 import           Cardano.Api.Eras
 import           Cardano.Api.KeysShelley
+import           Cardano.Api.Modes
 import           Cardano.Api.NetworkId
 import           Cardano.Api.ProtocolParameters
 import           Cardano.Api.Query
@@ -63,7 +64,7 @@ import           Cardano.Api.Value
 
 -- Temporarily, until they're moved to the ledger API:
 import           Cardano.Ledger.Alonzo.PParams (PParams'(..))
-import qualified Cardano.Ledger.Alonzo.Rules.Utxo as Ledger
+import qualified Cardano.Ledger.Alonzo.Tools as Ledger
                    (evaluateTransactionExecutionUnits,
                     evaluateTransactionBalance,
                     evaluateTransactionFee,
@@ -195,21 +196,24 @@ estimateTransactionFee _ _ _ (ByronTx _) =
 -- 4. balance the transaction and update tx change output
 
 makeTransactionBodyAutoBalance :: IsShelleyBasedEra era   --TODO eliminate
-                               => SystemStart
-                               -> EraHistory era
+                               => CardanoEra era
+                               -> EraInMode era mode
+                               -> SystemStart
+                               -> EraHistory mode
                                -> ProtocolParameters
                                -> Set PoolId
                                -> UTxO era
                                -> TxBodyContent BuildTx era
                                -> AddressInEra era
                                -> Either () (TxBody era)
-makeTransactionBodyAutoBalance systemstart history pparams
+makeTransactionBodyAutoBalance _era eraInMode systemstart history pparams
                             poolids utxo txbodycontent changeaddr = do
     txbody0 <- first (const ()) $
                makeTransactionBody txbodycontent
 
     exUnitsMap <- first (const ()) $
                   evaluateTransactionExecutionUnits
+                    eraInMode
                     systemstart history
                     pparams utxo
                     txbody0
@@ -288,15 +292,16 @@ data PastHorizonException = PastHorizonException
 -- is the sum of these.
 --
 evaluateTransactionExecutionUnits
-  :: forall era.
-     SystemStart
-  -> EraHistory era
+  :: forall era mode.
+     EraInMode era mode
+  -> SystemStart
+  -> EraHistory mode
   -> ProtocolParameters
   -> UTxO era
   -> TxBody era
   -> Either PastHorizonException --TODO: wrap error
             (Map ScriptWitnessIndex (Either ScriptFailure ExecutionUnits))
-evaluateTransactionExecutionUnits systemstart history pparams utxo txbody =
+evaluateTransactionExecutionUnits _eraInMode systemstart history pparams utxo txbody =
     case makeSignedTransaction [] txbody of
       ByronTx {}                 -> Right Map.empty
       ShelleyTx era tx' ->
@@ -328,7 +333,7 @@ evaluateTransactionExecutionUnits systemstart history pparams utxo txbody =
         of Left  _     -> Left PastHorizonException
            Right exmap -> Right (fromLedgerScriptExUnitsMap exmap)
 
-    toLedgerEpochInfo :: EraHistory era -> EpochInfo (Either PastHorizonException)
+    toLedgerEpochInfo :: EraHistory mode -> EpochInfo (Either PastHorizonException)
     toLedgerEpochInfo (EraHistory _ interpreter) =
         hoistEpochInfo (first fromConsensusPastHorizonException . runExcept) $
           Consensus.interpreterToEpochInfo interpreter

@@ -15,7 +15,7 @@ module Cardano.CLI.Shelley.Parsers
   ) where
 
 import           Cardano.Prelude hiding (All, Any, option)
-import           Prelude (String)
+import           Prelude (String, error)
 
 import           Cardano.Api
 import           Cardano.Api.Shelley
@@ -234,7 +234,7 @@ pScriptWitnessFiles :: forall witctx.
                     -> Maybe String
                     -> String
                     -> Parser (ScriptWitnessFiles witctx)
-pScriptWitnessFiles witctx scriptFlagPrefix scriptFlagPrefixDeprecated help =
+pScriptWitnessFiles witctx _todo scriptFlagPrefix scriptFlagPrefixDeprecated help =
     toScriptWitnessFiles
       <$> pScriptFor (scriptFlagPrefix ++ "-script-file")
                      ((++ "-script-file") <$> scriptFlagPrefixDeprecated)
@@ -626,9 +626,8 @@ pTransaction =
                   <> Opt.metavar "TX-IN"
                   <> Opt.help "TxId#TxIx"
                  )
-               )
 
-  pChangeAddress :: Parser AddressAny
+  pChangeAddress :: Parser TxOutChangeAddress
   pChangeAddress =
     TxOutChangeAddress <$>
       Opt.option (readerFromParsecParser parseAddressAny)
@@ -1237,6 +1236,7 @@ pCertificateFile =
           )
       <*> optional (pScriptWitnessFiles
                       WitCtxStake
+                      (error "alonzo fix me") -- TODO alonzo fix me
                       "certificate" Nothing
                       "the use of the certificate.")
  where
@@ -1311,6 +1311,7 @@ pWithdrawal =
             )
       <*> optional (pScriptWitnessFiles
                       WitCtxStake
+                      (error "alonzo fix me") -- TODO alonzo fix me
                       "withdrawal" Nothing
                       "the withdrawal of rewards.")
  where
@@ -1766,6 +1767,7 @@ pTxIn =
                )
          <*> optional (pScriptWitnessFiles
                          WitCtxTxIn
+                         (error "alonzo fix me") -- TODO alonzo fix me
                          "tx-in" (Just "txin")
                          "the spending of the transaction input.")
 
@@ -1848,6 +1850,7 @@ pMintMultiAsset =
               )
       <*> some (pScriptWitnessFiles
                   WitCtxMint
+                  (error "alonzo fix me") -- TODO alonzo fix me
                   "mint" (Just "minting")
                   "the minting of assets for a particular policy Id.")
 
