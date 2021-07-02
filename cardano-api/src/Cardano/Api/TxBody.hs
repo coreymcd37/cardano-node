@@ -116,6 +116,8 @@ module Cardano.Api.TxBody (
 
     -- * Conversion functions
     fromByronTxIn,
+    renderScriptWitnessIndex,
+    renderTxIn,
   ) where
 
 import           Prelude
@@ -2250,6 +2252,16 @@ data ScriptWitnessIndex =
      -- | The n'th withdrawal, in the order of the 'StakeAddress's.
    | ScriptWitnessIndexWithdrawal !Word
   deriving (Eq, Ord, Show)
+
+renderScriptWitnessIndex :: ScriptWitnessIndex -> Text
+renderScriptWitnessIndex (ScriptWitnessIndexTxIn index) =
+  "Transaction input " <> Text.pack (show index) <> " in the order of the TxIds."
+renderScriptWitnessIndex (ScriptWitnessIndexMint index) =
+  "PolicyId " <> Text.pack (show index) <> " in the order of the PolicyIds."
+renderScriptWitnessIndex (ScriptWitnessIndexCertificate index) =
+  "Certificate " <> Text.pack (show index) <> " in the list order of the certificates."
+renderScriptWitnessIndex (ScriptWitnessIndexWithdrawal index) =
+  "Withdrawal " <> Text.pack (show index) <> " in the order of the StakeAddresses."
 
 toAlonzoRdmrPtr :: ScriptWitnessIndex -> Alonzo.RdmrPtr
 toAlonzoRdmrPtr widx =
