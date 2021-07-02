@@ -10,6 +10,8 @@ module Cardano.CLI.Helpers
   , renderHelpersError
   , textShow
   , validateCBOR
+
+  , nothingE
   ) where
 
 import           Cardano.Prelude
@@ -104,6 +106,9 @@ validateCBOR cborObject bs =
       () <$ decodeCBOR bs (fromCBOR :: Decoder s Update.Vote)
       Right "Valid Byron vote."
 
-
 textShow :: Show a => a -> Text
 textShow = Text.pack . show
+
+-- | Extract value from the Maybe value or throw the provided exception
+nothingE :: Monad m => e -> Maybe a -> ExceptT e m a
+nothingE e = maybe (throwError e) return

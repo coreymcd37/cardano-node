@@ -240,6 +240,7 @@ module Cardano.Api (
     makeShelleyBootstrapWitness,
 
     -- * Fee calculation
+    BalanceTxBodyError(..),
     transactionFee,
     estimateTransactionFee,
     makeTransactionBodyAutoBalance,

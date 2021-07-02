@@ -12,6 +12,7 @@ module Cardano.CLI.Shelley.Run.Transaction
   , runTransactionCmd
   ) where
 
+import           Control.Monad.Trans.Except (except)
 import           Cardano.Prelude hiding (All, Any)
 import           Prelude (String, error)
 
@@ -49,6 +50,7 @@ import           Ouroboros.Network.Protocol.LocalStateQuery.Type (AcquireFailure
 import qualified Ouroboros.Network.Protocol.LocalStateQuery.Client as Net.Query
 import qualified Ouroboros.Network.Protocol.LocalStateQuery.Type as Net.Query
 import           Cardano.CLI.Environment (EnvSocketError, readEnvSocketPath, renderEnvSocketError)
+import           Cardano.CLI.Helpers (nothingE)
 import           Cardano.CLI.Run.Friendly (friendlyTxBodyBS)
 import           Cardano.CLI.Shelley.Key (InputDecodeError, readSigningKeyFileAnyOf)
 import           Cardano.CLI.Shelley.Parsers
@@ -105,7 +107,13 @@ data ShelleyTxCmdError
       !TxBodyFile
       !AnyConsensusMode
       !AnyCardanoEra
+  | ShelleyTxCmdBalanceTxBody !SomeBalanceTxBodyError
   deriving Show
+
+data SomeBalanceTxBodyError where
+     SomeBalanceTxBodyError :: BalanceTxBodyError era -> SomeBalanceTxBodyError
+
+deriving instance Show SomeBalanceTxBodyError
 
 data SomeTxBodyError where
      SomeTxBodyError :: TxBodyError era -> SomeTxBodyError
@@ -217,12 +225,14 @@ renderShelleyTxCmdError err =
       "A script provided to witness minting does not correspond to the policy \
       \id of any asset specified in the \"--mint\" field. The script hash is: "
       <> Text.intercalate ", " (map serialiseToRawBytesHexText policyids)
-    ShelleyTxCmdAcquireFailure _ -> error "TODO alonzo fix me"
+    ShelleyTxCmdAcquireFailure acquireFail -> Text.pack $ show acquireFail
     ShelleyTxCmdUnsupportedMode mode -> "Unsupported mode: " <> renderMode mode
     ShelleyTxCmdByronEra -> "This query cannot be used for the Byron era"
     ShelleyTxCmdEraConsensusModeMismatchTxBalance fp mode era ->
        "Cannot balance " <> renderEra era <> " era transaction body (" <> show fp <>
        ") because is not supported in the " <> renderMode mode <> " consensus mode."
+    ShelleyTxCmdBalanceTxBody (SomeBalanceTxBodyError e) ->
+      "Transaction validaton error: " <> Text.pack (displayError e)
 
 renderEra :: AnyCardanoEra -> Text
 renderEra (AnyCardanoEra ByronEra)   = "Byron"
@@ -249,33 +259,6 @@ renderFeature TxFeatureShelleyKeys          = "Shelley keys"
 renderFeature TxFeatureCollateral           = "Collateral inputs"
 renderFeature TxFeatureProtocolParameters   = "Protocol parameters"
 renderFeature TxFeatureTxOutDatum           = "Transaction output datums"
-
-  -- = TxBuildRaw
-  --     AnyCardanoEra
-  --     [(TxIn, Maybe (ScriptWitnessFiles WitCtxTxIn))]
-  --     -- ^ Transaction inputs with optional spending scripts
-  --     [TxIn]
-  --     -- ^ Transaction inputs for collateral, only key witnesses, no scripts.
-  --     [TxOutAnyEra]
-  --     (Maybe (Value, [ScriptWitnessFiles WitCtxMint]))
-  --     -- ^ Multi-Asset value with script witness
-  --     (Maybe SlotNo)
-  --     -- ^ Transaction lower bound
-  --     (Maybe SlotNo)
-  --     -- ^ Transaction upper bound
-  --     (Maybe Lovelace)
-  --     -- ^ Tx fee
-  --     [(CertificateFile, Maybe (ScriptWitnessFiles WitCtxStake))]
-  --     -- ^ Certificates with potential script witness
-  --     [(StakeAddress, Lovelace, Maybe (ScriptWitnessFiles WitCtxStake))]
-  --     TxMetadataJsonSchema
-  --     [ScriptFile]
-  --     -- ^ Auxillary scripts
-  --     [MetadataFile]
-  --     (Maybe ProtocolParamsSourceSpec)
-  --     (Maybe UpdateProposalFile)
-  --     TxBodyFile
-
 
 runTransactionCmd :: TransactionCmd -> ExceptT ShelleyTxCmdError IO ()
 runTransactionCmd cmd =
@@ -309,7 +292,6 @@ runTransactionCmd cmd =
       runTxCreateWitness txBodyfile witSignData mbNw outFile
     TxAssembleTxBodyWitness txBodyFile witnessFile outFile ->
       runTxSignWitness txBodyFile witnessFile outFile
-    -- TxBuild {} -> error "TODO alonzo fix me"
 
 -- ----------------------------------------------------------------------------
 -- Building transactions
@@ -443,45 +425,36 @@ runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId tx
                             , localNodeNetworkId       = networkId
                             , localNodeSocketPath      = sockPath
                             }
+
       sbe <- getSbe $ cardanoEraStyle era
 
+      eInMode <- toEraInMode era cMode
+        & nothingE (ShelleyTxCmdEraConsensusModeMismatchTxBalance outBody (AnyConsensusMode cMode) (AnyCardanoEra era))
+
+      let utxoQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe (QueryUTxO QueryUTxOWhole)
+      let pParamsQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe QueryProtocolParameters
+
+      utxo <- executeQuery era cModeParams localConnInfo utxoQuery
+      pparams <- executeQuery era cModeParams localConnInfo pParamsQuery
+      (eraHistory, systemStart) <- firstExceptT ShelleyTxCmdAcquireFailure $ newExceptT $ queryEraHistoryAndSystemStart localNodeConnInfo Nothing
+
       -- Query all the necessary things
-      (utxo, pparams, eraHistory, systemStart, eInMode) <-
-        case toEraInMode era cMode of
-          Just eInMode' -> do
-            let utxoQuery = QueryInEra eInMode' $ QueryInShelleyBasedEra sbe (QueryUTxO QueryUTxOWhole)
-                pParamsQuery = QueryInEra eInMode' $ QueryInShelleyBasedEra sbe QueryProtocolParameters
 
-            utxo' <- executeQuery era cModeParams localConnInfo utxoQuery
-            pparams' <- executeQuery era cModeParams localConnInfo pParamsQuery
-            (eraHistory', systemStart') <- firstExceptT ShelleyTxCmdAcquireFailure $ newExceptT $ queryEraHistoryAndSystemStart localNodeConnInfo Nothing
-            return (utxo', pparams', eraHistory', systemStart', eInMode')
-          Nothing -> left $ ShelleyTxCmdEraConsensusModeMismatchTxBalance outBody (AnyConsensusMode cMode) (AnyCardanoEra era)
+      -- Steps:
+      -- 1. evaluate all the scripts to get the exec units, update with ex units
+      -- 2. figure out the overall min fees
+      -- 3. update tx with fees
+      -- 4. balance the transaction and update tx change output
 
-            -- Steps:
-            -- 1. evaluate all the scripts to get the exec units, update with ex units
-            -- 2. figure out the overall min fees
-            -- 3. update tx with fees
-            -- 4. balance the transaction and update tx change output
+      let poolIdSet = mempty -- TODO: Not sure about the relevance of the pool ids
 
+      _v <- makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory pparams poolIdSet
+        utxo txBodyContent (error "TODO alonzo need: AddressInEra era")
+        & except & withExceptT (ShelleyTxCmdBalanceTxBody . SomeBalanceTxBodyError)
 
-          -- let poolIdSet = mempty -- TODO: Not sure about the relevance of the pool ids
-
-      case makeTransactionBodyAutoBalance
-            sbe
-            eInMode
-            systemStart
-            eraHistory
-            pparams
-            (error "TODO alonzo need: Set PoolId")
-            utxo
-            txBodyContent
-            (error "TODO alonzo need: AddressInEra era")
-            of
-              Right _v -> case valueToLovelace (error "fix me") of
-                Just _l -> error "fix me" -- TODO fix me
-                Nothing -> error "fix me" -- TODO fix me mismatch in non-ada assets
-              Left _e -> error "fix me" -- TODO
+      case valueToLovelace (error "fix me") of
+        Just _l -> error "fix me" -- TODO fix me
+        Nothing -> error "fix me" -- TODO fix me mismatch in non-ada assets
 
     wrongMode -> left (ShelleyTxCmdUnsupportedMode (AnyConsensusMode wrongMode))
 

@@ -13,6 +13,7 @@
 -- | Fee calculation
 --
 module Cardano.Api.Fees (
+    BalanceTxBodyError(..),
     transactionFee,
     estimateTransactionFee,
     makeTransactionBodyAutoBalance,
@@ -52,6 +53,7 @@ import qualified Cardano.Ledger.Crypto as Ledger
 import           Cardano.Api.Address
 import           Cardano.Api.Certificate
 import           Cardano.Api.Eras
+import           Cardano.Api.Error
 import           Cardano.Api.KeysShelley
 import           Cardano.Api.Modes
 import           Cardano.Api.NetworkId
@@ -82,6 +84,8 @@ import qualified Cardano.Ledger.Alonzo.Scripts as Alonzo
 import qualified Cardano.Ledger.Alonzo.TxWitness as Alonzo
 
 import qualified Ouroboros.Consensus.HardFork.History as Consensus
+
+{- HLINT ignore "Redundant return" -}
 
 -- ----------------------------------------------------------------------------
 -- Transaction fees
@@ -196,7 +200,17 @@ data BalanceTxBodyError era =
      | BalanceByronEraNotSupported
      | BalanceMinUTxOPParamNotFound
      | BalanceCostPerWordPParamNotFound
+  deriving Show
 
+instance Error (BalanceTxBodyError era) where
+  displayError (BalanceTxBodyErr e)  = "Transaction balance body error: " <> displayError e
+  displayError (BalancePastHorizonErr PastHorizonException)  = "Transaction balance horizon error"
+  displayError (BalanceScriptFailure ScriptFailure)  = "Transaction balance script failure"
+  displayError BalanceMoreInputsNeeded  = "Transaction balance needs more inputs"
+  displayError BalanceMinUTxONotMet  = "Transaction balance minimum UTxO not met"
+  displayError BalanceByronEraNotSupported  = "Transaction balance Byron era not supported"
+  displayError BalanceMinUTxOPParamNotFound  = "Transaction balance min UTxO protocol parameter not found"
+  displayError BalanceCostPerWordPParamNotFound  = "Transaction balance cost per word protocol parameter not found"
 
 -- Steps:
 -- 1. evaluate all the scripts to get the exec units, update with ex units
@@ -315,8 +329,8 @@ substituteExecutionUnits exUnitsMap =
                                             datum redeemer exunits
 
 
-data ScriptFailure = ScriptFailure
-data PastHorizonException = PastHorizonException
+data ScriptFailure = ScriptFailure deriving Show
+data PastHorizonException = PastHorizonException deriving Show
 
 -- | Run all the scripts in a transaction and return the execution units needed
 -- for each use of each script. The total execution units for the transaction
