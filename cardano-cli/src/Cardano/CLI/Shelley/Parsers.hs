@@ -234,22 +234,22 @@ pScriptWitnessFiles :: forall witctx.
                     -> Maybe String
                     -> String
                     -> Parser (ScriptWitnessFiles witctx)
-pScriptWitnessFiles witctx _todo scriptFlagPrefix scriptFlagPrefixDeprecated help =
+pScriptWitnessFiles witctx balanceExecUnits scriptFlagPrefix scriptFlagPrefixDeprecated help =
     toScriptWitnessFiles
       <$> pScriptFor (scriptFlagPrefix ++ "-script-file")
                      ((++ "-script-file") <$> scriptFlagPrefixDeprecated)
                      ("The file containing the script to witness " ++ help)
       <*> optional ((,,) <$> pScriptDatumOrFile
                          <*> pScriptRedeemerOrFile
-                         <*> pExecutionUnits)
+                         <*> pExecutionUnits balanceExecUnits)
   where
     toScriptWitnessFiles :: ScriptFile
                          -> Maybe (ScriptDatumOrFile witctx,
                                    ScriptRedeemerOrFile,
-                                   ExecutionUnits)
+                                   Maybe ExecutionUnits)
                          -> ScriptWitnessFiles witctx
     toScriptWitnessFiles sf Nothing        = SimpleScriptWitnessFile  sf
-    toScriptWitnessFiles sf (Just (d,r,e)) = PlutusScriptWitnessFiles sf d r e
+    toScriptWitnessFiles sf (Just (d,r, mE)) = PlutusScriptWitnessFiles sf d r mE
 
     pScriptDatumOrFile :: Parser (ScriptDatumOrFile witctx)
     pScriptDatumOrFile =
@@ -262,14 +262,18 @@ pScriptWitnessFiles witctx _todo scriptFlagPrefix scriptFlagPrefixDeprecated hel
     pScriptRedeemerOrFile :: Parser ScriptDataOrFile
     pScriptRedeemerOrFile = pScriptDataOrFile (scriptFlagPrefix ++ "-redeemer")
 
-    pExecutionUnits :: Parser ExecutionUnits
-    pExecutionUnits =
-      uncurry ExecutionUnits <$>
-      Opt.option Opt.auto
-        (  Opt.long (scriptFlagPrefix ++ "-execution-units")
-        <> Opt.metavar "(INT, INT)"
-        <> Opt.help "The time and space units needed by the script."
-        )
+    pExecutionUnits :: Bool -> Parser (Maybe ExecutionUnits)
+    pExecutionUnits balanceExecUnits' =
+      case balanceExecUnits' of
+        True -> pure Nothing
+        False -> Just <$>
+                  (uncurry ExecutionUnits <$>
+                    Opt.option Opt.auto
+                      (  Opt.long (scriptFlagPrefix ++ "-execution-units")
+                      <> Opt.metavar "(INT, INT)"
+                      <> Opt.help "The time and space units needed by the script."
+                      )
+                  )
 
 pScriptDataOrFile :: String -> Parser ScriptDataOrFile
 pScriptDataOrFile dataFlagPrefix =
@@ -604,10 +608,10 @@ pTransaction =
             <*> many pCollateralTxIn
             <*> many pTxOut
             <*> pChangeAddress
-            <*> optional pMintMultiAsset
+            <*> optional (pMintMultiAsset False)
             <*> optional pInvalidBefore
             <*> optional pInvalidHereafter
-            <*> many pCertificateFile
+            <*> many (pCertificateFile False)
             <*> many pWithdrawal
             <*> pTxMetadataJsonSchema
             <*> many (pScriptFor
@@ -642,11 +646,11 @@ pTransaction =
                <*> some pTxIn
                <*> many pTxInCollateral
                <*> many pTxOut
-               <*> optional pMintMultiAsset
+               <*> optional (pMintMultiAsset True)
                <*> optional pInvalidBefore
                <*> optional pInvalidHereafter
                <*> optional pTxFee
-               <*> many pCertificateFile
+               <*> many (pCertificateFile False)
                <*> many pWithdrawal
                <*> pTxMetadataJsonSchema
                <*> many (pScriptFor
@@ -1220,9 +1224,9 @@ pProtocolParamsFile =
       <> Opt.completer (Opt.bashCompleter "file")
       )
 
-pCertificateFile :: Parser (CertificateFile,
+pCertificateFile :: Bool -> Parser (CertificateFile,
                             Maybe (ScriptWitnessFiles WitCtxStake))
-pCertificateFile =
+pCertificateFile balanceExecUnits =
   (,) <$> (CertificateFile
              <$> (  Opt.strOption
                       (  Opt.long "certificate-file"
@@ -1236,7 +1240,7 @@ pCertificateFile =
           )
       <*> optional (pScriptWitnessFiles
                       WitCtxStake
-                      (error "alonzo fix me") -- TODO alonzo fix me
+                      balanceExecUnits
                       "certificate" Nothing
                       "the use of the certificate.")
  where
@@ -1311,7 +1315,7 @@ pWithdrawal =
             )
       <*> optional (pScriptWitnessFiles
                       WitCtxStake
-                      (error "alonzo fix me") -- TODO alonzo fix me
+                      (error "pBalanceExecUnits")
                       "withdrawal" Nothing
                       "the withdrawal of rewards.")
  where
@@ -1767,7 +1771,7 @@ pTxIn =
                )
          <*> optional (pScriptWitnessFiles
                          WitCtxTxIn
-                         (error "alonzo fix me") -- TODO alonzo fix me
+                         (error "pBalanceExecUnits")
                          "tx-in" (Just "txin")
                          "the spending of the transaction input.")
 
@@ -1840,8 +1844,10 @@ pMultiAsset =
       <> Opt.help "Multi-asset value(s) with the multi-asset cli syntax"
       )
 
-pMintMultiAsset :: Parser (Value, [ScriptWitnessFiles WitCtxMint])
-pMintMultiAsset =
+
+
+pMintMultiAsset :: Bool -> Parser (Value, [ScriptWitnessFiles WitCtxMint])
+pMintMultiAsset balanceExecUnits =
   (,) <$> Opt.option
             (readerFromParsecParser parseValue)
               (  Opt.long "mint"
@@ -1850,9 +1856,12 @@ pMintMultiAsset =
               )
       <*> some (pScriptWitnessFiles
                   WitCtxMint
-                  (error "alonzo fix me") -- TODO alonzo fix me
+                  balanceExecUnits
                   "mint" (Just "minting")
-                  "the minting of assets for a particular policy Id.")
+                  "the minting of assets for a particular policy Id."
+               )
+
+
 
  where
    helpText = "Mint multi-asset value(s) with the multi-asset cli syntax. \

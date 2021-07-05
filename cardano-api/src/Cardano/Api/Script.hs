@@ -654,7 +654,7 @@ data ScriptWitness witctx era where
                          -> PlutusScript         lang
                          -> ScriptDatum witctx
                          -> ScriptRedeemer
-                         -> ExecutionUnits
+                         -> Maybe ExecutionUnits
                          -> ScriptWitness witctx era
 
 deriving instance Show (ScriptWitness witctx era)

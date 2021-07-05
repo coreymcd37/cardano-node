@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE RankNTypes #-}
@@ -37,8 +38,11 @@ import           Ouroboros.Consensus.Shelley.Eras (StandardAllegra, StandardMary
 import qualified Cardano.Binary as CBOR
 
 --TODO: following import needed for orphan Eq Script instance
+import qualified Cardano.Ledger.Era as Ledger
 import           Cardano.Ledger.ShelleyMA.TxBody ()
+import qualified Cardano.Ledger.Shelley.Constraints as Ledger
 import           Shelley.Spec.Ledger.Scripts ()
+import qualified Shelley.Spec.Ledger.API as Shelley
 
 import           Ouroboros.Consensus.BlockchainTime.WallClock.Types (SystemStart (..))
 import           Ouroboros.Consensus.Byron.Ledger (ByronBlock)
@@ -448,7 +452,7 @@ runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId tx
 
       let poolIdSet = mempty -- TODO: Not sure about the relevance of the pool ids
 
-      _v <- makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory pparams poolIdSet
+      _v <- obtainLedgerEraClassConstraints sbe $ makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory pparams poolIdSet
         utxo txBodyContent (error "TODO alonzo need: AddressInEra era")
         & except & withExceptT (ShelleyTxCmdBalanceTxBody . SomeBalanceTxBodyError)
 
@@ -845,7 +849,7 @@ createScriptWitness era (PlutusScriptWitnessFiles
                           (ScriptFile scriptFile)
                           datumOrFile
                           redeemerOrFile
-                          execUnits) = do
+                          mExecUnits) = do
     script@(ScriptInAnyLang lang _) <- firstExceptT ShelleyTxCmdScriptFileError $
                                          readFileScriptInAnyLang scriptFile
     ScriptInEra langInEra script'   <- validateScriptSupportedInEra era script
@@ -857,7 +861,7 @@ createScriptWitness era (PlutusScriptWitnessFiles
                    langInEra version pscript
                    datum
                    redeemer
-                   execUnits
+                   mExecUnits
 
       -- If the supplied cli flags were for a plutus script (i.e. the user did
       -- supply the datum, redeemer and ex units), but the script file turns
@@ -1434,3 +1438,17 @@ executeQuery _era _cModeP _localNodeConnInfo _q = error "fix me" -- TODO alonzo 
 getSbe :: CardanoEraStyle era -> ExceptT ShelleyTxCmdError IO (ShelleyBasedEra era)
 getSbe LegacyByronEra = left ShelleyTxCmdByronEra
 getSbe (ShelleyBasedEra sbe) = return sbe
+
+obtainLedgerEraClassConstraints
+  :: ShelleyLedgerEra era ~ ledgerera
+  => Monoid a
+  => ShelleyBasedEra era
+  -> (( Shelley.CLIHelpers ledgerera
+      , Ledger.Era ledgerera
+
+      ) => a) -> a
+obtainLedgerEraClassConstraints ShelleyBasedEraShelley f = f
+obtainLedgerEraClassConstraints ShelleyBasedEraAllegra f = f
+obtainLedgerEraClassConstraints ShelleyBasedEraMary    f = f
+obtainLedgerEraClassConstraints ShelleyBasedEraAlonzo  f = f
+

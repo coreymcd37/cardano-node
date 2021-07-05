@@ -163,7 +163,7 @@ data ScriptWitnessFiles witctx where
      PlutusScriptWitnessFiles :: ScriptFile
                               -> ScriptDatumOrFile witctx
                               -> ScriptRedeemerOrFile
-                              -> ExecutionUnits
+                              -> Maybe ExecutionUnits
                               -> ScriptWitnessFiles witctx
 
 deriving instance Show (ScriptWitnessFiles witctx)

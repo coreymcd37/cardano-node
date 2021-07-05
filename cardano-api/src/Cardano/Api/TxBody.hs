@@ -2196,10 +2196,17 @@ makeShelleyTransactionBody era@ShelleyBasedEraAlonzo
     redeemers =
       Alonzo.Redeemers $
         Map.fromList
-          [ (toAlonzoRdmrPtr idx, (toAlonzoData d, toAlonzoExUnits e))
+          [ (toAlonzoRdmrPtr idx, (toAlonzoData d, toAlonzoExUnits $ stopGap e))
           | (idx, AnyScriptWitness
                     (PlutusScriptWitness _ _ _ _ d e)) <- witnesses
           ]
+
+    -- TODO: We need to wrap Alonzo.Redeemers StandardAlonzo
+    -- to allow building txs with no execution units (for automagic balance command)
+    -- stopGap is a temporary fix for this
+    stopGap :: Maybe ExecutionUnits -> ExecutionUnits
+    stopGap Nothing = ExecutionUnits 0 0
+    stopGap (Just e) = e
 
     languages :: Set Alonzo.Language
     languages =
