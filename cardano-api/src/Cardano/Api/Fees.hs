@@ -28,18 +28,18 @@ module Cardano.Api.Fees (
 
 import           Prelude
 
-import qualified Data.ByteString as BS
-import           Data.Bifunctor (bimap, first)
 import qualified Data.Array as Array
-import           Data.Set (Set)
-import qualified Data.Set as Set
-import qualified Data.Text as Text
-import           Data.Text (Text)
+import           Data.Bifunctor (bimap, first)
+import qualified Data.ByteString as BS
 import           Data.Map (Map)
 import qualified Data.Map as Map
+import           Data.Sequence.Strict (StrictSeq (..))
+import           Data.Set (Set)
+import qualified Data.Set as Set
+import           Data.Text (Text)
+import qualified Data.Text as Text
 import           GHC.Records (HasField (..))
 import           Numeric.Natural
-import           Data.Sequence.Strict (StrictSeq(..))
 
 import           Control.Monad.Trans.Except
 
@@ -52,11 +52,11 @@ import qualified Cardano.Ledger.Alonzo.Tools as Alonzo
 import qualified Cardano.Ledger.Alonzo.Tx as Alonzo
 import qualified Cardano.Ledger.Coin as Ledger
 import qualified Cardano.Ledger.Core as Ledger
-import qualified Cardano.Ledger.Era  as Ledger
-import qualified Cardano.Ledger.Era  as Ledger.Era (Crypto)
-import qualified Cardano.Ledger.Keys as Ledger
-import qualified Cardano.Ledger.Tx   as Ledger
 import qualified Cardano.Ledger.Crypto as Ledger
+import qualified Cardano.Ledger.Era as Ledger
+import qualified Cardano.Ledger.Era as Ledger.Era (Crypto)
+import qualified Cardano.Ledger.Keys as Ledger
+import qualified Cardano.Ledger.Tx as Ledger
 
 import           Cardano.Api.Address
 import           Cardano.Api.Certificate
@@ -67,23 +67,18 @@ import           Cardano.Api.Modes
 import           Cardano.Api.NetworkId
 import           Cardano.Api.ProtocolParameters
 import           Cardano.Api.Query
-import           Cardano.Api.SerialiseRaw
 import           Cardano.Api.Script
+import           Cardano.Api.SerialiseRaw
 import           Cardano.Api.Tx
 import           Cardano.Api.TxBody
 import           Cardano.Api.Value
 
 -- Temporarily, until they're moved to the ledger API:
-import           Cardano.Ledger.Alonzo.PParams (PParams'(..))
-import qualified Cardano.Ledger.Alonzo.Tools as Ledger
-                   (evaluateTransactionExecutionUnits,
-                    evaluateTransactionBalance,
-                    evaluateTransactionFee,
-                  --evaluateMinLovelaceOutput, --TODO use this
-                    ScriptFailure)
-import           Shelley.Spec.Ledger.PParams (PParams'(..))
+import           Cardano.Ledger.Alonzo.PParams (PParams' (..))
+import qualified Cardano.Ledger.Alonzo.Tools as Ledger (ScriptFailure, evaluateTransactionBalance,
+                   evaluateTransactionExecutionUnits, evaluateTransactionFee)
+import           Shelley.Spec.Ledger.PParams (PParams' (..))
 
-import qualified Shelley.Spec.Ledger.TxBody as Shelley
 import qualified Shelley.Spec.Ledger.API as Shelley
 
 import qualified Cardano.Ledger.Mary.Value as Mary
@@ -240,15 +235,7 @@ instance Error (BalanceTxBodyError era) where
 -- 3. update tx with fees
 -- 4. balance the transaction and update tx change output
 
-makeTransactionBodyAutoBalance :: IsCardanoEra era
-                               => Shelley.CLIHelpers (ShelleyLedgerEra era)
-                               => Ledger.Era (ShelleyLedgerEra era)
-                               => CBOR.ToCBOR (Ledger.AuxiliaryData (ShelleyLedgerEra era))
-                               => CBOR.ToCBOR (Ledger.TxBody (ShelleyLedgerEra era))
-                               => CBOR.ToCBOR (Ledger.Witnesses (ShelleyLedgerEra era))
-                               => HasField "certs" (Ledger.TxBody (ShelleyLedgerEra era))
-                                                   (StrictSeq (Shelley.DCert Ledger.StandardCrypto))
-                               => ShelleyBasedEra era
+makeTransactionBodyAutoBalance :: ShelleyBasedEra era
                                -> EraInMode era mode
                                -> SystemStart
                                -> EraHistory mode
@@ -261,7 +248,7 @@ makeTransactionBodyAutoBalance :: IsCardanoEra era
 makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
                             poolids utxo txbodycontent changeaddr = do
     txbody0 <- first BalanceTxBodyErr $
-                 makeTransactionBody txbodycontent
+                 obtainIsCardanoEraConstraint sbe $ makeTransactionBody txbodycontent
 
     exUnitsMap <- first BalanceTxExecUnits $
                     evaluateTransactionExecutionUnits
@@ -279,7 +266,7 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
 
     -- Insert change address and set tx fee to 0
     txbody1 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
-               makeTransactionBody txbodycontent1 {
+               obtainIsCardanoEraConstraint sbe $ makeTransactionBody txbodycontent1 {
                  txFee  = TxFeeExplicit explicitInE 0,
                  txOuts = TxOut changeaddr
                                 (lovelaceToTxOutValue 0)
@@ -289,14 +276,14 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
                  -- 1,2,4 or 8 bytes?
                }
 
-    let fee = evaluateTransactionFee sbe pparams txbody1
+    let fee = obtainIsCardanoEraConstraint sbe $ obtainLedgerEra sbe $ evaluateTransactionFee sbe pparams txbody1
 
     txbody2 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
-               makeTransactionBody txbodycontent1 {
+               obtainIsCardanoEraConstraint sbe $ makeTransactionBody txbodycontent1 {
                  txFee = TxFeeExplicit explicitInE fee
                }
 
-    let balance = evaluateTransactionBalance sbe pparams poolids utxo txbody2
+    let balance = obtainIsCardanoEraConstraint sbe $ evaluateTransactionBalance sbe pparams poolids utxo txbody2
     -- check if the balance is positive or negative
     -- in one case we can produce change, in the other the inputs are insufficient
     minUTxOValue <- getMinUTxOValue pparams
@@ -311,7 +298,7 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
     -- now that we know the magnitude of the change: i.e. 1-8 bytes extra.
 
     txbody3 <- first BalanceTxBodyErr $ -- TODO: impossible to fail now
-               makeTransactionBody txbodycontent {
+               obtainIsCardanoEraConstraint sbe $ makeTransactionBody txbodycontent {
                  txFee  = TxFeeExplicit explicitInE fee,
                  txOuts = TxOut changeaddr balance TxOutDatumHashNone
                         : txOuts txbodycontent
@@ -319,6 +306,30 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
 
     return txbody3
  where
+   obtainIsCardanoEraConstraint
+     :: ShelleyBasedEra era
+     -> (( IsCardanoEra era
+         , Shelley.CLIHelpers (ShelleyLedgerEra era)
+       ) => a) -> a
+   obtainIsCardanoEraConstraint ShelleyBasedEraShelley f = f
+   obtainIsCardanoEraConstraint ShelleyBasedEraAllegra f = f
+   obtainIsCardanoEraConstraint ShelleyBasedEraMary    f = f
+   obtainIsCardanoEraConstraint ShelleyBasedEraAlonzo  f = f
+
+   obtainLedgerEra
+     :: ShelleyBasedEra era
+     -> (( Ledger.Era (ShelleyLedgerEra era)
+         , CBOR.ToCBOR (Ledger.AuxiliaryData (ShelleyLedgerEra era))
+         , CBOR.ToCBOR (Ledger.TxBody (ShelleyLedgerEra era))
+         , CBOR.ToCBOR (Ledger.Witnesses (ShelleyLedgerEra era))
+         , HasField "certs" (Ledger.TxBody (ShelleyLedgerEra era))
+             (StrictSeq (Shelley.DCert Ledger.StandardCrypto))
+         ) => a) -> a
+   obtainLedgerEra ShelleyBasedEraShelley f = f
+   obtainLedgerEra ShelleyBasedEraAllegra f = f
+   obtainLedgerEra ShelleyBasedEraMary    f = f
+   obtainLedgerEra ShelleyBasedEraAlonzo  f = f
+
    balanceCheck :: Lovelace -> Lovelace -> Either (BalanceTxBodyError era) ()
    balanceCheck minUTxOValue balance
     | balance < 0 = Left BalanceMoreInputsNeeded

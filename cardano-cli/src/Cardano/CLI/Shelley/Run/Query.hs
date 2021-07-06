@@ -13,9 +13,12 @@
 
 module Cardano.CLI.Shelley.Run.Query
   ( ShelleyQueryCmdError
+  , ShelleyQueryCmdLocalStateQueryError (..)
   , renderShelleyQueryCmdError
+  , renderLocalStateQueryError
   , runQueryCmd
   , percentage
+  , executeQuery
   ) where
 
 import           Cardano.Prelude hiding (atomically)

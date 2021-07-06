@@ -1,3 +1,4 @@
+{-# LANGUAGE DataKinds #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE NamedFieldPuns #-}
@@ -13,7 +14,6 @@ module Cardano.CLI.Shelley.Run.Transaction
   , runTransactionCmd
   ) where
 
-import           Control.Monad.Trans.Except (except)
 import           Cardano.Prelude hiding (All, Any)
 import           Prelude (String, error)
 
@@ -38,21 +38,9 @@ import           Ouroboros.Consensus.Shelley.Eras (StandardAllegra, StandardMary
 import qualified Cardano.Binary as CBOR
 
 --TODO: following import needed for orphan Eq Script instance
-import qualified Cardano.Ledger.Era as Ledger
 import           Cardano.Ledger.ShelleyMA.TxBody ()
-import qualified Cardano.Ledger.Shelley.Constraints as Ledger
 import           Shelley.Spec.Ledger.Scripts ()
-import qualified Shelley.Spec.Ledger.API as Shelley
 
-import           Ouroboros.Consensus.BlockchainTime.WallClock.Types (SystemStart (..))
-import           Ouroboros.Consensus.Byron.Ledger (ByronBlock)
-import           Ouroboros.Consensus.Cardano.Block (EraMismatch (..))
-import           Ouroboros.Consensus.Ledger.SupportsMempool (ApplyTxErr)
-import           Ouroboros.Consensus.Shelley.Ledger (ShelleyBlock)
-import qualified Ouroboros.Network.Protocol.LocalTxSubmission.Client as Net.Tx
-import           Ouroboros.Network.Protocol.LocalStateQuery.Type (AcquireFailure (..))
-import qualified Ouroboros.Network.Protocol.LocalStateQuery.Client as Net.Query
-import qualified Ouroboros.Network.Protocol.LocalStateQuery.Type as Net.Query
 import           Cardano.CLI.Environment (EnvSocketError, readEnvSocketPath, renderEnvSocketError)
 import           Cardano.CLI.Helpers (nothingE)
 import           Cardano.CLI.Run.Friendly (friendlyTxBodyBS)
@@ -60,8 +48,19 @@ import           Cardano.CLI.Shelley.Key (InputDecodeError, readSigningKeyFileAn
 import           Cardano.CLI.Shelley.Parsers
 import           Cardano.CLI.Shelley.Run.Genesis (ShelleyGenesisCmdError (..), readShelleyGenesis,
                    renderShelleyGenesisCmdError)
+import           Cardano.CLI.Shelley.Run.Query (ShelleyQueryCmdLocalStateQueryError (..),
+                   renderLocalStateQueryError)
 import           Cardano.CLI.Shelley.Script
 import           Cardano.CLI.Types
+import           Ouroboros.Consensus.BlockchainTime.WallClock.Types (SystemStart (..))
+import           Ouroboros.Consensus.Byron.Ledger (ByronBlock)
+import           Ouroboros.Consensus.Cardano.Block (EraMismatch (..))
+import           Ouroboros.Consensus.Ledger.SupportsMempool (ApplyTxErr)
+import           Ouroboros.Consensus.Shelley.Ledger (ShelleyBlock)
+import qualified Ouroboros.Network.Protocol.LocalStateQuery.Client as Net.Query
+import           Ouroboros.Network.Protocol.LocalStateQuery.Type (AcquireFailure (..))
+import qualified Ouroboros.Network.Protocol.LocalStateQuery.Type as Net.Query
+import qualified Ouroboros.Network.Protocol.LocalTxSubmission.Client as Net.Tx
 
 import qualified System.IO as IO
 
@@ -112,6 +111,10 @@ data ShelleyTxCmdError
       !AnyConsensusMode
       !AnyCardanoEra
   | ShelleyTxCmdBalanceTxBody !SomeBalanceTxBodyError
+  | ShelleyTxCmdEraConsensusModeMismatchQuery !AnyConsensusMode !AnyCardanoEra
+  | ShelleyTxCmdByronEraQuery
+  | ShelleyTxCmdLocalStateQueryError ShelleyQueryCmdLocalStateQueryError
+
   deriving Show
 
 data SomeBalanceTxBodyError where
@@ -237,6 +240,9 @@ renderShelleyTxCmdError err =
        ") because is not supported in the " <> renderMode mode <> " consensus mode."
     ShelleyTxCmdBalanceTxBody (SomeBalanceTxBodyError e) ->
       "Transaction validaton error: " <> Text.pack (displayError e)
+    ShelleyTxCmdEraConsensusModeMismatchQuery _ _ -> "TODO"
+    ShelleyTxCmdByronEraQuery -> "TODO"
+    ShelleyTxCmdLocalStateQueryError err' -> renderLocalStateQueryError err'
 
 renderEra :: AnyCardanoEra -> Text
 renderEra (AnyCardanoEra ByronEra)   = "Byron"
@@ -388,14 +394,14 @@ runTxBuild
   -> Maybe UpdateProposalFile
   -> TxBodyFile
   -> ExceptT ShelleyTxCmdError IO ()
-runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId txins txinsc txouts _changeAddr
-           mValue mLowerBound mUpperBound certFiles withdrawals metadataSchema scriptFiles
-           metadataFiles mpparams mUpdatePropFile outBody = do
+runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId txins txinsc txouts
+           (TxOutChangeAddress changeAddr) mValue mLowerBound mUpperBound certFiles withdrawals
+           metadataSchema scriptFiles metadataFiles mpparams mUpdatePropFile outBody@(TxBodyFile fpath) = do
   SocketPath sockPath <- firstExceptT ShelleyTxCmdSocketEnvError readEnvSocketPath
 
   let localNodeConnInfo = LocalNodeConnectInfo cModeParams networkId sockPath
       consensusMode = consensusModeOnly cModeParams
-
+      dummyFee = Just $ Lovelace 0
   case consensusMode of
     CardanoMode -> do
       txBodyContent <-
@@ -403,7 +409,7 @@ runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId tx
           <$> validateTxIns               era txins
           <*> validateTxInsCollateral     era txinsc
           <*> validateTxOuts              era txouts
-          <*> validateTxFee               era (error "TODO fix me mFee")
+          <*> validateTxFee               era dummyFee
           <*> ((,) <$> validateTxValidityLowerBound era mLowerBound
                   <*> validateTxValidityUpperBound era mUpperBound)
           <*> validateTxMetadataInEra     era metadataSchema metadataFiles
@@ -416,50 +422,38 @@ runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId tx
           <*> validateTxUpdateProposal    era mUpdatePropFile
           <*> validateTxMintValue         era mValue
 
-      -- let txins' :: Set TxIn
-      --     txins' = Set.fromList [ txin | (txin, _) <- txIns txBodyContent ]
-      --     query = QueryUTxO (QueryUTxOByTxIn txins')
-
 
       -- TODO: Probably should query the UTxO at the relevant address
       -- TODO: Combine queries
-      let cMode = consensusModeOnly cModeParams
-          localConnInfo = LocalNodeConnectInfo
-                            { localConsensusModeParams = cModeParams
+      let localConnInfo = LocalNodeConnectInfo
+                            { localConsensusModeParams = CardanoModeParams (EpochSlots 21600)
                             , localNodeNetworkId       = networkId
                             , localNodeSocketPath      = sockPath
                             }
-
       sbe <- getSbe $ cardanoEraStyle era
-
-      eInMode <- toEraInMode era cMode
-        & nothingE (ShelleyTxCmdEraConsensusModeMismatchTxBalance outBody (AnyConsensusMode cMode) (AnyCardanoEra era))
+      eInMode <-
+        nothingE (ShelleyTxCmdEraConsensusModeMismatchTxBalance outBody (AnyConsensusMode CardanoMode) (AnyCardanoEra era))
+          $ toEraInMode era CardanoMode
 
       let utxoQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe (QueryUTxO QueryUTxOWhole)
       let pParamsQuery = QueryInEra eInMode $ QueryInShelleyBasedEra sbe QueryProtocolParameters
-
       utxo <- executeQuery era cModeParams localConnInfo utxoQuery
       pparams <- executeQuery era cModeParams localConnInfo pParamsQuery
       (eraHistory, systemStart) <- firstExceptT ShelleyTxCmdAcquireFailure $ newExceptT $ queryEraHistoryAndSystemStart localNodeConnInfo Nothing
 
-      -- Query all the necessary things
+      let cAddr = case anyAddressInEra (shelleyBasedToCardanoEra sbe) changeAddr of
+                    Just addr -> addr
+                    Nothing -> error $ "runTxBuild: Byron address used: " <> show changeAddr
 
-      -- Steps:
-      -- 1. evaluate all the scripts to get the exec units, update with ex units
-      -- 2. figure out the overall min fees
-      -- 3. update tx with fees
-      -- 4. balance the transaction and update tx change output
+      balancedTxBody <-
+        firstExceptT (ShelleyTxCmdBalanceTxBody . SomeBalanceTxBodyError)
+          . hoistEither
+          $ makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory
+                                           pparams Set.empty utxo txBodyContent
+                                           cAddr
 
-      let poolIdSet = mempty -- TODO: Not sure about the relevance of the pool ids
-
-      _v <- obtainLedgerEraClassConstraints sbe $ makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory pparams poolIdSet
-        utxo txBodyContent (error "TODO alonzo need: AddressInEra era")
-        & except & withExceptT (ShelleyTxCmdBalanceTxBody . SomeBalanceTxBodyError)
-
-      case valueToLovelace (error "fix me") of
-        Just _l -> error "fix me" -- TODO fix me
-        Nothing -> error "fix me" -- TODO fix me mismatch in non-ada assets
-
+      firstExceptT ShelleyTxCmdWriteFileError . newExceptT $
+        writeFileTextEnvelope fpath Nothing balancedTxBody
     wrongMode -> left (ShelleyTxCmdUnsupportedMode (AnyConsensusMode wrongMode))
 
 queryEraHistoryAndSystemStart
@@ -1432,23 +1426,38 @@ executeQuery
   -> LocalNodeConnectInfo mode
   -> QueryInMode mode (Either EraMismatch result)
   -> ExceptT ShelleyTxCmdError IO result
-executeQuery _era _cModeP _localNodeConnInfo _q = error "fix me" -- TODO alonzo fix me
+executeQuery era cModeP localNodeConnInfo q = do
+  eraInMode <- calcEraInMode era $ consensusModeOnly cModeP
+  case eraInMode of
+    ByronEraInByronMode -> left ShelleyTxCmdByronEraQuery
+    _ -> liftIO execQuery >>= queryResult
+ where
+   execQuery :: IO (Either AcquireFailure (Either EraMismatch result))
+   execQuery = queryNodeLocalState localNodeConnInfo Nothing q
 
 
-getSbe :: CardanoEraStyle era -> ExceptT ShelleyTxCmdError IO (ShelleyBasedEra era)
+queryResult
+  :: Either AcquireFailure (Either EraMismatch a)
+  -> ExceptT ShelleyTxCmdError IO a
+queryResult eAcq =
+  case eAcq of
+    Left acqFailure -> left $ ShelleyTxCmdAcquireFailure acqFailure
+    Right eResult ->
+      case eResult of
+        Left err -> left . ShelleyTxCmdLocalStateQueryError $ EraMismatchError err
+        Right result -> return result
+
+calcEraInMode
+  :: CardanoEra era
+  -> ConsensusMode mode
+  -> ExceptT ShelleyTxCmdError IO (EraInMode era mode)
+calcEraInMode era mode=
+  hoistMaybe (ShelleyTxCmdEraConsensusModeMismatchQuery (AnyConsensusMode mode) (anyCardanoEra era))
+                   $ toEraInMode era mode
+
+getSbe :: CardanoEraStyle era
+       -> ExceptT ShelleyTxCmdError IO (ShelleyBasedEra era)
 getSbe LegacyByronEra = left ShelleyTxCmdByronEra
 getSbe (ShelleyBasedEra sbe) = return sbe
 
-obtainLedgerEraClassConstraints
-  :: ShelleyLedgerEra era ~ ledgerera
-  => Monoid a
-  => ShelleyBasedEra era
-  -> (( Shelley.CLIHelpers ledgerera
-      , Ledger.Era ledgerera
-
-      ) => a) -> a
-obtainLedgerEraClassConstraints ShelleyBasedEraShelley f = f
-obtainLedgerEraClassConstraints ShelleyBasedEraAllegra f = f
-obtainLedgerEraClassConstraints ShelleyBasedEraMary    f = f
-obtainLedgerEraClassConstraints ShelleyBasedEraAlonzo  f = f
 
