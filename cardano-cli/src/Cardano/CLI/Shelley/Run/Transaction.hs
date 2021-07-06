@@ -843,7 +843,7 @@ createScriptWitness era (PlutusScriptWitnessFiles
                           (ScriptFile scriptFile)
                           datumOrFile
                           redeemerOrFile
-                          mExecUnits) = do
+                          execUnits) = do
     script@(ScriptInAnyLang lang _) <- firstExceptT ShelleyTxCmdScriptFileError $
                                          readFileScriptInAnyLang scriptFile
     ScriptInEra langInEra script'   <- validateScriptSupportedInEra era script
@@ -855,7 +855,7 @@ createScriptWitness era (PlutusScriptWitnessFiles
                    langInEra version pscript
                    datum
                    redeemer
-                   mExecUnits
+                   execUnits
 
       -- If the supplied cli flags were for a plutus script (i.e. the user did
       -- supply the datum, redeemer and ex units), but the script file turns

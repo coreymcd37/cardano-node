@@ -5,7 +5,8 @@
 {-# LANGUAGE StandaloneDeriving #-}
 
 module Cardano.CLI.Types
-  ( CBORObject (..)
+  ( BalanceTxExecUnits (..)
+  , CBORObject (..)
   , CertificateFile (..)
   , GenesisFile (..)
   , OutputFormat (..)
@@ -163,7 +164,7 @@ data ScriptWitnessFiles witctx where
      PlutusScriptWitnessFiles :: ScriptFile
                               -> ScriptDatumOrFile witctx
                               -> ScriptRedeemerOrFile
-                              -> Maybe ExecutionUnits
+                              -> ExecutionUnits
                               -> ScriptWitnessFiles witctx
 
 deriving instance Show (ScriptWitnessFiles witctx)
@@ -204,3 +205,4 @@ data TxOutAnyEra = TxOutAnyEra
 newtype TxOutChangeAddress = TxOutChangeAddress AddressAny
   deriving (Eq, Show)
 
+data BalanceTxExecUnits = AutoBalance | ManualBalance

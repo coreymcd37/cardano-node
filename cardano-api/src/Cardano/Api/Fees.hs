@@ -366,7 +366,7 @@ substituteExecutionUnits exUnitsMap =
       case Map.lookup idx exUnitsMap of
         Nothing      -> wit
         Just exunits -> PlutusScriptWitness langInEra version script
-                                            datum redeemer (Just exunits)
+                                            datum redeemer exunits
 
 data ScriptFailure
   = UnnecessaryRedeemer ScriptWitnessIndex

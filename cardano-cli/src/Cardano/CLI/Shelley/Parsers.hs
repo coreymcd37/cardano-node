@@ -15,7 +15,7 @@ module Cardano.CLI.Shelley.Parsers
   ) where
 
 import           Cardano.Prelude hiding (All, Any, option)
-import           Prelude (String, error)
+import           Prelude (String)
 
 import           Cardano.Api
 import           Cardano.Api.Shelley
@@ -48,8 +48,8 @@ import qualified Data.Attoparsec.ByteString.Char8 as Atto
 import qualified Options.Applicative as Opt
 import qualified Text.Parsec as Parsec
 import qualified Text.Parsec.Error as Parsec
-import qualified Text.Parsec.String as Parsec
 import qualified Text.Parsec.Language as Parsec
+import qualified Text.Parsec.String as Parsec
 import qualified Text.Parsec.Token as Parsec
 
 import qualified Shelley.Spec.Ledger.TxBody as Shelley
@@ -229,27 +229,30 @@ pScriptFor name (Just deprecated) help =
 
 pScriptWitnessFiles :: forall witctx.
                        WitCtx witctx
-                    -> Bool -- ^ Use the @execution-units@ flag.
+                    -> BalanceTxExecUnits -- ^ Use the @execution-units@ flag.
                     -> String
                     -> Maybe String
                     -> String
                     -> Parser (ScriptWitnessFiles witctx)
-pScriptWitnessFiles witctx balanceExecUnits scriptFlagPrefix scriptFlagPrefixDeprecated help =
+pScriptWitnessFiles witctx autoBalanceExecUnits scriptFlagPrefix scriptFlagPrefixDeprecated help =
     toScriptWitnessFiles
       <$> pScriptFor (scriptFlagPrefix ++ "-script-file")
                      ((++ "-script-file") <$> scriptFlagPrefixDeprecated)
                      ("The file containing the script to witness " ++ help)
       <*> optional ((,,) <$> pScriptDatumOrFile
                          <*> pScriptRedeemerOrFile
-                         <*> pExecutionUnits balanceExecUnits)
+                         <*> (case autoBalanceExecUnits of
+                               AutoBalance -> pure (ExecutionUnits 0 0)
+                               ManualBalance -> pExecutionUnits)
+                   )
   where
     toScriptWitnessFiles :: ScriptFile
                          -> Maybe (ScriptDatumOrFile witctx,
                                    ScriptRedeemerOrFile,
-                                   Maybe ExecutionUnits)
+                                   ExecutionUnits)
                          -> ScriptWitnessFiles witctx
     toScriptWitnessFiles sf Nothing        = SimpleScriptWitnessFile  sf
-    toScriptWitnessFiles sf (Just (d,r, mE)) = PlutusScriptWitnessFiles sf d r mE
+    toScriptWitnessFiles sf (Just (d,r, e)) = PlutusScriptWitnessFiles sf d r e
 
     pScriptDatumOrFile :: Parser (ScriptDatumOrFile witctx)
     pScriptDatumOrFile =
@@ -262,18 +265,15 @@ pScriptWitnessFiles witctx balanceExecUnits scriptFlagPrefix scriptFlagPrefixDep
     pScriptRedeemerOrFile :: Parser ScriptDataOrFile
     pScriptRedeemerOrFile = pScriptDataOrFile (scriptFlagPrefix ++ "-redeemer")
 
-    pExecutionUnits :: Bool -> Parser (Maybe ExecutionUnits)
-    pExecutionUnits balanceExecUnits' =
-      case balanceExecUnits' of
-        True -> pure Nothing
-        False -> Just <$>
-                  (uncurry ExecutionUnits <$>
-                    Opt.option Opt.auto
-                      (  Opt.long (scriptFlagPrefix ++ "-execution-units")
-                      <> Opt.metavar "(INT, INT)"
-                      <> Opt.help "The time and space units needed by the script."
-                      )
-                  )
+    pExecutionUnits :: Parser ExecutionUnits
+    pExecutionUnits =
+      uncurry ExecutionUnits <$>
+        Opt.option Opt.auto
+          (  Opt.long (scriptFlagPrefix ++ "-execution-units")
+          <> Opt.metavar "(INT, INT)"
+          <> Opt.help "The time and space units needed by the script."
+          )
+
 
 pScriptDataOrFile :: String -> Parser ScriptDataOrFile
 pScriptDataOrFile dataFlagPrefix =
@@ -604,15 +604,15 @@ pTransaction =
     TxBuild <$> pCardanoEra
             <*> pConsensusModeParams
             <*> pNetworkId
-            <*> some pTxIn
+            <*> some (pTxIn AutoBalance)
             <*> many pCollateralTxIn
             <*> many pTxOut
             <*> pChangeAddress
-            <*> optional (pMintMultiAsset False)
+            <*> optional (pMintMultiAsset AutoBalance)
             <*> optional pInvalidBefore
             <*> optional pInvalidHereafter
-            <*> many (pCertificateFile False)
-            <*> many pWithdrawal
+            <*> many (pCertificateFile AutoBalance)
+            <*> many (pWithdrawal AutoBalance)
             <*> pTxMetadataJsonSchema
             <*> many (pScriptFor
                         "auxiliary-script-file"
@@ -643,15 +643,15 @@ pTransaction =
   pTransactionBuildRaw :: Parser TransactionCmd
   pTransactionBuildRaw =
     TxBuildRaw <$> pCardanoEra
-               <*> some pTxIn
+               <*> some (pTxIn ManualBalance)
                <*> many pTxInCollateral
                <*> many pTxOut
-               <*> optional (pMintMultiAsset True)
+               <*> optional (pMintMultiAsset ManualBalance)
                <*> optional pInvalidBefore
                <*> optional pInvalidHereafter
                <*> optional pTxFee
-               <*> many (pCertificateFile False)
-               <*> many pWithdrawal
+               <*> many (pCertificateFile ManualBalance )
+               <*> many (pWithdrawal ManualBalance)
                <*> pTxMetadataJsonSchema
                <*> many (pScriptFor
                            "auxiliary-script-file"
@@ -1224,8 +1224,9 @@ pProtocolParamsFile =
       <> Opt.completer (Opt.bashCompleter "file")
       )
 
-pCertificateFile :: Bool -> Parser (CertificateFile,
-                            Maybe (ScriptWitnessFiles WitCtxStake))
+pCertificateFile
+  :: BalanceTxExecUnits
+  -> Parser (CertificateFile, Maybe (ScriptWitnessFiles WitCtxStake))
 pCertificateFile balanceExecUnits =
   (,) <$> (CertificateFile
              <$> (  Opt.strOption
@@ -1303,10 +1304,12 @@ pMetadataFile =
           <> Opt.completer (Opt.bashCompleter "file")
           )
 
-pWithdrawal :: Parser (StakeAddress,
-                       Lovelace,
-                       Maybe (ScriptWitnessFiles WitCtxStake))
-pWithdrawal =
+pWithdrawal
+  :: BalanceTxExecUnits
+  -> Parser (StakeAddress,
+            Lovelace,
+            Maybe (ScriptWitnessFiles WitCtxStake))
+pWithdrawal balance =
     (\(stakeAddr,lovelace) maybeScriptFp -> (stakeAddr, lovelace, maybeScriptFp))
       <$> Opt.option (readerFromParsecParser parseWithdrawal)
             (  Opt.long "withdrawal"
@@ -1315,7 +1318,7 @@ pWithdrawal =
             )
       <*> optional (pScriptWitnessFiles
                       WitCtxStake
-                      (error "pBalanceExecUnits")
+                      balance
                       "withdrawal" Nothing
                       "the withdrawal of rewards.")
  where
@@ -1762,8 +1765,9 @@ pCardanoEra = asum
   , pure (AnyCardanoEra MaryEra)
   ]
 
-pTxIn :: Parser (TxIn, Maybe (ScriptWitnessFiles WitCtxTxIn))
-pTxIn =
+pTxIn :: BalanceTxExecUnits
+      -> Parser (TxIn, Maybe (ScriptWitnessFiles WitCtxTxIn))
+pTxIn balance =
      (,) <$> Opt.option (readerFromParsecParser parseTxIn)
                (  Opt.long "tx-in"
                 <> Opt.metavar "TX-IN"
@@ -1771,7 +1775,7 @@ pTxIn =
                )
          <*> optional (pScriptWitnessFiles
                          WitCtxTxIn
-                         (error "pBalanceExecUnits")
+                         balance
                          "tx-in" (Just "txin")
                          "the spending of the transaction input.")
 
@@ -1846,7 +1850,9 @@ pMultiAsset =
 
 
 
-pMintMultiAsset :: Bool -> Parser (Value, [ScriptWitnessFiles WitCtxMint])
+pMintMultiAsset
+  :: BalanceTxExecUnits
+  -> Parser (Value, [ScriptWitnessFiles WitCtxMint])
 pMintMultiAsset balanceExecUnits =
   (,) <$> Opt.option
             (readerFromParsecParser parseValue)

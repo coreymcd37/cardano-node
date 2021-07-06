@@ -158,9 +158,9 @@ import qualified Cardano.Crypto.Hashing as Byron
 import qualified Cardano.Ledger.Address as Shelley
 import qualified Cardano.Ledger.AuxiliaryData as Ledger (hashAuxiliaryData)
 import           Cardano.Ledger.BaseTypes (StrictMaybe (..), maybeToStrictMaybe)
-import qualified Cardano.Ledger.Credential as Shelley
 import qualified Cardano.Ledger.Core as Core
 import qualified Cardano.Ledger.Core as Ledger
+import qualified Cardano.Ledger.Credential as Shelley
 import qualified Cardano.Ledger.Era as Ledger
 import qualified Cardano.Ledger.Keys as Shelley
 import qualified Cardano.Ledger.SafeHash as SafeHash
@@ -2196,17 +2196,10 @@ makeShelleyTransactionBody era@ShelleyBasedEraAlonzo
     redeemers =
       Alonzo.Redeemers $
         Map.fromList
-          [ (toAlonzoRdmrPtr idx, (toAlonzoData d, toAlonzoExUnits $ stopGap e))
+          [ (toAlonzoRdmrPtr idx, (toAlonzoData d, toAlonzoExUnits e))
           | (idx, AnyScriptWitness
                     (PlutusScriptWitness _ _ _ _ d e)) <- witnesses
           ]
-
-    -- TODO: We need to wrap Alonzo.Redeemers StandardAlonzo
-    -- to allow building txs with no execution units (for automagic balance command)
-    -- stopGap is a temporary fix for this
-    stopGap :: Maybe ExecutionUnits -> ExecutionUnits
-    stopGap Nothing = ExecutionUnits 0 0
-    stopGap (Just e) = e
 
     languages :: Set Alonzo.Language
     languages =
