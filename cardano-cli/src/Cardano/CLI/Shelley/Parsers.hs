@@ -605,7 +605,7 @@ pTransaction =
             <*> pConsensusModeParams
             <*> pNetworkId
             <*> some (pTxIn AutoBalance)
-            <*> many pCollateralTxIn
+            <*> many pTxInCollateral
             <*> many pTxOut
             <*> pChangeAddress
             <*> optional (pMintMultiAsset AutoBalance)
@@ -622,14 +622,6 @@ pTransaction =
             <*> optional pProtocolParamsSourceSpec
             <*> optional pUpdateProposalFile
             <*> pTxBodyFile Output
-
-  pCollateralTxIn :: Parser TxIn
-  pCollateralTxIn =
-    Opt.option (readerFromParsecParser parseTxIn)
-                 (   Opt.long "tx-in"
-                  <> Opt.metavar "TX-IN"
-                  <> Opt.help "TxId#TxIx"
-                 )
 
   pChangeAddress :: Parser TxOutChangeAddress
   pChangeAddress =

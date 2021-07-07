@@ -35,8 +35,8 @@ elif [ "$1" == "" ]; then
  plutusscriptinuse="$BASE/scripts/plutus/scripts/untyped-always-succeeds-txin.plutus"
  # This datum hash is the hash of the untyped 42
  scriptdatumhash="9e1199a988ba72ffd6e9c269cadb3b53b5f360ff99f112d9b2ee30c4d74ad88b"
- plutusrequiredspace=70000000
- plutusrequiredtime=70000000
+ plutusrequiredspace=45070000 #44 works when this is 44 and time is 45
+ plutusrequiredtime=11300 #44
  datumfilepath="$BASE/scripts/plutus/data/42.datum"
  redeemerfilepath="$BASE/scripts/plutus/data/42.redeemer"
  echo "Always succeeds Plutus script in use. Any datum and redeemer combination will succeed."
@@ -103,9 +103,11 @@ lovelaceatplutusscriptaddr=$(jq -r ".[\"$plutusutxotxin\"].value.lovelace" $WORK
 txfee=$(expr $plutusrequiredtime + $plutusrequiredtime)
 spendable=$(expr $lovelaceatplutusscriptaddr - $plutusrequiredtime - $plutusrequiredtime)
 
-$CARDANO_CLI transaction build-raw \
+$CARDANO_CLI transaction build \
   --alonzo-era \
-  --fee "$txfee" \
+  --cardano-mode \
+  --testnet-magic 42 \
+  --change-address "$utxoaddr" \
   --tx-in $plutusutxotxin \
   --tx-in-collateral $txinCollateral \
   --tx-out "$dummyaddress+$spendable" \
@@ -113,8 +115,21 @@ $CARDANO_CLI transaction build-raw \
   --tx-in-datum-file "$datumfilepath"  \
   --protocol-params-file $WORK/pparams.json\
   --tx-in-redeemer-file "$redeemerfilepath" \
-  --tx-in-execution-units "($plutusrequiredtime, $plutusrequiredspace)" \
   --out-file $WORK/test-alonzo.body
+
+# this works
+#$CARDANO_CLI transaction build-raw \
+#  --alonzo-era \
+#  --fee "$txfee" \
+#  --tx-in $plutusutxotxin \
+#  --tx-in-collateral $txinCollateral \
+#  --tx-out "$dummyaddress+$spendable" \
+#  --tx-in-script-file $plutusscriptinuse \
+#  --tx-in-datum-file "$datumfilepath"  \
+#  --protocol-params-file $WORK/pparams.json\
+#  --tx-in-redeemer-file "$redeemerfilepath" \
+#  --tx-in-execution-units "($plutusrequiredtime, $plutusrequiredspace)" \
+#  --out-file $WORK/test-alonzo.body
 
 $CARDANO_CLI transaction sign \
   --tx-body-file $WORK/test-alonzo.body \

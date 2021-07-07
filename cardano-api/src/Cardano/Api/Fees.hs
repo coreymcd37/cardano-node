@@ -203,7 +203,7 @@ estimateTransactionFee _ _ _ (ByronTx _) =
 data BalanceTxBodyError era =
        BalanceTxBodyErr (TxBodyError era)
      | BalanceScriptFailure ScriptFailure
-     | BalanceMoreInputsNeeded
+     | BalanceMoreInputsNeeded Lovelace
      | BalanceMinUTxONotMet
      | BalanceByronEraNotSupported
      | BalanceMinUTxOPParamNotFound
@@ -216,8 +216,8 @@ instance Error (BalanceTxBodyError era) where
     "Transaction balance body error: " <> displayError e
   displayError (BalanceScriptFailure sFailure) =
     show $ renderPlutusFailure sFailure
-  displayError BalanceMoreInputsNeeded =
-    "Transaction balance needs more inputs"
+  displayError (BalanceMoreInputsNeeded currentBalance) =
+    "Transaction balance needs more inputs. Current balance: " <> show currentBalance
   displayError BalanceMinUTxONotMet =
     "Transaction balance minimum UTxO not met"
   displayError BalanceByronEraNotSupported =
@@ -244,9 +244,10 @@ makeTransactionBodyAutoBalance :: ShelleyBasedEra era
                                -> UTxO era
                                -> TxBodyContent BuildTx era
                                -> AddressInEra era
-                               -> Either (BalanceTxBodyError era) (TxBody era)
+                               -> Either (BalanceTxBodyError era)
+                                         (TxBody era, Map ScriptWitnessIndex ExecutionUnits, Lovelace)
 makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
-                            poolids utxo txbodycontent changeaddr = do
+                               poolids utxo txbodycontent changeaddr = do
     txbody0 <- first BalanceTxBodyErr $
                  obtainIsCardanoEraConstraint sbe $ makeTransactionBody txbodycontent
 
@@ -304,7 +305,7 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
                         : txOuts txbodycontent
                }
 
-    return txbody3
+    return (txbody3, exUnitsMap', fee)
  where
    obtainIsCardanoEraConstraint
      :: ShelleyBasedEra era
@@ -332,7 +333,7 @@ makeTransactionBodyAutoBalance sbe eraInMode systemstart history pparams
 
    balanceCheck :: Lovelace -> Lovelace -> Either (BalanceTxBodyError era) ()
    balanceCheck minUTxOValue balance
-    | balance < 0 = Left BalanceMoreInputsNeeded
+    | balance < 0 = Left $ BalanceMoreInputsNeeded balance
       -- check the change is over the min utxo threshold
     | balance < minUTxOValue = Left BalanceMinUTxONotMet
     | otherwise = return ()
@@ -587,7 +588,7 @@ evaluateTransactionBalance sbe pparams poolids utxo
 
     evalAdaOnly
       :: Ledger.Value (ShelleyLedgerEra era) ~ Shelley.Coin
-      =>Ledger.Era.Crypto (ShelleyLedgerEra era) ~ Ledger.StandardCrypto
+      => Ledger.Era.Crypto (ShelleyLedgerEra era) ~ Ledger.StandardCrypto
       => OnlyAdaSupportedInEra era -> TxOutValue era
     evalAdaOnly evidence =
      TxOutAdaOnly evidence . fromShelleyLovelace

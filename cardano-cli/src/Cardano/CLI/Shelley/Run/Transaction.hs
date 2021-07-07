@@ -5,6 +5,7 @@
 {-# LANGUAGE RankNTypes #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE StandaloneDeriving #-}
+{-# LANGUAGE TypeApplications #-}
 
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
@@ -38,7 +39,9 @@ import           Ouroboros.Consensus.Shelley.Eras (StandardAllegra, StandardMary
 import qualified Cardano.Binary as CBOR
 
 --TODO: following import needed for orphan Eq Script instance
+import qualified Cardano.Ledger.Core as Ledger
 import           Cardano.Ledger.ShelleyMA.TxBody ()
+import qualified Shelley.Spec.Ledger.API as Shelley
 import           Shelley.Spec.Ledger.Scripts ()
 
 import           Cardano.CLI.Environment (EnvSocketError, readEnvSocketPath, renderEnvSocketError)
@@ -445,16 +448,30 @@ runTxBuild (AnyCardanoEra era) (AnyConsensusModeParams cModeParams) networkId tx
                     Just addr -> addr
                     Nothing -> error $ "runTxBuild: Byron address used: " <> show changeAddr
 
-      balancedTxBody <-
+      (balancedTxBody, execUnitsMap, fee) <-
         firstExceptT (ShelleyTxCmdBalanceTxBody . SomeBalanceTxBodyError)
           . hoistEither
           $ makeTransactionBodyAutoBalance sbe eInMode systemStart eraHistory
                                            pparams Set.empty utxo txBodyContent
                                            cAddr
+      let ShelleyTxBody _ txbod _ _ _ = balancedTxBody
 
+      liftIO $ print ("Final fee in tx body: " :: String)
+      obtainLedgerEra sbe $ liftIO $ print $ getField @"txfee" txbod
+      liftIO $ print $ "evaluateTransactionFee: " <> (show fee :: String)
+      liftIO $ print execUnitsMap
       firstExceptT ShelleyTxCmdWriteFileError . newExceptT $
         writeFileTextEnvelope fpath Nothing balancedTxBody
     wrongMode -> left (ShelleyTxCmdUnsupportedMode (AnyConsensusMode wrongMode))
+ where
+   obtainLedgerEra
+     :: ShelleyBasedEra era
+     -> ((HasField "txfee" (Ledger.TxBody (ShelleyLedgerEra era)) Shelley.Coin
+         ) => a) -> a
+   obtainLedgerEra ShelleyBasedEraShelley f = f
+   obtainLedgerEra ShelleyBasedEraAllegra f = f
+   obtainLedgerEra ShelleyBasedEraMary    f = f
+   obtainLedgerEra ShelleyBasedEraAlonzo  f = f
 
 queryEraHistoryAndSystemStart
   :: LocalNodeConnectInfo CardanoMode
