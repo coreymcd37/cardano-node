@@ -13,8 +13,8 @@
 </span><span id="line-13"></span><span>
 </span><span id="line-14"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">firstExceptT</span></span><span class="hs-special">)</span><span>
 </span><span id="line-15"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson.Encode.Pretty</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">encodePretty</span></span><span class="hs-special">)</span><span>
-</span><span id="line-16"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
-</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text.Encoding</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-16"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Lazy</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text.Encoding</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-18"></span><span>
 </span><span id="line-19"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api</span></a></span><span>
 </span><span id="line-20"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.CLI.Environment.html"><span class="hs-identifier">Cardano.CLI.Environment</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Environment.html#EnvSocketError"><span class="hs-identifier">EnvSocketError</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.CLI.Environment.html#readEnvSocketPath"><span class="hs-identifier">readEnvSocketPath</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.CLI.Environment.html#renderEnvSocketError"><span class="hs-identifier">renderEnvSocketError</span></a></span><span class="hs-special">)</span><span>
@@ -38,9 +38,9 @@ show :: ByronQueryError -&gt; String
 $cshow :: ByronQueryError -&gt; String
 showsPrec :: Int -&gt; ByronQueryError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ByronQueryError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-27"></span><span>
-</span><span id="line-28"></span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#renderByronQueryError"><span class="hs-identifier hs-type">renderByronQueryError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#ByronQueryError"><span class="hs-identifier hs-type">ByronQueryError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-28"></span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#renderByronQueryError"><span class="hs-identifier hs-type">renderByronQueryError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#ByronQueryError"><span class="hs-identifier hs-type">ByronQueryError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-29"></span><span id="renderByronQueryError"><span class="annot"><span class="annottext">renderByronQueryError :: ByronQueryError -&gt; Text
 </span><a href="Cardano.CLI.Byron.Query.html#renderByronQueryError"><span class="hs-identifier hs-var hs-var">renderByronQueryError</span></a></span></span><span> </span><span id="local-6989586621679321463"><span class="annot"><span class="annottext">ByronQueryError
 </span><a href="#local-6989586621679321463"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -55,7 +55,7 @@ $cshowsPrec :: Int -&gt; ByronQueryError -&gt; ShowS
 </span><span id="line-34"></span><span class="hs-comment">-- Query local node's chain tip</span><span>
 </span><span id="line-35"></span><span class="hs-comment">--------------------------------------------------------------------------------</span><span>
 </span><span id="line-36"></span><span>
-</span><span id="line-37"></span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#runGetLocalNodeTip"><span class="hs-identifier hs-type">runGetLocalNodeTip</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">NetworkId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#ByronQueryError"><span class="hs-identifier hs-type">ByronQueryError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-37"></span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#runGetLocalNodeTip"><span class="hs-identifier hs-type">runGetLocalNodeTip</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">NetworkId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Query.html#ByronQueryError"><span class="hs-identifier hs-type">ByronQueryError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-38"></span><span id="runGetLocalNodeTip"><span class="annot"><span class="annottext">runGetLocalNodeTip :: NetworkId -&gt; ExceptT ByronQueryError IO ()
 </span><a href="Cardano.CLI.Byron.Query.html#runGetLocalNodeTip"><span class="hs-identifier hs-var hs-var">runGetLocalNodeTip</span></a></span></span><span> </span><span id="local-6989586621679321461"><span class="annot"><span class="annottext">NetworkId
 </span><a href="#local-6989586621679321461"><span class="hs-identifier hs-var">networkId</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
@@ -92,38 +92,38 @@ ConsensusModeParams mode
 </span><span id="line-48"></span><span>    </span><span id="local-6989586621679321451"><span class="annot"><span class="annottext">ChainTip
 </span><a href="#local-6989586621679321451"><span class="hs-identifier hs-var">tip</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ChainTip -&gt; ExceptT ByronQueryError IO ChainTip
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO ChainTip -&gt; ExceptT ByronQueryError IO ChainTip)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO ChainTip -&gt; ExceptT ByronQueryError IO ChainTip)
 -&gt; IO ChainTip -&gt; ExceptT ByronQueryError IO ChainTip
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">LocalNodeConnectInfo ByronMode -&gt; IO ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">LocalNodeConnectInfo ByronMode -&gt; IO ChainTip
 forall mode. LocalNodeConnectInfo mode -&gt; IO ChainTip
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">getLocalChainTip</span></a></span><span> </span><span class="annot"><span class="annottext">LocalNodeConnectInfo ByronMode
 </span><a href="#local-6989586621679321458"><span class="hs-identifier hs-var">connctInfo</span></a></span><span>
 </span><span id="line-49"></span><span>    </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ByronQueryError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ByronQueryError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ByronQueryError IO ())
 -&gt; (ByteString -&gt; IO ())
 -&gt; ByteString
 -&gt; ExceptT ByronQueryError IO ()
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; IO ()
 </span><span class="hs-identifier hs-var">putTextLn</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; IO ()) -&gt; (ByteString -&gt; Text) -&gt; ByteString -&gt; IO ()
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
-</span><span class="hs-identifier hs-var">Text.decodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.decodeUtf8</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Text)
 -&gt; (ByteString -&gt; ByteString) -&gt; ByteString -&gt; Text
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
-</span><span class="hs-identifier hs-var">LB.toStrict</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; ExceptT ByronQueryError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">LB.toStrict</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; ExceptT ByronQueryError IO ())
 -&gt; ByteString -&gt; ExceptT ByronQueryError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ChainTip -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ChainTip -&gt; ByteString
 forall a. ToJSON a =&gt; a -&gt; ByteString
 </span><span class="hs-identifier hs-var">encodePretty</span></span><span> </span><span class="annot"><span class="annottext">ChainTip
 </span><a href="#local-6989586621679321451"><span class="hs-identifier hs-var">tip</span></a></span><span>

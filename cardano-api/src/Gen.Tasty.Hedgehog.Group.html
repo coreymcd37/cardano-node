@@ -3,7 +3,7 @@
 </span><span id="line-3"></span><span>  </span><span class="hs-special">)</span><span>
 </span><span id="line-4"></span><span class="hs-keyword">where</span><span>
 </span><span id="line-5"></span><span>
-</span><span id="line-6"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-6"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-7"></span><span>
 </span><span id="line-8"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Hedgehog</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Group</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">Property</span></span><span class="hs-special">)</span><span>
 </span><span id="line-9"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Hedgehog.Internal.Property</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">GroupName</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">PropertyName</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
@@ -18,15 +18,15 @@
 </span><span class="hs-identifier hs-var">testGroup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">GroupName -&gt; TestName
 </span><span class="hs-identifier hs-var hs-var">unGroupName</span></span><span> </span><span class="annot"><span class="annottext">(GroupName -&gt; TestName) -&gt; GroupName -&gt; TestName
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Group -&gt; GroupName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Group -&gt; GroupName
 </span><span class="hs-identifier hs-var hs-var">groupName</span></span><span> </span><span class="annot"><span class="annottext">Group
 </span><a href="#local-6989586621679184029"><span class="hs-identifier hs-var">group</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">([TestTree] -&gt; TestTree) -&gt; [TestTree] -&gt; TestTree
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-16"></span><span>      </span><span class="annot"><span class="annottext">((PropertyName, Property) -&gt; TestTree)
 -&gt; [(PropertyName, Property)] -&gt; [TestTree]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
-</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">(PropertyName, Property) -&gt; TestTree
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">(PropertyName, Property) -&gt; TestTree
 </span><a href="#local-6989586621679184026"><span class="hs-identifier hs-var">mkTestTree</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Group -&gt; [(PropertyName, Property)]
 </span><span class="hs-identifier hs-var hs-var">groupProperties</span></span><span> </span><span class="annot"><span class="annottext">Group
 </span><a href="#local-6989586621679184029"><span class="hs-identifier hs-var">group</span></a></span><span class="hs-special">)</span><span>

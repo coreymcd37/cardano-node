@@ -15,9 +15,9 @@
 </span><span id="line-15"></span><span>    </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier">AsType</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-16"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-17"></span><span>
-</span><span id="line-18"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-19"></span><span>
-</span><span id="line-20"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Word</span></span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.Word</span></a></span><span>
 </span><span id="line-21"></span><span>
 </span><span id="line-22"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Ledger.Crypto</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">StandardCrypto</span></span><span class="hs-special">)</span><span>
 </span><span id="line-23"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Ledger.Keys</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Shelley</span></span><span>
@@ -55,7 +55,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: OperationalCertificate -&gt; OperationalCertificate -&gt; Bool
 == :: OperationalCertificate -&gt; OperationalCertificate -&gt; Bool
 $c== :: OperationalCertificate -&gt; OperationalCertificate -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679446506"><span id="local-6989586621679446508"><span id="local-6989586621679446510"><span class="annot"><span class="annottext">Int -&gt; OperationalCertificate -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679446506"><span id="local-6989586621679446508"><span id="local-6989586621679446510"><span class="annot"><span class="annottext">Int -&gt; OperationalCertificate -&gt; ShowS
 [OperationalCertificate] -&gt; ShowS
 OperationalCertificate -&gt; String
 (Int -&gt; OperationalCertificate -&gt; ShowS)
@@ -70,7 +70,7 @@ show :: OperationalCertificate -&gt; String
 $cshow :: OperationalCertificate -&gt; String
 showsPrec :: Int -&gt; OperationalCertificate -&gt; ShowS
 $cshowsPrec :: Int -&gt; OperationalCertificate -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-50"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">anyclass</span></span><span> </span><span id="local-6989586621679446500"><span id="local-6989586621679446502"><span class="annot"><span class="annottext">HasTypeProxy OperationalCertificate
 HasTypeProxy OperationalCertificate
 -&gt; (OperationalCertificate -&gt; ByteString)
@@ -96,7 +96,7 @@ $cp1SerialiseAsCBOR :: HasTypeProxy OperationalCertificate
 </span><span id="line-51"></span><span>
 </span><span id="line-52"></span><span class="hs-keyword">data</span><span> </span><span id="OperationalCertificateIssueCounter"><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-var">OperationalCertificateIssueCounter</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-53"></span><span>     </span><span id="OperationalCertificateIssueCounter"><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-var">OperationalCertificateIssueCounter</span></a></span></span><span>
-</span><span id="line-54"></span><span>       </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Word64</span></span><span>
+</span><span id="line-54"></span><span>       </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Word64</span></a></span><span>
 </span><span id="line-55"></span><span>       </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakePoolKey"><span class="hs-identifier hs-type">StakePoolKey</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- For consistency checking</span><span>
 </span><span id="line-56"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679446494"><span id="local-6989586621679446496"><span class="annot"><span class="annottext">OperationalCertificateIssueCounter
 -&gt; OperationalCertificateIssueCounter -&gt; Bool
@@ -114,7 +114,7 @@ $c/= :: OperationalCertificateIssueCounter
 -&gt; OperationalCertificateIssueCounter -&gt; Bool
 $c== :: OperationalCertificateIssueCounter
 -&gt; OperationalCertificateIssueCounter -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679446488"><span id="local-6989586621679446490"><span id="local-6989586621679446492"><span class="annot"><span class="annottext">Int -&gt; OperationalCertificateIssueCounter -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679446488"><span id="local-6989586621679446490"><span id="local-6989586621679446492"><span class="annot"><span class="annottext">Int -&gt; OperationalCertificateIssueCounter -&gt; ShowS
 [OperationalCertificateIssueCounter] -&gt; ShowS
 OperationalCertificateIssueCounter -&gt; String
 (Int -&gt; OperationalCertificateIssueCounter -&gt; ShowS)
@@ -129,7 +129,7 @@ show :: OperationalCertificateIssueCounter -&gt; String
 $cshow :: OperationalCertificateIssueCounter -&gt; String
 showsPrec :: Int -&gt; OperationalCertificateIssueCounter -&gt; ShowS
 $cshowsPrec :: Int -&gt; OperationalCertificateIssueCounter -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-57"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">anyclass</span></span><span> </span><span id="local-6989586621679446483"><span id="local-6989586621679446485"><span class="annot"><span class="annottext">HasTypeProxy OperationalCertificateIssueCounter
 HasTypeProxy OperationalCertificateIssueCounter
 -&gt; (OperationalCertificateIssueCounter -&gt; ByteString)
@@ -182,7 +182,7 @@ forall a s. FromCBOR a =&gt; Decoder s a
 </span><span class="hs-identifier hs-var">fromCBOR</span></span><span>
 </span><span id="line-66"></span><span>      </span><span class="annot"><span class="annottext">OperationalCertificate -&gt; Decoder s OperationalCertificate
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OCert StandardCrypto
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OCert StandardCrypto
 -&gt; VerificationKey StakePoolKey -&gt; OperationalCertificate
 </span><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificate"><span class="hs-identifier hs-var">OperationalCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">OCert StandardCrypto
 </span><a href="#local-6989586621679446463"><span class="hs-identifier hs-var">ocert</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
@@ -210,7 +210,7 @@ forall a s. FromCBOR a =&gt; Decoder s a
 </span><span id="line-75"></span><span>      </span><span class="annot"><span class="annottext">OperationalCertificateIssueCounter
 -&gt; Decoder s OperationalCertificateIssueCounter
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64
 -&gt; VerificationKey StakePoolKey
 -&gt; OperationalCertificateIssueCounter
 </span><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-var">OperationalCertificateIssueCounter</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
@@ -268,7 +268,7 @@ show :: OperationalCertIssueError -&gt; String
 $cshow :: OperationalCertIssueError -&gt; String
 showsPrec :: Int -&gt; OperationalCertIssueError -&gt; ShowS
 $cshowsPrec :: Int -&gt; OperationalCertIssueError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-101"></span><span>
 </span><span id="line-102"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.Error.html#Error"><span class="hs-identifier hs-type">Error</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertIssueError"><span class="hs-identifier hs-type">OperationalCertIssueError</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-103"></span><span>    </span><span id="local-6989586621679446415"><span class="annot"><span class="annottext">displayError :: OperationalCertIssueError -&gt; String
@@ -280,14 +280,14 @@ $cshowsPrec :: Int -&gt; OperationalCertIssueError -&gt; ShowS
 </span><span id="line-105"></span><span>      </span><span class="hs-comment">--TODO: include key ids</span><span>
 </span><span id="line-106"></span><span>
 </span><span id="line-107"></span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#issueOperationalCertificate"><span class="hs-identifier hs-type">issueOperationalCertificate</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysPraos.html#KesKey"><span class="hs-identifier hs-type">KesKey</span></a></span><span>
-</span><span id="line-108"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakePoolKey"><span class="hs-identifier hs-type">StakePoolKey</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-108"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakePoolKey"><span class="hs-identifier hs-type">StakePoolKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-109"></span><span>                                      </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#GenesisDelegateExtendedKey"><span class="hs-identifier hs-type">GenesisDelegateExtendedKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-110"></span><span>                               </span><span class="hs-comment">--TODO: this may be better with a type that</span><span>
 </span><span id="line-111"></span><span>                               </span><span class="hs-comment">-- captured the three (four?) choices, stake pool</span><span>
 </span><span id="line-112"></span><span>                               </span><span class="hs-comment">-- or genesis delegate, extended or normal.</span><span>
 </span><span id="line-113"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.KESPeriod</span></span><span>
 </span><span id="line-114"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-type">OperationalCertificateIssueCounter</span></a></span><span>
-</span><span id="line-115"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertIssueError"><span class="hs-identifier hs-type">OperationalCertIssueError</span></a></span><span>
+</span><span id="line-115"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Either</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertIssueError"><span class="hs-identifier hs-type">OperationalCertIssueError</span></a></span><span>
 </span><span id="line-116"></span><span>                                      </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificate"><span class="hs-identifier hs-type">OperationalCertificate</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-117"></span><span>                                      </span><span class="annot"><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-type">OperationalCertificateIssueCounter</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-118"></span><span id="issueOperationalCertificate"><span class="annot"><span class="annottext">issueOperationalCertificate :: VerificationKey KesKey
@@ -311,27 +311,27 @@ $cshowsPrec :: Int -&gt; OperationalCertIssueError -&gt; ShowS
 </span><a href="#local-6989586621679446406"><span class="hs-identifier hs-var">poolVKey</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 -&gt; VerificationKey StakePoolKey -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 </span><a href="#local-6989586621679446404"><span class="hs-identifier hs-var">poolVKey'</span></a></span><span>
 </span><span id="line-123"></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">OperationalCertIssueError
 -&gt; Either
      OperationalCertIssueError
      (OperationalCertificate, OperationalCertificateIssueCounter)
 forall a b. a -&gt; Either a b
-</span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Left</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 -&gt; VerificationKey StakePoolKey -&gt; OperationalCertIssueError
 </span><a href="Cardano.Api.OperationalCertificate.html#OperationalCertKeyMismatch"><span class="hs-identifier hs-var">OperationalCertKeyMismatch</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 </span><a href="#local-6989586621679446406"><span class="hs-identifier hs-var">poolVKey</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 </span><a href="#local-6989586621679446404"><span class="hs-identifier hs-var">poolVKey'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-124"></span><span>
 </span><span id="line-125"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">otherwise</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">otherwise</span></a></span><span>
 </span><span id="line-126"></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(OperationalCertificate, OperationalCertificateIssueCounter)
 -&gt; Either
      OperationalCertIssueError
      (OperationalCertificate, OperationalCertificateIssueCounter)
 forall a b. b -&gt; Either a b
-</span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OCert StandardCrypto
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Right</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OCert StandardCrypto
 -&gt; VerificationKey StakePoolKey -&gt; OperationalCertificate
 </span><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificate"><span class="hs-identifier hs-var">OperationalCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">OCert StandardCrypto
 </span><a href="#local-6989586621679446403"><span class="hs-identifier hs-var">ocert</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
@@ -341,7 +341,7 @@ forall a b. b -&gt; Either a b
 -&gt; OperationalCertificateIssueCounter
 </span><a href="Cardano.Api.OperationalCertificate.html#OperationalCertificateIssueCounter"><span class="hs-identifier hs-var">OperationalCertificateIssueCounter</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; Word64
 forall a. Enum a =&gt; a -&gt; a
-</span><span class="hs-identifier hs-var">succ</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">succ</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679446407"><span class="hs-identifier hs-var">counter</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">VerificationKey StakePoolKey
 </span><a href="#local-6989586621679446406"><span class="hs-identifier hs-var">poolVKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-128"></span><span>  </span><span class="hs-keyword">where</span><span>
@@ -354,7 +354,7 @@ forall a. Enum a =&gt; a -&gt; a
      (SigningKey StakePoolKey) (SigningKey GenesisDelegateExtendedKey)
 -&gt; VerificationKey StakePoolKey
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="annot"><span class="annottext">SigningKey StakePoolKey -&gt; VerificationKey StakePoolKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="annot"><span class="annottext">SigningKey StakePoolKey -&gt; VerificationKey StakePoolKey
 forall keyrole.
 Key keyrole =&gt;
 SigningKey keyrole -&gt; VerificationKey keyrole
@@ -367,7 +367,7 @@ SigningKey keyrole -&gt; VerificationKey keyrole
 -&gt; SigningKey GenesisDelegateExtendedKey
 -&gt; VerificationKey StakePoolKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">SigningKey GenesisDelegateExtendedKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">SigningKey GenesisDelegateExtendedKey
 -&gt; VerificationKey GenesisDelegateExtendedKey
 forall keyrole.
 Key keyrole =&gt;
@@ -393,7 +393,7 @@ VerificationKey keyroleA -&gt; VerificationKey keyroleB
 -&gt; VerificationKey GenesisDelegateExtendedKey
 -&gt; VerificationKey StakePoolKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey GenesisDelegateExtendedKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey GenesisDelegateExtendedKey
 -&gt; VerificationKey GenesisDelegateKey
 forall keyroleA keyroleB.
 CastVerificationKeyRole keyroleA keyroleB =&gt;
@@ -447,11 +447,11 @@ VerKeyKES crypto -&gt; Word64 -&gt; KESPeriod -&gt; OCertSignable crypto
 </span><a href="#local-6989586621679446392"><span class="hs-identifier hs-var hs-var">skey'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either
   (SigningKey StakePoolKey) (SigningKey GenesisDelegateExtendedKey)
 </span><a href="#local-6989586621679446409"><span class="hs-identifier hs-var">skey</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-151"></span><span>                  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakePoolSigningKey"><span class="hs-identifier hs-type">StakePoolSigningKey</span></a></span><span> </span><span id="local-6989586621679446390"><span class="annot"><a href="#local-6989586621679446390"><span class="hs-identifier hs-var">poolSKey</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-151"></span><span>                  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakePoolSigningKey"><span class="hs-identifier hs-type">StakePoolSigningKey</span></a></span><span> </span><span id="local-6989586621679446390"><span class="annot"><a href="#local-6989586621679446390"><span class="hs-identifier hs-var">poolSKey</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-152"></span><span>                    </span><span class="annot"><span class="annottext">SignKeyDSIGN StandardCrypto -&gt; ShelleySigningKey
 </span><a href="Cardano.Api.Tx.html#ShelleyNormalSigningKey"><span class="hs-identifier hs-var">ShelleyNormalSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">SignKeyDSIGN StandardCrypto
 </span><a href="#local-6989586621679446390"><span class="hs-identifier hs-var">poolSKey</span></a></span><span>
-</span><span id="line-153"></span><span>                  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.KeysShelley.html#GenesisDelegateExtendedSigningKey"><span class="hs-identifier hs-type">GenesisDelegateExtendedSigningKey</span></a></span><span> </span><span id="local-6989586621679446387"><span class="annot"><a href="#local-6989586621679446387"><span class="hs-identifier hs-var">delegSKey</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-153"></span><span>                  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.KeysShelley.html#GenesisDelegateExtendedSigningKey"><span class="hs-identifier hs-type">GenesisDelegateExtendedSigningKey</span></a></span><span> </span><span id="local-6989586621679446387"><span class="annot"><a href="#local-6989586621679446387"><span class="hs-identifier hs-var">delegSKey</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-154"></span><span>                    </span><span class="annot"><span class="annottext">XPrv -&gt; ShelleySigningKey
 </span><a href="Cardano.Api.Tx.html#ShelleyExtendedSigningKey"><span class="hs-identifier hs-var">ShelleyExtendedSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">XPrv
 </span><a href="#local-6989586621679446387"><span class="hs-identifier hs-var">delegSKey</span></a></span><span>

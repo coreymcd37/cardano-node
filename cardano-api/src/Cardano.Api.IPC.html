@@ -70,15 +70,15 @@
 </span><span id="line-70"></span><span>    </span><span class="annot"><span class="hs-identifier">NodeToClientVersion</span></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-71"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-72"></span><span>
-</span><span id="line-73"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-73"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-74"></span><span>
-</span><span id="line-75"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Void</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Void</span></span><span class="hs-special">)</span><span>
+</span><span id="line-75"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.Void</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Void</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-76"></span><span>
-</span><span id="line-77"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LBS</span></span><span>
-</span><span id="line-78"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
+</span><span id="line-77"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Lazy</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LBS</span></span><span>
+</span><span id="line-78"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Strict</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
 </span><span id="line-79"></span><span>
-</span><span id="line-80"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Concurrent.STM</span></span><span>
-</span><span id="line-81"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">void</span></span><span class="hs-special">)</span><span>
+</span><span id="line-80"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier">Control.Concurrent.STM</span></a></span><span>
+</span><span id="line-81"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Control.Monad</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">void</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-82"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Tracer</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">nullTracer</span></span><span class="hs-special">)</span><span>
 </span><span id="line-83"></span><span>
 </span><span id="line-84"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Ouroboros.Network.Block</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Net</span></span><span>
@@ -136,12 +136,12 @@
 </span><span id="line-134"></span><span>     </span><span class="hs-special">,</span><span> </span><span id="localTxSubmissionClient"><span class="annot"><span class="annottext">LocalNodeClientProtocols block point tip tx txerr query m
 -&gt; Maybe (LocalTxSubmissionClient tx txerr m ())
 </span><a href="Cardano.Api.IPC.html#localTxSubmissionClient"><span class="hs-identifier hs-var hs-var">localTxSubmissionClient</span></a></span></span><span>
-</span><span id="line-135"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="annot"><a href="#local-6989586621679445213"><span class="hs-identifier hs-type">tx</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445212"><span class="hs-identifier hs-type">txerr</span></a></span><span>          </span><span class="annot"><a href="#local-6989586621679445210"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-135"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="annot"><a href="#local-6989586621679445213"><span class="hs-identifier hs-type">tx</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445212"><span class="hs-identifier hs-type">txerr</span></a></span><span>          </span><span class="annot"><a href="#local-6989586621679445210"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-136"></span><span>
 </span><span id="line-137"></span><span>     </span><span class="hs-special">,</span><span> </span><span id="localStateQueryClient"><span class="annot"><span class="annottext">LocalNodeClientProtocols block point tip tx txerr query m
 -&gt; Maybe (LocalStateQueryClient block point query m ())
 </span><a href="Cardano.Api.IPC.html#localStateQueryClient"><span class="hs-identifier hs-var hs-var">localStateQueryClient</span></a></span></span><span>
-</span><span id="line-138"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span>   </span><span class="annot"><a href="#local-6989586621679445216"><span class="hs-identifier hs-type">block</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445215"><span class="hs-identifier hs-type">point</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445211"><span class="hs-identifier hs-type">query</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445210"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-138"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span>   </span><span class="annot"><a href="#local-6989586621679445216"><span class="hs-identifier hs-type">block</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445215"><span class="hs-identifier hs-type">point</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445211"><span class="hs-identifier hs-type">query</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445210"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-139"></span><span>     </span><span class="hs-special">}</span><span>
 </span><span id="line-140"></span><span>
 </span><span id="line-141"></span><span class="hs-keyword">data</span><span> </span><span id="LocalChainSyncClient"><span class="annot"><a href="Cardano.Api.IPC.html#LocalChainSyncClient"><span class="hs-identifier hs-var">LocalChainSyncClient</span></a></span></span><span> </span><span id="local-6989586621679445206"><span class="annot"><a href="#local-6989586621679445206"><span class="hs-identifier hs-type">block</span></a></span></span><span> </span><span id="local-6989586621679445205"><span class="annot"><a href="#local-6989586621679445205"><span class="hs-identifier hs-type">point</span></a></span></span><span> </span><span id="local-6989586621679445204"><span class="annot"><a href="#local-6989586621679445204"><span class="hs-identifier hs-type">tip</span></a></span></span><span> </span><span id="local-6989586621679445203"><span class="annot"><a href="#local-6989586621679445203"><span class="hs-identifier hs-type">m</span></a></span></span><span>
@@ -158,7 +158,7 @@
 </span><span id="line-152"></span><span>         </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxInMode"><span class="hs-identifier hs-type">TxInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445015"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-153"></span><span>         </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445015"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-154"></span><span>         </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Query.html#QueryInMode"><span class="hs-identifier hs-type">QueryInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445015"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-155"></span><span>         </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span>
+</span><span id="line-155"></span><span>         </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span>
 </span><span id="line-156"></span><span>
 </span><span id="line-157"></span><span class="hs-keyword">data</span><span> </span><span id="LocalNodeConnectInfo"><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-var">LocalNodeConnectInfo</span></a></span></span><span> </span><span id="local-6989586621679445429"><span class="annot"><a href="#local-6989586621679445429"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-158"></span><span>     </span><span id="LocalNodeConnectInfo"><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-var">LocalNodeConnectInfo</span></a></span></span><span> </span><span class="hs-special">{</span><span>
@@ -167,7 +167,7 @@
 </span><span id="line-160"></span><span>       </span><span id="localNodeNetworkId"><span class="annot"><span class="annottext">LocalNodeConnectInfo mode -&gt; NetworkId
 </span><a href="Cardano.Api.IPC.html#localNodeNetworkId"><span class="hs-identifier hs-var hs-var">localNodeNetworkId</span></a></span></span><span>       </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.NetworkId.html#NetworkId"><span class="hs-identifier hs-type">NetworkId</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-161"></span><span>       </span><span id="localNodeSocketPath"><span class="annot"><span class="annottext">LocalNodeConnectInfo mode -&gt; FilePath
-</span><a href="Cardano.Api.IPC.html#localNodeSocketPath"><span class="hs-identifier hs-var hs-var">localNodeSocketPath</span></a></span></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><a href="Cardano.Api.IPC.html#localNodeSocketPath"><span class="hs-identifier hs-var hs-var">localNodeSocketPath</span></a></span></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">FilePath</span></a></span><span>
 </span><span id="line-162"></span><span>     </span><span class="hs-special">}</span><span>
 </span><span id="line-163"></span><span>
 </span><span id="line-164"></span><span id="local-6989586621679445010"><span class="annot"><a href="Cardano.Api.IPC.html#localConsensusMode"><span class="hs-identifier hs-type">localConsensusMode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445010"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445010"><span class="hs-identifier hs-type">mode</span></a></span></span><span>
@@ -204,7 +204,7 @@ ConsensusMode CardanoMode
 </span><span id="line-181"></span><span class="hs-comment">--</span><span>
 </span><span id="line-182"></span><span id="local-6989586621679445111"><span class="annot"><a href="Cardano.Api.IPC.html#connectToLocalNode"><span class="hs-identifier hs-type">connectToLocalNode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445111"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-183"></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsInMode"><span class="hs-identifier hs-type">LocalNodeClientProtocolsInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445111"><span class="hs-identifier hs-type">mode</span></a></span><span>
-</span><span id="line-184"></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-184"></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-185"></span><span id="connectToLocalNode"><span class="annot"><span class="annottext">connectToLocalNode :: LocalNodeConnectInfo mode
 -&gt; LocalNodeClientProtocolsInMode mode -&gt; IO ()
 </span><a href="Cardano.Api.IPC.html#connectToLocalNode"><span class="hs-identifier hs-var hs-var">connectToLocalNode</span></a></span></span><span> </span><span id="local-6989586621679445002"><span class="annot"><span class="annottext">LocalNodeConnectInfo mode
@@ -221,7 +221,7 @@ LocalNodeConnectInfo mode
 </span><a href="#local-6989586621679445002"><span class="hs-identifier hs-var">localNodeConnectInfo</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">LocalNodeClientProtocolsInMode mode
 -&gt; NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">LocalNodeClientProtocolsInMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">LocalNodeClientProtocolsInMode mode
 </span><a href="#local-6989586621679445001"><span class="hs-identifier hs-var">handlers</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-187"></span><span>
 </span><span id="line-188"></span><span class="hs-comment">-- | Establish a connection to a local node and execute the given set of</span><span>
@@ -230,7 +230,7 @@ forall a b. a -&gt; b -&gt; a
 </span><span id="line-191"></span><span class="hs-comment">--</span><span>
 </span><span id="line-192"></span><span id="local-6989586621679445420"><span class="annot"><a href="Cardano.Api.IPC.html#connectToLocalNodeWithVersion"><span class="hs-identifier hs-type">connectToLocalNodeWithVersion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445420"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-193"></span><span>                              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">NodeToClientVersion</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsInMode"><span class="hs-identifier hs-type">LocalNodeClientProtocolsInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445420"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-194"></span><span>                              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-194"></span><span>                              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-195"></span><span id="connectToLocalNodeWithVersion"><span class="annot"><span class="annottext">connectToLocalNodeWithVersion :: LocalNodeConnectInfo mode
 -&gt; (NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode)
 -&gt; IO ()
@@ -253,7 +253,7 @@ localConsensusModeParams :: forall mode. LocalNodeConnectInfo mode -&gt; Consens
 WithIOManager
 </span><span class="hs-identifier hs-var">Net.withIOManager</span></span><span> </span><span class="annot"><span class="annottext">((IOManager -&gt; IO ()) -&gt; IO ()) -&gt; (IOManager -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679444994"><span class="annot"><span class="annottext">IOManager
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679444994"><span class="annot"><span class="annottext">IOManager
 </span><a href="#local-6989586621679444994"><span class="hs-identifier hs-var">iomgr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-201"></span><span>      </span><span class="annot"><span class="annottext">LocalSnocket
 -&gt; NetworkConnectTracers LocalAddress NodeToClientVersion
@@ -373,7 +373,7 @@ NetworkId
 </span><span id="line-229"></span><span>                          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.OuroborosApplication</span></span><span>
 </span><span id="line-230"></span><span>                             </span><span class="annot"><span class="hs-identifier hs-type">Net.InitiatorMode</span></span><span>
 </span><span id="line-231"></span><span>                             </span><span class="annot"><span class="hs-identifier hs-type">Net.LocalAddress</span></span><span>
-</span><span id="line-232"></span><span>                             </span><span class="annot"><span class="hs-identifier hs-type">LBS.ByteString</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Void</span></span><span class="hs-special">)</span><span>
+</span><span id="line-232"></span><span>                             </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">LBS.ByteString</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Void</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-233"></span><span id="mkVersionedProtocols"><span class="annot"><span class="annottext">mkVersionedProtocols :: NetworkId
 -&gt; ProtocolClientInfoArgs block
 -&gt; (NodeToClientVersion -&gt; LocalNodeClientProtocolsForBlock block)
@@ -452,7 +452,7 @@ NodeToClientVersion
 </span><span id="line-245"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Map NodeToClientVersion (BlockNodeToClientVersion block)
 -&gt; [(NodeToClientVersion, BlockNodeToClientVersion block)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy block
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy block
 -&gt; Map NodeToClientVersion (BlockNodeToClientVersion block)
 forall blk.
 SupportedNetworkProtocolVersion blk =&gt;
@@ -460,16 +460,16 @@ Proxy blk -&gt; Map NodeToClientVersion (BlockNodeToClientVersion blk)
 </span><span class="hs-identifier hs-var">Consensus.supportedNodeToClientVersions</span></span><span> </span><span class="annot"><span class="annottext">Proxy block
 </span><a href="#local-6989586621679444967"><span class="hs-identifier hs-var">proxy</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-246"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-247"></span><span>    </span><span class="annot"><a href="#local-6989586621679444967"><span class="hs-identifier hs-type">proxy</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Proxy</span></span><span> </span><span class="annot"><a href="#local-6989586621679445382"><span class="hs-identifier hs-type">block</span></a></span><span>
+</span><span id="line-247"></span><span>    </span><span class="annot"><a href="#local-6989586621679444967"><span class="hs-identifier hs-type">proxy</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Proxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445382"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-248"></span><span>    </span><span id="local-6989586621679444967"><span class="annot"><span class="annottext">proxy :: Proxy block
 </span><a href="#local-6989586621679444967"><span class="hs-identifier hs-var hs-var">proxy</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Proxy block
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span>
 </span><span id="line-249"></span><span>
 </span><span id="line-250"></span><span>    </span><span class="annot"><a href="#local-6989586621679444970"><span class="hs-identifier hs-type">protocols</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsForBlock"><span class="hs-identifier hs-type">LocalNodeClientProtocolsForBlock</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445382"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-251"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.BlockNodeToClientVersion</span></span><span> </span><span class="annot"><a href="#local-6989586621679445382"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-252"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeToClientVersion</span></span><span>
-</span><span id="line-253"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeToClientProtocols</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.InitiatorMode</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">LBS.ByteString</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Void</span></span><span>
+</span><span id="line-253"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeToClientProtocols</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.InitiatorMode</span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">LBS.ByteString</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Void</span></a></span><span>
 </span><span id="line-254"></span><span>    </span><span id="local-6989586621679444970"><span class="annot"><span class="annottext">protocols :: LocalNodeClientProtocolsForBlock block
 -&gt; BlockNodeToClientVersion block
 -&gt; NodeToClientVersion
@@ -522,7 +522,7 @@ MuxPeer bytes m a -&gt; RunMiniProtocol 'InitiatorMode bytes m a Void
 -&gt; MuxPeer ByteString IO ()
 -&gt; RunMiniProtocol 'InitiatorMode ByteString IO () Void
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">LocalChainSyncClient block (Point block) (Tip block) IO
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">LocalChainSyncClient block (Point block) (Tip block) IO
 </span><a href="#local-6989586621679444964"><span class="hs-identifier hs-var">localChainSyncClientForBlock</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-265"></span><span>              </span><span class="annot"><span class="annottext">LocalChainSyncClient block (Point block) (Tip block) IO
 </span><a href="Cardano.Api.IPC.html#NoLocalChainSyncClient"><span class="hs-identifier hs-var">NoLocalChainSyncClient</span></a></span><span>
@@ -650,7 +650,7 @@ MuxPeer bytes m a -&gt; RunMiniProtocol 'InitiatorMode bytes m a Void
 -&gt; MuxPeer ByteString IO ()
 -&gt; RunMiniProtocol 'InitiatorMode ByteString IO () Void
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-280"></span><span>              </span><span class="annot"><span class="annottext">Tracer
   IO
   (TraceSendRecv
@@ -710,7 +710,7 @@ forall (m :: * -&gt; *) a. Applicative m =&gt; Tracer m a
      IO
      ()
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
-</span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="annot"><span class="annottext">Peer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">maybe</span></a></span><span> </span><span class="annot"><span class="annottext">Peer
   (LocalTxSubmission (GenTx block) (ApplyTxErr block))
   'AsClient
   'StIdle
@@ -747,7 +747,7 @@ MuxPeer bytes m a -&gt; RunMiniProtocol 'InitiatorMode bytes m a Void
 -&gt; MuxPeer ByteString IO ()
 -&gt; RunMiniProtocol 'InitiatorMode ByteString IO () Void
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-289"></span><span>              </span><span class="annot"><span class="annottext">Tracer
   IO
   (TraceSendRecv (LocalStateQuery block (Point block) (Query block)))
@@ -805,7 +805,7 @@ forall (m :: * -&gt; *) a. Applicative m =&gt; Tracer m a
      IO
      ()
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
-</span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="annot"><span class="annottext">Peer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">maybe</span></a></span><span> </span><span class="annot"><span class="annottext">Peer
   (LocalStateQuery block (Point block) (Query block))
   'AsClient
   'StIdle
@@ -937,31 +937,31 @@ ProtocolClientInfoArgs blk -&gt; ProtocolClientInfo blk
 </span><span id="line-335"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalChainSyncClient"><span class="hs-identifier hs-type">LocalChainSyncClient</span></a></span><span>  </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-336"></span><span>                                  </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.Point</span></span><span> </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-337"></span><span>                                  </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tip</span></span><span>         </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-338"></span><span>                                   </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span>
+</span><span id="line-338"></span><span>                                   </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span>
 </span><span id="line-339"></span><span>
 </span><span id="line-340"></span><span>     </span><span class="hs-special">,</span><span> </span><span id="localStateQueryClientForBlock"><span class="annot"><span class="annottext">LocalNodeClientProtocolsForBlock block
 -&gt; Maybe
      (LocalStateQueryClient block (Point block) (Query block) IO ())
 </span><a href="Cardano.Api.IPC.html#localStateQueryClientForBlock"><span class="hs-identifier hs-var hs-var">localStateQueryClientForBlock</span></a></span></span><span>
-</span><span id="line-341"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span>  </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span>
+</span><span id="line-341"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span>  </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-342"></span><span>                                         </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.Point</span></span><span> </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-343"></span><span>                                         </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.Query</span></span><span> </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-344"></span><span>                                          </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-344"></span><span>                                          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-345"></span><span>
 </span><span id="line-346"></span><span>     </span><span class="hs-special">,</span><span> </span><span id="localTxSubmissionClientForBlock"><span class="annot"><span class="annottext">LocalNodeClientProtocolsForBlock block
 -&gt; Maybe
      (LocalTxSubmissionClient (GenTx block) (ApplyTxErr block) IO ())
 </span><a href="Cardano.Api.IPC.html#localTxSubmissionClientForBlock"><span class="hs-identifier hs-var hs-var">localTxSubmissionClientForBlock</span></a></span></span><span>
-</span><span id="line-347"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.GenTx</span></span><span>      </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-347"></span><span>         </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.GenTx</span></span><span>      </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-348"></span><span>                                           </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.ApplyTxErr</span></span><span> </span><span class="annot"><a href="#local-6989586621679445350"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-349"></span><span>                                            </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-349"></span><span>                                            </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-350"></span><span>     </span><span class="hs-special">}</span><span>
 </span><span id="line-351"></span><span>
 </span><span id="line-352"></span><span>
 </span><span id="line-353"></span><span class="hs-comment">-- | Convert from the mode-parametrised style to the block-parametrised style.</span><span>
 </span><span id="line-354"></span><span class="hs-comment">--</span><span>
 </span><span id="line-355"></span><span class="annot"><a href="Cardano.Api.IPC.html#mkLocalNodeClientParams"><span class="hs-identifier hs-type">mkLocalNodeClientParams</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445388"><span class="annot"><a href="#local-6989586621679445388"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445386"><span class="annot"><a href="#local-6989586621679445386"><span class="hs-identifier hs-type">block</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-356"></span><span>                           </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445388"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445386"><span class="hs-identifier hs-type">block</span></a></span><span>
+</span><span id="line-356"></span><span>                           </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445388"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445386"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-357"></span><span>                        </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusModeParams"><span class="hs-identifier hs-type">ConsensusModeParams</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445388"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-358"></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">NodeToClientVersion</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsInMode"><span class="hs-identifier hs-type">LocalNodeClientProtocolsInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445388"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-359"></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientParams"><span class="hs-identifier hs-type">LocalNodeClientParams</span></a></span><span>
@@ -1019,7 +1019,7 @@ ConsensusMode mode
 -&gt; NodeToClientVersion
 -&gt; LocalNodeClientProtocolsForBlock ByronBlockHFC
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
 NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode ByronMode
 </span><a href="#local-6989586621679444926"><span class="hs-identifier hs-var">clients</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-377"></span><span>
@@ -1061,7 +1061,7 @@ ConsensusMode mode
 -&gt; LocalNodeClientProtocolsForBlock
      (ShelleyBlockHFC StandardShelley)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
 NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode ShelleyMode
 </span><a href="#local-6989586621679444926"><span class="hs-identifier hs-var">clients</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-382"></span><span>
@@ -1100,13 +1100,13 @@ ConsensusMode mode
 -&gt; NodeToClientVersion
 -&gt; LocalNodeClientProtocolsForBlock (CardanoBlock StandardCrypto)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode mode
 NodeToClientVersion -&gt; LocalNodeClientProtocolsInMode CardanoMode
 </span><a href="#local-6989586621679444926"><span class="hs-identifier hs-var">clients</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-387"></span><span>
 </span><span id="line-388"></span><span>
 </span><span id="line-389"></span><span class="annot"><a href="Cardano.Api.IPC.html#convLocalNodeClientProtocols"><span class="hs-identifier hs-type">convLocalNodeClientProtocols</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445230"><span class="annot"><a href="#local-6989586621679445230"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445229"><span class="annot"><a href="#local-6989586621679445229"><span class="hs-identifier hs-type">block</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-390"></span><span>                                </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445230"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445229"><span class="hs-identifier hs-type">block</span></a></span><span>
+</span><span id="line-390"></span><span>                                </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445230"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445229"><span class="hs-identifier hs-type">block</span></a></span><span>
 </span><span id="line-391"></span><span>                             </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445230"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-392"></span><span>                             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsInMode"><span class="hs-identifier hs-type">LocalNodeClientProtocolsInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445230"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-393"></span><span>                             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeClientProtocolsForBlock"><span class="hs-identifier hs-type">LocalNodeClientProtocolsForBlock</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445229"><span class="hs-identifier hs-type">block</span></a></span><span>
@@ -1172,7 +1172,7 @@ ChainSyncClientPipelined block point tip m ()
 -&gt; ChainSyncClientPipelined block (Point block) (Tip block) IO ()
 -&gt; LocalChainSyncClient block (Point block) (Tip block) IO
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ConsensusMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ConsensusMode mode
 -&gt; ChainSyncClientPipelined
      (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; ChainSyncClientPipelined block (Point block) (Tip block) IO ()
@@ -1197,7 +1197,7 @@ ChainSyncClient block point tip m ()
 -&gt; ChainSyncClient block (Point block) (Tip block) IO ()
 -&gt; LocalChainSyncClient block (Point block) (Tip block) IO
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ConsensusMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ConsensusMode mode
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; ChainSyncClient block (Point block) (Tip block) IO ()
 forall mode block (m :: * -&gt; *) a.
@@ -1231,7 +1231,7 @@ ConsensusMode mode
 -&gt; Maybe
      (LocalTxSubmissionClient (GenTx block) (ApplyTxErr block) IO ())
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span>
 </span><span id="line-408"></span><span>                                          </span><span class="annot"><span class="annottext">Maybe
   (LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ())
@@ -1259,7 +1259,7 @@ ConsensusMode mode
 -&gt; Maybe
      (LocalStateQueryClient block (Point block) (Query block) IO ())
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span>
 </span><span id="line-411"></span><span>                                          </span><span class="annot"><span class="annottext">Maybe
   (LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
@@ -1269,7 +1269,7 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span id="line-414"></span><span>
 </span><span id="line-415"></span><span class="annot"><a href="Cardano.Api.IPC.html#convLocalChainSyncClient"><span class="hs-identifier hs-type">convLocalChainSyncClient</span></a></span><span>
 </span><span id="line-416"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445198"><span class="annot"><a href="#local-6989586621679445198"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445197"><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span></span><span> </span><span id="local-6989586621679445196"><span class="annot"><a href="#local-6989586621679445196"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679445195"><span class="annot"><a href="#local-6989586621679445195"><span class="hs-identifier hs-type">a</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-417"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445198"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Functor</span></span><span> </span><span class="annot"><a href="#local-6989586621679445196"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-417"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445198"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Functor</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445196"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-418"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445198"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-419"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445198"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445196"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445195"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-420"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClient</span></span><span> </span><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Point</span></span><span> </span><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tip</span></span><span> </span><span class="annot"><a href="#local-6989586621679445197"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679445196"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445195"><span class="hs-identifier hs-type">a</span></a></span><span>
@@ -1322,7 +1322,7 @@ ConsensusMode mode -&gt; Tip block -&gt; ChainTip
 </span><span id="line-427"></span><span>
 </span><span id="line-428"></span><span class="annot"><a href="Cardano.Api.IPC.html#convLocalChainSyncClientPipelined"><span class="hs-identifier hs-type">convLocalChainSyncClientPipelined</span></a></span><span>
 </span><span id="line-429"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445202"><span class="annot"><a href="#local-6989586621679445202"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445201"><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span></span><span> </span><span id="local-6989586621679445200"><span class="annot"><a href="#local-6989586621679445200"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679445199"><span class="annot"><a href="#local-6989586621679445199"><span class="hs-identifier hs-type">a</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-430"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445202"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Functor</span></span><span> </span><span class="annot"><a href="#local-6989586621679445200"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-430"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445202"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Functor</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445200"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-431"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445202"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-432"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClientPipelined</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445202"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445200"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445199"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-433"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClientPipelined</span></span><span> </span><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Point</span></span><span> </span><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tip</span></span><span> </span><span class="annot"><a href="#local-6989586621679445201"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679445200"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445199"><span class="hs-identifier hs-type">a</span></a></span><span>
@@ -1377,7 +1377,7 @@ ConsensusMode mode -&gt; Tip block -&gt; ChainTip
 </span><span id="line-440"></span><span>
 </span><span id="line-441"></span><span class="annot"><a href="Cardano.Api.IPC.html#convLocalTxSubmissionClient"><span class="hs-identifier hs-type">convLocalTxSubmissionClient</span></a></span><span>
 </span><span id="line-442"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445194"><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445193"><span class="annot"><a href="#local-6989586621679445193"><span class="hs-identifier hs-type">block</span></a></span></span><span> </span><span id="local-6989586621679445192"><span class="annot"><a href="#local-6989586621679445192"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679445191"><span class="annot"><a href="#local-6989586621679445191"><span class="hs-identifier hs-type">a</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-443"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445193"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Functor</span></span><span> </span><span class="annot"><a href="#local-6989586621679445192"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-443"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445193"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Functor</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445192"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-444"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-445"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxInMode"><span class="hs-identifier hs-type">TxInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445194"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679445192"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445191"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-446"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalTxSubmissionClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.GenTx</span></span><span> </span><span class="annot"><a href="#local-6989586621679445193"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
@@ -1417,7 +1417,7 @@ ConsensusMode mode
 </span><span id="line-453"></span><span>
 </span><span id="line-454"></span><span class="annot"><a href="Cardano.Api.IPC.html#convLocalStateQueryClient"><span class="hs-identifier hs-type">convLocalStateQueryClient</span></a></span><span>
 </span><span id="line-455"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445187"><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679445186"><span class="annot"><a href="#local-6989586621679445186"><span class="hs-identifier hs-type">block</span></a></span></span><span> </span><span id="local-6989586621679445185"><span class="annot"><a href="#local-6989586621679445185"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679445184"><span class="annot"><a href="#local-6989586621679445184"><span class="hs-identifier hs-type">a</span></a></span></span><span class="hs-operator">.</span><span>
-</span><span id="line-456"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><a href="#local-6989586621679445186"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Functor</span></span><span> </span><span class="annot"><a href="#local-6989586621679445185"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-456"></span><span>     </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusBlockForMode"><span class="hs-identifier hs-type">ConsensusBlockForMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-glyph hs-type">~</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445186"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Functor</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445185"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-457"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Modes.html#ConsensusMode"><span class="hs-identifier hs-type">ConsensusMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-458"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Query.html#QueryInMode"><span class="hs-identifier hs-type">QueryInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445187"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679445185"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445184"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-459"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalStateQueryClient</span></span><span> </span><span class="annot"><a href="#local-6989586621679445186"><span class="hs-identifier hs-type">block</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Consensus.Point</span></span><span> </span><span class="annot"><a href="#local-6989586621679445186"><span class="hs-identifier hs-type">block</span></a></span><span class="hs-special">)</span><span>
@@ -1479,9 +1479,9 @@ QueryInMode mode result -&gt; Query block result' -&gt; result' -&gt; result
 </span><span id="line-478"></span><span class="hs-comment">--</span><span>
 </span><span id="line-479"></span><span class="annot"><a href="Cardano.Api.IPC.html#queryNodeLocalState"><span class="hs-identifier hs-type">queryNodeLocalState</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679444891"><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span></span><span> </span><span id="local-6989586621679444890"><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span></span><span class="hs-operator">.</span><span>
 </span><span id="line-480"></span><span>                       </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span><span>
-</span><span id="line-481"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span>
+</span><span id="line-481"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span>
 </span><span id="line-482"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Query.html#QueryInMode"><span class="hs-identifier hs-type">QueryInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span><span>
-</span><span id="line-483"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Query.AcquireFailure</span></span><span> </span><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-483"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Either</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Query.AcquireFailure</span></span><span> </span><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-484"></span><span id="queryNodeLocalState"><span class="annot"><span class="annottext">queryNodeLocalState :: LocalNodeConnectInfo mode
 -&gt; Maybe ChainPoint
 -&gt; QueryInMode mode result
@@ -1493,7 +1493,7 @@ QueryInMode mode result -&gt; Query block result' -&gt; result' -&gt; result
 </span><span id="line-485"></span><span>    </span><span id="local-6989586621679444886"><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 </span><a href="#local-6989586621679444886"><span class="hs-identifier hs-var">resultVar</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (TMVar (Either AcquireFailure result))
 forall a. IO (TMVar a)
-</span><span class="hs-identifier hs-var">newEmptyTMVarIO</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">newEmptyTMVarIO</span></a></span><span>
 </span><span id="line-486"></span><span>    </span><span class="annot"><span class="annottext">LocalNodeConnectInfo mode
 -&gt; LocalNodeClientProtocolsInMode mode -&gt; IO ()
 forall mode.
@@ -1522,7 +1522,7 @@ LocalChainSyncClient block point tip m
      (LocalStateQueryClient
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe ChainPoint
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe ChainPoint
 -&gt; TMVar (Either AcquireFailure result)
 -&gt; LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
@@ -1536,22 +1536,22 @@ forall a. a -&gt; Maybe a
   (LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-492"></span><span>      </span><span class="hs-special">}</span><span>
 </span><span id="line-493"></span><span>    </span><span class="annot"><span class="annottext">STM (Either AcquireFailure result)
 -&gt; IO (Either AcquireFailure result)
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 -&gt; STM (Either AcquireFailure result)
 forall a. TMVar a -&gt; STM a
-</span><span class="hs-identifier hs-var">takeTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">takeTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 </span><a href="#local-6989586621679444886"><span class="hs-identifier hs-var">resultVar</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-494"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-495"></span><span>    </span><span class="annot"><a href="#local-6989586621679444884"><span class="hs-identifier hs-type">singleQuery</span></a></span><span>
-</span><span id="line-496"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span>
-</span><span id="line-497"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Query.AcquireFailure</span></span><span> </span><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-496"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span>
+</span><span id="line-497"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-type">TMVar</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Either</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Query.AcquireFailure</span></span><span> </span><span class="annot"><a href="#local-6989586621679444890"><span class="hs-identifier hs-type">result</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-498"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Query.LocalStateQueryClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span>
-</span><span id="line-499"></span><span>                                         </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Query.html#QueryInMode"><span class="hs-identifier hs-type">QueryInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-499"></span><span>                                         </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Query.html#QueryInMode"><span class="hs-identifier hs-type">QueryInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444891"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-500"></span><span>    </span><span id="local-6989586621679444884"><span class="annot"><span class="annottext">singleQuery :: Maybe ChainPoint
 -&gt; TMVar (Either AcquireFailure result)
 -&gt; LocalStateQueryClient
@@ -1578,13 +1578,13 @@ m (ClientStIdle block point query m a)
 -&gt; LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-502"></span><span>      </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 -&gt; IO
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
    (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
  -&gt; IO
       (ClientStIdle
@@ -1595,7 +1595,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-503"></span><span>        </span><span class="annot"><span class="annottext">Maybe ChainPoint
 -&gt; ClientStAcquiring
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
@@ -1615,7 +1615,7 @@ Maybe point
 -&gt; ClientStIdle
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-504"></span><span>        </span><span class="annot"><span class="annottext">ClientStAcquiring :: forall block point (query :: * -&gt; *) (m :: * -&gt; *) a.
 m (ClientStAcquired block point query m a)
 -&gt; (AcquireFailure -&gt; m (ClientStIdle block point query m a))
@@ -1631,7 +1631,7 @@ m (ClientStAcquired block point query m a)
      (ClientStAcquired
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStAcquired
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStAcquired
    (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
  -&gt; IO
       (ClientStAcquired
@@ -1642,7 +1642,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (ClientStAcquired
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">QueryInMode mode result
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">QueryInMode mode result
 -&gt; ClientStQuerying
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO () result
 -&gt; ClientStAcquired
@@ -1661,7 +1661,7 @@ query result
 -&gt; ClientStAcquired
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-507"></span><span>                </span><span class="annot"><span class="annottext">ClientStQuerying :: forall block point (query :: * -&gt; *) (m :: * -&gt; *) a result.
 (result -&gt; m (ClientStAcquired block point query m a))
 -&gt; ClientStQuerying block point query m a result
@@ -1674,15 +1674,15 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679444872"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-509"></span><span>                    </span><span class="annot"><span class="annottext">STM () -&gt; IO ()
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 -&gt; Either AcquireFailure result -&gt; STM ()
 forall a. TMVar a -&gt; a -&gt; STM ()
-</span><span class="hs-identifier hs-var">putTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">putTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 </span><a href="#local-6989586621679444880"><span class="hs-identifier hs-var">resultVar'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">result -&gt; Either AcquireFailure result
 forall a b. b -&gt; Either a b
-</span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">result
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Right</span></a></span><span> </span><span class="annot"><span class="annottext">result
 </span><a href="#local-6989586621679444872"><span class="hs-identifier hs-var">result</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-510"></span><span>
 </span><span id="line-511"></span><span>                    </span><span class="annot"><span class="annottext">ClientStAcquired
@@ -1691,7 +1691,7 @@ forall a b. b -&gt; Either a b
      (ClientStAcquired
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStAcquired
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStAcquired
    (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
  -&gt; IO
       (ClientStAcquired
@@ -1702,7 +1702,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (ClientStAcquired
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IO
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">IO
   (ClientStIdle
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 -&gt; ClientStAcquired
@@ -1721,13 +1721,13 @@ m (ClientStIdle block point query m a)
 -&gt; ClientStAcquired
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-512"></span><span>                      </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 -&gt; IO
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
    (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
  -&gt; IO
       (ClientStIdle
@@ -1738,7 +1738,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">()
 -&gt; ClientStIdle
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a block point (query :: * -&gt; *) (m :: * -&gt; *).
@@ -1753,22 +1753,22 @@ a -&gt; ClientStIdle block point query m a
 </span><a href="#local-6989586621679444867"><span class="hs-identifier hs-var">failure</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-515"></span><span>              </span><span class="annot"><span class="annottext">STM () -&gt; IO ()
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 -&gt; Either AcquireFailure result -&gt; STM ()
 forall a. TMVar a -&gt; a -&gt; STM ()
-</span><span class="hs-identifier hs-var">putTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">putTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (Either AcquireFailure result)
 </span><a href="#local-6989586621679444880"><span class="hs-identifier hs-var">resultVar'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AcquireFailure -&gt; Either AcquireFailure result
 forall a b. a -&gt; Either a b
-</span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">AcquireFailure
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Left</span></a></span><span> </span><span class="annot"><span class="annottext">AcquireFailure
 </span><a href="#local-6989586621679444867"><span class="hs-identifier hs-var">failure</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-516"></span><span>              </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 -&gt; IO
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle
    (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
  -&gt; IO
       (ClientStIdle
@@ -1779,7 +1779,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (ClientStIdle
         (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">()
 -&gt; ClientStIdle
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ()
 forall a block point (query :: * -&gt; *) (m :: * -&gt; *).
@@ -1790,7 +1790,7 @@ a -&gt; ClientStIdle block point query m a
 </span><span id="line-519"></span><span class="annot"><a href="Cardano.Api.IPC.html#submitTxToNodeLocal"><span class="hs-identifier hs-type">submitTxToNodeLocal</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679444866"><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span></span><span class="hs-operator">.</span><span>
 </span><span id="line-520"></span><span>                       </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span>
 </span><span id="line-521"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxInMode"><span class="hs-identifier hs-type">TxInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span>
-</span><span id="line-522"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tx.SubmitResult</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-522"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tx.SubmitResult</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-523"></span><span id="submitTxToNodeLocal"><span class="annot"><span class="annottext">submitTxToNodeLocal :: LocalNodeConnectInfo mode
 -&gt; TxInMode mode
 -&gt; IO (SubmitResult (TxValidationErrorInMode mode))
@@ -1800,7 +1800,7 @@ a -&gt; ClientStIdle block point query m a
 </span><span id="line-524"></span><span>    </span><span id="local-6989586621679444863"><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 </span><a href="#local-6989586621679444863"><span class="hs-identifier hs-var">resultVar</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (TMVar (SubmitResult (TxValidationErrorInMode mode)))
 forall a. IO (TMVar a)
-</span><span class="hs-identifier hs-var">newEmptyTMVarIO</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">newEmptyTMVarIO</span></a></span><span>
 </span><span id="line-525"></span><span>    </span><span class="annot"><span class="annottext">LocalNodeConnectInfo mode
 -&gt; LocalNodeClientProtocolsInMode mode -&gt; IO ()
 forall mode.
@@ -1829,7 +1829,7 @@ LocalChainSyncClient block point tip m
      (LocalTxSubmissionClient
         (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 -&gt; LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ()
 </span><a href="#local-6989586621679444862"><span class="hs-identifier hs-var">localTxSubmissionClientSingle</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
@@ -1841,22 +1841,22 @@ forall a. a -&gt; Maybe a
   (LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-531"></span><span>      </span><span class="hs-special">}</span><span>
 </span><span id="line-532"></span><span>    </span><span class="annot"><span class="annottext">STM (SubmitResult (TxValidationErrorInMode mode))
 -&gt; IO (SubmitResult (TxValidationErrorInMode mode))
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 -&gt; STM (SubmitResult (TxValidationErrorInMode mode))
 forall a. TMVar a -&gt; STM a
-</span><span class="hs-identifier hs-var">takeTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">takeTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 </span><a href="#local-6989586621679444863"><span class="hs-identifier hs-var">resultVar</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-533"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-534"></span><span>    </span><span class="annot"><a href="#local-6989586621679444862"><span class="hs-identifier hs-type">localTxSubmissionClientSingle</span></a></span><span>
-</span><span id="line-535"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tx.SubmitResult</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-535"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-type">TMVar</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Net.Tx.SubmitResult</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-536"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Tx.LocalTxSubmissionClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxInMode"><span class="hs-identifier hs-type">TxInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-537"></span><span>                                        </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.TxInMode.html#TxValidationErrorInMode"><span class="hs-identifier hs-type">TxValidationErrorInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444866"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-538"></span><span>                                        </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-538"></span><span>                                        </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-539"></span><span>    </span><span id="local-6989586621679444862"><span class="annot"><span class="annottext">localTxSubmissionClientSingle :: TMVar (SubmitResult (TxValidationErrorInMode mode))
 -&gt; LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ()
@@ -1881,14 +1881,14 @@ m (LocalTxClientStIdle tx reject m a)
 -&gt; LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-541"></span><span>        </span><span class="annot"><span class="annottext">LocalTxClientStIdle
   (TxInMode mode) (TxValidationErrorInMode mode) IO ()
 -&gt; IO
      (LocalTxClientStIdle
         (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(LocalTxClientStIdle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(LocalTxClientStIdle
    (TxInMode mode) (TxValidationErrorInMode mode) IO ()
  -&gt; IO
       (LocalTxClientStIdle
@@ -1899,7 +1899,7 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
      (LocalTxClientStIdle
         (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TxInMode mode
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TxInMode mode
 -&gt; (SubmitResult (TxValidationErrorInMode mode)
     -&gt; IO
          (LocalTxClientStIdle
@@ -1924,16 +1924,16 @@ tx
 -&gt; LocalTxClientStIdle
      (TxInMode mode) (TxValidationErrorInMode mode) IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679444858"><span class="annot"><span class="annottext">SubmitResult (TxValidationErrorInMode mode)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679444858"><span class="annot"><span class="annottext">SubmitResult (TxValidationErrorInMode mode)
 </span><a href="#local-6989586621679444858"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-542"></span><span>        </span><span class="annot"><span class="annottext">STM () -&gt; IO ()
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 -&gt; SubmitResult (TxValidationErrorInMode mode) -&gt; STM ()
 forall a. TMVar a -&gt; a -&gt; STM ()
-</span><span class="hs-identifier hs-var">putTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">putTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar (SubmitResult (TxValidationErrorInMode mode))
 </span><a href="#local-6989586621679444861"><span class="hs-identifier hs-var">resultVar</span></a></span><span> </span><span class="annot"><span class="annottext">SubmitResult (TxValidationErrorInMode mode)
 </span><a href="#local-6989586621679444858"><span class="hs-identifier hs-var">result</span></a></span><span>
 </span><span id="line-543"></span><span>        </span><span class="annot"><span class="annottext">LocalTxClientStIdle
@@ -1942,7 +1942,7 @@ forall a. TMVar a -&gt; a -&gt; STM ()
      (LocalTxClientStIdle
         (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">()
 -&gt; LocalTxClientStIdle
      (TxInMode mode) (TxValidationErrorInMode mode) IO ()
 forall a tx reject (m :: * -&gt; *).
@@ -1954,14 +1954,14 @@ a -&gt; LocalTxClientStIdle tx reject m a
 </span><span id="line-547"></span><span class="hs-comment">--</span><span>
 </span><span id="line-548"></span><span>
 </span><span id="line-549"></span><span>
-</span><span id="line-550"></span><span id="local-6989586621679444856"><span class="annot"><a href="Cardano.Api.IPC.html#getLocalChainTip"><span class="hs-identifier hs-type">getLocalChainTip</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444856"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span></span><span>
+</span><span id="line-550"></span><span id="local-6989586621679444856"><span class="annot"><a href="Cardano.Api.IPC.html#getLocalChainTip"><span class="hs-identifier hs-type">getLocalChainTip</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.IPC.html#LocalNodeConnectInfo"><span class="hs-identifier hs-type">LocalNodeConnectInfo</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679444856"><span class="hs-identifier hs-type">mode</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span></span><span>
 </span><span id="line-551"></span><span id="getLocalChainTip"><span class="annot"><span class="annottext">getLocalChainTip :: LocalNodeConnectInfo mode -&gt; IO ChainTip
 </span><a href="Cardano.Api.IPC.html#getLocalChainTip"><span class="hs-identifier hs-var hs-var">getLocalChainTip</span></a></span></span><span> </span><span id="local-6989586621679444855"><span class="annot"><span class="annottext">LocalNodeConnectInfo mode
 </span><a href="#local-6989586621679444855"><span class="hs-identifier hs-var">localNodeConInfo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-552"></span><span>    </span><span id="local-6989586621679444854"><span class="annot"><span class="annottext">TMVar ChainTip
 </span><a href="#local-6989586621679444854"><span class="hs-identifier hs-var">resultVar</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (TMVar ChainTip)
 forall a. IO (TMVar a)
-</span><span class="hs-identifier hs-var">newEmptyTMVarIO</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">newEmptyTMVarIO</span></a></span><span>
 </span><span id="line-553"></span><span>    </span><span class="annot"><span class="annottext">LocalNodeConnectInfo mode
 -&gt; LocalNodeClientProtocolsInMode mode -&gt; IO ()
 forall mode.
@@ -1987,7 +1987,7 @@ ChainSyncClient block point tip m ()
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; LocalChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 forall mode.
 TMVar ChainTip
@@ -2001,7 +2001,7 @@ TMVar ChainTip
   (LocalTxSubmissionClient
      (TxInMode mode) (TxValidationErrorInMode mode) IO ())
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-558"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">localStateQueryClient :: Maybe
   (LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
@@ -2009,20 +2009,20 @@ forall a. Maybe a
   (LocalStateQueryClient
      (BlockInMode mode) ChainPoint (QueryInMode mode) IO ())
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-559"></span><span>        </span><span class="hs-special">}</span><span>
 </span><span id="line-560"></span><span>    </span><span class="annot"><span class="annottext">STM ChainTip -&gt; IO ChainTip
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM ChainTip -&gt; IO ChainTip) -&gt; STM ChainTip -&gt; IO ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM ChainTip -&gt; IO ChainTip) -&gt; STM ChainTip -&gt; IO ChainTip
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; STM ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; STM ChainTip
 forall a. TMVar a -&gt; STM a
-</span><span class="hs-identifier hs-var">takeTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">takeTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
 </span><a href="#local-6989586621679444854"><span class="hs-identifier hs-var">resultVar</span></a></span><span>
 </span><span id="line-561"></span><span>
 </span><span id="line-562"></span><span class="annot"><a href="Cardano.Api.IPC.html#chainSyncGetCurrentTip"><span class="hs-identifier hs-type">chainSyncGetCurrentTip</span></a></span><span>
-</span><span id="line-563"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445058"><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TMVar</span></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span>
-</span><span id="line-564"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-563"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679445058"><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-type">TMVar</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span>
+</span><span id="line-564"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ChainSyncClient</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-565"></span><span id="chainSyncGetCurrentTip"><span class="annot"><span class="annottext">chainSyncGetCurrentTip :: TMVar ChainTip
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 </span><a href="Cardano.Api.IPC.html#chainSyncGetCurrentTip"><span class="hs-identifier hs-var hs-var">chainSyncGetCurrentTip</span></a></span></span><span> </span><span id="local-6989586621679444852"><span class="annot"><span class="annottext">TMVar ChainTip
@@ -2037,13 +2037,13 @@ m (ClientStIdle header point tip m a)
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 </span><a href="#local-6989586621679444850"><span class="hs-identifier hs-var">clientStIdle</span></a></span><span>
 </span><span id="line-567"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-568"></span><span>  </span><span class="annot"><a href="#local-6989586621679444850"><span class="hs-identifier hs-type">clientStIdle</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Sync.ClientStIdle</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-568"></span><span>  </span><span class="annot"><a href="#local-6989586621679444850"><span class="hs-identifier hs-type">clientStIdle</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Sync.ClientStIdle</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-569"></span><span>  </span><span id="local-6989586621679444850"><span class="annot"><span class="annottext">clientStIdle :: ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 </span><a href="#local-6989586621679444850"><span class="hs-identifier hs-var hs-var">clientStIdle</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-570"></span><span>    </span><span class="annot"><span class="annottext">ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ()
@@ -2057,10 +2057,10 @@ ClientStNext header point tip m a
 </span><a href="#local-6989586621679444848"><span class="hs-identifier hs-var">clientStNext</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ()
 </span><a href="#local-6989586621679444848"><span class="hs-identifier hs-var">clientStNext</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-571"></span><span>
-</span><span id="line-572"></span><span>  </span><span class="annot"><a href="#local-6989586621679444848"><span class="hs-identifier hs-type">clientStNext</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Sync.ClientStNext</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-572"></span><span>  </span><span class="annot"><a href="#local-6989586621679444848"><span class="hs-identifier hs-type">clientStNext</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Net.Sync.ClientStNext</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Block.html#BlockInMode"><span class="hs-identifier hs-type">BlockInMode</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679445058"><span class="hs-identifier hs-type">mode</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainPoint"><span class="hs-identifier hs-type">ChainPoint</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Block.html#ChainTip"><span class="hs-identifier hs-type">ChainTip</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-573"></span><span>  </span><span id="local-6989586621679444848"><span class="annot"><span class="annottext">clientStNext :: ClientStNext (BlockInMode mode) ChainPoint ChainTip IO ()
 </span><a href="#local-6989586621679444848"><span class="hs-identifier hs-var hs-var">clientStNext</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ClientStNext :: forall header point tip (m :: * -&gt; *) a.
 (header -&gt; tip -&gt; ChainSyncClient header point tip m a)
@@ -2082,29 +2082,29 @@ m (ClientStIdle header point tip m a)
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-575"></span><span>        </span><span class="annot"><span class="annottext">IO Bool -&gt; IO ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
-</span><span class="hs-identifier hs-var">void</span></span><span> </span><span class="annot"><span class="annottext">(IO Bool -&gt; IO ()) -&gt; IO Bool -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">void</span></a></span><span> </span><span class="annot"><span class="annottext">(IO Bool -&gt; IO ()) -&gt; IO Bool -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">STM Bool -&gt; IO Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">STM Bool -&gt; IO Bool
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM Bool -&gt; IO Bool) -&gt; STM Bool -&gt; IO Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM Bool -&gt; IO Bool) -&gt; STM Bool -&gt; IO Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; ChainTip -&gt; STM Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; ChainTip -&gt; STM Bool
 forall a. TMVar a -&gt; a -&gt; STM Bool
-</span><span class="hs-identifier hs-var">tryPutTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">tryPutTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
 </span><a href="#local-6989586621679444852"><span class="hs-identifier hs-var">tipVar</span></a></span><span> </span><span class="annot"><span class="annottext">ChainTip
 </span><a href="#local-6989586621679444844"><span class="hs-identifier hs-var">tip</span></a></span><span>
 </span><span id="line-576"></span><span>        </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
  -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()))
 -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">() -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">() -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 forall a header point tip (m :: * -&gt; *).
 a -&gt; ClientStIdle header point tip m a
 </span><span class="hs-identifier hs-var">Net.Sync.SendMsgDone</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
@@ -2123,29 +2123,29 @@ m (ClientStIdle header point tip m a)
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 -&gt; ChainSyncClient (BlockInMode mode) ChainPoint ChainTip IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-578"></span><span>        </span><span class="annot"><span class="annottext">IO Bool -&gt; IO ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
-</span><span class="hs-identifier hs-var">void</span></span><span> </span><span class="annot"><span class="annottext">(IO Bool -&gt; IO ()) -&gt; IO Bool -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">void</span></a></span><span> </span><span class="annot"><span class="annottext">(IO Bool -&gt; IO ()) -&gt; IO Bool -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">STM Bool -&gt; IO Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">STM Bool -&gt; IO Bool
 forall a. STM a -&gt; IO a
-</span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM Bool -&gt; IO Bool) -&gt; STM Bool -&gt; IO Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">atomically</span></a></span><span> </span><span class="annot"><span class="annottext">(STM Bool -&gt; IO Bool) -&gt; STM Bool -&gt; IO Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; ChainTip -&gt; STM Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip -&gt; ChainTip -&gt; STM Bool
 forall a. TMVar a -&gt; a -&gt; STM Bool
-</span><span class="hs-identifier hs-var">tryPutTMVar</span></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/src"><span class="hs-identifier hs-var">tryPutTMVar</span></a></span><span> </span><span class="annot"><span class="annottext">TMVar ChainTip
 </span><a href="#local-6989586621679444852"><span class="hs-identifier hs-var">tipVar</span></a></span><span> </span><span class="annot"><span class="annottext">ChainTip
 </span><a href="#local-6989586621679444839"><span class="hs-identifier hs-var">tip</span></a></span><span>
 </span><span id="line-579"></span><span>        </span><span class="annot"><span class="annottext">ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">(ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
  -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()))
 -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 -&gt; IO (ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">() -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">() -&gt; ClientStIdle (BlockInMode mode) ChainPoint ChainTip IO ()
 forall a header point tip (m :: * -&gt; *).
 a -&gt; ClientStIdle header point tip m a
 </span><span class="hs-identifier hs-var">Net.Sync.SendMsgDone</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>

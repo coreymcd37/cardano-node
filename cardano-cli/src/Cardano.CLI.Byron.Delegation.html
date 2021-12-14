@@ -12,10 +12,10 @@
 </span><span id="line-12"></span><span>  </span><span class="hs-special">)</span><span>
 </span><span id="line-13"></span><span class="hs-keyword">where</span><span>
 </span><span id="line-14"></span><span>
-</span><span id="line-15"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">option</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">show</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">trace</span></span><span class="hs-special">)</span><span>
+</span><span id="line-15"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">option</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">show</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">trace</span></span><span class="hs-special">)</span><span>
 </span><span id="line-16"></span><span>
 </span><span id="line-17"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">left</span></span><span class="hs-special">)</span><span>
-</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Lazy</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
 </span><span id="line-19"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Formatting</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Format</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">sformat</span></span><span class="hs-special">)</span><span>
 </span><span id="line-20"></span><span>
 </span><span id="line-21"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Byron</span></a></span><span>
@@ -31,8 +31,8 @@
 </span><span id="line-31"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.CLI.Types.html"><span class="hs-identifier">Cardano.CLI.Types</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Types.html#CertificateFile"><span class="hs-identifier">CertificateFile</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-32"></span><span>
 </span><span id="line-33"></span><span class="hs-keyword">data</span><span> </span><span id="ByronDelegationError"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationError"><span class="hs-identifier hs-var">ByronDelegationError</span></a></span></span><span>
-</span><span id="line-34"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="CertificateValidationErrors"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#CertificateValidationErrors"><span class="hs-identifier hs-var">CertificateValidationErrors</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">!</span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span>
-</span><span id="line-35"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DlgCertificateDeserialisationFailed"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#DlgCertificateDeserialisationFailed"><span class="hs-identifier hs-var">DlgCertificateDeserialisationFailed</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-34"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="CertificateValidationErrors"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#CertificateValidationErrors"><span class="hs-identifier hs-var">CertificateValidationErrors</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">FilePath</span></a></span><span> </span><span class="hs-glyph">!</span><span class="hs-special">[</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-35"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DlgCertificateDeserialisationFailed"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#DlgCertificateDeserialisationFailed"><span class="hs-identifier hs-var">DlgCertificateDeserialisationFailed</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">FilePath</span></a></span><span> </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-36"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="ByronDelegationKeyError"><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationKeyError"><span class="hs-identifier hs-var">ByronDelegationKeyError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><a href="Cardano.CLI.Byron.Key.html#ByronKeyFailure"><span class="hs-identifier hs-type">ByronKeyFailure</span></a></span><span>
 </span><span id="line-37"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span id="local-6989586621679322847"><span id="local-6989586621679322849"><span id="local-6989586621679322851"><span class="annot"><span class="annottext">Int -&gt; ByronDelegationError -&gt; ShowS
 [ByronDelegationError] -&gt; ShowS
@@ -49,9 +49,9 @@ show :: ByronDelegationError -&gt; String
 $cshow :: ByronDelegationError -&gt; String
 showsPrec :: Int -&gt; ByronDelegationError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ByronDelegationError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-38"></span><span>
-</span><span id="line-39"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#renderByronDelegationError"><span class="hs-identifier hs-type">renderByronDelegationError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationError"><span class="hs-identifier hs-type">ByronDelegationError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-39"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#renderByronDelegationError"><span class="hs-identifier hs-type">renderByronDelegationError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationError"><span class="hs-identifier hs-type">ByronDelegationError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-40"></span><span id="renderByronDelegationError"><span class="annot"><span class="annottext">renderByronDelegationError :: ByronDelegationError -&gt; Text
 </span><a href="Cardano.CLI.Byron.Delegation.html#renderByronDelegationError"><span class="hs-identifier hs-var hs-var">renderByronDelegationError</span></a></span></span><span> </span><span id="local-6989586621679322845"><span class="annot"><span class="annottext">ByronDelegationError
 </span><a href="#local-6989586621679322845"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -63,15 +63,15 @@ $cshowsPrec :: Int -&gt; ByronDelegationError -&gt; ShowS
 </span><span id="line-43"></span><span>      </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Certificate validation error(s) at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679322844"><span class="hs-identifier hs-var">certFp</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; Errors: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">[Text]
 </span><a href="#local-6989586621679322843"><span class="hs-identifier hs-var">errs</span></a></span><span>
@@ -81,15 +81,15 @@ forall a. Show a =&gt; a -&gt; Text
 </span><span id="line-45"></span><span>      </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Certificate deserialisation error at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679322842"><span class="hs-identifier hs-var">certFp</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; Error: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679322841"><span class="hs-identifier hs-var">deSererr</span></a></span><span>
@@ -121,7 +121,7 @@ forall a. Show a =&gt; a -&gt; Text
 </span><a href="#local-6989586621679322836"><span class="hs-identifier hs-var">delegateVK</span></a></span><span> </span><span class="annot"><span class="annottext">EpochNumber
 </span><a href="#local-6989586621679322838"><span class="hs-identifier hs-var">epoch</span></a></span><span> </span><span class="annot"><span class="annottext">(SafeSigner -&gt; Certificate) -&gt; SafeSigner -&gt; Certificate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-59"></span><span>  </span><span class="annot"><span class="annottext">SigningKey -&gt; SafeSigner
 </span><span class="hs-identifier hs-var">Crypto.noPassSafeSigner</span></span><span> </span><span class="annot"><span class="annottext">SigningKey
 </span><a href="#local-6989586621679322837"><span class="hs-identifier hs-var">issuerSK</span></a></span><span>
@@ -134,7 +134,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-66"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ProtocolMagicId</span></span><span>
 </span><span id="line-67"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Crypto.VerificationKey</span></span><span>
 </span><span id="line-68"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Crypto.VerificationKey</span></span><span>
-</span><span id="line-69"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationError"><span class="hs-identifier hs-type">ByronDelegationError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-69"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#ByronDelegationError"><span class="hs-identifier hs-type">ByronDelegationError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span id="checkByronGenesisDelegation"><span class="annot"><span class="annottext">checkByronGenesisDelegation :: CertificateFile
 -&gt; ProtocolMagicId
 -&gt; VerificationKey
@@ -149,34 +149,34 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679322828"><span class="hs-identifier hs-var">ecert</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (Either Text Certificate)
 -&gt; ExceptT ByronDelegationError IO (Either Text Certificate)
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text Certificate)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text Certificate)
  -&gt; ExceptT ByronDelegationError IO (Either Text Certificate))
 -&gt; IO (Either Text Certificate)
 -&gt; ExceptT ByronDelegationError IO (Either Text Certificate)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text Certificate
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text Certificate
 forall a.
 FromJSON (Either SchemaError) a =&gt;
 ByteString -&gt; Either Text a
 </span><span class="hs-identifier hs-var">canonicalDecodePretty</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Either Text Certificate)
 -&gt; IO ByteString -&gt; IO (Either Text Certificate)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; IO ByteString
-</span><span class="hs-identifier hs-var">LB.readFile</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; IO ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">LB.readFile</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679322832"><span class="hs-identifier hs-var">certF</span></a></span><span>
 </span><span id="line-72"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either Text Certificate
 </span><a href="#local-6989586621679322828"><span class="hs-identifier hs-var">ecert</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-73"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679322823"><span class="annot"><span class="annottext">Text
+</span><span id="line-73"></span><span>    </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span> </span><span id="local-6989586621679322823"><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679322823"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByronDelegationError -&gt; ExceptT ByronDelegationError IO ()
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">left</span></span><span> </span><span class="annot"><span class="annottext">(ByronDelegationError -&gt; ExceptT ByronDelegationError IO ())
 -&gt; ByronDelegationError -&gt; ExceptT ByronDelegationError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text -&gt; ByronDelegationError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text -&gt; ByronDelegationError
 </span><a href="Cardano.CLI.Byron.Delegation.html#DlgCertificateDeserialisationFailed"><span class="hs-identifier hs-var">DlgCertificateDeserialisationFailed</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679322832"><span class="hs-identifier hs-var">certF</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679322823"><span class="hs-identifier hs-var">e</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679322822"><span class="annot"><span class="annottext">Certificate
+</span><span id="line-74"></span><span>    </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679322822"><span class="annot"><span class="annottext">Certificate
 </span><a href="#local-6989586621679322822"><span class="hs-identifier hs-var">cert</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.Certificate</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-75"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679322821"><span class="annot"><span class="annottext">issues :: [Text]
 </span><a href="#local-6989586621679322821"><span class="hs-identifier hs-var hs-var">issues</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Certificate
@@ -193,21 +193,21 @@ ACertificate a
 -&gt; ExceptT ByronDelegationError IO ()
 -&gt; ExceptT ByronDelegationError IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
-</span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Text] -&gt; Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">unless</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Text] -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
-</span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">[Text]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">null</span></a></span><span> </span><span class="annot"><span class="annottext">[Text]
 </span><a href="#local-6989586621679322821"><span class="hs-identifier hs-var">issues</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ExceptT ByronDelegationError IO ()
  -&gt; ExceptT ByronDelegationError IO ())
 -&gt; ExceptT ByronDelegationError IO ()
 -&gt; ExceptT ByronDelegationError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-77"></span><span>        </span><span class="annot"><span class="annottext">ByronDelegationError -&gt; ExceptT ByronDelegationError IO ()
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">left</span></span><span> </span><span class="annot"><span class="annottext">(ByronDelegationError -&gt; ExceptT ByronDelegationError IO ())
 -&gt; ByronDelegationError -&gt; ExceptT ByronDelegationError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; [Text] -&gt; ByronDelegationError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; [Text] -&gt; ByronDelegationError
 </span><a href="Cardano.CLI.Byron.Delegation.html#CertificateValidationErrors"><span class="hs-identifier hs-var">CertificateValidationErrors</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679322832"><span class="hs-identifier hs-var">certF</span></a></span><span> </span><span class="annot"><span class="annottext">[Text]
 </span><a href="#local-6989586621679322821"><span class="hs-identifier hs-var">issues</span></a></span><span>
@@ -216,7 +216,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-80"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.ACertificate</span></span><span> </span><span class="annot"><a href="#local-6989586621679322906"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-81"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ProtocolMagicId</span></span><span>
 </span><span id="line-82"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Crypto.VerificationKey</span></span><span>
-</span><span id="line-83"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Crypto.VerificationKey</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span></span><span>
+</span><span id="line-83"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Crypto.VerificationKey</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span class="hs-special">]</span></span><span>
 </span><span id="line-84"></span><span id="checkDlgCert"><span class="annot"><span class="annottext">checkDlgCert :: ACertificate a
 -&gt; ProtocolMagicId -&gt; VerificationKey -&gt; VerificationKey -&gt; [Text]
 </span><a href="Cardano.CLI.Byron.Delegation.html#checkDlgCert"><span class="hs-identifier hs-var hs-var">checkDlgCert</span></a></span></span><span> </span><span id="local-6989586621679322817"><span class="annot"><span class="annottext">ACertificate a
@@ -226,13 +226,13 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679322814"><span class="hs-identifier hs-var">delegateVK'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-85"></span><span>  </span><span class="annot"><span class="annottext">[[Text]] -&gt; [Text]
 forall a. Monoid a =&gt; [a] -&gt; a
-</span><span class="hs-identifier hs-var">mconcat</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">mconcat</span></a></span><span>
 </span><span id="line-86"></span><span>  </span><span class="hs-special">[</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Format Text Text -&gt; Text
 forall a. Format Text a -&gt; a
 </span><span class="hs-identifier hs-var">sformat</span></span><span> </span><span class="annot"><span class="annottext">Format Text Text
 </span><span class="hs-string">&quot;Certificate does not have a valid signature.&quot;</span></span><span>
 </span><span id="line-87"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
-</span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Annotated ProtocolMagicId ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var">not</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Annotated ProtocolMagicId ByteString
 -&gt; ACertificate ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">Dlg.isValid</span></span><span> </span><span class="annot"><span class="annottext">Annotated ProtocolMagicId ByteString
 </span><a href="#local-6989586621679322811"><span class="hs-identifier hs-var">magic'</span></a></span><span> </span><span class="annot"><span class="annottext">ACertificate ByteString
@@ -252,7 +252,7 @@ forall a. Format Text a -&gt; a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format
   (VerificationKey -&gt; Text)
   (VerificationKey -&gt; VerificationKey -&gt; Text)
 forall r. Format r (VerificationKey -&gt; r)
@@ -264,14 +264,14 @@ forall r. Format r (VerificationKey -&gt; r)
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
 </span><span class="hs-string">&quot; doesn't match expected: &quot;</span></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
 -&gt; Format Text (VerificationKey -&gt; Text)
 -&gt; Format Text (VerificationKey -&gt; Text)
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format Text (VerificationKey -&gt; Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format Text (VerificationKey -&gt; Text)
 forall r. Format r (VerificationKey -&gt; r)
 </span><a href="#local-6989586621679322808"><span class="hs-identifier hs-var">vkF</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>      </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="annottext">ACertificate a -&gt; VerificationKey
@@ -284,7 +284,7 @@ forall a. ACertificate a -&gt; VerificationKey
 </span><span class="hs-identifier hs-var hs-var">Dlg.issuerVK</span></span><span> </span><span class="annot"><span class="annottext">ACertificate a
 </span><a href="#local-6989586621679322817"><span class="hs-identifier hs-var">cert</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey
 </span><a href="#local-6989586621679322815"><span class="hs-identifier hs-var">issuerVK'</span></a></span><span>
 </span><span id="line-92"></span><span>    </span><span class="hs-special">]</span><span>
 </span><span id="line-93"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Format Text (VerificationKey -&gt; VerificationKey -&gt; Text)
@@ -301,7 +301,7 @@ forall a. Format Text a -&gt; a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format
   (VerificationKey -&gt; Text)
   (VerificationKey -&gt; VerificationKey -&gt; Text)
 forall r. Format r (VerificationKey -&gt; r)
@@ -313,14 +313,14 @@ forall r. Format r (VerificationKey -&gt; r)
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
 </span><span class="hs-string">&quot; doesn't match expected: &quot;</span></span><span class="annot"><span class="annottext">Format (VerificationKey -&gt; Text) (VerificationKey -&gt; Text)
 -&gt; Format Text (VerificationKey -&gt; Text)
 -&gt; Format Text (VerificationKey -&gt; Text)
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span class="annot"><span class="annottext">Format Text (VerificationKey -&gt; Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span class="annot"><span class="annottext">Format Text (VerificationKey -&gt; Text)
 forall r. Format r (VerificationKey -&gt; r)
 </span><a href="#local-6989586621679322808"><span class="hs-identifier hs-var">vkF</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-94"></span><span>      </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="annottext">ACertificate a -&gt; VerificationKey
@@ -333,12 +333,12 @@ forall a. ACertificate a -&gt; VerificationKey
 </span><span class="hs-identifier hs-var hs-var">Dlg.delegateVK</span></span><span> </span><span class="annot"><span class="annottext">ACertificate a
 </span><a href="#local-6989586621679322817"><span class="hs-identifier hs-var">cert</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey
 </span><a href="#local-6989586621679322814"><span class="hs-identifier hs-var">delegateVK'</span></a></span><span>
 </span><span id="line-96"></span><span>    </span><span class="hs-special">]</span><span>
 </span><span id="line-97"></span><span>  </span><span class="hs-special">]</span><span>
 </span><span id="line-98"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-99"></span><span>    </span><span class="annot"><a href="#local-6989586621679322811"><span class="hs-identifier hs-type">magic'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Annotated</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ProtocolMagicId</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-99"></span><span>    </span><span class="annot"><a href="#local-6989586621679322811"><span class="hs-identifier hs-type">magic'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Annotated</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ProtocolMagicId</span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-100"></span><span>    </span><span id="local-6989586621679322811"><span class="annot"><span class="annottext">magic' :: Annotated ProtocolMagicId ByteString
 </span><a href="#local-6989586621679322811"><span class="hs-identifier hs-var hs-var">magic'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ProtocolMagicId
 -&gt; ByteString -&gt; Annotated ProtocolMagicId ByteString
@@ -356,12 +356,12 @@ forall b a. Annotated b a -&gt; b
 </span><span class="hs-identifier hs-var hs-var">unAnnotated</span></span><span> </span><span class="annot"><span class="annottext">(Annotated EpochNumber a -&gt; EpochNumber)
 -&gt; Annotated EpochNumber a -&gt; EpochNumber
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ACertificate a -&gt; Annotated EpochNumber a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ACertificate a -&gt; Annotated EpochNumber a
 forall a. ACertificate a -&gt; Annotated EpochNumber a
 </span><span class="hs-identifier hs-var hs-var">Dlg.aEpoch</span></span><span> </span><span class="annot"><span class="annottext">ACertificate a
 </span><a href="#local-6989586621679322817"><span class="hs-identifier hs-var">cert</span></a></span><span>
 </span><span id="line-104"></span><span>
-</span><span id="line-105"></span><span>    </span><span class="annot"><a href="#local-6989586621679322810"><span class="hs-identifier hs-type">cert'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.ACertificate</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-105"></span><span>    </span><span class="annot"><a href="#local-6989586621679322810"><span class="hs-identifier hs-type">cert'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.ACertificate</span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-106"></span><span>    </span><span id="local-6989586621679322810"><span class="annot"><span class="annottext">cert' :: ACertificate ByteString
 </span><a href="#local-6989586621679322810"><span class="hs-identifier hs-var hs-var">cert'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-107"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679322800"><span class="annot"><span class="annottext">unannotated :: Certificate
@@ -395,19 +395,19 @@ forall r. Format r (VerificationKey -&gt; r)
 </span><span class="hs-identifier hs-var">Crypto.fullVerificationKeyF</span></span><span>
 </span><span id="line-114"></span><span>
 </span><span id="line-115"></span><span>
-</span><span id="line-116"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#serialiseDelegationCert"><span class="hs-identifier hs-type">serialiseDelegationCert</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.Certificate</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-116"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#serialiseDelegationCert"><span class="hs-identifier hs-type">serialiseDelegationCert</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Dlg.Certificate</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-117"></span><span id="serialiseDelegationCert"><span class="annot"><span class="annottext">serialiseDelegationCert :: Certificate -&gt; ByteString
 </span><a href="Cardano.CLI.Byron.Delegation.html#serialiseDelegationCert"><span class="hs-identifier hs-var hs-var">serialiseDelegationCert</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
-</span><span class="hs-identifier hs-var">LB.toStrict</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">LB.toStrict</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString)
 -&gt; (Certificate -&gt; ByteString) -&gt; Certificate -&gt; ByteString
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Certificate -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Certificate -&gt; ByteString
 forall a. ToJSON Identity a =&gt; a -&gt; ByteString
 </span><span class="hs-identifier hs-var">canonicalEncodePretty</span></span><span>
 </span><span id="line-118"></span><span>
-</span><span id="line-119"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#serialiseByronWitness"><span class="hs-identifier hs-type">serialiseByronWitness</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">SomeByronSigningKey</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-119"></span><span class="annot"><a href="Cardano.CLI.Byron.Delegation.html#serialiseByronWitness"><span class="hs-identifier hs-type">serialiseByronWitness</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">SomeByronSigningKey</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-120"></span><span id="serialiseByronWitness"><span class="annot"><span class="annottext">serialiseByronWitness :: SomeByronSigningKey -&gt; ByteString
 </span><a href="Cardano.CLI.Byron.Delegation.html#serialiseByronWitness"><span class="hs-identifier hs-var hs-var">serialiseByronWitness</span></a></span></span><span> </span><span id="local-6989586621679322795"><span class="annot"><span class="annottext">SomeByronSigningKey
 </span><a href="#local-6989586621679322795"><span class="hs-identifier hs-var">sk</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>

@@ -28,7 +28,7 @@
 </span><span id="line-28"></span><span>
 </span><span id="line-29"></span><span class="annot"><a href="Cardano.Node.Protocol.html#mkConsensusProtocol"><span class="hs-identifier hs-type">mkConsensusProtocol</span></a></span><span>
 </span><span id="line-30"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Node.Configuration.POM.html#NodeConfiguration"><span class="hs-identifier hs-type">NodeConfiguration</span></a></span><span>
-</span><span id="line-31"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.html#ProtocolInstantiationError"><span class="hs-identifier hs-type">ProtocolInstantiationError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Types.html#SomeConsensusProtocol"><span class="hs-identifier hs-type">SomeConsensusProtocol</span></a></span><span>
+</span><span id="line-31"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.html#ProtocolInstantiationError"><span class="hs-identifier hs-type">ProtocolInstantiationError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Types.html#SomeConsensusProtocol"><span class="hs-identifier hs-type">SomeConsensusProtocol</span></a></span><span>
 </span><span id="line-32"></span><span id="mkConsensusProtocol"><span class="annot"><span class="annottext">mkConsensusProtocol :: NodeConfiguration
 -&gt; ExceptT ProtocolInstantiationError IO SomeConsensusProtocol
 </span><a href="Cardano.Node.Protocol.html#mkConsensusProtocol"><span class="hs-identifier hs-var hs-var">mkConsensusProtocol</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Node.Configuration.POM.html#NodeConfiguration"><span class="hs-identifier hs-type">NodeConfiguration</span></a></span><span class="hs-special">{</span><span id="local-6989586621679414436"><span class="annot"><span class="annottext">NodeProtocolConfiguration
@@ -55,14 +55,14 @@ Functor m =&gt;
 -&gt; ExceptT ByronProtocolInstantiationError IO SomeConsensusProtocol
 -&gt; ExceptT ProtocolInstantiationError IO SomeConsensusProtocol
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-37"></span><span>          </span><span class="annot"><span class="annottext">NodeByronProtocolConfiguration
 -&gt; Maybe ProtocolFilepaths
 -&gt; ExceptT ByronProtocolInstantiationError IO SomeConsensusProtocol
 </span><a href="Cardano.Node.Protocol.Byron.html#mkSomeConsensusProtocolByron"><span class="hs-identifier hs-var">mkSomeConsensusProtocolByron</span></a></span><span> </span><span class="annot"><span class="annottext">NodeByronProtocolConfiguration
 </span><a href="#local-6989586621679414431"><span class="hs-identifier hs-var">config</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ProtocolFilepaths -&gt; Maybe ProtocolFilepaths
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
 </span><a href="#local-6989586621679414434"><span class="hs-identifier hs-var">ncProtocolFiles</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-38"></span><span>
 </span><span id="line-39"></span><span>      </span><span class="annot"><a href="Cardano.Node.Types.html#NodeProtocolConfigurationShelley"><span class="hs-identifier hs-type">NodeProtocolConfigurationShelley</span></a></span><span> </span><span id="local-6989586621679414427"><span class="annot"><span class="annottext">NodeShelleyProtocolConfiguration
@@ -81,7 +81,7 @@ Functor m =&gt;
      ShelleyProtocolInstantiationError IO SomeConsensusProtocol
 -&gt; ExceptT ProtocolInstantiationError IO SomeConsensusProtocol
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-41"></span><span>          </span><span class="annot"><span class="annottext">NodeShelleyProtocolConfiguration
 -&gt; Maybe ProtocolFilepaths
 -&gt; ExceptT
@@ -89,7 +89,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Cardano.Node.Protocol.Shelley.html#mkSomeConsensusProtocolShelley"><span class="hs-identifier hs-var">mkSomeConsensusProtocolShelley</span></a></span><span> </span><span class="annot"><span class="annottext">NodeShelleyProtocolConfiguration
 </span><a href="#local-6989586621679414427"><span class="hs-identifier hs-var">config</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ProtocolFilepaths -&gt; Maybe ProtocolFilepaths
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
 </span><a href="#local-6989586621679414434"><span class="hs-identifier hs-var">ncProtocolFiles</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-42"></span><span>
 </span><span id="line-43"></span><span>      </span><span class="annot"><a href="Cardano.Node.Types.html#NodeProtocolConfigurationCardano"><span class="hs-identifier hs-type">NodeProtocolConfigurationCardano</span></a></span><span> </span><span id="local-6989586621679414423"><span class="annot"><span class="annottext">NodeByronProtocolConfiguration
@@ -114,7 +114,7 @@ Functor m =&gt;
      CardanoProtocolInstantiationError IO SomeConsensusProtocol
 -&gt; ExceptT ProtocolInstantiationError IO SomeConsensusProtocol
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-48"></span><span>          </span><span class="annot"><span class="annottext">NodeByronProtocolConfiguration
 -&gt; NodeShelleyProtocolConfiguration
 -&gt; NodeAlonzoProtocolConfiguration
@@ -133,7 +133,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679414420"><span class="hs-identifier hs-var">hardForkConfig</span></a></span><span>
 </span><span id="line-53"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ProtocolFilepaths -&gt; Maybe ProtocolFilepaths
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">ProtocolFilepaths
 </span><a href="#local-6989586621679414434"><span class="hs-identifier hs-var">ncProtocolFiles</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-54"></span><span>
 </span><span id="line-55"></span><span class="hs-comment">------------------------------------------------------------------------------</span><span>
@@ -159,7 +159,7 @@ show :: ProtocolInstantiationError -&gt; String
 $cshow :: ProtocolInstantiationError -&gt; String
 showsPrec :: Int -&gt; ProtocolInstantiationError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ProtocolInstantiationError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-64"></span><span>
 </span><span id="line-65"></span><span>
 </span><span id="line-66"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Error</span></a></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.html#ProtocolInstantiationError"><span class="hs-identifier hs-type">ProtocolInstantiationError</span></a></span><span> </span><span class="hs-keyword">where</span><span>

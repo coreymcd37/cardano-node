@@ -6,7 +6,7 @@
 </span><span id="line-6"></span><span>
 </span><span id="line-7"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span>
 </span><span id="line-8"></span><span>
-</span><span id="line-9"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-9"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-10"></span><span>
 </span><span id="line-11"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">firstExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">left</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">newExceptT</span></span><span class="hs-special">)</span><span>
 </span><span id="line-12"></span><span>
@@ -27,10 +27,10 @@
 </span><span id="line-27"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="ShelleyGovernanceCmdTextEnvWriteError"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdTextEnvWriteError"><span class="hs-identifier hs-var">ShelleyGovernanceCmdTextEnvWriteError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileError</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-28"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="ShelleyGovernanceCmdEmptyUpdateProposalError"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdEmptyUpdateProposalError"><span class="hs-identifier hs-var">ShelleyGovernanceCmdEmptyUpdateProposalError</span></a></span></span><span>
 </span><span id="line-29"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="ShelleyGovernanceCmdMIRCertificateKeyRewardMistmach"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdMIRCertificateKeyRewardMistmach"><span class="hs-identifier hs-var">ShelleyGovernanceCmdMIRCertificateKeyRewardMistmach</span></a></span></span><span>
-</span><span id="line-30"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
-</span><span id="line-31"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
+</span><span id="line-30"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">FilePath</span></a></span><span>
+</span><span id="line-31"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span>
 </span><span id="line-32"></span><span>      </span><span class="hs-comment">-- ^ Number of stake verification keys</span><span>
-</span><span id="line-33"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
+</span><span id="line-33"></span><span>      </span><span class="hs-glyph">!</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span>
 </span><span id="line-34"></span><span>      </span><span class="hs-comment">-- ^ Number of reward amounts</span><span>
 </span><span id="line-35"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span id="local-6989586621679317209"><span id="local-6989586621679317211"><span id="local-6989586621679317213"><span class="annot"><span class="annottext">Int -&gt; ShelleyGovernanceCmdError -&gt; ShowS
 [ShelleyGovernanceCmdError] -&gt; ShowS
@@ -47,9 +47,9 @@ show :: ShelleyGovernanceCmdError -&gt; String
 $cshow :: ShelleyGovernanceCmdError -&gt; String
 showsPrec :: Int -&gt; ShelleyGovernanceCmdError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ShelleyGovernanceCmdError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-36"></span><span>
-</span><span id="line-37"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#renderShelleyGovernanceError"><span class="hs-identifier hs-type">renderShelleyGovernanceError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-37"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#renderShelleyGovernanceError"><span class="hs-identifier hs-type">renderShelleyGovernanceError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-38"></span><span id="renderShelleyGovernanceError"><span class="annot"><span class="annottext">renderShelleyGovernanceError :: ShelleyGovernanceCmdError -&gt; Text
 </span><a href="Cardano.CLI.Shelley.Run.Governance.html#renderShelleyGovernanceError"><span class="hs-identifier hs-var hs-var">renderShelleyGovernanceError</span></a></span></span><span> </span><span id="local-6989586621679317207"><span class="annot"><span class="annottext">ShelleyGovernanceCmdError
 </span><a href="#local-6989586621679317207"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -57,19 +57,19 @@ $cshowsPrec :: Int -&gt; ShelleyGovernanceCmdError -&gt; ShowS
 </span><a href="#local-6989586621679317207"><span class="hs-identifier hs-var">err</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-40"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdTextEnvReadError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdTextEnvReadError</span></a></span><span> </span><span id="local-6989586621679317206"><span class="annot"><span class="annottext">FileError TextEnvelopeError
 </span><a href="#local-6989586621679317206"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError TextEnvelopeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError TextEnvelopeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError TextEnvelopeError
 </span><a href="#local-6989586621679317206"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-41"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdKeyReadError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdKeyReadError</span></a></span><span> </span><span id="local-6989586621679317203"><span class="annot"><span class="annottext">FileError InputDecodeError
 </span><a href="#local-6989586621679317203"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError InputDecodeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError InputDecodeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError InputDecodeError
 </span><a href="#local-6989586621679317203"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-42"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdTextEnvWriteError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdTextEnvWriteError</span></a></span><span> </span><span id="local-6989586621679317202"><span class="annot"><span class="annottext">FileError ()
 </span><a href="#local-6989586621679317202"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError () -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError () -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError ()
 </span><a href="#local-6989586621679317202"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
@@ -85,43 +85,43 @@ forall e. Error e =&gt; e -&gt; String
 </span><span id="line-47"></span><span>       </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Error creating the MIR certificate at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="#local-6989586621679317198"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317201"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-48"></span><span>       </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; The number of staking keys: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="#local-6989586621679317198"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679317200"><span class="hs-identifier hs-var">numVKeys</span></a></span><span>
 </span><span id="line-49"></span><span>       </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; and the number of reward amounts: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="#local-6989586621679317198"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679317199"><span class="hs-identifier hs-var">numRwdAmts</span></a></span><span>
 </span><span id="line-50"></span><span>       </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; are not equivalent.&quot;</span></span><span>
 </span><span id="line-51"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-52"></span><span>    </span><span id="local-6989586621679317198"><span class="annot"><span class="annottext">textShow :: a -&gt; Text
 </span><a href="#local-6989586621679317198"><span class="hs-identifier hs-var hs-var">textShow</span></a></span></span><span> </span><span id="local-6989586621679317197"><span class="annot"><span class="annottext">a
 </span><a href="#local-6989586621679317197"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">a
 </span><a href="#local-6989586621679317197"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-53"></span><span>
 </span><span id="line-54"></span><span>
-</span><span id="line-55"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#runGovernanceCmd"><span class="hs-identifier hs-type">runGovernanceCmd</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#GovernanceCmd"><span class="hs-identifier hs-type">GovernanceCmd</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-55"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#runGovernanceCmd"><span class="hs-identifier hs-type">runGovernanceCmd</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#GovernanceCmd"><span class="hs-identifier hs-type">GovernanceCmd</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-56"></span><span id="runGovernanceCmd"><span class="annot"><span class="annottext">runGovernanceCmd :: GovernanceCmd -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Governance.html#runGovernanceCmd"><span class="hs-identifier hs-var hs-var">runGovernanceCmd</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#GovernanceMIRPayStakeAddressesCertificate"><span class="hs-identifier hs-type">GovernanceMIRPayStakeAddressesCertificate</span></a></span><span> </span><span id="local-6989586621679317194"><span class="annot"><span class="annottext">MIRPot
 </span><a href="#local-6989586621679317194"><span class="hs-identifier hs-var">mirpot</span></a></span></span><span> </span><span id="local-6989586621679317193"><span class="annot"><span class="annottext">[StakeAddress]
@@ -186,7 +186,7 @@ forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span id="line-67"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">StakeAddress</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-comment">-- ^ Stake addresses</span><span>
 </span><span id="line-68"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Lovelace</span></a></span><span class="hs-special">]</span><span>     </span><span class="hs-comment">-- ^ Corresponding reward amounts (same length)</span><span>
 </span><span id="line-69"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
-</span><span id="line-70"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-70"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-71"></span><span id="runGovernanceMIRCertificatePayStakeAddrs"><span class="annot"><span class="annottext">runGovernanceMIRCertificatePayStakeAddrs :: MIRPot
 -&gt; [StakeAddress]
 -&gt; [Lovelace]
@@ -202,12 +202,12 @@ forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
-</span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[StakeAddress] -&gt; Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">unless</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[StakeAddress] -&gt; Int
 forall a. HasLength a =&gt; a -&gt; Int
 </span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[StakeAddress]
 </span><a href="#local-6989586621679317171"><span class="hs-identifier hs-var">sAddrs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">[Lovelace] -&gt; Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">==</span></a></span><span> </span><span class="annot"><span class="annottext">[Lovelace] -&gt; Int
 forall a. HasLength a =&gt; a -&gt; Int
 </span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[Lovelace]
 </span><a href="#local-6989586621679317170"><span class="hs-identifier hs-var">rwdAmts</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ExceptT ShelleyGovernanceCmdError IO ()
@@ -215,7 +215,7 @@ forall a. HasLength a =&gt; a -&gt; Int
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-74"></span><span>      </span><span class="annot"><span class="annottext">ShelleyGovernanceCmdError
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
@@ -224,7 +224,7 @@ forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
 -&gt; ShelleyGovernanceCmdError
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Int -&gt; Int -&gt; ShelleyGovernanceCmdError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Int -&gt; Int -&gt; ShelleyGovernanceCmdError
 </span><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdMIRCertificateKeyRewardMistmach"><span class="hs-identifier hs-var">ShelleyGovernanceCmdMIRCertificateKeyRewardMistmach</span></a></span><span>
 </span><span id="line-75"></span><span>               </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317168"><span class="hs-identifier hs-var">oFp</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[StakeAddress] -&gt; Int
@@ -249,9 +249,9 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">StakeAddressesMIR</span></a></span><span> </span><span class="annot"><span class="annottext">([(StakeCredential, Lovelace)] -&gt; MIRTarget)
 -&gt; [(StakeCredential, Lovelace)] -&gt; MIRTarget
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[StakeCredential] -&gt; [Lovelace] -&gt; [(StakeCredential, Lovelace)]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">[StakeCredential] -&gt; [Lovelace] -&gt; [(StakeCredential, Lovelace)]
 forall a b. [a] -&gt; [b] -&gt; [(a, b)]
-</span><span class="hs-identifier hs-var">zip</span></span><span> </span><span class="annot"><span class="annottext">[StakeCredential]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">zip</span></a></span><span> </span><span class="annot"><span class="annottext">[StakeCredential]
 </span><a href="#local-6989586621679317165"><span class="hs-identifier hs-var">sCreds</span></a></span><span> </span><span class="annot"><span class="annottext">[Lovelace]
 </span><a href="#local-6989586621679317170"><span class="hs-identifier hs-var">rwdAmts</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-79"></span><span>
@@ -271,7 +271,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
 </span><span id="line-82"></span><span>      </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
@@ -279,7 +279,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; Certificate
 -&gt; IO (Either (FileError ()) ())
@@ -290,7 +290,7 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317168"><span class="hs-identifier hs-var">oFp</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
 </span><a href="#local-6989586621679317157"><span class="hs-identifier hs-var">mirCertDesc</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Certificate
 </span><a href="#local-6989586621679317162"><span class="hs-identifier hs-var">mirCert</span></a></span><span>
 </span><span id="line-83"></span><span>  </span><span class="hs-keyword">where</span><span>
@@ -313,7 +313,7 @@ forall a. a -&gt; Maybe a
 </span><span id="line-93"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Lovelace</span></a></span><span>
 </span><span id="line-94"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
 </span><span id="line-95"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Types.html#TransferDirection"><span class="hs-identifier hs-type">TransferDirection</span></a></span><span>
-</span><span id="line-96"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-96"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span id="runGovernanceMIRCertificateTransfer"><span class="annot"><span class="annottext">runGovernanceMIRCertificateTransfer :: Lovelace
 -&gt; OutputFile
 -&gt; TransferDirection
@@ -329,38 +329,38 @@ forall a. a -&gt; Maybe a
 </span><a href="Cardano.CLI.Types.html#TransferToReserves"><span class="hs-identifier hs-var">TransferToReserves</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-100"></span><span>                   </span><span class="annot"><span class="annottext">Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="annot"><span class="annottext">(Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
 -&gt; (MIRTarget -&gt; Certificate)
 -&gt; MIRTarget
 -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget -&gt; Certificate
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget -&gt; Certificate
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">makeMIRCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">MIRPot
 </span><span class="hs-identifier hs-var">Shelley.TreasuryMIR</span></span><span> </span><span class="annot"><span class="annottext">(MIRTarget -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
 -&gt; MIRTarget -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">SendToReservesMIR</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679317153"><span class="hs-identifier hs-var">ll</span></a></span><span>
 </span><span id="line-101"></span><span>                 </span><span class="annot"><span class="annottext">TransferDirection
 </span><a href="Cardano.CLI.Types.html#TransferToTreasury"><span class="hs-identifier hs-var">TransferToTreasury</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-102"></span><span>                   </span><span class="annot"><span class="annottext">Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="annot"><span class="annottext">(Certificate -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
 -&gt; (MIRTarget -&gt; Certificate)
 -&gt; MIRTarget
 -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget -&gt; Certificate
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget -&gt; Certificate
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">makeMIRCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">MIRPot
 </span><span class="hs-identifier hs-var">Shelley.ReservesMIR</span></span><span> </span><span class="annot"><span class="annottext">(MIRTarget -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate)
 -&gt; MIRTarget -&gt; ExceptT ShelleyGovernanceCmdError IO Certificate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">SendToTreasuryMIR</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679317153"><span class="hs-identifier hs-var">ll</span></a></span><span>
 </span><span id="line-103"></span><span>
@@ -380,7 +380,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
 </span><span id="line-106"></span><span>    </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
@@ -388,7 +388,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; Certificate
 -&gt; IO (Either (FileError ()) ())
@@ -399,10 +399,10 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317152"><span class="hs-identifier hs-var">oFp</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr)
 -&gt; TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TransferDirection -&gt; TextEnvelopeDescr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TransferDirection -&gt; TextEnvelopeDescr
 </span><a href="#local-6989586621679317143"><span class="hs-identifier hs-var">mirCertDesc</span></a></span><span> </span><span class="annot"><span class="annottext">TransferDirection
 </span><a href="#local-6989586621679317151"><span class="hs-identifier hs-var">direction</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Certificate
 </span><a href="#local-6989586621679317150"><span class="hs-identifier hs-var">mirCert</span></a></span><span>
@@ -422,7 +422,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-115"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyOrHashOrFile"><span class="hs-identifier hs-type">VerificationKeyOrHashOrFile</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">GenesisDelegateKey</span></a></span><span>
 </span><span id="line-116"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyOrHashOrFile"><span class="hs-identifier hs-type">VerificationKeyOrHashOrFile</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">VrfKey</span></a></span><span>
 </span><span id="line-117"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
-</span><span id="line-118"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-118"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-119"></span><span id="runGovernanceGenesisKeyDelegationCertificate"><span class="annot"><span class="annottext">runGovernanceGenesisKeyDelegationCertificate :: VerificationKeyOrHashOrFile GenesisKey
 -&gt; VerificationKeyOrHashOrFile GenesisDelegateKey
 -&gt; VerificationKeyOrHashOrFile VrfKey
@@ -454,7 +454,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash GenesisKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash GenesisKey))
 -&gt; ExceptT (FileError InputDecodeError) IO (Hash GenesisKey)
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
@@ -463,7 +463,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError InputDecodeError) (Hash GenesisKey))
 -&gt; ExceptT ShelleyGovernanceCmdError IO (Hash GenesisKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AsType GenesisKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AsType GenesisKey
 -&gt; VerificationKeyOrHashOrFile GenesisKey
 -&gt; IO (Either (FileError InputDecodeError) (Hash GenesisKey))
 forall keyrole.
@@ -496,7 +496,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash GenesisDelegateKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash GenesisDelegateKey))
 -&gt; ExceptT
      (FileError InputDecodeError) IO (Hash GenesisDelegateKey)
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
@@ -507,7 +507,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
      (Either (FileError InputDecodeError) (Hash GenesisDelegateKey))
 -&gt; ExceptT ShelleyGovernanceCmdError IO (Hash GenesisDelegateKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AsType GenesisDelegateKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AsType GenesisDelegateKey
 -&gt; VerificationKeyOrHashOrFile GenesisDelegateKey
 -&gt; IO
      (Either (FileError InputDecodeError) (Hash GenesisDelegateKey))
@@ -537,7 +537,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash VrfKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (Hash VrfKey))
 -&gt; ExceptT (FileError InputDecodeError) IO (Hash VrfKey)
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
@@ -546,7 +546,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError InputDecodeError) (Hash VrfKey))
 -&gt; ExceptT ShelleyGovernanceCmdError IO (Hash VrfKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AsType VrfKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AsType VrfKey
 -&gt; VerificationKeyOrHashOrFile VrfKey
 -&gt; IO (Either (FileError InputDecodeError) (Hash VrfKey))
 forall keyrole.
@@ -573,7 +573,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
 </span><span id="line-134"></span><span>      </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
@@ -581,7 +581,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; Certificate
 -&gt; IO (Either (FileError ()) ())
@@ -592,12 +592,12 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317139"><span class="hs-identifier hs-var">oFp</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
 </span><a href="#local-6989586621679317132"><span class="hs-identifier hs-var">genKeyDelegCertDesc</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-135"></span><span>      </span><span class="annot"><span class="annottext">(Certificate -&gt; IO (Either (FileError ()) ()))
 -&gt; Certificate -&gt; IO (Either (FileError ()) ())
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Hash GenesisKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Hash GenesisKey
 -&gt; Hash GenesisDelegateKey -&gt; Hash VrfKey -&gt; Certificate
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">makeGenesisKeyDelegationCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">Hash GenesisKey
 </span><a href="#local-6989586621679317138"><span class="hs-identifier hs-var">genesisVkHash</span></a></span><span> </span><span class="annot"><span class="annottext">Hash GenesisDelegateKey
@@ -615,7 +615,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-143"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Cardano.CLI.Types.html#VerificationKeyFile"><span class="hs-identifier hs-type">VerificationKeyFile</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-144"></span><span>  </span><span class="hs-comment">-- ^ Genesis verification keys</span><span>
 </span><span id="line-145"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ProtocolParametersUpdate</span></a></span><span>
-</span><span id="line-146"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-146"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Governance.html#ShelleyGovernanceCmdError"><span class="hs-identifier hs-type">ShelleyGovernanceCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-147"></span><span id="runGovernanceUpdateProposal"><span class="annot"><span class="annottext">runGovernanceUpdateProposal :: OutputFile
 -&gt; EpochNo
 -&gt; [VerificationKeyFile]
@@ -630,17 +630,17 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
-</span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ProtocolParametersUpdate
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">when</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ProtocolParametersUpdate
 </span><a href="#local-6989586621679317127"><span class="hs-identifier hs-var">upPprams</span></a></span><span> </span><span class="annot"><span class="annottext">ProtocolParametersUpdate -&gt; ProtocolParametersUpdate -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">ProtocolParametersUpdate
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">==</span></a></span><span> </span><span class="annot"><span class="annottext">ProtocolParametersUpdate
 forall a. Monoid a =&gt; a
-</span><span class="hs-identifier hs-var">mempty</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ExceptT ShelleyGovernanceCmdError IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">mempty</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ExceptT ShelleyGovernanceCmdError IO ()
  -&gt; ExceptT ShelleyGovernanceCmdError IO ())
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShelleyGovernanceCmdError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ShelleyGovernanceCmdError
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">left</span></span><span> </span><span class="annot"><span class="annottext">ShelleyGovernanceCmdError
@@ -652,7 +652,7 @@ forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
 forall (t :: * -&gt; *) (m :: * -&gt; *) a.
 (Traversable t, Monad m) =&gt;
 t (m a) -&gt; m (t a)
-</span><span class="hs-identifier hs-var">sequence</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">sequence</span></a></span><span>
 </span><span id="line-150"></span><span>                  </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">(FileError TextEnvelopeError -&gt; ShelleyGovernanceCmdError)
 -&gt; ExceptT
      (FileError TextEnvelopeError) IO (VerificationKey GenesisKey)
@@ -677,7 +677,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO
   (Either (FileError TextEnvelopeError) (VerificationKey GenesisKey))
 -&gt; ExceptT
      (FileError TextEnvelopeError) IO (VerificationKey GenesisKey)
@@ -691,7 +691,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; ExceptT
      ShelleyGovernanceCmdError IO (VerificationKey GenesisKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-151"></span><span>                      </span><span class="annot"><span class="annottext">AsType (VerificationKey GenesisKey)
 -&gt; String
 -&gt; IO
@@ -741,14 +741,14 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span> </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
  -&gt; ExceptT ShelleyGovernanceCmdError IO ())
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyGovernanceCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-158"></span><span>      </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; UpdateProposal
@@ -760,6 +760,6 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317130"><span class="hs-identifier hs-var">upFile</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe TextEnvelopeDescr
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">UpdateProposal
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="annot"><span class="annottext">UpdateProposal
 </span><a href="#local-6989586621679317117"><span class="hs-identifier hs-var">upProp</span></a></span><span>
 </span><span id="line-159"></span></pre></body></html>

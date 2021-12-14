@@ -33,7 +33,7 @@
 </span><span id="line-33"></span><span>
 </span><span id="line-34"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.CLI.Helpers.html"><span class="hs-identifier">Cardano.CLI.Helpers</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier">textShow</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-35"></span><span>
-</span><span id="line-36"></span><span id="local-6989586621679319011"><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyBS"><span class="hs-identifier hs-type">friendlyTxBodyBS</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">CardanoEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319011"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Api.TxBody</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319011"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span></span><span>
+</span><span id="line-36"></span><span id="local-6989586621679319011"><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyBS"><span class="hs-identifier hs-type">friendlyTxBodyBS</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">CardanoEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319011"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Api.TxBody</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319011"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span></span><span>
 </span><span id="line-37"></span><span id="friendlyTxBodyBS"><span class="annot"><span class="annottext">friendlyTxBodyBS :: CardanoEra era -&gt; TxBody era -&gt; ByteString
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyBS"><span class="hs-identifier hs-var hs-var">friendlyTxBodyBS</span></a></span></span><span> </span><span id="local-6989586621679319010"><span class="annot"><span class="annottext">CardanoEra era
 </span><a href="#local-6989586621679319010"><span class="hs-identifier hs-var">era</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -42,13 +42,13 @@ forall a. ToJSON a =&gt; Config -&gt; a -&gt; ByteString
 </span><span class="hs-identifier hs-var">encodePretty</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Text -&gt; Text -&gt; Ordering) -&gt; Config -&gt; Config
 </span><span class="hs-identifier hs-var">setConfCompare</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Ordering
 forall a. Ord a =&gt; a -&gt; a -&gt; Ordering
-</span><span class="hs-identifier hs-var">compare</span></span><span> </span><span class="annot"><span class="annottext">Config
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var">compare</span></a></span><span> </span><span class="annot"><span class="annottext">Config
 </span><span class="hs-identifier hs-var">defConfig</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Value -&gt; ByteString)
 -&gt; (TxBody era -&gt; Value) -&gt; TxBody era -&gt; ByteString
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">CardanoEra era -&gt; TxBody era -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">CardanoEra era -&gt; TxBody era -&gt; Value
 forall era. CardanoEra era -&gt; TxBody era -&gt; Value
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBody"><span class="hs-identifier hs-var">friendlyTxBody</span></a></span><span> </span><span class="annot"><span class="annottext">CardanoEra era
 </span><a href="#local-6989586621679319010"><span class="hs-identifier hs-var">era</span></a></span><span>
@@ -61,7 +61,7 @@ forall era. CardanoEra era -&gt; TxBody era -&gt; Value
 </span><span id="line-42"></span><span>  </span><span class="annot"><span class="annottext">Object -&gt; Value
 </span><span class="hs-identifier hs-var">Object</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Value) -&gt; Object -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-43"></span><span>    </span><span class="annot"><span class="annottext">[(Text, Value)] -&gt; Object
 forall k v. (Eq k, Hashable k) =&gt; [(k, v)] -&gt; HashMap k v
 </span><span class="hs-identifier hs-var">HashMap.fromList</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
@@ -73,7 +73,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 </span><a href="#local-6989586621679319006"><span class="hs-identifier hs-var">era</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">Object -&gt; Object -&gt; Object
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span>
 </span><span id="line-45"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TxBody era
 </span><a href="#local-6989586621679319005"><span class="hs-identifier hs-var">txbody</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-46"></span><span>      </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronTxBody</span></a></span><span> </span><span id="local-6989586621679319002"><span class="annot"><span class="annottext">Annotated Tx ByteString
@@ -92,7 +92,7 @@ forall a. Show a =&gt; Maybe a -&gt; Object -&gt; Object
 Maybe (Metadata (ShelleyEra StandardCrypto))
 </span><a href="#local-6989586621679318998"><span class="hs-identifier hs-var">aux</span></a></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto) -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto) -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyShelley"><span class="hs-identifier hs-var">friendlyTxBodyShelley</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
 TxBody (ShelleyEra StandardCrypto)
 </span><a href="#local-6989586621679319000"><span class="hs-identifier hs-var">body</span></a></span><span>
@@ -109,7 +109,7 @@ forall a. Show a =&gt; Maybe a -&gt; Object -&gt; Object
 Maybe (AuxiliaryData (ShelleyLedgerEra era))
 </span><a href="#local-6989586621679318993"><span class="hs-identifier hs-var">aux</span></a></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyAllegra"><span class="hs-identifier hs-var">friendlyTxBodyAllegra</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
 TxBody (ShelleyMAEra 'Allegra StandardCrypto)
 </span><a href="#local-6989586621679318995"><span class="hs-identifier hs-var">body</span></a></span><span>
@@ -126,7 +126,7 @@ forall a. Show a =&gt; Maybe a -&gt; Object -&gt; Object
 Maybe (AuxiliaryData (ShelleyLedgerEra era))
 </span><a href="#local-6989586621679318989"><span class="hs-identifier hs-var">aux</span></a></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Mary StandardCrypto) -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Mary StandardCrypto) -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyMary"><span class="hs-identifier hs-var">friendlyTxBodyMary</span></a></span><span> </span><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
 TxBody (ShelleyMAEra 'Mary StandardCrypto)
 </span><a href="#local-6989586621679318991"><span class="hs-identifier hs-var">body</span></a></span><span>
@@ -141,7 +141,7 @@ forall a. HasCallStack =&gt; Text -&gt; a
 </span><span class="hs-identifier hs-var">panic</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;friendlyTxBody: Alonzo not implemented yet&quot;</span></span><span> </span><span class="hs-comment">-- TODO alonzo</span><span>
 </span><span id="line-55"></span><span>
-</span><span id="line-56"></span><span id="local-6989586621679319096"><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#addAuxData"><span class="hs-identifier hs-type">addAuxData</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621679319096"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679319096"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span></span><span>
+</span><span id="line-56"></span><span id="local-6989586621679319096"><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#addAuxData"><span class="hs-identifier hs-type">addAuxData</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Show</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319096"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679319096"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span></span><span>
 </span><span id="line-57"></span><span id="addAuxData"><span class="annot"><span class="annottext">addAuxData :: Maybe a -&gt; Object -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#addAuxData"><span class="hs-identifier hs-var hs-var">addAuxData</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
 forall k v.
@@ -153,20 +153,20 @@ k -&gt; v -&gt; HashMap k v -&gt; HashMap k v
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; (a -&gt; Value) -&gt; Maybe a -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; (a -&gt; Value) -&gt; Maybe a -&gt; Value
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
-</span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="annot"><span class="annottext">Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">maybe</span></a></span><span> </span><span class="annot"><span class="annottext">Value
 </span><span class="hs-identifier hs-var">Null</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Value) -&gt; (a -&gt; Text) -&gt; a -&gt; Value
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-58"></span><span>
-</span><span id="line-59"></span><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyByron"><span class="hs-identifier hs-type">friendlyTxBodyByron</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Annotated</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.Tx</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span>
+</span><span id="line-59"></span><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyByron"><span class="hs-identifier hs-type">friendlyTxBodyByron</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Annotated</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.Tx</span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span>
 </span><span id="line-60"></span><span id="friendlyTxBodyByron"><span class="annot"><span class="annottext">friendlyTxBodyByron :: Annotated Tx ByteString -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxBodyByron"><span class="hs-identifier hs-var hs-var">friendlyTxBodyByron</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HasCallStack =&gt; Value -&gt; Object
 Value -&gt; Object
@@ -177,7 +177,7 @@ Value -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Annotated Tx ByteString -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Annotated Tx ByteString -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span>
 </span><span id="line-61"></span><span>
@@ -210,7 +210,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">(TxOut (ShelleyEra StandardCrypto) -&gt; Value)
 -&gt; StrictSeq (TxOut (ShelleyEra StandardCrypto)) -&gt; StrictSeq Value
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyEra StandardCrypto) -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyEra StandardCrypto) -&gt; Value
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxOutShelley"><span class="hs-identifier hs-var">friendlyTxOutShelley</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto)
 -&gt; (Era (ShelleyEra StandardCrypto),
     FromCBOR (PParamsDelta (ShelleyEra StandardCrypto)),
@@ -229,7 +229,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">(DCert StandardCrypto -&gt; Text)
 -&gt; StrictSeq (DCert StandardCrypto) -&gt; StrictSeq Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto)
 -&gt; (Era (ShelleyEra StandardCrypto),
@@ -297,7 +297,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (Update (ShelleyEra StandardCrypto))
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyEra StandardCrypto) -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyEra StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto)
 -&gt; (Era (ShelleyEra StandardCrypto),
@@ -318,7 +318,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (AuxiliaryDataHash StandardCrypto)
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TxBody (ShelleyEra StandardCrypto)
 -&gt; (Era (ShelleyEra StandardCrypto),
@@ -377,7 +377,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto))
 -&gt; StrictSeq Value
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Value
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxOutAllegra"><span class="hs-identifier hs-var">friendlyTxOutAllegra</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto))
 </span><a href="#local-6989586621679318969"><span class="hs-identifier hs-var">outputs</span></a></span><span>
 </span><span id="line-93"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
@@ -386,7 +386,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">(DCert StandardCrypto -&gt; Text)
 -&gt; StrictSeq (DCert StandardCrypto) -&gt; StrictSeq Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (DCert StandardCrypto)
 StrictSeq (DCert (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
@@ -416,7 +416,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (Update (ShelleyMAEra 'Allegra StandardCrypto))
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Allegra StandardCrypto))
 </span><a href="#local-6989586621679318963"><span class="hs-identifier hs-var">update</span></a></span><span>
@@ -427,7 +427,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (AuxiliaryDataHash StandardCrypto)
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (AuxiliaryDataHash StandardCrypto)
 StrictMaybe
@@ -475,7 +475,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto))
 -&gt; StrictSeq Value
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyMAEra 'Mary StandardCrypto) -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">TxOut (ShelleyMAEra 'Mary StandardCrypto) -&gt; Value
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyTxOutMary"><span class="hs-identifier hs-var">friendlyTxOutMary</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto))
 </span><a href="#local-6989586621679318957"><span class="hs-identifier hs-var">outputs</span></a></span><span>
 </span><span id="line-117"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
@@ -484,7 +484,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">(DCert StandardCrypto -&gt; Text)
 -&gt; StrictSeq (DCert StandardCrypto) -&gt; StrictSeq Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">DCert StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (DCert StandardCrypto)
 StrictSeq (DCert (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
@@ -513,7 +513,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (Update (ShelleyMAEra 'Mary StandardCrypto))
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Mary StandardCrypto) -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Mary StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Mary StandardCrypto))
 </span><a href="#local-6989586621679318952"><span class="hs-identifier hs-var">update</span></a></span><span>
@@ -524,7 +524,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 -&gt; StrictMaybe (AuxiliaryDataHash StandardCrypto)
 -&gt; StrictMaybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">AuxiliaryDataHash StandardCrypto -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (AuxiliaryDataHash StandardCrypto)
 StrictMaybe
@@ -570,7 +570,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span id="line-136"></span><span>  </span><span class="annot"><span class="annottext">Object -&gt; Value
 </span><span class="hs-identifier hs-var">Object</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Value) -&gt; Object -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
 forall k v.
 (Eq k, Hashable k) =&gt;
 k -&gt; v -&gt; HashMap k v -&gt; HashMap k v
@@ -581,7 +581,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 Coin
 </span><a href="#local-6989586621679318942"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyAddress"><span class="hs-identifier hs-var">friendlyAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto
 Addr (Crypto (ShelleyEra StandardCrypto))
 </span><a href="#local-6989586621679318943"><span class="hs-identifier hs-var">addr</span></a></span><span>
@@ -594,7 +594,7 @@ Addr (Crypto (ShelleyEra StandardCrypto))
 </span><span id="line-140"></span><span>  </span><span class="annot"><span class="annottext">Object -&gt; Value
 </span><span class="hs-identifier hs-var">Object</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Value) -&gt; Object -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
 forall k v.
 (Eq k, Hashable k) =&gt;
 k -&gt; v -&gt; HashMap k v -&gt; HashMap k v
@@ -605,7 +605,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 Coin
 </span><a href="#local-6989586621679318939"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyAddress"><span class="hs-identifier hs-var">friendlyAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto
 Addr (Crypto (ShelleyMAEra 'Allegra StandardCrypto))
 </span><a href="#local-6989586621679318940"><span class="hs-identifier hs-var">addr</span></a></span><span>
@@ -618,7 +618,7 @@ Addr (Crypto (ShelleyMAEra 'Allegra StandardCrypto))
 </span><span id="line-144"></span><span>  </span><span class="annot"><span class="annottext">Object -&gt; Value
 </span><span class="hs-identifier hs-var">Object</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Value) -&gt; Object -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Object -&gt; Object
 forall k v.
 (Eq k, Hashable k) =&gt;
 k -&gt; v -&gt; HashMap k v -&gt; HashMap k v
@@ -629,7 +629,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 Value StandardCrypto
 </span><a href="#local-6989586621679318937"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Object -&gt; Object) -&gt; Object -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#friendlyAddress"><span class="hs-identifier hs-var">friendlyAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto
 Addr (Crypto (ShelleyMAEra 'Mary StandardCrypto))
 </span><a href="#local-6989586621679318938"><span class="hs-identifier hs-var">addr</span></a></span><span>
@@ -642,7 +642,7 @@ Addr (Crypto (ShelleyMAEra 'Mary StandardCrypto))
 forall k v. (Eq k, Hashable k) =&gt; [(k, v)] -&gt; HashMap k v
 </span><span class="hs-identifier hs-var">HashMap.fromList</span></span><span> </span><span class="annot"><span class="annottext">([(Text, Value)] -&gt; Object) -&gt; [(Text, Value)] -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-149"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto
 </span><a href="#local-6989586621679318936"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-150"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Addr</span></span><span> </span><span id="local-6989586621679318934"><span class="annot"><span class="annottext">Network
@@ -713,7 +713,7 @@ forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">serialiseAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679318926"><span class="hs-identifier hs-var">a</span></a></span><span>
 </span><span id="line-166"></span><span>
-</span><span id="line-167"></span><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#assertObject"><span class="hs-identifier hs-type">assertObject</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HasCallStack</span></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span>
+</span><span id="line-167"></span><span class="annot"><a href="Cardano.CLI.Run.Friendly.html#assertObject"><span class="hs-identifier hs-type">assertObject</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">HasCallStack</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span>
 </span><span id="line-168"></span><span id="assertObject"><span class="annot"><span class="annottext">assertObject :: Value -&gt; Object
 </span><a href="Cardano.CLI.Run.Friendly.html#assertObject"><span class="hs-identifier hs-var hs-var">assertObject</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
 </span><span id="line-169"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span> </span><span id="local-6989586621679318925"><span class="annot"><span class="annottext">Object
@@ -724,10 +724,10 @@ forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 forall a. HasCallStack =&gt; Text -&gt; a
 </span><span class="hs-identifier hs-var">panic</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Object) -&gt; Text -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;expected JSON Object, but got &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679318923"><span class="hs-identifier hs-var">typ</span></a></span><span>
 </span><span id="line-171"></span><span>    </span><span class="hs-keyword">where</span><span>
 </span><span id="line-172"></span><span>      </span><span id="local-6989586621679318923"><span class="annot"><span class="annottext">typ :: Text

@@ -63,15 +63,15 @@
 </span><span id="line-63"></span><span>           </span><span class="annot"><a href="Cardano.Api.Address.html#AsAddress"><span class="hs-identifier">AsAddress</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AsAddressAny"><span class="hs-identifier">AsAddressAny</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AsAddressInEra"><span class="hs-identifier">AsAddressInEra</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AsStakeAddress"><span class="hs-identifier">AsStakeAddress</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-64"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-65"></span><span>
-</span><span id="line-66"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-66"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-67"></span><span>
 </span><span id="line-68"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-69"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Aeson</span></span><span>
 </span><span id="line-70"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Base58</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Base58</span></span><span>
-</span><span id="line-71"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-72"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text.Encoding</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-71"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Text</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-72"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text.Encoding</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-73"></span><span>
-</span><span id="line-74"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Applicative</span></span><span>
+</span><span id="line-74"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Control.Applicative</span></a></span><span>
 </span><span id="line-75"></span><span>
 </span><span id="line-76"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Api.Eras.html"><span class="hs-identifier">Cardano.Api.Eras</span></a></span><span>
 </span><span id="line-77"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Api.Hash.html"><span class="hs-identifier">Cardano.Api.Hash</span></a></span><span>
@@ -101,9 +101,9 @@
 </span><span id="line-101"></span><span class="hs-comment">--</span><span>
 </span><span id="line-102"></span><span class="hs-keyword">class</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span id="SerialiseAddress"><span class="annot"><a href="Cardano.Api.Address.html#SerialiseAddress"><span class="hs-identifier hs-var">SerialiseAddress</span></a></span></span><span> </span><span id="local-6989586621679437998"><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-103"></span><span>
-</span><span id="line-104"></span><span>    </span><span id="serialiseAddress"><span class="annot"><a href="Cardano.Api.Address.html#serialiseAddress"><span class="hs-identifier hs-type">serialiseAddress</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-104"></span><span>    </span><span id="serialiseAddress"><span class="annot"><a href="Cardano.Api.Address.html#serialiseAddress"><span class="hs-identifier hs-type">serialiseAddress</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-105"></span><span>
-</span><span id="line-106"></span><span>    </span><span id="deserialiseAddress"><span class="annot"><a href="Cardano.Api.Address.html#deserialiseAddress"><span class="hs-identifier hs-type">deserialiseAddress</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span>
+</span><span id="line-106"></span><span>    </span><span id="deserialiseAddress"><span class="annot"><a href="Cardano.Api.Address.html#deserialiseAddress"><span class="hs-identifier hs-type">deserialiseAddress</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437998"><span class="hs-identifier hs-type">addr</span></a></span><span>
 </span><span id="line-107"></span><span>    </span><span class="hs-comment">-- TODO: consider adding data AddressDecodeError</span><span>
 </span><span id="line-108"></span><span>
 </span><span id="line-109"></span><span>
@@ -174,9 +174,9 @@
 </span><span id="line-168"></span><span>       </span><span class="hs-comment">-- the era, but in fact this is a phantom type parameter and they are</span><span>
 </span><span id="line-169"></span><span>       </span><span class="hs-comment">-- the same for all eras. See 'toShelleyAddr' below.</span><span>
 </span><span id="line-170"></span><span>
-</span><span id="line-171"></span><span id="local-6989586621679437853"><span id="local-6989586621679437855"><span id="local-6989586621679437857"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437857"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span><span>
-</span><span id="line-172"></span><span id="local-6989586621679437836"><span id="local-6989586621679437838"><span id="local-6989586621679437840"><span id="local-6989586621679437842"><span id="local-6989586621679437844"><span id="local-6989586621679437846"><span id="local-6989586621679437848"><span id="local-6989586621679437851"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span>  </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437851"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span>
-</span><span id="line-173"></span><span id="local-6989586621679437828"><span id="local-6989586621679437830"><span id="local-6989586621679437832"><span id="local-6989586621679437834"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437834"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span></span><span>
+</span><span id="line-171"></span><span id="local-6989586621679437853"><span id="local-6989586621679437855"><span id="local-6989586621679437857"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Eq</span></a></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437857"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span><span>
+</span><span id="line-172"></span><span id="local-6989586621679437836"><span id="local-6989586621679437838"><span id="local-6989586621679437840"><span id="local-6989586621679437842"><span id="local-6989586621679437844"><span id="local-6989586621679437846"><span id="local-6989586621679437848"><span id="local-6989586621679437851"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Ord</span></a></span><span>  </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437851"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span>
+</span><span id="line-173"></span><span id="local-6989586621679437828"><span id="local-6989586621679437830"><span id="local-6989586621679437832"><span id="local-6989586621679437834"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Show</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437834"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span></span></span></span></span><span>
 </span><span id="line-174"></span><span>
 </span><span id="line-175"></span><span>
 </span><span id="line-176"></span><span id="local-6989586621679437826"><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437826"><span class="hs-identifier hs-type">addrtype</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437826"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
@@ -189,7 +189,7 @@ forall addrtype. AsType addrtype -&gt; AsType (Address addrtype)
 forall t. HasTypeProxy t =&gt; Proxy t -&gt; AsType t
 </span><a href="Cardano.Api.HasTypeProxy.html#proxyToAsType"><span class="hs-identifier hs-var">proxyToAsType</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy addrtype
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Proxy</span></span><span> </span><span class="annot"><a href="#local-6989586621679437826"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Proxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437826"><span class="hs-identifier hs-type">addrtype</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span></span><span>
 </span><span id="line-179"></span><span>
 </span><span id="line-180"></span><span class="hs-keyword">pattern</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AsByronAddress"><span class="hs-identifier hs-type">AsByronAddress</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#Address"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ByronAddr"><span class="hs-identifier hs-type">ByronAddr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-181"></span><span class="hs-keyword">pattern</span><span> </span><span id="%24bAsByronAddress"><span id="%24mAsByronAddress"><span id="AsByronAddress"><span class="annot"><span class="annottext">$bAsByronAddress :: AsType (Address ByronAddr)
@@ -215,18 +215,18 @@ forall crypto. Addr crypto -&gt; ByteString
 </span><span id="line-191"></span><span>      </span><span class="annot"><span class="annottext">(Addr Any -&gt; ByteString)
 -&gt; (Address -&gt; Addr Any) -&gt; Address -&gt; ByteString
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">BootstrapAddress Any -&gt; Addr Any
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">BootstrapAddress Any -&gt; Addr Any
 forall crypto. BootstrapAddress crypto -&gt; Addr crypto
 </span><span class="hs-identifier hs-var">Shelley.AddrBootstrap</span></span><span>
 </span><span id="line-192"></span><span>      </span><span class="annot"><span class="annottext">(BootstrapAddress Any -&gt; Addr Any)
 -&gt; (Address -&gt; BootstrapAddress Any) -&gt; Address -&gt; Addr Any
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Address -&gt; BootstrapAddress Any
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Address -&gt; BootstrapAddress Any
 forall crypto. Address -&gt; BootstrapAddress crypto
 </span><span class="hs-identifier hs-var">Shelley.BootstrapAddress</span></span><span>
 </span><span id="line-193"></span><span>      </span><span class="annot"><span class="annottext">(Address -&gt; ByteString) -&gt; Address -&gt; ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Address
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Address
 </span><a href="#local-6989586621679437812"><span class="hs-identifier hs-var">addr</span></a></span><span>
 </span><span id="line-194"></span><span>
 </span><span id="line-195"></span><span>    </span><span id="local-6989586621679437807"><span class="annot"><span class="annottext">deserialiseFromRawBytes :: AsType (Address ByronAddr)
@@ -236,19 +236,19 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-196"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (Addr StandardCrypto)
 forall crypto. Crypto crypto =&gt; ByteString -&gt; Maybe (Addr crypto)
 </span><span class="hs-identifier hs-var">Shelley.deserialiseAddr</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679437805"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679437805"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-197"></span><span>          </span><span class="annot"><span class="annottext">Maybe (Addr StandardCrypto)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ByronAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ByronAddr)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-198"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ByronAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-198"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ByronAddr)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-199"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.BootstrapAddress</span></span><span> </span><span id="local-6989586621679437802"><span class="annot"><span class="annottext">Address
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-199"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.BootstrapAddress</span></span><span> </span><span id="local-6989586621679437802"><span class="annot"><span class="annottext">Address
 </span><a href="#local-6989586621679437802"><span class="hs-identifier hs-var">addr</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-200"></span><span>            </span><span class="annot"><span class="annottext">Address ByronAddr -&gt; Maybe (Address ByronAddr)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address -&gt; Address ByronAddr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address -&gt; Address ByronAddr
 </span><a href="Cardano.Api.Address.html#ByronAddress"><span class="hs-identifier hs-var">ByronAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Address
 </span><a href="#local-6989586621679437802"><span class="hs-identifier hs-var">addr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-201"></span><span>
@@ -281,18 +281,18 @@ forall crypto. Crypto crypto =&gt; ByteString -&gt; Maybe (Addr crypto)
 </span><span class="hs-identifier hs-var">Shelley.deserialiseAddr</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679437793"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-208"></span><span>          </span><span class="annot"><span class="annottext">Maybe (Addr StandardCrypto)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>                       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>                       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-209"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-209"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-210"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span id="local-6989586621679437792"><span class="annot"><span class="annottext">Network
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-210"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span id="local-6989586621679437792"><span class="annot"><span class="annottext">Network
 </span><a href="#local-6989586621679437792"><span class="hs-identifier hs-var">nw</span></a></span></span><span> </span><span id="local-6989586621679437791"><span class="annot"><span class="annottext">PaymentCredential StandardCrypto
 </span><a href="#local-6989586621679437791"><span class="hs-identifier hs-var">pc</span></a></span></span><span> </span><span id="local-6989586621679437790"><span class="annot"><span class="annottext">StakeReference StandardCrypto
 </span><a href="#local-6989586621679437790"><span class="hs-identifier hs-var">scr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; Maybe (Address ShelleyAddr)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Network
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Network
 -&gt; PaymentCredential StandardCrypto
 -&gt; StakeReference StandardCrypto
 -&gt; Address ShelleyAddr
@@ -325,11 +325,11 @@ forall a. a -&gt; Maybe a
 </span><a href="#local-6989586621679437774"><span class="hs-identifier hs-var hs-var hs-var hs-var">serialiseAddress</span></a></span></span><span> </span><span id="local-6989586621679437773"><span class="annot"><span class="annottext">addr :: Address ByronAddr
 </span><a href="#local-6989586621679437773"><span class="hs-identifier hs-var">addr</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Cardano.Api.Address.html#ByronAddress"><span class="hs-identifier hs-type">ByronAddress</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-221"></span><span>         </span><span class="annot"><span class="annottext">ByteString -&gt; Text
-</span><span class="hs-identifier hs-var">Text.decodeLatin1</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.decodeLatin1</span></a></span><span>
 </span><span id="line-222"></span><span>       </span><span class="annot"><span class="annottext">(ByteString -&gt; Text)
 -&gt; (Address ByronAddr -&gt; ByteString) -&gt; Address ByronAddr -&gt; Text
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Alphabet -&gt; ByteString -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Alphabet -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">Base58.encodeBase58</span></span><span> </span><span class="annot"><span class="annottext">Alphabet
 </span><span class="hs-identifier hs-var">Base58.bitcoinAlphabet</span></span><span>
 </span><span id="line-223"></span><span>       </span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString)
@@ -337,12 +337,12 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Address ByronAddr
 -&gt; ByteString
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Address ByronAddr -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Address ByronAddr -&gt; ByteString
 forall a. SerialiseAsRawBytes a =&gt; a -&gt; ByteString
 </span><a href="Cardano.Api.SerialiseRaw.html#serialiseToRawBytes"><span class="hs-identifier hs-var">serialiseToRawBytes</span></a></span><span>
 </span><span id="line-224"></span><span>       </span><span class="annot"><span class="annottext">(Address ByronAddr -&gt; Text) -&gt; Address ByronAddr -&gt; Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Address ByronAddr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Address ByronAddr
 </span><a href="#local-6989586621679437773"><span class="hs-identifier hs-var">addr</span></a></span><span>
 </span><span id="line-225"></span><span>
 </span><span id="line-226"></span><span>    </span><span id="local-6989586621679437769"><span class="annot"><span class="annottext">deserialiseAddress :: AsType (Address ByronAddr) -&gt; Text -&gt; Maybe (Address ByronAddr)
@@ -352,7 +352,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679437767"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Alphabet -&gt; ByteString -&gt; Maybe ByteString
 </span><span class="hs-identifier hs-var">Base58.decodeBase58</span></span><span> </span><span class="annot"><span class="annottext">Alphabet
 </span><span class="hs-identifier hs-var">Base58.bitcoinAlphabet</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679437768"><span class="hs-identifier hs-var">txt</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-228"></span><span>      </span><span class="annot"><span class="annottext">AsType (Address ByronAddr)
 -&gt; ByteString -&gt; Maybe (Address ByronAddr)
@@ -382,19 +382,19 @@ forall a. SerialiseAsBech32 a =&gt; a -&gt; Text
 -&gt; Either Bech32DecodeError (Address ShelleyAddr)
 -&gt; Maybe (Address ShelleyAddr)
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
 -&gt; Bech32DecodeError -&gt; Maybe (Address ShelleyAddr)
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (Address ShelleyAddr)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; Maybe (Address ShelleyAddr)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(Either Bech32DecodeError (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(Either Bech32DecodeError (Address ShelleyAddr)
  -&gt; Maybe (Address ShelleyAddr))
 -&gt; Either Bech32DecodeError (Address ShelleyAddr)
 -&gt; Maybe (Address ShelleyAddr)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-236"></span><span>      </span><span class="annot"><span class="annottext">AsType (Address ShelleyAddr)
 -&gt; Text -&gt; Either Bech32DecodeError (Address ShelleyAddr)
 forall a.
@@ -416,7 +416,7 @@ forall addrtype. AsType addrtype -&gt; AsType (Address addrtype)
 </span><span id="line-243"></span><span>    </span><span class="annot"><span class="annottext">Address -&gt; Address ByronAddr
 </span><a href="Cardano.Api.Address.html#ByronAddress"><span class="hs-identifier hs-var">ByronAddress</span></a></span><span> </span><span class="annot"><span class="annottext">(Address -&gt; Address ByronAddr) -&gt; Address -&gt; Address ByronAddr
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-244"></span><span>      </span><span class="annot"><span class="annottext">NetworkMagic -&gt; VerificationKey -&gt; Address
 </span><span class="hs-identifier hs-var">Byron.makeVerKeyAddress</span></span><span>
 </span><span id="line-245"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NetworkId -&gt; NetworkMagic
@@ -474,7 +474,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: AddressAny -&gt; AddressAny -&gt; Bool
 == :: AddressAny -&gt; AddressAny -&gt; Bool
 $c== :: AddressAny -&gt; AddressAny -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437722"><span id="local-6989586621679437724"><span id="local-6989586621679437726"><span id="local-6989586621679437728"><span id="local-6989586621679437730"><span id="local-6989586621679437732"><span id="local-6989586621679437734"><span class="annot"><span class="annottext">Eq AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437722"><span id="local-6989586621679437724"><span id="local-6989586621679437726"><span id="local-6989586621679437728"><span id="local-6989586621679437730"><span id="local-6989586621679437732"><span id="local-6989586621679437734"><span class="annot"><span class="annottext">Eq AddressAny
 Eq AddressAny
 -&gt; (AddressAny -&gt; AddressAny -&gt; Ordering)
 -&gt; (AddressAny -&gt; AddressAny -&gt; Bool)
@@ -512,7 +512,7 @@ $c&lt; :: AddressAny -&gt; AddressAny -&gt; Bool
 compare :: AddressAny -&gt; AddressAny -&gt; Ordering
 $ccompare :: AddressAny -&gt; AddressAny -&gt; Ordering
 $cp1Ord :: Eq AddressAny
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437716"><span id="local-6989586621679437718"><span id="local-6989586621679437720"><span class="annot"><span class="annottext">Int -&gt; AddressAny -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437716"><span id="local-6989586621679437718"><span id="local-6989586621679437720"><span class="annot"><span class="annottext">Int -&gt; AddressAny -&gt; ShowS
 [AddressAny] -&gt; ShowS
 AddressAny -&gt; String
 (Int -&gt; AddressAny -&gt; ShowS)
@@ -527,7 +527,7 @@ show :: AddressAny -&gt; String
 $cshow :: AddressAny -&gt; String
 showsPrec :: Int -&gt; AddressAny -&gt; ShowS
 $cshowsPrec :: Int -&gt; AddressAny -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-273"></span><span>
 </span><span id="line-274"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AddressAny"><span class="hs-identifier hs-type">AddressAny</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-275"></span><span>    </span><span class="hs-keyword">data</span><span> </span><span id="AsType"><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-var">AsType</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AddressAny"><span class="hs-identifier hs-type">AddressAny</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="AsAddressAny"><span class="annot"><a href="Cardano.Api.Address.html#AsAddressAny"><span class="hs-identifier hs-var">AsAddressAny</span></a></span></span><span>
@@ -558,25 +558,25 @@ forall crypto. Crypto crypto =&gt; ByteString -&gt; Maybe (Addr crypto)
 </span><span class="hs-identifier hs-var">Shelley.deserialiseAddr</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679437706"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-284"></span><span>        </span><span class="annot"><span class="annottext">Maybe (Addr StandardCrypto)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe AddressAny
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-285"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.BootstrapAddress</span></span><span> </span><span id="local-6989586621679437705"><span class="annot"><span class="annottext">Address
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-285"></span><span>        </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.AddrBootstrap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.BootstrapAddress</span></span><span> </span><span id="local-6989586621679437705"><span class="annot"><span class="annottext">Address
 </span><a href="#local-6989586621679437705"><span class="hs-identifier hs-var">addr</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-286"></span><span>          </span><span class="annot"><span class="annottext">AddressAny -&gt; Maybe AddressAny
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ByronAddr -&gt; AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ByronAddr -&gt; AddressAny
 </span><a href="Cardano.Api.Address.html#AddressByron"><span class="hs-identifier hs-var">AddressByron</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address -&gt; Address ByronAddr
 </span><a href="Cardano.Api.Address.html#ByronAddress"><span class="hs-identifier hs-var">ByronAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Address
 </span><a href="#local-6989586621679437705"><span class="hs-identifier hs-var">addr</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-287"></span><span>
-</span><span id="line-288"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span id="local-6989586621679437704"><span class="annot"><span class="annottext">Network
+</span><span id="line-288"></span><span>        </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Addr</span></span><span> </span><span id="local-6989586621679437704"><span class="annot"><span class="annottext">Network
 </span><a href="#local-6989586621679437704"><span class="hs-identifier hs-var">nw</span></a></span></span><span> </span><span id="local-6989586621679437703"><span class="annot"><span class="annottext">PaymentCredential StandardCrypto
 </span><a href="#local-6989586621679437703"><span class="hs-identifier hs-var">pc</span></a></span></span><span> </span><span id="local-6989586621679437702"><span class="annot"><span class="annottext">StakeReference StandardCrypto
 </span><a href="#local-6989586621679437702"><span class="hs-identifier hs-var">scr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-289"></span><span>          </span><span class="annot"><span class="annottext">AddressAny -&gt; Maybe AddressAny
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; AddressAny
 </span><a href="Cardano.Api.Address.html#AddressShelley"><span class="hs-identifier hs-var">AddressShelley</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Network
 -&gt; PaymentCredential StandardCrypto
 -&gt; StakeReference StandardCrypto
@@ -607,7 +607,7 @@ forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 </span><a href="Cardano.Api.Address.html#AddressByron"><span class="hs-identifier hs-var">AddressByron</span></a></span><span>   </span><span class="annot"><span class="annottext">(Address ByronAddr -&gt; AddressAny)
 -&gt; Maybe (Address ByronAddr) -&gt; Maybe AddressAny
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">AsType (Address ByronAddr) -&gt; Text -&gt; Maybe (Address ByronAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">AsType (Address ByronAddr) -&gt; Text -&gt; Maybe (Address ByronAddr)
 forall addr.
 SerialiseAddress addr =&gt;
 AsType addr -&gt; Text -&gt; Maybe addr
@@ -618,11 +618,11 @@ forall addrtype. AsType addrtype -&gt; AsType (Address addrtype)
 </span><a href="#local-6989586621679437694"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-297"></span><span>      </span><span class="annot"><span class="annottext">Maybe AddressAny -&gt; Maybe AddressAny -&gt; Maybe AddressAny
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
-</span><span class="hs-operator hs-var">&lt;|&gt;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;|&gt;</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ShelleyAddr -&gt; AddressAny
 </span><a href="Cardano.Api.Address.html#AddressShelley"><span class="hs-identifier hs-var">AddressShelley</span></a></span><span> </span><span class="annot"><span class="annottext">(Address ShelleyAddr -&gt; AddressAny)
 -&gt; Maybe (Address ShelleyAddr) -&gt; Maybe AddressAny
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">AsType (Address ShelleyAddr) -&gt; Text -&gt; Maybe (Address ShelleyAddr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">AsType (Address ShelleyAddr) -&gt; Text -&gt; Maybe (Address ShelleyAddr)
 forall addr.
 SerialiseAddress addr =&gt;
 AsType addr -&gt; Text -&gt; Maybe addr
@@ -653,13 +653,13 @@ forall addrtype. AsType addrtype -&gt; AsType (Address addrtype)
 </span><span class="hs-identifier hs-var">Aeson.String</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Value)
 -&gt; (AddressInEra era -&gt; Text) -&gt; AddressInEra era -&gt; Value
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">AddressInEra era -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">AddressInEra era -&gt; Text
 forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 </span><a href="Cardano.Api.Address.html#serialiseAddress"><span class="hs-identifier hs-var">serialiseAddress</span></a></span></span><span>
 </span><span id="line-316"></span><span>
-</span><span id="line-317"></span><span id="local-6989586621679437676"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679437673"><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437676"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-317"></span><span id="local-6989586621679437676"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679437673"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Eq</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437676"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-318"></span><span>  </span><span id="local-6989586621679437672"><span class="annot"><span class="annottext">== :: AddressInEra era -&gt; AddressInEra era -&gt; Bool
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">(==)</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var hs-var hs-var hs-var">(==)</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
 </span><a href="Cardano.Api.Address.html#ByronAddressInAnyEra"><span class="hs-identifier hs-var">ByronAddressInAnyEra</span></a></span><span> </span><span id="local-6989586621679437670"><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679437670"><span class="hs-identifier hs-var">addr1</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-319"></span><span>       </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
@@ -667,35 +667,35 @@ forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 </span><a href="#local-6989586621679437669"><span class="hs-identifier hs-var">addr2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679437670"><span class="hs-identifier hs-var">addr1</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype -&gt; Address addrtype -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Address addrtype
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">==</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype
 Address addrtype
 </span><a href="#local-6989586621679437669"><span class="hs-identifier hs-var">addr2</span></a></span><span>
 </span><span id="line-320"></span><span>
-</span><span id="line-321"></span><span>  </span><span class="annot"><span class="hs-operator hs-var">(==)</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span id="local-6989586621679437667"><span class="annot"><span class="annottext">Address addrtype
+</span><span id="line-321"></span><span>  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">(==)</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span id="local-6989586621679437667"><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679437667"><span class="hs-identifier hs-var">addr1</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-322"></span><span>       </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span id="local-6989586621679437666"><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679437666"><span class="hs-identifier hs-var">addr2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><a href="#local-6989586621679437667"><span class="hs-identifier hs-var">addr1</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype -&gt; Address addrtype -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Address addrtype
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">==</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype
 Address addrtype
 </span><a href="#local-6989586621679437666"><span class="hs-identifier hs-var">addr2</span></a></span><span>
 </span><span id="line-323"></span><span>
-</span><span id="line-324"></span><span>  </span><span class="annot"><span class="hs-operator hs-var">(==)</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
+</span><span id="line-324"></span><span>  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">(==)</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
 </span><a href="Cardano.Api.Address.html#ByronAddressInAnyEra"><span class="hs-identifier hs-var">ByronAddressInAnyEra</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>
 </span><span id="line-325"></span><span>       </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">False</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var">False</span></a></span><span>
 </span><span id="line-326"></span><span>
-</span><span id="line-327"></span><span>  </span><span class="annot"><span class="hs-operator hs-var">(==)</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">Address addrtype
+</span><span id="line-327"></span><span>  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">(==)</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-type">ShelleyAddressInEra</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>
 </span><span id="line-328"></span><span>       </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><span class="annottext">AddressTypeInEra addrtype era
 </span><a href="Cardano.Api.Address.html#ByronAddressInAnyEra"><span class="hs-identifier hs-var">ByronAddressInAnyEra</span></a></span><span> </span><span class="annot"><span class="annottext">Address addrtype
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">False</span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var">False</span></a></span></span><span>
 </span><span id="line-329"></span><span>
-</span><span id="line-330"></span><span id="local-6989586621679437659"><span id="local-6989586621679437661"><span id="local-6989586621679437663"><span id="local-6989586621679437665"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437665"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span></span></span></span><span>
+</span><span id="line-330"></span><span id="local-6989586621679437659"><span id="local-6989586621679437661"><span id="local-6989586621679437663"><span id="local-6989586621679437665"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Show</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437665"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span></span></span></span><span>
 </span><span id="line-331"></span><span>
 </span><span id="line-332"></span><span class="hs-keyword">data</span><span> </span><span id="AddressTypeInEra"><span class="annot"><a href="Cardano.Api.Address.html#AddressTypeInEra"><span class="hs-identifier hs-var">AddressTypeInEra</span></a></span></span><span> </span><span id="local-6989586621679437658"><span class="annot"><a href="#local-6989586621679437658"><span class="hs-identifier hs-type">addrtype</span></a></span></span><span> </span><span id="local-6989586621679437657"><span class="annot"><a href="#local-6989586621679437657"><span class="hs-identifier hs-type">era</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-333"></span><span>
@@ -704,7 +704,7 @@ Address addrtype
 </span><span id="line-336"></span><span>     </span><span id="local-6989586621679437936"><span id="ShelleyAddressInEra"><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddressInEra"><span class="hs-identifier hs-var">ShelleyAddressInEra</span></a></span></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Eras.html#ShelleyBasedEra"><span class="hs-identifier hs-type">ShelleyBasedEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437936"><span class="hs-identifier hs-type">era</span></a></span><span>
 </span><span id="line-337"></span><span>                          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AddressTypeInEra"><span class="hs-identifier hs-type">AddressTypeInEra</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#ShelleyAddr"><span class="hs-identifier hs-type">ShelleyAddr</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437936"><span class="hs-identifier hs-type">era</span></a></span></span><span>
 </span><span id="line-338"></span><span>
-</span><span id="line-339"></span><span id="local-6989586621679437649"><span id="local-6989586621679437651"><span id="local-6989586621679437653"><span id="local-6989586621679437655"><span id="local-6989586621679437656"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressTypeInEra"><span class="hs-identifier hs-type">AddressTypeInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437656"><span class="hs-identifier hs-type">addrtype</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437655"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span></span></span></span></span><span>
+</span><span id="line-339"></span><span id="local-6989586621679437649"><span id="local-6989586621679437651"><span id="local-6989586621679437653"><span id="local-6989586621679437655"><span id="local-6989586621679437656"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Show</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressTypeInEra"><span class="hs-identifier hs-type">AddressTypeInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437656"><span class="hs-identifier hs-type">addrtype</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437655"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span></span></span></span></span><span>
 </span><span id="line-340"></span><span>
 </span><span id="line-341"></span><span>
 </span><span id="line-342"></span><span id="local-6989586621679437648"><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437648"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437648"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
@@ -717,7 +717,7 @@ forall era. AsType era -&gt; AsType (AddressInEra era)
 forall t. HasTypeProxy t =&gt; Proxy t -&gt; AsType t
 </span><a href="Cardano.Api.HasTypeProxy.html#proxyToAsType"><span class="hs-identifier hs-var">proxyToAsType</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy era
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Proxy</span></span><span> </span><span class="annot"><a href="#local-6989586621679437648"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Proxy</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437648"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span></span><span>
 </span><span id="line-345"></span><span>
 </span><span id="line-346"></span><span id="local-6989586621679437645"><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.Eras.html#IsCardanoEra"><span class="hs-identifier hs-type">IsCardanoEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437645"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#SerialiseAsRawBytes"><span class="hs-identifier hs-type">SerialiseAsRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437645"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-347"></span><span>
@@ -749,7 +749,7 @@ forall era. IsCardanoEra era =&gt; CardanoEra era
 </span><a href="Cardano.Api.Eras.html#cardanoEra"><span class="hs-identifier hs-var">cardanoEra</span></a></span><span> </span><span class="annot"><span class="annottext">(AddressAny -&gt; Maybe (AddressInEra era))
 -&gt; Maybe AddressAny -&gt; Maybe (AddressInEra era)
 forall (m :: * -&gt; *) a b. Monad m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b
-</span><span class="hs-operator hs-var">=&lt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">AsType AddressAny -&gt; ByteString -&gt; Maybe AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">=&lt;&lt;</span></a></span><span> </span><span class="annot"><span class="annottext">AsType AddressAny -&gt; ByteString -&gt; Maybe AddressAny
 forall a.
 SerialiseAsRawBytes a =&gt;
 AsType a -&gt; ByteString -&gt; Maybe a
@@ -786,7 +786,7 @@ forall era. IsCardanoEra era =&gt; CardanoEra era
 </span><a href="Cardano.Api.Eras.html#cardanoEra"><span class="hs-identifier hs-var">cardanoEra</span></a></span><span> </span><span class="annot"><span class="annottext">(AddressAny -&gt; Maybe (AddressInEra era))
 -&gt; Maybe AddressAny -&gt; Maybe (AddressInEra era)
 forall (m :: * -&gt; *) a b. Monad m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b
-</span><span class="hs-operator hs-var">=&lt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">AsType AddressAny -&gt; Text -&gt; Maybe AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">=&lt;&lt;</span></a></span><span> </span><span class="annot"><span class="annottext">AsType AddressAny -&gt; Text -&gt; Maybe AddressAny
 forall addr.
 SerialiseAddress addr =&gt;
 AsType addr -&gt; Text -&gt; Maybe addr
@@ -841,14 +841,14 @@ Address ShelleyAddr -&gt; AddressInEra era
 </span><span id="line-382"></span><span>
 </span><span id="line-383"></span><span id="local-6989586621679437950"><span class="annot"><a href="Cardano.Api.Address.html#anyAddressInEra"><span class="hs-identifier hs-type">anyAddressInEra</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Eras.html#CardanoEra"><span class="hs-identifier hs-type">CardanoEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437950"><span class="hs-identifier hs-type">era</span></a></span><span>
 </span><span id="line-384"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#AddressAny"><span class="hs-identifier hs-type">AddressAny</span></a></span><span>
-</span><span id="line-385"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437950"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span><span>
+</span><span id="line-385"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressInEra"><span class="hs-identifier hs-type">AddressInEra</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679437950"><span class="hs-identifier hs-type">era</span></a></span><span class="hs-special">)</span></span><span>
 </span><span id="line-386"></span><span id="anyAddressInEra"><span class="annot"><span class="annottext">anyAddressInEra :: CardanoEra era -&gt; AddressAny -&gt; Maybe (AddressInEra era)
 </span><a href="Cardano.Api.Address.html#anyAddressInEra"><span class="hs-identifier hs-var hs-var">anyAddressInEra</span></a></span></span><span> </span><span class="annot"><span class="annottext">CardanoEra era
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Address.html#AddressByron"><span class="hs-identifier hs-type">AddressByron</span></a></span><span> </span><span id="local-6989586621679437621"><span class="annot"><span class="annottext">Address ByronAddr
 </span><a href="#local-6989586621679437621"><span class="hs-identifier hs-var">addr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-387"></span><span>    </span><span class="annot"><span class="annottext">AddressInEra era -&gt; Maybe (AddressInEra era)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AddressTypeInEra ByronAddr era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AddressTypeInEra ByronAddr era
 -&gt; Address ByronAddr -&gt; AddressInEra era
 forall addrtype era.
 AddressTypeInEra addrtype era
@@ -868,11 +868,11 @@ forall era. CardanoEra era -&gt; CardanoEraStyle era
 </span><span id="line-391"></span><span>      </span><span class="annot"><span class="annottext">CardanoEraStyle era
 </span><a href="Cardano.Api.Eras.html#LegacyByronEra"><span class="hs-identifier hs-var">LegacyByronEra</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (AddressInEra era)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-392"></span><span>      </span><span class="annot"><a href="Cardano.Api.Eras.html#ShelleyBasedEra"><span class="hs-identifier hs-type">ShelleyBasedEra</span></a></span><span> </span><span id="local-6989586621679437615"><span class="annot"><span class="annottext">ShelleyBasedEra era
 </span><a href="#local-6989586621679437615"><span class="hs-identifier hs-var">era'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">AddressInEra era -&gt; Maybe (AddressInEra era)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AddressTypeInEra ShelleyAddr era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AddressTypeInEra ShelleyAddr era
 -&gt; Address ShelleyAddr -&gt; AddressInEra era
 forall addrtype era.
 AddressTypeInEra addrtype era
@@ -954,7 +954,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakeAddress -&gt; StakeAddress -&gt; Bool
 == :: StakeAddress -&gt; StakeAddress -&gt; Bool
 $c== :: StakeAddress -&gt; StakeAddress -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437585"><span id="local-6989586621679437587"><span id="local-6989586621679437589"><span id="local-6989586621679437591"><span id="local-6989586621679437593"><span id="local-6989586621679437595"><span id="local-6989586621679437597"><span class="annot"><span class="annottext">Eq StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437585"><span id="local-6989586621679437587"><span id="local-6989586621679437589"><span id="local-6989586621679437591"><span id="local-6989586621679437593"><span id="local-6989586621679437595"><span id="local-6989586621679437597"><span class="annot"><span class="annottext">Eq StakeAddress
 Eq StakeAddress
 -&gt; (StakeAddress -&gt; StakeAddress -&gt; Ordering)
 -&gt; (StakeAddress -&gt; StakeAddress -&gt; Bool)
@@ -992,7 +992,7 @@ $c&lt; :: StakeAddress -&gt; StakeAddress -&gt; Bool
 compare :: StakeAddress -&gt; StakeAddress -&gt; Ordering
 $ccompare :: StakeAddress -&gt; StakeAddress -&gt; Ordering
 $cp1Ord :: Eq StakeAddress
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437579"><span id="local-6989586621679437581"><span id="local-6989586621679437583"><span class="annot"><span class="annottext">Int -&gt; StakeAddress -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437579"><span id="local-6989586621679437581"><span id="local-6989586621679437583"><span class="annot"><span class="annottext">Int -&gt; StakeAddress -&gt; ShowS
 [StakeAddress] -&gt; ShowS
 StakeAddress -&gt; String
 (Int -&gt; StakeAddress -&gt; ShowS)
@@ -1007,7 +1007,7 @@ show :: StakeAddress -&gt; String
 $cshow :: StakeAddress -&gt; String
 showsPrec :: Int -&gt; StakeAddress -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakeAddress -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-425"></span><span>
 </span><span id="line-426"></span><span class="hs-keyword">data</span><span> </span><span id="PaymentCredential"><span class="annot"><a href="Cardano.Api.Address.html#PaymentCredential"><span class="hs-identifier hs-var">PaymentCredential</span></a></span></span><span>
 </span><span id="line-427"></span><span>       </span><span class="hs-glyph">=</span><span> </span><span id="PaymentCredentialByKey"><span class="annot"><a href="Cardano.Api.Address.html#PaymentCredentialByKey"><span class="hs-identifier hs-var">PaymentCredentialByKey</span></a></span></span><span>    </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#PaymentKey"><span class="hs-identifier hs-type">PaymentKey</span></a></span><span class="hs-special">)</span><span>
@@ -1021,7 +1021,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: PaymentCredential -&gt; PaymentCredential -&gt; Bool
 == :: PaymentCredential -&gt; PaymentCredential -&gt; Bool
 $c== :: PaymentCredential -&gt; PaymentCredential -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437558"><span id="local-6989586621679437560"><span id="local-6989586621679437562"><span id="local-6989586621679437564"><span id="local-6989586621679437566"><span id="local-6989586621679437568"><span id="local-6989586621679437570"><span class="annot"><span class="annottext">Eq PaymentCredential
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437558"><span id="local-6989586621679437560"><span id="local-6989586621679437562"><span id="local-6989586621679437564"><span id="local-6989586621679437566"><span id="local-6989586621679437568"><span id="local-6989586621679437570"><span class="annot"><span class="annottext">Eq PaymentCredential
 Eq PaymentCredential
 -&gt; (PaymentCredential -&gt; PaymentCredential -&gt; Ordering)
 -&gt; (PaymentCredential -&gt; PaymentCredential -&gt; Bool)
@@ -1059,7 +1059,7 @@ $c&lt; :: PaymentCredential -&gt; PaymentCredential -&gt; Bool
 compare :: PaymentCredential -&gt; PaymentCredential -&gt; Ordering
 $ccompare :: PaymentCredential -&gt; PaymentCredential -&gt; Ordering
 $cp1Ord :: Eq PaymentCredential
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437552"><span id="local-6989586621679437554"><span id="local-6989586621679437556"><span class="annot"><span class="annottext">Int -&gt; PaymentCredential -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437552"><span id="local-6989586621679437554"><span id="local-6989586621679437556"><span class="annot"><span class="annottext">Int -&gt; PaymentCredential -&gt; ShowS
 [PaymentCredential] -&gt; ShowS
 PaymentCredential -&gt; String
 (Int -&gt; PaymentCredential -&gt; ShowS)
@@ -1074,7 +1074,7 @@ show :: PaymentCredential -&gt; String
 $cshow :: PaymentCredential -&gt; String
 showsPrec :: Int -&gt; PaymentCredential -&gt; ShowS
 $cshowsPrec :: Int -&gt; PaymentCredential -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-430"></span><span>
 </span><span id="line-431"></span><span class="hs-keyword">data</span><span> </span><span id="StakeCredential"><span class="annot"><a href="Cardano.Api.Address.html#StakeCredential"><span class="hs-identifier hs-var">StakeCredential</span></a></span></span><span>
 </span><span id="line-432"></span><span>       </span><span class="hs-glyph">=</span><span> </span><span id="StakeCredentialByKey"><span class="annot"><a href="Cardano.Api.Address.html#StakeCredentialByKey"><span class="hs-identifier hs-var">StakeCredentialByKey</span></a></span></span><span>    </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakeKey"><span class="hs-identifier hs-type">StakeKey</span></a></span><span class="hs-special">)</span><span>
@@ -1088,7 +1088,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakeCredential -&gt; StakeCredential -&gt; Bool
 == :: StakeCredential -&gt; StakeCredential -&gt; Bool
 $c== :: StakeCredential -&gt; StakeCredential -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437531"><span id="local-6989586621679437533"><span id="local-6989586621679437535"><span id="local-6989586621679437537"><span id="local-6989586621679437539"><span id="local-6989586621679437541"><span id="local-6989586621679437543"><span class="annot"><span class="annottext">Eq StakeCredential
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437531"><span id="local-6989586621679437533"><span id="local-6989586621679437535"><span id="local-6989586621679437537"><span id="local-6989586621679437539"><span id="local-6989586621679437541"><span id="local-6989586621679437543"><span class="annot"><span class="annottext">Eq StakeCredential
 Eq StakeCredential
 -&gt; (StakeCredential -&gt; StakeCredential -&gt; Ordering)
 -&gt; (StakeCredential -&gt; StakeCredential -&gt; Bool)
@@ -1126,7 +1126,7 @@ $c&lt; :: StakeCredential -&gt; StakeCredential -&gt; Bool
 compare :: StakeCredential -&gt; StakeCredential -&gt; Ordering
 $ccompare :: StakeCredential -&gt; StakeCredential -&gt; Ordering
 $cp1Ord :: Eq StakeCredential
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437525"><span id="local-6989586621679437527"><span id="local-6989586621679437529"><span class="annot"><span class="annottext">Int -&gt; StakeCredential -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437525"><span id="local-6989586621679437527"><span id="local-6989586621679437529"><span class="annot"><span class="annottext">Int -&gt; StakeCredential -&gt; ShowS
 [StakeCredential] -&gt; ShowS
 StakeCredential -&gt; String
 (Int -&gt; StakeCredential -&gt; ShowS)
@@ -1141,7 +1141,7 @@ show :: StakeCredential -&gt; String
 $cshow :: StakeCredential -&gt; String
 showsPrec :: Int -&gt; StakeCredential -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakeCredential -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-435"></span><span>
 </span><span id="line-436"></span><span class="hs-keyword">data</span><span> </span><span id="StakeAddressReference"><span class="annot"><a href="Cardano.Api.Address.html#StakeAddressReference"><span class="hs-identifier hs-var">StakeAddressReference</span></a></span></span><span>
 </span><span id="line-437"></span><span>       </span><span class="hs-glyph">=</span><span> </span><span id="StakeAddressByValue"><span class="annot"><a href="Cardano.Api.Address.html#StakeAddressByValue"><span class="hs-identifier hs-var">StakeAddressByValue</span></a></span></span><span>   </span><span class="annot"><a href="Cardano.Api.Address.html#StakeCredential"><span class="hs-identifier hs-type">StakeCredential</span></a></span><span>
@@ -1156,7 +1156,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakeAddressReference -&gt; StakeAddressReference -&gt; Bool
 == :: StakeAddressReference -&gt; StakeAddressReference -&gt; Bool
 $c== :: StakeAddressReference -&gt; StakeAddressReference -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437512"><span id="local-6989586621679437514"><span id="local-6989586621679437516"><span class="annot"><span class="annottext">Int -&gt; StakeAddressReference -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437512"><span id="local-6989586621679437514"><span id="local-6989586621679437516"><span class="annot"><span class="annottext">Int -&gt; StakeAddressReference -&gt; ShowS
 [StakeAddressReference] -&gt; ShowS
 StakeAddressReference -&gt; String
 (Int -&gt; StakeAddressReference -&gt; ShowS)
@@ -1171,7 +1171,7 @@ show :: StakeAddressReference -&gt; String
 $cshow :: StakeAddressReference -&gt; String
 showsPrec :: Int -&gt; StakeAddressReference -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakeAddressReference -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-441"></span><span>
 </span><span id="line-442"></span><span class="hs-keyword">newtype</span><span> </span><span id="StakeAddressPointer"><span class="annot"><a href="Cardano.Api.Address.html#StakeAddressPointer"><span class="hs-identifier hs-var">StakeAddressPointer</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="StakeAddressPointer"><span class="annot"><a href="Cardano.Api.Address.html#StakeAddressPointer"><span class="hs-identifier hs-var">StakeAddressPointer</span></a></span></span><span>
 </span><span id="line-443"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="unStakeAddressPointer"><span class="annot"><span class="annottext">StakeAddressPointer -&gt; Ptr
@@ -1186,7 +1186,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakeAddressPointer -&gt; StakeAddressPointer -&gt; Bool
 == :: StakeAddressPointer -&gt; StakeAddressPointer -&gt; Bool
 $c== :: StakeAddressPointer -&gt; StakeAddressPointer -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437500"><span id="local-6989586621679437502"><span id="local-6989586621679437504"><span class="annot"><span class="annottext">Int -&gt; StakeAddressPointer -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679437500"><span id="local-6989586621679437502"><span id="local-6989586621679437504"><span class="annot"><span class="annottext">Int -&gt; StakeAddressPointer -&gt; ShowS
 [StakeAddressPointer] -&gt; ShowS
 StakeAddressPointer -&gt; String
 (Int -&gt; StakeAddressPointer -&gt; ShowS)
@@ -1201,7 +1201,7 @@ show :: StakeAddressPointer -&gt; String
 $cshow :: StakeAddressPointer -&gt; String
 showsPrec :: Int -&gt; StakeAddressPointer -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakeAddressPointer -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-446"></span><span>
 </span><span id="line-447"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#StakeAddress"><span class="hs-identifier hs-type">StakeAddress</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-448"></span><span>    </span><span class="hs-keyword">data</span><span> </span><span id="AsType"><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-var">AsType</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#StakeAddress"><span class="hs-identifier hs-type">StakeAddress</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="AsStakeAddress"><span class="annot"><a href="Cardano.Api.Address.html#AsStakeAddress"><span class="hs-identifier hs-var">AsStakeAddress</span></a></span></span><span>
@@ -1237,14 +1237,14 @@ ByteString -&gt; Maybe (RewardAcnt crypto)
 </span><span class="hs-identifier hs-var">Shelley.deserialiseRewardAcnt</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679437488"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-458"></span><span>          </span><span class="annot"><span class="annottext">Maybe (RewardAcnt StandardCrypto)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe StakeAddress
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-459"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.RewardAcnt</span></span><span> </span><span id="local-6989586621679437486"><span class="annot"><span class="annottext">Network
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-459"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.RewardAcnt</span></span><span> </span><span id="local-6989586621679437486"><span class="annot"><span class="annottext">Network
 </span><a href="#local-6989586621679437486"><span class="hs-identifier hs-var">nw</span></a></span></span><span> </span><span id="local-6989586621679437485"><span class="annot"><span class="annottext">StakeCredential StandardCrypto
 </span><a href="#local-6989586621679437485"><span class="hs-identifier hs-var">sc</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">StakeAddress -&gt; Maybe StakeAddress
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Network -&gt; StakeCredential StandardCrypto -&gt; StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Network -&gt; StakeCredential StandardCrypto -&gt; StakeAddress
 </span><a href="Cardano.Api.Address.html#StakeAddress"><span class="hs-identifier hs-var">StakeAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Network
 </span><a href="#local-6989586621679437486"><span class="hs-identifier hs-var">nw</span></a></span><span> </span><span class="annot"><span class="annottext">StakeCredential StandardCrypto
 </span><a href="#local-6989586621679437485"><span class="hs-identifier hs-var">sc</span></a></span><span class="hs-special">)</span><span>
@@ -1286,16 +1286,16 @@ forall a. SerialiseAsBech32 a =&gt; a -&gt; Text
 -&gt; Either Bech32DecodeError StakeAddress
 -&gt; Maybe StakeAddress
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe StakeAddress -&gt; Bech32DecodeError -&gt; Maybe StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe StakeAddress -&gt; Bech32DecodeError -&gt; Maybe StakeAddress
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe StakeAddress
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StakeAddress -&gt; Maybe StakeAddress
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StakeAddress -&gt; Maybe StakeAddress
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(Either Bech32DecodeError StakeAddress -&gt; Maybe StakeAddress)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(Either Bech32DecodeError StakeAddress -&gt; Maybe StakeAddress)
 -&gt; Either Bech32DecodeError StakeAddress -&gt; Maybe StakeAddress
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-475"></span><span>      </span><span class="annot"><span class="annottext">AsType StakeAddress
 -&gt; Text -&gt; Either Bech32DecodeError StakeAddress
 forall a.

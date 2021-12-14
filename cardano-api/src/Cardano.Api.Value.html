@@ -50,22 +50,22 @@
 </span><span id="line-50"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier">AsType</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-51"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-52"></span><span>
-</span><span id="line-53"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-53"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-54"></span><span>
 </span><span id="line-55"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Value</span></span><span class="hs-special">)</span><span>
 </span><span id="line-56"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Aeson</span></span><span>
 </span><span id="line-57"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson.Types</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Parser</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">toJSONKeyText</span></span><span class="hs-special">)</span><span>
-</span><span id="line-58"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.ByteString</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ByteString</span></span><span class="hs-special">)</span><span>
-</span><span id="line-59"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
-</span><span id="line-60"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Char8</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BSC</span></span><span>
+</span><span id="line-58"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">ByteString</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-59"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
+</span><span id="line-60"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Char8</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BSC</span></span><span>
 </span><span id="line-61"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.HashMap.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">HashMap</span></span><span>
-</span><span id="line-62"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map.Merge.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
-</span><span id="line-63"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Map.Strict</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Map</span></span><span class="hs-special">)</span><span>
-</span><span id="line-64"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
-</span><span id="line-65"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">IsString</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-66"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-67"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
-</span><span id="line-68"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text.Encoding</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-62"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Merge.Strict</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
+</span><span id="line-63"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Strict</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Map</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-64"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Strict</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
+</span><span id="line-65"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.String</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">IsString</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-66"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Text</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-67"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-68"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text.Encoding</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-69"></span><span>
 </span><span id="line-70"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Chain.Common</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Byron</span></span><span>
 </span><span id="line-71"></span><span>
@@ -85,7 +85,7 @@
 </span><span id="line-85"></span><span class="hs-comment">-- Lovelace</span><span>
 </span><span id="line-86"></span><span class="hs-comment">--</span><span>
 </span><span id="line-87"></span><span>
-</span><span id="line-88"></span><span class="hs-keyword">newtype</span><span> </span><span id="Lovelace"><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Lovelace"><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span>
+</span><span id="line-88"></span><span class="hs-keyword">newtype</span><span> </span><span id="Lovelace"><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Lovelace"><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/integer-gmp-1.0.3.0/src"><span class="hs-identifier hs-type">Integer</span></a></span><span>
 </span><span id="line-89"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">stock</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438640"><span id="local-6989586621679438642"><span class="annot"><span class="annottext">Lovelace -&gt; Lovelace -&gt; Bool
 (Lovelace -&gt; Lovelace -&gt; Bool)
 -&gt; (Lovelace -&gt; Lovelace -&gt; Bool) -&gt; Eq Lovelace
@@ -94,7 +94,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Lovelace -&gt; Lovelace -&gt; Bool
 == :: Lovelace -&gt; Lovelace -&gt; Bool
 $c== :: Lovelace -&gt; Lovelace -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438624"><span id="local-6989586621679438626"><span id="local-6989586621679438628"><span id="local-6989586621679438630"><span id="local-6989586621679438632"><span id="local-6989586621679438634"><span id="local-6989586621679438636"><span class="annot"><span class="annottext">Eq Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438624"><span id="local-6989586621679438626"><span id="local-6989586621679438628"><span id="local-6989586621679438630"><span id="local-6989586621679438632"><span id="local-6989586621679438634"><span id="local-6989586621679438636"><span class="annot"><span class="annottext">Eq Lovelace
 Eq Lovelace
 -&gt; (Lovelace -&gt; Lovelace -&gt; Ordering)
 -&gt; (Lovelace -&gt; Lovelace -&gt; Bool)
@@ -132,7 +132,7 @@ $c&lt; :: Lovelace -&gt; Lovelace -&gt; Bool
 compare :: Lovelace -&gt; Lovelace -&gt; Ordering
 $ccompare :: Lovelace -&gt; Lovelace -&gt; Ordering
 $cp1Ord :: Eq Lovelace
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438617"><span id="local-6989586621679438619"><span id="local-6989586621679438621"><span class="annot"><span class="annottext">Int -&gt; Lovelace -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438617"><span id="local-6989586621679438619"><span id="local-6989586621679438621"><span class="annot"><span class="annottext">Int -&gt; Lovelace -&gt; ShowS
 [Lovelace] -&gt; ShowS
 Lovelace -&gt; String
 (Int -&gt; Lovelace -&gt; ShowS)
@@ -145,7 +145,7 @@ show :: Lovelace -&gt; String
 $cshow :: Lovelace -&gt; String
 showsPrec :: Int -&gt; Lovelace -&gt; ShowS
 $cshowsPrec :: Int -&gt; Lovelace -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438600"><span id="local-6989586621679438602"><span id="local-6989586621679438604"><span id="local-6989586621679438606"><span id="local-6989586621679438608"><span id="local-6989586621679438610"><span id="local-6989586621679438612"><span id="local-6989586621679438614"><span class="annot"><span class="annottext">Int -&gt; Lovelace
 Lovelace -&gt; Int
 Lovelace -&gt; [Lovelace]
@@ -187,7 +187,7 @@ pred :: Lovelace -&gt; Lovelace
 $cpred :: Lovelace -&gt; Lovelace
 succ :: Lovelace -&gt; Lovelace
 $csucc :: Lovelace -&gt; Lovelace
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Enum</span></span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438585"><span id="local-6989586621679438587"><span id="local-6989586621679438589"><span id="local-6989586621679438591"><span id="local-6989586621679438593"><span id="local-6989586621679438595"><span id="local-6989586621679438597"><span class="annot"><span class="annottext">Integer -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Enum</span></a></span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438585"><span id="local-6989586621679438587"><span id="local-6989586621679438589"><span id="local-6989586621679438591"><span id="local-6989586621679438593"><span id="local-6989586621679438595"><span id="local-6989586621679438597"><span class="annot"><span class="annottext">Integer -&gt; Lovelace
 Lovelace -&gt; Lovelace
 Lovelace -&gt; Lovelace -&gt; Lovelace
 (Lovelace -&gt; Lovelace -&gt; Lovelace)
@@ -221,7 +221,7 @@ $c* :: Lovelace -&gt; Lovelace -&gt; Lovelace
 $c- :: Lovelace -&gt; Lovelace -&gt; Lovelace
 + :: Lovelace -&gt; Lovelace -&gt; Lovelace
 $c+ :: Lovelace -&gt; Lovelace -&gt; Lovelace
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Num</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438576"><span id="local-6989586621679438578"><span id="local-6989586621679438580"><span id="local-6989586621679438582"><span class="annot"><span class="annottext">[Lovelace] -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Num</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438576"><span id="local-6989586621679438578"><span id="local-6989586621679438580"><span id="local-6989586621679438582"><span class="annot"><span class="annottext">[Lovelace] -&gt; Value
 [Lovelace] -&gt; Encoding
 Lovelace -&gt; Value
 Lovelace -&gt; Encoding
@@ -296,39 +296,39 @@ $cfromCBOR :: forall s. Decoder s Lovelace
 $cp1FromCBOR :: Typeable Lovelace
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var">FromCBOR</span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-91"></span><span>
-</span><span id="line-92"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438551"><span id="local-6989586621679438553"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-92"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438551"><span id="local-6989586621679438553"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Semigroup</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-93"></span><span>  </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span id="local-6989586621679438549"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438549"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679438548"><span class="annot"><span class="annottext">&lt;&gt; :: Lovelace -&gt; Lovelace -&gt; Lovelace
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span id="local-6989586621679438547"><span class="annot"><span class="annottext">Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span id="local-6989586621679438547"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438547"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438549"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Integer
 forall a. Num a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">+</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438547"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-94"></span><span>
-</span><span id="line-95"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438540"><span id="local-6989586621679438542"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-95"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438540"><span id="local-6989586621679438542"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Monoid</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-96"></span><span>  </span><span id="local-6989586621679438538"><span class="annot"><span class="annottext">mempty :: Lovelace
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-97"></span><span>
 </span><span id="line-98"></span><span>
-</span><span id="line-99"></span><span class="annot"><a href="Cardano.Api.Value.html#toByronLovelace"><span class="hs-identifier hs-type">toByronLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.Lovelace</span></span><span>
+</span><span id="line-99"></span><span class="annot"><a href="Cardano.Api.Value.html#toByronLovelace"><span class="hs-identifier hs-type">toByronLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.Lovelace</span></span><span>
 </span><span id="line-100"></span><span id="toByronLovelace"><span class="annot"><span class="annottext">toByronLovelace :: Lovelace -&gt; Maybe Lovelace
 </span><a href="Cardano.Api.Value.html#toByronLovelace"><span class="hs-identifier hs-var hs-var">toByronLovelace</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span id="local-6989586621679438537"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438537"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-101"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Either LovelaceError Lovelace
 </span><span class="hs-identifier hs-var">Byron.integerToLovelace</span></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438537"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-102"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span class="annot"><span class="annottext">LovelaceError
+</span><span id="line-102"></span><span>      </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span>  </span><span class="annot"><span class="annottext">LovelaceError
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Lovelace
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-103"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679438535"><span class="annot"><span class="annottext">Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
+</span><span id="line-103"></span><span>      </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span id="local-6989586621679438535"><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679438535"><span class="hs-identifier hs-var">x'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Maybe Lovelace
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679438535"><span class="hs-identifier hs-var">x'</span></a></span><span>
 </span><span id="line-104"></span><span>
 </span><span id="line-105"></span><span class="annot"><a href="Cardano.Api.Value.html#fromByronLovelace"><span class="hs-identifier hs-type">fromByronLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.Lovelace</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span>
@@ -337,7 +337,7 @@ forall a. a -&gt; Maybe a
 </span><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; Lovelace)
 -&gt; (Lovelace -&gt; Integer) -&gt; Lovelace -&gt; Lovelace
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Integer
 </span><span class="hs-identifier hs-var">Byron.lovelaceToInteger</span></span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span class="annot"><a href="Cardano.Api.Value.html#toShelleyLovelace"><span class="hs-identifier hs-type">toShelleyLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Coin</span></span><span>
@@ -367,7 +367,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-120"></span><span class="hs-comment">-- Multi asset Value</span><span>
 </span><span id="line-121"></span><span class="hs-comment">--</span><span>
 </span><span id="line-122"></span><span>
-</span><span id="line-123"></span><span class="hs-keyword">newtype</span><span> </span><span id="Quantity"><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Quantity"><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span>
+</span><span id="line-123"></span><span class="hs-keyword">newtype</span><span> </span><span id="Quantity"><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Quantity"><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/integer-gmp-1.0.3.0/src"><span class="hs-identifier hs-type">Integer</span></a></span><span>
 </span><span id="line-124"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438523"><span id="local-6989586621679438525"><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Bool
 (Quantity -&gt; Quantity -&gt; Bool)
 -&gt; (Quantity -&gt; Quantity -&gt; Bool) -&gt; Eq Quantity
@@ -376,7 +376,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Quantity -&gt; Quantity -&gt; Bool
 == :: Quantity -&gt; Quantity -&gt; Bool
 $c== :: Quantity -&gt; Quantity -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438508"><span id="local-6989586621679438510"><span id="local-6989586621679438512"><span id="local-6989586621679438514"><span id="local-6989586621679438516"><span id="local-6989586621679438518"><span id="local-6989586621679438520"><span class="annot"><span class="annottext">Eq Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438508"><span id="local-6989586621679438510"><span id="local-6989586621679438512"><span id="local-6989586621679438514"><span id="local-6989586621679438516"><span id="local-6989586621679438518"><span id="local-6989586621679438520"><span class="annot"><span class="annottext">Eq Quantity
 Eq Quantity
 -&gt; (Quantity -&gt; Quantity -&gt; Ordering)
 -&gt; (Quantity -&gt; Quantity -&gt; Bool)
@@ -414,7 +414,7 @@ $c&lt; :: Quantity -&gt; Quantity -&gt; Bool
 compare :: Quantity -&gt; Quantity -&gt; Ordering
 $ccompare :: Quantity -&gt; Quantity -&gt; Ordering
 $cp1Ord :: Eq Quantity
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438494"><span id="local-6989586621679438496"><span id="local-6989586621679438498"><span id="local-6989586621679438500"><span id="local-6989586621679438502"><span id="local-6989586621679438504"><span id="local-6989586621679438506"><span class="annot"><span class="annottext">Integer -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438494"><span id="local-6989586621679438496"><span id="local-6989586621679438498"><span id="local-6989586621679438500"><span id="local-6989586621679438502"><span id="local-6989586621679438504"><span id="local-6989586621679438506"><span class="annot"><span class="annottext">Integer -&gt; Quantity
 Quantity -&gt; Quantity
 Quantity -&gt; Quantity -&gt; Quantity
 (Quantity -&gt; Quantity -&gt; Quantity)
@@ -448,7 +448,7 @@ $c* :: Quantity -&gt; Quantity -&gt; Quantity
 $c- :: Quantity -&gt; Quantity -&gt; Quantity
 + :: Quantity -&gt; Quantity -&gt; Quantity
 $c+ :: Quantity -&gt; Quantity -&gt; Quantity
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Num</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438488"><span id="local-6989586621679438490"><span id="local-6989586621679438492"><span class="annot"><span class="annottext">Int -&gt; Quantity -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Num</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438488"><span id="local-6989586621679438490"><span id="local-6989586621679438492"><span class="annot"><span class="annottext">Int -&gt; Quantity -&gt; ShowS
 [Quantity] -&gt; ShowS
 Quantity -&gt; String
 (Int -&gt; Quantity -&gt; ShowS)
@@ -461,7 +461,7 @@ show :: Quantity -&gt; String
 $cshow :: Quantity -&gt; String
 showsPrec :: Int -&gt; Quantity -&gt; ShowS
 $cshowsPrec :: Int -&gt; Quantity -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438480"><span id="local-6989586621679438482"><span id="local-6989586621679438484"><span id="local-6989586621679438486"><span class="annot"><span class="annottext">[Quantity] -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438480"><span id="local-6989586621679438482"><span id="local-6989586621679438484"><span id="local-6989586621679438486"><span class="annot"><span class="annottext">[Quantity] -&gt; Value
 [Quantity] -&gt; Encoding
 Quantity -&gt; Value
 Quantity -&gt; Encoding
@@ -496,20 +496,20 @@ parseJSON :: Value -&gt; Parser Quantity
 $cparseJSON :: Value -&gt; Parser Quantity
 </span><a href="#local-6989586621679438476"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">FromJSON</span></a></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-125"></span><span>
-</span><span id="line-126"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438471"><span id="local-6989586621679438473"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-126"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438471"><span id="local-6989586621679438473"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Semigroup</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-127"></span><span>  </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span id="local-6989586621679438470"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438470"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679438469"><span class="annot"><span class="annottext">&lt;&gt; :: Quantity -&gt; Quantity -&gt; Quantity
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span id="local-6989586621679438468"><span class="annot"><span class="annottext">Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span id="local-6989586621679438468"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438468"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Quantity
 </span><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438470"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Integer
 forall a. Num a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">+</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438468"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-128"></span><span>
-</span><span id="line-129"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438462"><span id="local-6989586621679438464"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-129"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438462"><span id="local-6989586621679438464"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Monoid</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-130"></span><span>  </span><span id="local-6989586621679438461"><span class="annot"><span class="annottext">mempty :: Quantity
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Quantity
 </span><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-131"></span><span>
@@ -537,7 +537,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: PolicyId -&gt; PolicyId -&gt; Bool
 == :: PolicyId -&gt; PolicyId -&gt; Bool
 $c== :: PolicyId -&gt; PolicyId -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438439"><span id="local-6989586621679438441"><span id="local-6989586621679438443"><span id="local-6989586621679438445"><span id="local-6989586621679438447"><span id="local-6989586621679438449"><span id="local-6989586621679438451"><span class="annot"><span class="annottext">Eq PolicyId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438439"><span id="local-6989586621679438441"><span id="local-6989586621679438443"><span id="local-6989586621679438445"><span id="local-6989586621679438447"><span id="local-6989586621679438449"><span id="local-6989586621679438451"><span class="annot"><span class="annottext">Eq PolicyId
 Eq PolicyId
 -&gt; (PolicyId -&gt; PolicyId -&gt; Ordering)
 -&gt; (PolicyId -&gt; PolicyId -&gt; Bool)
@@ -575,7 +575,7 @@ $c&lt; :: PolicyId -&gt; PolicyId -&gt; Bool
 compare :: PolicyId -&gt; PolicyId -&gt; Ordering
 $ccompare :: PolicyId -&gt; PolicyId -&gt; Ordering
 $cp1Ord :: Eq PolicyId
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-141"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438433"><span id="local-6989586621679438435"><span id="local-6989586621679438437"><span class="annot"><span class="annottext">Int -&gt; PolicyId -&gt; ShowS
 [PolicyId] -&gt; ShowS
 PolicyId -&gt; String
@@ -589,12 +589,12 @@ show :: PolicyId -&gt; String
 $cshow :: PolicyId -&gt; String
 showsPrec :: Int -&gt; PolicyId -&gt; ShowS
 $cshowsPrec :: Int -&gt; PolicyId -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438431"><span class="annot"><span class="annottext">String -&gt; PolicyId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438431"><span class="annot"><span class="annottext">String -&gt; PolicyId
 (String -&gt; PolicyId) -&gt; IsString PolicyId
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; PolicyId
 $cfromString :: String -&gt; PolicyId
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438422"><span id="local-6989586621679438424"><span id="local-6989586621679438426"><span id="local-6989586621679438428"><span class="annot"><span class="annottext">[PolicyId] -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438422"><span id="local-6989586621679438424"><span id="local-6989586621679438426"><span id="local-6989586621679438428"><span class="annot"><span class="annottext">[PolicyId] -&gt; Value
 [PolicyId] -&gt; Encoding
 PolicyId -&gt; Value
 PolicyId -&gt; Encoding
@@ -650,7 +650,7 @@ forall a. SerialiseAsRawBytes a =&gt; a -&gt; ByteString
 </span><span id="line-150"></span><span>      </span><span class="annot"><span class="annottext">ScriptHash -&gt; PolicyId
 </span><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-var">PolicyId</span></a></span><span> </span><span class="annot"><span class="annottext">(ScriptHash -&gt; PolicyId) -&gt; Maybe ScriptHash -&gt; Maybe PolicyId
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">AsType ScriptHash -&gt; ByteString -&gt; Maybe ScriptHash
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ScriptHash -&gt; ByteString -&gt; Maybe ScriptHash
 forall a.
 SerialiseAsRawBytes a =&gt;
 AsType a -&gt; ByteString -&gt; Maybe a
@@ -664,12 +664,12 @@ AsType a -&gt; ByteString -&gt; Maybe a
 </span><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-var">PolicyId</span></a></span><span> </span><span class="annot"><span class="annottext">(ScriptHash -&gt; PolicyId)
 -&gt; (Script lang -&gt; ScriptHash) -&gt; Script lang -&gt; PolicyId
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Script lang -&gt; ScriptHash
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Script lang -&gt; ScriptHash
 forall lang. Script lang -&gt; ScriptHash
 </span><a href="Cardano.Api.Script.html#hashScript"><span class="hs-identifier hs-var">hashScript</span></a></span><span>
 </span><span id="line-154"></span><span>
 </span><span id="line-155"></span><span>
-</span><span id="line-156"></span><span class="hs-keyword">newtype</span><span> </span><span id="AssetName"><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="AssetName"><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-156"></span><span class="hs-keyword">newtype</span><span> </span><span id="AssetName"><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="AssetName"><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-157"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">stock</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438393"><span id="local-6989586621679438395"><span class="annot"><span class="annottext">AssetName -&gt; AssetName -&gt; Bool
 (AssetName -&gt; AssetName -&gt; Bool)
 -&gt; (AssetName -&gt; AssetName -&gt; Bool) -&gt; Eq AssetName
@@ -678,7 +678,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: AssetName -&gt; AssetName -&gt; Bool
 == :: AssetName -&gt; AssetName -&gt; Bool
 $c== :: AssetName -&gt; AssetName -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438378"><span id="local-6989586621679438380"><span id="local-6989586621679438382"><span id="local-6989586621679438384"><span id="local-6989586621679438386"><span id="local-6989586621679438388"><span id="local-6989586621679438390"><span class="annot"><span class="annottext">Eq AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438378"><span id="local-6989586621679438380"><span id="local-6989586621679438382"><span id="local-6989586621679438384"><span id="local-6989586621679438386"><span id="local-6989586621679438388"><span id="local-6989586621679438390"><span class="annot"><span class="annottext">Eq AssetName
 Eq AssetName
 -&gt; (AssetName -&gt; AssetName -&gt; Ordering)
 -&gt; (AssetName -&gt; AssetName -&gt; Bool)
@@ -716,7 +716,7 @@ $c&lt; :: AssetName -&gt; AssetName -&gt; Bool
 compare :: AssetName -&gt; AssetName -&gt; Ordering
 $ccompare :: AssetName -&gt; AssetName -&gt; Ordering
 $cp1Ord :: Eq AssetName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-158"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438372"><span id="local-6989586621679438374"><span id="local-6989586621679438376"><span class="annot"><span class="annottext">Int -&gt; AssetName -&gt; ShowS
 [AssetName] -&gt; ShowS
 AssetName -&gt; String
@@ -732,30 +732,30 @@ show :: AssetName -&gt; String
 $cshow :: AssetName -&gt; String
 showsPrec :: Int -&gt; AssetName -&gt; ShowS
 $cshowsPrec :: Int -&gt; AssetName -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-159"></span><span>
-</span><span id="line-160"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IsString</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-160"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">IsString</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-161"></span><span>    </span><span id="local-6989586621679438370"><span class="annot"><span class="annottext">fromString :: String -&gt; AssetName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromString</span></span></span><span> </span><span id="local-6989586621679438369"><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">fromString</span></a></span></span><span> </span><span id="local-6989586621679438369"><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679438369"><span class="hs-identifier hs-var">s</span></a></span></span><span>
 </span><span id="line-162"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679438368"><span class="annot"><span class="annottext">bs :: ByteString
 </span><a href="#local-6989586621679438368"><span class="hs-identifier hs-var hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679438369"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-163"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
-</span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BS.length</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438368"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">&lt;=</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">32</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; AssetName
 </span><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; ByteString
-</span><span class="hs-identifier hs-var">BSC.pack</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BSC.pack</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679438369"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-164"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">otherwise</span></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">otherwise</span></a></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; AssetName
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;fromString: AssetName over 32 bytes&quot;</span></span><span>
 </span><span id="line-165"></span><span>
 </span><span id="line-166"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#HasTypeProxy"><span class="hs-identifier hs-type">HasTypeProxy</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="hs-keyword">where</span><span>
@@ -775,19 +775,19 @@ forall a. HasCallStack =&gt; String -&gt; a
 </span><a href="Cardano.Api.Value.html#AsAssetName"><span class="hs-identifier hs-var">AsAssetName</span></a></span><span> </span><span id="local-6989586621679438352"><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438352"><span class="hs-identifier hs-var">bs</span></a></span></span><span>
 </span><span id="line-173"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
-</span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BS.length</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438352"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">&lt;=</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">32</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">AssetName -&gt; Maybe AssetName
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; AssetName
 </span><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438352"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-174"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">otherwise</span></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">otherwise</span></a></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe AssetName
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-175"></span><span>
 </span><span id="line-176"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438345"><span id="local-6989586621679438347"><span id="local-6989586621679438349"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-177"></span><span>  </span><span id="local-6989586621679438344"><span class="annot"><span class="annottext">toJSON :: AssetName -&gt; Value
@@ -795,8 +795,8 @@ forall a. Maybe a
 </span><a href="#local-6989586621679438342"><span class="hs-identifier hs-var">an</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value
 </span><span class="hs-identifier hs-var">Aeson.String</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Value) -&gt; Text -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
-</span><span class="hs-identifier hs-var">Text.decodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.decodeUtf8</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438342"><span class="hs-identifier hs-var">an</span></a></span><span>
 </span><span id="line-178"></span><span>
 </span><span id="line-179"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438337"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -806,15 +806,15 @@ forall a. String -&gt; (Text -&gt; Parser a) -&gt; Value -&gt; Parser a
 </span><span class="hs-identifier hs-var">withText</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;AssetName&quot;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetName -&gt; Parser AssetName
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(AssetName -&gt; Parser AssetName)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="annot"><span class="annottext">(AssetName -&gt; Parser AssetName)
 -&gt; (Text -&gt; AssetName) -&gt; Text -&gt; Parser AssetName
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; AssetName
 </span><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; AssetName)
 -&gt; (Text -&gt; ByteString) -&gt; Text -&gt; AssetName
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-181"></span><span>
 </span><span id="line-182"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438331"><span class="annot"><span class="hs-identifier hs-type">ToJSONKey</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-183"></span><span>  </span><span id="local-6989586621679438329"><span class="annot"><span class="annottext">toJSONKey :: ToJSONKeyFunction AssetName
@@ -822,7 +822,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall a. (a -&gt; Text) -&gt; ToJSONKeyFunction a
 </span><span class="hs-identifier hs-var">toJSONKeyText</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span id="local-6989586621679438327"><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438327"><span class="hs-identifier hs-var">asset</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
-</span><span class="hs-identifier hs-var">Text.decodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.decodeUtf8</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679438327"><span class="hs-identifier hs-var">asset</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-184"></span><span>
 </span><span id="line-185"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438324"><span class="annot"><span class="hs-identifier hs-type">FromJSONKey</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -833,8 +833,8 @@ forall a. (Text -&gt; a) -&gt; FromJSONKeyFunction a
 </span><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-var">AssetName</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; AssetName)
 -&gt; (Text -&gt; ByteString) -&gt; Text -&gt; AssetName
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-187"></span><span>
 </span><span id="line-188"></span><span>
 </span><span id="line-189"></span><span class="hs-keyword">data</span><span> </span><span id="AssetId"><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-var">AssetId</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="AdaAssetId"><span class="annot"><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span></span><span>
@@ -847,7 +847,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: AssetId -&gt; AssetId -&gt; Bool
 == :: AssetId -&gt; AssetId -&gt; Bool
 $c== :: AssetId -&gt; AssetId -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438299"><span id="local-6989586621679438301"><span id="local-6989586621679438303"><span id="local-6989586621679438305"><span id="local-6989586621679438307"><span id="local-6989586621679438309"><span id="local-6989586621679438311"><span class="annot"><span class="annottext">Eq AssetId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438299"><span id="local-6989586621679438301"><span id="local-6989586621679438303"><span id="local-6989586621679438305"><span id="local-6989586621679438307"><span id="local-6989586621679438309"><span id="local-6989586621679438311"><span class="annot"><span class="annottext">Eq AssetId
 Eq AssetId
 -&gt; (AssetId -&gt; AssetId -&gt; Ordering)
 -&gt; (AssetId -&gt; AssetId -&gt; Bool)
@@ -885,7 +885,7 @@ $c&lt; :: AssetId -&gt; AssetId -&gt; Bool
 compare :: AssetId -&gt; AssetId -&gt; Ordering
 $ccompare :: AssetId -&gt; AssetId -&gt; Ordering
 $cp1Ord :: Eq AssetId
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438293"><span id="local-6989586621679438295"><span id="local-6989586621679438297"><span class="annot"><span class="annottext">Int -&gt; AssetId -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438293"><span id="local-6989586621679438295"><span id="local-6989586621679438297"><span class="annot"><span class="annottext">Int -&gt; AssetId -&gt; ShowS
 [AssetId] -&gt; ShowS
 AssetId -&gt; String
 (Int -&gt; AssetId -&gt; ShowS)
@@ -898,10 +898,10 @@ show :: AssetId -&gt; String
 $cshow :: AssetId -&gt; String
 showsPrec :: Int -&gt; AssetId -&gt; ShowS
 $cshowsPrec :: Int -&gt; AssetId -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-192"></span><span>
 </span><span id="line-193"></span><span>
-</span><span id="line-194"></span><span class="hs-keyword">newtype</span><span> </span><span id="Value"><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Value"><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-194"></span><span class="hs-keyword">newtype</span><span> </span><span id="Value"><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Value"><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-195"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span id="local-6989586621679438288"><span id="local-6989586621679438290"><span class="annot"><span class="annottext">Value -&gt; Value -&gt; Bool
 (Value -&gt; Value -&gt; Bool) -&gt; (Value -&gt; Value -&gt; Bool) -&gt; Eq Value
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -909,34 +909,34 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Value -&gt; Value -&gt; Bool
 == :: Value -&gt; Value -&gt; Bool
 $c== :: Value -&gt; Value -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span>
 </span><span id="line-196"></span><span>
-</span><span id="line-197"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438283"><span id="local-6989586621679438285"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-197"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438283"><span id="local-6989586621679438285"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Show</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-198"></span><span>  </span><span id="local-6989586621679438282"><span class="annot"><span class="annottext">showsPrec :: Int -&gt; Value -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">showsPrec</span></span></span><span> </span><span id="local-6989586621679438280"><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">showsPrec</span></a></span></span><span> </span><span id="local-6989586621679438280"><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679438280"><span class="hs-identifier hs-var">d</span></a></span></span><span> </span><span id="local-6989586621679438279"><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438279"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; ShowS -&gt; ShowS
-</span><span class="hs-identifier hs-var">showParen</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">showParen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679438280"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">10</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ShowS -&gt; ShowS) -&gt; ShowS -&gt; ShowS
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-199"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; ShowS
-</span><span class="hs-identifier hs-var">showString</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">showString</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;valueFromList &quot;</span></span><span> </span><span class="annot"><span class="annottext">ShowS -&gt; ShowS -&gt; ShowS
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">[(AssetId, Quantity)] -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">[(AssetId, Quantity)] -&gt; ShowS
 forall a. Show a =&gt; a -&gt; ShowS
-</span><span class="hs-identifier hs-var">shows</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; [(AssetId, Quantity)]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">shows</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; [(AssetId, Quantity)]
 </span><a href="Cardano.Api.Value.html#valueToList"><span class="hs-identifier hs-var">valueToList</span></a></span><span> </span><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438279"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-200"></span><span>
-</span><span id="line-201"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438270"><span id="local-6989586621679438272"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-201"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438270"><span id="local-6989586621679438272"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Semigroup</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-202"></span><span>  </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span id="local-6989586621679438269"><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438269"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679438268"><span class="annot"><span class="annottext">&lt;&gt; :: Value -&gt; Value -&gt; Value
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span id="local-6989586621679438267"><span class="annot"><span class="annottext">Map AssetId Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span id="local-6989586621679438267"><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438267"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity -&gt; Value
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Map AssetId Quantity
 -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
@@ -944,18 +944,18 @@ forall a. Show a =&gt; a -&gt; ShowS
 </span><a href="#local-6989586621679438269"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438267"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-203"></span><span>
-</span><span id="line-204"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438260"><span id="local-6989586621679438262"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-204"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438260"><span id="local-6989586621679438262"><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Monoid</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-205"></span><span>  </span><span id="local-6989586621679438259"><span class="annot"><span class="annottext">mempty :: Value
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity -&gt; Value
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
 forall k a. Map k a
-</span><span class="hs-identifier hs-var">Map.empty</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.empty</span></a></span><span>
 </span><span id="line-206"></span><span>
 </span><span id="line-207"></span><span>
 </span><span id="line-208"></span><span class="hs-pragma">{-# NOINLINE</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#mergeAssetMaps"><span class="hs-pragma hs-type">mergeAssetMaps</span></a></span><span> </span><span class="hs-pragma">#-}</span><span> </span><span class="hs-comment">-- as per advice in Data.Map.Merge docs</span><span>
-</span><span id="line-209"></span><span class="annot"><a href="Cardano.Api.Value.html#mergeAssetMaps"><span class="hs-identifier hs-type">mergeAssetMaps</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
-</span><span id="line-210"></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
-</span><span id="line-211"></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
+</span><span id="line-209"></span><span class="annot"><a href="Cardano.Api.Value.html#mergeAssetMaps"><span class="hs-identifier hs-type">mergeAssetMaps</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
+</span><span id="line-210"></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
+</span><span id="line-211"></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
 </span><span id="line-212"></span><span id="mergeAssetMaps"><span class="annot"><span class="annottext">mergeAssetMaps :: Map AssetId Quantity
 -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
 </span><a href="Cardano.Api.Value.html#mergeAssetMaps"><span class="hs-identifier hs-var hs-var">mergeAssetMaps</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -973,22 +973,22 @@ SimpleWhenMissing k a c
 -&gt; Map k a
 -&gt; Map k b
 -&gt; Map k c
-</span><span class="hs-identifier hs-var">Map.merge</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.merge</span></a></span><span>
 </span><span id="line-214"></span><span>      </span><span class="annot"><span class="annottext">SimpleWhenMissing AssetId Quantity Quantity
 forall (f :: * -&gt; *) k x. Applicative f =&gt; WhenMissing f k x x
-</span><span class="hs-identifier hs-var">Map.preserveMissing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.preserveMissing</span></a></span><span>
 </span><span id="line-215"></span><span>      </span><span class="annot"><span class="annottext">SimpleWhenMissing AssetId Quantity Quantity
 forall (f :: * -&gt; *) k x. Applicative f =&gt; WhenMissing f k x x
-</span><span class="hs-identifier hs-var">Map.preserveMissing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.preserveMissing</span></a></span><span>
 </span><span id="line-216"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(AssetId -&gt; Quantity -&gt; Quantity -&gt; Maybe Quantity)
 -&gt; SimpleWhenMatched AssetId Quantity Quantity Quantity
 forall (f :: * -&gt; *) k x y z.
 Applicative f =&gt;
 (k -&gt; x -&gt; y -&gt; Maybe z) -&gt; WhenMatched f k x y z
-</span><span class="hs-identifier hs-var">Map.zipWithMaybeMatched</span></span><span> </span><span class="annot"><span class="annottext">AssetId -&gt; Quantity -&gt; Quantity -&gt; Maybe Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.zipWithMaybeMatched</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId -&gt; Quantity -&gt; Quantity -&gt; Maybe Quantity
 </span><a href="#local-6989586621679438254"><span class="hs-identifier hs-var">mergeQuantity</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-217"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-218"></span><span>    </span><span class="annot"><a href="#local-6989586621679438254"><span class="hs-identifier hs-type">mergeQuantity</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
+</span><span id="line-218"></span><span>    </span><span class="annot"><a href="#local-6989586621679438254"><span class="hs-identifier hs-type">mergeQuantity</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
 </span><span id="line-219"></span><span>    </span><span id="local-6989586621679438254"><span class="annot"><span class="annottext">mergeQuantity :: AssetId -&gt; Quantity -&gt; Quantity -&gt; Maybe Quantity
 </span><a href="#local-6989586621679438254"><span class="hs-identifier hs-var hs-var">mergeQuantity</span></a></span></span><span> </span><span id="local-6989586621679438253"><span class="annot"><span class="annottext">AssetId
 </span><a href="#local-6989586621679438253"><span class="hs-identifier hs-var">_k</span></a></span></span><span> </span><span id="local-6989586621679438252"><span class="annot"><span class="annottext">Quantity
@@ -997,16 +997,16 @@ Applicative f =&gt;
 </span><span id="line-220"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438252"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Quantity
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438251"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-221"></span><span>        </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Quantity
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-222"></span><span>        </span><span id="local-6989586621679438250"><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438250"><span class="hs-identifier hs-var">c</span></a></span></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Maybe Quantity
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438250"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-223"></span><span>
 </span><span id="line-224"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438243"><span id="local-6989586621679438245"><span id="local-6989586621679438247"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -1016,7 +1016,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">(ValueNestedRep -&gt; Value)
 -&gt; (Value -&gt; ValueNestedRep) -&gt; Value -&gt; Value
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; ValueNestedRep
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; ValueNestedRep
 </span><a href="Cardano.Api.Value.html#valueToNestedRep"><span class="hs-identifier hs-var">valueToNestedRep</span></a></span><span>
 </span><span id="line-226"></span><span>
 </span><span id="line-227"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679438239"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -1025,7 +1025,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><a href="#local-6989586621679438237"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ValueNestedRep -&gt; Value
 </span><a href="Cardano.Api.Value.html#valueFromNestedRep"><span class="hs-identifier hs-var">valueFromNestedRep</span></a></span><span> </span><span class="annot"><span class="annottext">(ValueNestedRep -&gt; Value) -&gt; Parser ValueNestedRep -&gt; Parser Value
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser ValueNestedRep
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser ValueNestedRep
 forall a. FromJSON a =&gt; Value -&gt; Parser a
 </span><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438237"><span class="hs-identifier hs-var">v</span></a></span><span>
@@ -1037,9 +1037,9 @@ forall a. FromJSON a =&gt; Value -&gt; Parser a
 </span><a href="#local-6989586621679438236"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679438235"><span class="annot"><span class="annottext">AssetId
 </span><a href="#local-6989586621679438235"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; AssetId -&gt; Map AssetId Quantity -&gt; Quantity
 forall k a. Ord k =&gt; a -&gt; k -&gt; Map k a -&gt; a
-</span><span class="hs-identifier hs-var">Map.findWithDefault</span></span><span> </span><span class="annot"><span class="annottext">Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.findWithDefault</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 forall a. Monoid a =&gt; a
-</span><span class="hs-identifier hs-var">mempty</span></span><span> </span><span class="annot"><span class="annottext">AssetId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">mempty</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId
 </span><a href="#local-6989586621679438235"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438236"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-233"></span><span>
@@ -1052,30 +1052,30 @@ forall a. Monoid a =&gt; a
 -&gt; [(AssetId, Quantity)]
 -&gt; Value
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Bool) -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Bool) -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
 forall a k. (a -&gt; Bool) -&gt; Map k a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.filter</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Bool
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.filter</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><span class="hs-number">0</span></span><span class="hs-special">)</span><span>
 </span><span id="line-237"></span><span>              </span><span class="annot"><span class="annottext">(Map AssetId Quantity -&gt; Map AssetId Quantity)
 -&gt; ([(AssetId, Quantity)] -&gt; Map AssetId Quantity)
 -&gt; [(AssetId, Quantity)]
 -&gt; Map AssetId Quantity
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Quantity -&gt; Quantity)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Quantity -&gt; Quantity)
 -&gt; [(AssetId, Quantity)] -&gt; Map AssetId Quantity
 forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; [(k, a)] -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.fromListWith</span></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.fromListWith</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Quantity
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">(&lt;&gt;)</span></a></span><span>
 </span><span id="line-238"></span><span>
 </span><span id="line-239"></span><span class="annot"><a href="Cardano.Api.Value.html#valueToList"><span class="hs-identifier hs-type">valueToList</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
 </span><span id="line-240"></span><span id="valueToList"><span class="annot"><span class="annottext">valueToList :: Value -&gt; [(AssetId, Quantity)]
 </span><a href="Cardano.Api.Value.html#valueToList"><span class="hs-identifier hs-var hs-var">valueToList</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span id="local-6989586621679438230"><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438230"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity -&gt; [(AssetId, Quantity)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438230"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-241"></span><span>
 </span><span id="line-242"></span><span class="hs-comment">-- | This lets you write @a - b@ as @a &lt;&gt; negateValue b@.</span><span>
@@ -1087,12 +1087,12 @@ forall k a. Map k a -&gt; [(k, a)]
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Quantity -&gt; Quantity)
 -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
 forall a b k. (a -&gt; b) -&gt; Map k a -&gt; Map k b
-</span><span class="hs-identifier hs-var">Map.map</span></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.map</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity
 forall a. Num a =&gt; a -&gt; a
-</span><span class="hs-identifier hs-var">negate</span></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">negate</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetId Quantity
 </span><a href="#local-6989586621679438228"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-246"></span><span>
-</span><span id="line-247"></span><span class="annot"><a href="Cardano.Api.Value.html#filterValue"><span class="hs-identifier hs-type">filterValue</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span>
+</span><span id="line-247"></span><span class="annot"><a href="Cardano.Api.Value.html#filterValue"><span class="hs-identifier hs-type">filterValue</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Bool</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span>
 </span><span id="line-248"></span><span id="filterValue"><span class="annot"><span class="annottext">filterValue :: (AssetId -&gt; Bool) -&gt; Value -&gt; Value
 </span><a href="Cardano.Api.Value.html#filterValue"><span class="hs-identifier hs-var hs-var">filterValue</span></a></span></span><span> </span><span id="local-6989586621679438226"><span class="annot"><span class="annottext">AssetId -&gt; Bool
 </span><a href="#local-6989586621679438226"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span id="local-6989586621679438225"><span class="annot"><span class="annottext">Map AssetId Quantity
@@ -1100,7 +1100,7 @@ forall a. Num a =&gt; a -&gt; a
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(AssetId -&gt; Quantity -&gt; Bool)
 -&gt; Map AssetId Quantity -&gt; Map AssetId Quantity
 forall k a. (k -&gt; a -&gt; Bool) -&gt; Map k a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.filterWithKey</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679438223"><span class="annot"><span class="annottext">AssetId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.filterWithKey</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679438223"><span class="annot"><span class="annottext">AssetId
 </span><a href="#local-6989586621679438223"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span id="local-6989586621679438222"><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438222"><span class="hs-identifier hs-var">_v</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">AssetId -&gt; Bool
 </span><a href="#local-6989586621679438226"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId
@@ -1112,9 +1112,9 @@ forall k a. (k -&gt; a -&gt; Bool) -&gt; Map k a -&gt; Map k a
 </span><a href="Cardano.Api.Value.html#selectLovelace"><span class="hs-identifier hs-var hs-var">selectLovelace</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#quantityToLovelace"><span class="hs-identifier hs-var">quantityToLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Lovelace) -&gt; (Value -&gt; Quantity) -&gt; Value -&gt; Lovelace
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Value -&gt; AssetId -&gt; Quantity) -&gt; AssetId -&gt; Value -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">(Value -&gt; AssetId -&gt; Quantity) -&gt; AssetId -&gt; Value -&gt; Quantity
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
-</span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; AssetId -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">flip</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; AssetId -&gt; Quantity
 </span><a href="Cardano.Api.Value.html#selectAsset"><span class="hs-identifier hs-var">selectAsset</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId
 </span><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span><span>
 </span><span id="line-252"></span><span>
@@ -1124,13 +1124,13 @@ forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="annot"><span class="annottext">(Map AssetId Quantity -&gt; Value)
 -&gt; (Lovelace -&gt; Map AssetId Quantity) -&gt; Lovelace -&gt; Value
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">AssetId -&gt; Quantity -&gt; Map AssetId Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId -&gt; Quantity -&gt; Map AssetId Quantity
 forall k a. k -&gt; a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.singleton</span></span><span> </span><span class="annot"><span class="annottext">AssetId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.singleton</span></a></span><span> </span><span class="annot"><span class="annottext">AssetId
 </span><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; Map AssetId Quantity)
 -&gt; (Lovelace -&gt; Quantity) -&gt; Lovelace -&gt; Map AssetId Quantity
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Quantity
 </span><a href="Cardano.Api.Value.html#lovelaceToQuantity"><span class="hs-identifier hs-var">lovelaceToQuantity</span></a></span><span>
 </span><span id="line-255"></span><span>
 </span><span id="line-256"></span><span class="hs-comment">-- | Check if the 'Value' consists of /only/ 'Lovelace' and no other assets,</span><span>
@@ -1139,7 +1139,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-259"></span><span class="hs-comment">-- See also 'selectLovelace' to select the Lovelace quantity from the Value,</span><span>
 </span><span id="line-260"></span><span class="hs-comment">-- ignoring other assets.</span><span>
 </span><span id="line-261"></span><span class="hs-comment">--</span><span>
-</span><span id="line-262"></span><span class="annot"><a href="Cardano.Api.Value.html#valueToLovelace"><span class="hs-identifier hs-type">valueToLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span>
+</span><span id="line-262"></span><span class="annot"><a href="Cardano.Api.Value.html#valueToLovelace"><span class="hs-identifier hs-type">valueToLovelace</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span>
 </span><span id="line-263"></span><span id="valueToLovelace"><span class="annot"><span class="annottext">valueToLovelace :: Value -&gt; Maybe Lovelace
 </span><a href="Cardano.Api.Value.html#valueToLovelace"><span class="hs-identifier hs-var hs-var">valueToLovelace</span></a></span></span><span> </span><span id="local-6989586621679438219"><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438219"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -1148,20 +1148,20 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><a href="#local-6989586621679438219"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-265"></span><span>      </span><span class="hs-special">[</span><span class="hs-special">]</span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Maybe Lovelace
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span class="hs-special">)</span><span>
 </span><span id="line-266"></span><span>      </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetId
 </span><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438218"><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438218"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Maybe Lovelace
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Quantity -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Quantity -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#quantityToLovelace"><span class="hs-identifier hs-var">quantityToLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438218"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-267"></span><span>      </span><span class="annot"><span class="annottext">[(AssetId, Quantity)]
 </span><span class="hs-identifier">_</span></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Lovelace
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>
 </span><span id="line-268"></span><span>
 </span><span id="line-269"></span><span class="annot"><a href="Cardano.Api.Value.html#toMaryValue"><span class="hs-identifier hs-type">toMaryValue</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Mary.Value</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span>
 </span><span id="line-270"></span><span id="toMaryValue"><span class="annot"><span class="annottext">toMaryValue :: Value -&gt; Value StandardCrypto
@@ -1189,15 +1189,15 @@ Integer
 -&gt; [(PolicyID StandardCrypto, Map AssetName Integer)]
 -&gt; Map (PolicyID StandardCrypto) (Map AssetName Integer)
 forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; [(k, a)] -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.fromListWith</span></span><span> </span><span class="annot"><span class="annottext">Map AssetName Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.fromListWith</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetName Integer
 -&gt; Map AssetName Integer -&gt; Map AssetName Integer
 forall k a. Ord k =&gt; Map k a -&gt; Map k a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.union</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.union</span></a></span><span>
 </span><span id="line-276"></span><span>              </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PolicyId -&gt; PolicyID StandardCrypto
 </span><a href="#local-6989586621679438212"><span class="hs-identifier hs-var">toMaryPolicyID</span></a></span><span> </span><span class="annot"><span class="annottext">PolicyId
 </span><a href="#local-6989586621679438211"><span class="hs-identifier hs-var">pid</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">AssetName -&gt; Integer -&gt; Map AssetName Integer
 forall k a. k -&gt; a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.singleton</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetName -&gt; AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.singleton</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetName -&gt; AssetName
 </span><a href="#local-6989586621679438210"><span class="hs-identifier hs-var">toMaryAssetName</span></a></span><span> </span><span class="annot"><span class="annottext">AssetName
 </span><a href="#local-6989586621679438209"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438208"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span>
@@ -1233,26 +1233,26 @@ forall crypto. ScriptHash crypto -&gt; PolicyID crypto
 </span><span id="line-288"></span><span>    </span><span class="annot"><span class="annottext">Map AssetId Quantity -&gt; Value
 </span><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-var">Value</span></a></span><span> </span><span class="annot"><span class="annottext">(Map AssetId Quantity -&gt; Value) -&gt; Map AssetId Quantity -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-289"></span><span>      </span><span class="hs-comment">--TODO: write QC tests to show it's ok to use Map.fromAscList here</span><span>
 </span><span id="line-290"></span><span>      </span><span class="annot"><span class="annottext">[(AssetId, Quantity)] -&gt; Map AssetId Quantity
 forall k a. Ord k =&gt; [(k, a)] -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.fromList</span></span><span> </span><span class="annot"><span class="annottext">([(AssetId, Quantity)] -&gt; Map AssetId Quantity)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.fromList</span></a></span><span> </span><span class="annot"><span class="annottext">([(AssetId, Quantity)] -&gt; Map AssetId Quantity)
 -&gt; [(AssetId, Quantity)] -&gt; Map AssetId Quantity
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-291"></span><span>        </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetId
 </span><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Quantity
 </span><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-var">Quantity</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438202"><span class="hs-identifier hs-var">lovelace</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438202"><span class="hs-identifier hs-var">lovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-292"></span><span>     </span><span class="annot"><span class="annottext">[(AssetId, Quantity)]
 -&gt; [(AssetId, Quantity)] -&gt; [(AssetId, Quantity)]
 forall a. [a] -&gt; [a] -&gt; [a]
-</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PolicyId -&gt; AssetName -&gt; AssetId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">++</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PolicyId -&gt; AssetName -&gt; AssetId
 </span><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-var">AssetId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PolicyID StandardCrypto -&gt; PolicyId
 </span><a href="#local-6989586621679438199"><span class="hs-identifier hs-var">fromMaryPolicyID</span></a></span><span> </span><span class="annot"><span class="annottext">PolicyID StandardCrypto
 </span><a href="#local-6989586621679438198"><span class="hs-identifier hs-var">pid</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AssetName -&gt; AssetName
@@ -1265,13 +1265,13 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><a href="#local-6989586621679438194"><span class="hs-keyword hs-var">as</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map (PolicyID StandardCrypto) (Map AssetName Integer)
 -&gt; [(PolicyID StandardCrypto, Map AssetName Integer)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map (PolicyID StandardCrypto) (Map AssetName Integer)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map (PolicyID StandardCrypto) (Map AssetName Integer)
 </span><a href="#local-6989586621679438201"><span class="hs-identifier hs-var">other</span></a></span><span>
 </span><span id="line-294"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438196"><span class="annot"><span class="annottext">AssetName
 </span><a href="#local-6989586621679438196"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438195"><span class="annot"><span class="annottext">Integer
 </span><a href="#local-6989586621679438195"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map AssetName Integer -&gt; [(AssetName, Integer)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map AssetName Integer
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetName Integer
 </span><a href="#local-6989586621679438194"><span class="hs-keyword hs-var">as</span></a></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-295"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-296"></span><span>    </span><span class="annot"><a href="#local-6989586621679438199"><span class="hs-identifier hs-type">fromMaryPolicyID</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Mary.PolicyID</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span>
@@ -1299,7 +1299,7 @@ forall k a. Map k a -&gt; [(k, a)]
 </span><span id="line-306"></span><span>  </span><span class="annot"><span class="annottext">Coin -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#fromShelleyLovelace"><span class="hs-identifier hs-var">fromShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">(Coin -&gt; Lovelace) -&gt; Coin -&gt; Lovelace
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Value StandardCrypto -&gt; Coin -&gt; Coin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Value StandardCrypto -&gt; Coin -&gt; Coin
 forall v. Val v =&gt; v -&gt; Coin -&gt; Coin
 </span><span class="hs-identifier hs-var">Shelley.scaledMinDeposit</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; Value StandardCrypto
 </span><a href="Cardano.Api.Value.html#toMaryValue"><span class="hs-identifier hs-var">toMaryValue</span></a></span><span> </span><span class="annot"><span class="annottext">Value
@@ -1323,7 +1323,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: ValueNestedRep -&gt; ValueNestedRep -&gt; Bool
 == :: ValueNestedRep -&gt; ValueNestedRep -&gt; Bool
 $c== :: ValueNestedRep -&gt; ValueNestedRep -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438168"><span id="local-6989586621679438170"><span id="local-6989586621679438172"><span id="local-6989586621679438174"><span id="local-6989586621679438176"><span id="local-6989586621679438178"><span id="local-6989586621679438180"><span class="annot"><span class="annottext">Eq ValueNestedRep
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438168"><span id="local-6989586621679438170"><span id="local-6989586621679438172"><span id="local-6989586621679438174"><span id="local-6989586621679438176"><span id="local-6989586621679438178"><span id="local-6989586621679438180"><span class="annot"><span class="annottext">Eq ValueNestedRep
 Eq ValueNestedRep
 -&gt; (ValueNestedRep -&gt; ValueNestedRep -&gt; Ordering)
 -&gt; (ValueNestedRep -&gt; ValueNestedRep -&gt; Bool)
@@ -1361,7 +1361,7 @@ $c&lt; :: ValueNestedRep -&gt; ValueNestedRep -&gt; Bool
 compare :: ValueNestedRep -&gt; ValueNestedRep -&gt; Ordering
 $ccompare :: ValueNestedRep -&gt; ValueNestedRep -&gt; Ordering
 $cp1Ord :: Eq ValueNestedRep
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438162"><span id="local-6989586621679438164"><span id="local-6989586621679438166"><span class="annot"><span class="annottext">Int -&gt; ValueNestedRep -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438162"><span id="local-6989586621679438164"><span id="local-6989586621679438166"><span class="annot"><span class="annottext">Int -&gt; ValueNestedRep -&gt; ShowS
 [ValueNestedRep] -&gt; ShowS
 ValueNestedRep -&gt; String
 (Int -&gt; ValueNestedRep -&gt; ShowS)
@@ -1376,13 +1376,13 @@ show :: ValueNestedRep -&gt; String
 $cshow :: ValueNestedRep -&gt; String
 showsPrec :: Int -&gt; ValueNestedRep -&gt; ShowS
 $cshowsPrec :: Int -&gt; ValueNestedRep -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-317"></span><span>
 </span><span id="line-318"></span><span class="hs-comment">-- | A bundle within a 'ValueNestedRep' for a single 'PolicyId', or for the</span><span>
 </span><span id="line-319"></span><span class="hs-comment">-- special case of ada.</span><span>
 </span><span id="line-320"></span><span class="hs-comment">--</span><span>
 </span><span id="line-321"></span><span class="hs-keyword">data</span><span> </span><span id="ValueNestedBundle"><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-var">ValueNestedBundle</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="ValueNestedBundleAda"><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundleAda"><span class="hs-identifier hs-var">ValueNestedBundleAda</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span>
-</span><span id="line-322"></span><span>                       </span><span class="hs-glyph">|</span><span> </span><span id="ValueNestedBundle"><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-var">ValueNestedBundle</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-322"></span><span>                       </span><span class="hs-glyph">|</span><span> </span><span id="ValueNestedBundle"><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-var">ValueNestedBundle</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-323"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438156"><span id="local-6989586621679438158"><span class="annot"><span class="annottext">ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool
 (ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool)
 -&gt; (ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool)
@@ -1392,7 +1392,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool
 == :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool
 $c== :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438141"><span id="local-6989586621679438143"><span id="local-6989586621679438145"><span id="local-6989586621679438147"><span id="local-6989586621679438149"><span id="local-6989586621679438151"><span id="local-6989586621679438153"><span class="annot"><span class="annottext">Eq ValueNestedBundle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438141"><span id="local-6989586621679438143"><span id="local-6989586621679438145"><span id="local-6989586621679438147"><span id="local-6989586621679438149"><span id="local-6989586621679438151"><span id="local-6989586621679438153"><span class="annot"><span class="annottext">Eq ValueNestedBundle
 Eq ValueNestedBundle
 -&gt; (ValueNestedBundle -&gt; ValueNestedBundle -&gt; Ordering)
 -&gt; (ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool)
@@ -1430,7 +1430,7 @@ $c&lt; :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Bool
 compare :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Ordering
 $ccompare :: ValueNestedBundle -&gt; ValueNestedBundle -&gt; Ordering
 $cp1Ord :: Eq ValueNestedBundle
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438135"><span id="local-6989586621679438137"><span id="local-6989586621679438139"><span class="annot"><span class="annottext">Int -&gt; ValueNestedBundle -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438135"><span id="local-6989586621679438137"><span id="local-6989586621679438139"><span class="annot"><span class="annottext">Int -&gt; ValueNestedBundle -&gt; ShowS
 [ValueNestedBundle] -&gt; ShowS
 ValueNestedBundle -&gt; String
 (Int -&gt; ValueNestedBundle -&gt; ShowS)
@@ -1445,7 +1445,7 @@ show :: ValueNestedBundle -&gt; String
 $cshow :: ValueNestedBundle -&gt; String
 showsPrec :: Int -&gt; ValueNestedBundle -&gt; ShowS
 $cshowsPrec :: Int -&gt; ValueNestedBundle -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-324"></span><span>
 </span><span id="line-325"></span><span>
 </span><span id="line-326"></span><span class="annot"><a href="Cardano.Api.Value.html#valueToNestedRep"><span class="hs-identifier hs-type">valueToNestedRep</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Value"><span class="hs-identifier hs-type">Value</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedRep"><span class="hs-identifier hs-type">ValueNestedRep</span></a></span><span>
@@ -1457,7 +1457,7 @@ $cshowsPrec :: Int -&gt; ValueNestedBundle -&gt; ShowS
 </span><a href="Cardano.Api.Value.html#ValueNestedRep"><span class="hs-identifier hs-var">ValueNestedRep</span></a></span><span> </span><span class="annot"><span class="annottext">([ValueNestedBundle] -&gt; ValueNestedRep)
 -&gt; [ValueNestedBundle] -&gt; ValueNestedRep
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-330"></span><span>        </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; ValueNestedBundle
 </span><a href="Cardano.Api.Value.html#ValueNestedBundleAda"><span class="hs-identifier hs-var">ValueNestedBundleAda</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438133"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679438133"><span class="annot"><span class="annottext">q :: Quantity
@@ -1467,11 +1467,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Cardano.Api.Value.html#AdaAssetId"><span class="hs-identifier hs-var">AdaAssetId</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438133"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-331"></span><span>     </span><span class="annot"><span class="annottext">[ValueNestedBundle] -&gt; [ValueNestedBundle] -&gt; [ValueNestedBundle]
 forall a. [a] -&gt; [a] -&gt; [a]
-</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">PolicyId -&gt; Map AssetName Quantity -&gt; ValueNestedBundle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">++</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">PolicyId -&gt; Map AssetName Quantity -&gt; ValueNestedBundle
 </span><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-var">ValueNestedBundle</span></a></span><span> </span><span class="annot"><span class="annottext">PolicyId
 </span><a href="#local-6989586621679438132"><span class="hs-identifier hs-var">pId</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetName Quantity
 </span><a href="#local-6989586621679438131"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679438132"><span class="annot"><span class="annottext">PolicyId
@@ -1479,10 +1479,10 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><a href="#local-6989586621679438131"><span class="hs-identifier hs-var">qs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map PolicyId (Map AssetName Quantity)
 -&gt; [(PolicyId, Map AssetName Quantity)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map PolicyId (Map AssetName Quantity)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map PolicyId (Map AssetName Quantity)
 </span><a href="#local-6989586621679438130"><span class="hs-identifier hs-var">nonAdaAssets</span></a></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-332"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-333"></span><span>    </span><span class="annot"><a href="#local-6989586621679438130"><span class="hs-identifier hs-type">nonAdaAssets</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-333"></span><span>    </span><span class="annot"><a href="#local-6989586621679438130"><span class="hs-identifier hs-type">nonAdaAssets</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-type">Map</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#AssetName"><span class="hs-identifier hs-type">AssetName</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Quantity"><span class="hs-identifier hs-type">Quantity</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-334"></span><span>    </span><span id="local-6989586621679438130"><span class="annot"><span class="annottext">nonAdaAssets :: Map PolicyId (Map AssetName Quantity)
 </span><a href="#local-6989586621679438130"><span class="hs-identifier hs-var hs-var">nonAdaAssets</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-335"></span><span>      </span><span class="annot"><span class="annottext">(Map AssetName Quantity
@@ -1490,18 +1490,18 @@ forall k a. Map k a -&gt; [(k, a)]
 -&gt; [(PolicyId, Map AssetName Quantity)]
 -&gt; Map PolicyId (Map AssetName Quantity)
 forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; [(k, a)] -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.fromListWith</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Quantity -&gt; Quantity -&gt; Quantity)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.fromListWith</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Quantity -&gt; Quantity -&gt; Quantity)
 -&gt; Map AssetName Quantity
 -&gt; Map AssetName Quantity
 -&gt; Map AssetName Quantity
 forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; Map k a -&gt; Map k a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.unionWith</span></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.unionWith</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity -&gt; Quantity -&gt; Quantity
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">(&lt;&gt;)</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-336"></span><span>        </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PolicyId
 </span><a href="#local-6989586621679438128"><span class="hs-identifier hs-var">pId</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">AssetName -&gt; Quantity -&gt; Map AssetName Quantity
 forall k a. k -&gt; a -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.singleton</span></span><span> </span><span class="annot"><span class="annottext">AssetName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.singleton</span></a></span><span> </span><span class="annot"><span class="annottext">AssetName
 </span><a href="#local-6989586621679438127"><span class="hs-identifier hs-var">aName</span></a></span><span> </span><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438126"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-337"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#AssetId"><span class="hs-identifier hs-type">AssetId</span></a></span><span> </span><span id="local-6989586621679438128"><span class="annot"><span class="annottext">PolicyId
@@ -1542,7 +1542,7 @@ forall k a. k -&gt; a -&gt; Map k a
 </span><a href="#local-6989586621679438118"><span class="hs-identifier hs-var">aName</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438117"><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438117"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map AssetName Quantity -&gt; [(AssetName, Quantity)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map AssetName Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map AssetName Quantity
 </span><a href="#local-6989586621679438119"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-348"></span><span>      </span><span class="hs-special">]</span><span>
 </span><span id="line-349"></span><span>
@@ -1552,13 +1552,13 @@ forall k a. Map k a -&gt; [(k, a)]
 </span><a href="#local-6989586621679438108"><span class="hs-identifier hs-var">bundles</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span> </span><span class="annot"><span class="annottext">([Pair] -&gt; Value) -&gt; [Pair] -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(ValueNestedBundle -&gt; Pair) -&gt; [ValueNestedBundle] -&gt; [Pair]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">(ValueNestedBundle -&gt; Pair) -&gt; [ValueNestedBundle] -&gt; [Pair]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
-</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">ValueNestedBundle -&gt; Pair
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">ValueNestedBundle -&gt; Pair
 </span><a href="#local-6989586621679438106"><span class="hs-identifier hs-var">toPair</span></a></span><span> </span><span class="annot"><span class="annottext">[ValueNestedBundle]
 </span><a href="#local-6989586621679438108"><span class="hs-identifier hs-var">bundles</span></a></span><span>
 </span><span id="line-352"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-353"></span><span>     </span><span class="annot"><a href="#local-6989586621679438106"><span class="hs-identifier hs-type">toPair</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-type">ValueNestedBundle</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Aeson.Value</span></span><span class="hs-special">)</span><span>
+</span><span id="line-353"></span><span>     </span><span class="annot"><a href="#local-6989586621679438106"><span class="hs-identifier hs-type">toPair</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-type">ValueNestedBundle</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Aeson.Value</span></span><span class="hs-special">)</span><span>
 </span><span id="line-354"></span><span>     </span><span id="local-6989586621679438106"><span class="annot"><span class="annottext">toPair :: ValueNestedBundle -&gt; Pair
 </span><a href="#local-6989586621679438106"><span class="hs-identifier hs-var hs-var">toPair</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundleAda"><span class="hs-identifier hs-type">ValueNestedBundleAda</span></a></span><span> </span><span id="local-6989586621679438105"><span class="annot"><span class="annottext">Quantity
 </span><a href="#local-6989586621679438105"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
@@ -1575,7 +1575,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">Map AssetName Quantity
 </span><a href="#local-6989586621679438103"><span class="hs-identifier hs-var">assets</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-356"></span><span>
-</span><span id="line-357"></span><span>     </span><span class="annot"><a href="#local-6989586621679438102"><span class="hs-identifier hs-type">renderPolicyId</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-357"></span><span>     </span><span class="annot"><a href="#local-6989586621679438102"><span class="hs-identifier hs-type">renderPolicyId</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-358"></span><span>     </span><span id="local-6989586621679438102"><span class="annot"><span class="annottext">renderPolicyId :: PolicyId -&gt; Text
 </span><a href="#local-6989586621679438102"><span class="hs-identifier hs-var hs-var">renderPolicyId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-type">PolicyId</span></a></span><span> </span><span id="local-6989586621679438101"><span class="annot"><span class="annottext">ScriptHash
 </span><a href="#local-6989586621679438101"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ScriptHash -&gt; Text
@@ -1598,17 +1598,17 @@ forall a. String -&gt; (Object -&gt; Parser a) -&gt; Value -&gt; Parser a
 -&gt; Value
 -&gt; Parser ValueNestedRep
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679438094"><span class="annot"><span class="annottext">Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679438094"><span class="annot"><span class="annottext">Object
 </span><a href="#local-6989586621679438094"><span class="hs-identifier hs-var">obj</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-363"></span><span>        </span><span class="annot"><span class="annottext">[ValueNestedBundle] -&gt; ValueNestedRep
 </span><a href="Cardano.Api.Value.html#ValueNestedRep"><span class="hs-identifier hs-var">ValueNestedRep</span></a></span><span> </span><span class="annot"><span class="annottext">([ValueNestedBundle] -&gt; ValueNestedRep)
 -&gt; Parser [ValueNestedBundle] -&gt; Parser ValueNestedRep
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Parser ValueNestedBundle] -&gt; Parser [ValueNestedBundle]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">[Parser ValueNestedBundle] -&gt; Parser [ValueNestedBundle]
 forall (t :: * -&gt; *) (f :: * -&gt; *) a.
 (Traversable t, Applicative f) =&gt;
 t (f a) -&gt; f (t a)
-</span><span class="hs-identifier hs-var">sequenceA</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Pair -&gt; Parser ValueNestedBundle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">sequenceA</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Pair -&gt; Parser ValueNestedBundle
 </span><a href="#local-6989586621679438092"><span class="hs-identifier hs-var">parsePid</span></a></span><span> </span><span class="annot"><span class="annottext">Pair
 </span><a href="#local-6989586621679438091"><span class="hs-identifier hs-var">keyValTuple</span></a></span><span>
 </span><span id="line-364"></span><span>                                   </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679438091"><span class="annot"><span class="annottext">Pair
@@ -1617,7 +1617,7 @@ forall k v. HashMap k v -&gt; [(k, v)]
 </span><span class="hs-identifier hs-var">HashMap.toList</span></span><span> </span><span class="annot"><span class="annottext">Object
 </span><a href="#local-6989586621679438094"><span class="hs-identifier hs-var">obj</span></a></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-365"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-366"></span><span>      </span><span class="annot"><a href="#local-6989586621679438092"><span class="hs-identifier hs-type">parsePid</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Aeson.Value</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-type">ValueNestedBundle</span></a></span><span>
+</span><span id="line-366"></span><span>      </span><span class="annot"><a href="#local-6989586621679438092"><span class="hs-identifier hs-type">parsePid</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Aeson.Value</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-type">ValueNestedBundle</span></a></span><span>
 </span><span id="line-367"></span><span>      </span><span id="local-6989586621679438092"><span class="annot"><span class="annottext">parsePid :: Pair -&gt; Parser ValueNestedBundle
 </span><a href="#local-6989586621679438092"><span class="hs-identifier hs-var hs-var">parsePid</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;lovelace&quot;</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679438089"><span class="annot"><span class="annottext">Value
@@ -1625,7 +1625,7 @@ forall k v. HashMap k v -&gt; [(k, v)]
 </span><a href="Cardano.Api.Value.html#ValueNestedBundleAda"><span class="hs-identifier hs-var">ValueNestedBundleAda</span></a></span><span> </span><span class="annot"><span class="annottext">(Quantity -&gt; ValueNestedBundle)
 -&gt; Parser Quantity -&gt; Parser ValueNestedBundle
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser Quantity
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser Quantity
 forall a. FromJSON a =&gt; Value -&gt; Parser a
 </span><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438089"><span class="hs-identifier hs-var">q</span></a></span><span>
@@ -1638,30 +1638,30 @@ SerialiseAsRawBytes a =&gt;
 AsType a -&gt; ByteString -&gt; Maybe a
 </span><a href="Cardano.Api.SerialiseRaw.html#deserialiseFromRawBytesHex"><span class="hs-identifier hs-var">deserialiseFromRawBytesHex</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ScriptHash
 </span><a href="Cardano.Api.Script.html#AsScriptHash"><span class="hs-identifier hs-var">AsScriptHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679438088"><span class="hs-identifier hs-var">pid</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-370"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679438085"><span class="annot"><span class="annottext">ScriptHash
+</span><span id="line-370"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span id="local-6989586621679438085"><span class="annot"><span class="annottext">ScriptHash
 </span><a href="#local-6989586621679438085"><span class="hs-identifier hs-var">sHash</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">PolicyId -&gt; Map AssetName Quantity -&gt; ValueNestedBundle
 </span><a href="Cardano.Api.Value.html#ValueNestedBundle"><span class="hs-identifier hs-var">ValueNestedBundle</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ScriptHash -&gt; PolicyId
 </span><a href="Cardano.Api.Value.html#PolicyId"><span class="hs-identifier hs-var">PolicyId</span></a></span><span> </span><span class="annot"><span class="annottext">ScriptHash
 </span><a href="#local-6989586621679438085"><span class="hs-identifier hs-var">sHash</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Map AssetName Quantity -&gt; ValueNestedBundle)
 -&gt; Parser (Map AssetName Quantity) -&gt; Parser ValueNestedBundle
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser (Map AssetName Quantity)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Value -&gt; Parser (Map AssetName Quantity)
 forall a. FromJSON a =&gt; Value -&gt; Parser a
 </span><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span class="annot"><span class="annottext">Value
 </span><a href="#local-6989586621679438087"><span class="hs-identifier hs-var">q</span></a></span><span>
 </span><span id="line-371"></span><span>          </span><span class="annot"><span class="annottext">Maybe ScriptHash
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ValueNestedBundle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ValueNestedBundle
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
-</span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser ValueNestedBundle)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fail</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser ValueNestedBundle)
 -&gt; String -&gt; Parser ValueNestedBundle
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Failure when deserialising PolicyId: &quot;</span></span><span>
 </span><span id="line-372"></span><span>                         </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
-</span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.unpack</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679438088"><span class="hs-identifier hs-var">pid</span></a></span><span>
 </span><span id="line-373"></span></pre></body></html>

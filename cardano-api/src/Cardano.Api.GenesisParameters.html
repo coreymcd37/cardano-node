@@ -16,9 +16,9 @@
 </span><span id="line-16"></span><span>
 </span><span id="line-17"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-18"></span><span>
-</span><span id="line-19"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-20"></span><span>
-</span><span id="line-21"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Time</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">NominalDiffTime</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">UTCTime</span></span><span class="hs-special">)</span><span>
+</span><span id="line-21"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/time-1.9.3/src"><span class="hs-identifier">Data.Time</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/time-1.9.3/src"><span class="hs-identifier">NominalDiffTime</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/time-1.9.3/src"><span class="hs-identifier">UTCTime</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-22"></span><span>
 </span><span id="line-23"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Slotting.Slot</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">EpochSize</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-24"></span><span>
@@ -41,7 +41,7 @@
 </span><span id="line-41"></span><span>       </span><span class="hs-comment">-- The time epoch against which all Ouroboros time slots are measured.</span><span>
 </span><span id="line-42"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-43"></span><span>       </span><span id="protocolParamSystemStart"><span class="annot"><span class="annottext">GenesisParameters -&gt; UTCTime
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSystemStart"><span class="hs-identifier hs-var hs-var">protocolParamSystemStart</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UTCTime</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSystemStart"><span class="hs-identifier hs-var hs-var">protocolParamSystemStart</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/time-1.9.3/src"><span class="hs-identifier hs-type">UTCTime</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-44"></span><span>
 </span><span id="line-45"></span><span>       </span><span class="hs-comment">-- | The network identifier for this blockchain instance. This</span><span>
 </span><span id="line-46"></span><span>       </span><span class="hs-comment">-- distinguishes the mainnet from testnets, and different testnets from</span><span>
@@ -53,7 +53,7 @@
 </span><span id="line-51"></span><span>       </span><span class="hs-comment">-- | The Ouroboros Praos active slot coefficient, aka @f@.</span><span>
 </span><span id="line-52"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-53"></span><span>       </span><span id="protocolParamActiveSlotsCoefficient"><span class="annot"><span class="annottext">GenesisParameters -&gt; Rational
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamActiveSlotsCoefficient"><span class="hs-identifier hs-var hs-var">protocolParamActiveSlotsCoefficient</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Rational</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamActiveSlotsCoefficient"><span class="hs-identifier hs-var hs-var">protocolParamActiveSlotsCoefficient</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Rational</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-54"></span><span>
 </span><span id="line-55"></span><span>       </span><span class="hs-comment">-- | The Ouroboros security paramaters, aka @k@. This is the maximum</span><span>
 </span><span id="line-56"></span><span>       </span><span class="hs-comment">-- number of blocks the node would ever be prepared to roll back by.</span><span>
@@ -62,7 +62,7 @@
 </span><span id="line-59"></span><span>       </span><span class="hs-comment">-- the node switching forks up to this long.</span><span>
 </span><span id="line-60"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-61"></span><span>       </span><span id="protocolParamSecurity"><span class="annot"><span class="annottext">GenesisParameters -&gt; Int
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSecurity"><span class="hs-identifier hs-var hs-var">protocolParamSecurity</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSecurity"><span class="hs-identifier hs-var hs-var">protocolParamSecurity</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span>       </span><span class="hs-comment">-- | The number of Ouroboros time slots in an Ouroboros epoch.</span><span>
 </span><span id="line-64"></span><span>       </span><span class="hs-comment">--</span><span>
@@ -72,13 +72,13 @@
 </span><span id="line-67"></span><span>       </span><span class="hs-comment">-- | The time duration of a slot.</span><span>
 </span><span id="line-68"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-69"></span><span>       </span><span id="protocolParamSlotLength"><span class="annot"><span class="annottext">GenesisParameters -&gt; NominalDiffTime
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSlotLength"><span class="hs-identifier hs-var hs-var">protocolParamSlotLength</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NominalDiffTime</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSlotLength"><span class="hs-identifier hs-var hs-var">protocolParamSlotLength</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/time-1.9.3/src"><span class="hs-identifier hs-type">NominalDiffTime</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span>       </span><span class="hs-comment">-- | For Ouroboros Praos, the length of a KES period as a number of time</span><span>
 </span><span id="line-72"></span><span>       </span><span class="hs-comment">-- slots. The KES keys get evolved once per KES period.</span><span>
 </span><span id="line-73"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-74"></span><span>       </span><span id="protocolParamSlotsPerKESPeriod"><span class="annot"><span class="annottext">GenesisParameters -&gt; Int
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSlotsPerKESPeriod"><span class="hs-identifier hs-var hs-var">protocolParamSlotsPerKESPeriod</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamSlotsPerKESPeriod"><span class="hs-identifier hs-var hs-var">protocolParamSlotsPerKESPeriod</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-75"></span><span>
 </span><span id="line-76"></span><span>       </span><span class="hs-comment">-- | The maximum number of times a KES key can be evolved before it is</span><span>
 </span><span id="line-77"></span><span>       </span><span class="hs-comment">-- no longer considered valid. This can be less than the maximum number</span><span>
@@ -86,14 +86,14 @@
 </span><span id="line-79"></span><span>       </span><span class="hs-comment">-- would allow 64 evolutions, but the max KES evolutions param is 62.</span><span>
 </span><span id="line-80"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-81"></span><span>       </span><span id="protocolParamMaxKESEvolutions"><span class="annot"><span class="annottext">GenesisParameters -&gt; Int
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamMaxKESEvolutions"><span class="hs-identifier hs-var hs-var">protocolParamMaxKESEvolutions</span></a></span></span><span> </span><span class="hs-glyph">::</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamMaxKESEvolutions"><span class="hs-identifier hs-var hs-var">protocolParamMaxKESEvolutions</span></a></span></span><span> </span><span class="hs-glyph">::</span><span>  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-82"></span><span>
 </span><span id="line-83"></span><span>       </span><span class="hs-comment">-- | In the Shelley era, prior to decentralised governance, this is the</span><span>
 </span><span id="line-84"></span><span>       </span><span class="hs-comment">-- number of genesis key delegates that need to agree for an update</span><span>
 </span><span id="line-85"></span><span>       </span><span class="hs-comment">-- proposal to be enacted.</span><span>
 </span><span id="line-86"></span><span>       </span><span class="hs-comment">--</span><span>
 </span><span id="line-87"></span><span>       </span><span id="protocolParamUpdateQuorum"><span class="annot"><span class="annottext">GenesisParameters -&gt; Int
-</span><a href="Cardano.Api.GenesisParameters.html#protocolParamUpdateQuorum"><span class="hs-identifier hs-var hs-var">protocolParamUpdateQuorum</span></a></span></span><span> </span><span class="hs-glyph">::</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.GenesisParameters.html#protocolParamUpdateQuorum"><span class="hs-identifier hs-var hs-var">protocolParamUpdateQuorum</span></a></span></span><span> </span><span class="hs-glyph">::</span><span>  </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-88"></span><span>
 </span><span id="line-89"></span><span>       </span><span class="hs-comment">-- | The maximum supply for Lovelace. This determines the initial value</span><span>
 </span><span id="line-90"></span><span>       </span><span class="hs-comment">-- of the reserves.</span><span>
@@ -209,7 +209,7 @@ forall r. BoundedRational r =&gt; r -&gt; Rational
 </span><span id="line-129"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamSecurity :: Int
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamSecurity"><span class="hs-identifier hs-var">protocolParamSecurity</span></a></span><span>               </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679439898"><span class="hs-identifier hs-var">sgSecurityParam</span></a></span><span>
 </span><span id="line-130"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamEpochLength :: EpochSize
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamEpochLength"><span class="hs-identifier hs-var">protocolParamEpochLength</span></a></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochSize
@@ -220,24 +220,24 @@ forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span id="line-132"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamSlotsPerKESPeriod :: Int
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamSlotsPerKESPeriod"><span class="hs-identifier hs-var">protocolParamSlotsPerKESPeriod</span></a></span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679439894"><span class="hs-identifier hs-var">sgSlotsPerKESPeriod</span></a></span><span>
 </span><span id="line-133"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamMaxKESEvolutions :: Int
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamMaxKESEvolutions"><span class="hs-identifier hs-var">protocolParamMaxKESEvolutions</span></a></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679439892"><span class="hs-identifier hs-var">sgMaxKESEvolutions</span></a></span><span>
 </span><span id="line-134"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamUpdateQuorum :: Int
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamUpdateQuorum"><span class="hs-identifier hs-var">protocolParamUpdateQuorum</span></a></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679439888"><span class="hs-identifier hs-var">sgUpdateQuorum</span></a></span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolParamMaxLovelaceSupply :: Lovelace
 </span><a href="Cardano.Api.GenesisParameters.html#protocolParamMaxLovelaceSupply"><span class="hs-identifier hs-var">protocolParamMaxLovelaceSupply</span></a></span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-var">Lovelace</span></a></span><span>
 </span><span id="line-136"></span><span>                                              </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; Integer
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><a href="#local-6989586621679439886"><span class="hs-identifier hs-var">sgMaxLovelaceSupply</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-137"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">protocolInitialUpdateableProtocolParameters :: ProtocolParameters
 </span><a href="Cardano.Api.GenesisParameters.html#protocolInitialUpdateableProtocolParameters"><span class="hs-identifier hs-var">protocolInitialUpdateableProtocolParameters</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">PParams era -&gt; ProtocolParameters

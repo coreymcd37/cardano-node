@@ -8,7 +8,7 @@
 </span><span id="line-8"></span><span>  </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier">ConvertTxId</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-9"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-10"></span><span>
-</span><span id="line-11"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">All</span></span><span class="hs-special">)</span><span>
+</span><span id="line-11"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">All</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-12"></span><span>
 </span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.SOP.Strict</span></span><span>
 </span><span id="line-14"></span><span>
@@ -25,7 +25,7 @@
 </span><span id="line-25"></span><span>
 </span><span id="line-26"></span><span class="hs-comment">-- | Convert a transaction ID to raw bytes.</span><span>
 </span><span id="line-27"></span><span class="hs-keyword">class</span><span> </span><span id="ConvertTxId"><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier hs-var">ConvertTxId</span></a></span></span><span> </span><span id="local-6989586621679406204"><span class="annot"><a href="#local-6989586621679406204"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-28"></span><span>  </span><span id="txIdToRawBytes"><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#txIdToRawBytes"><span class="hs-identifier hs-type">txIdToRawBytes</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TxId</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">GenTx</span></span><span> </span><span class="annot"><a href="#local-6989586621679406204"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-28"></span><span>  </span><span id="txIdToRawBytes"><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#txIdToRawBytes"><span class="hs-identifier hs-type">txIdToRawBytes</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TxId</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">GenTx</span></span><span> </span><span class="annot"><a href="#local-6989586621679406204"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-29"></span><span>
 </span><span id="line-30"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier hs-type">ConvertTxId</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByronBlock</span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-31"></span><span>  </span><span id="local-6989586621679406130"><span class="annot"><span class="annottext">txIdToRawBytes :: TxId (GenTx ByronBlock) -&gt; ByteString
@@ -60,7 +60,7 @@ forall h a. Hash h a -&gt; ByteString
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">SafeHash (Crypto c) EraIndependentTxBody
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">SafeHash (Crypto c) EraIndependentTxBody
 -&gt; Hash (HASH (Crypto c)) EraIndependentTxBody
 forall crypto i. SafeHash crypto i -&gt; Hash (HASH crypto) i
 </span><span class="hs-identifier hs-var">Ledger.extractHash</span></span><span> </span><span class="annot"><span class="annottext">(SafeHash (Crypto c) EraIndependentTxBody
@@ -71,11 +71,11 @@ forall crypto i. SafeHash crypto i -&gt; Hash (HASH crypto) i
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TxId (Crypto c) -&gt; SafeHash (Crypto c) EraIndependentTxBody
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TxId (Crypto c) -&gt; SafeHash (Crypto c) EraIndependentTxBody
 forall crypto. TxId crypto -&gt; SafeHash crypto EraIndependentTxBody
 </span><span class="hs-identifier hs-var hs-var">Shelley._unTxId</span></span><span> </span><span class="annot"><span class="annottext">(TxId (Crypto c) -&gt; ByteString) -&gt; TxId (Crypto c) -&gt; ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">TxId (Crypto c)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">TxId (Crypto c)
 </span><a href="#local-6989586621679406116"><span class="hs-identifier hs-var">txId</span></a></span></span><span>
 </span><span id="line-41"></span><span>
 </span><span id="line-42"></span><span id="local-6989586621679406111"><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">All</span></span><span> </span><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier hs-type">ConvertTxId</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679406111"><span class="hs-identifier hs-type">xs</span></a></span><span>
@@ -94,7 +94,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy ConvertTxId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy ConvertTxId
 -&gt; (forall a. ConvertTxId a =&gt; WrapGenTxId a -&gt; K ByteString a)
 -&gt; NS WrapGenTxId xs
 -&gt; NS (K ByteString) xs
@@ -106,21 +106,21 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy ConvertTxId
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier hs-type">ConvertTxId</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; K ByteString a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="annot"><a href="Cardano.Tracing.ConvertTxId.html#ConvertTxId"><span class="hs-identifier hs-type">ConvertTxId</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; K ByteString a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; K ByteString a)
 -&gt; (WrapGenTxId a -&gt; ByteString) -&gt; WrapGenTxId a -&gt; K ByteString a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx a) -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx a) -&gt; ByteString
 forall blk. ConvertTxId blk =&gt; TxId (GenTx blk) -&gt; ByteString
 </span><a href="Cardano.Tracing.ConvertTxId.html#txIdToRawBytes"><span class="hs-identifier hs-var">txIdToRawBytes</span></a></span><span> </span><span class="annot"><span class="annottext">(TxId (GenTx a) -&gt; ByteString)
 -&gt; (WrapGenTxId a -&gt; TxId (GenTx a)) -&gt; WrapGenTxId a -&gt; ByteString
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId a -&gt; TxId (GenTx a)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId a -&gt; TxId (GenTx a)
 forall blk. WrapGenTxId blk -&gt; GenTxId blk
 </span><span class="hs-identifier hs-var hs-var">unwrapGenTxId</span></span><span class="hs-special">)</span><span>
 </span><span id="line-47"></span><span>      </span><span class="annot"><span class="annottext">(NS WrapGenTxId xs -&gt; NS (K ByteString) xs)
@@ -130,7 +130,7 @@ forall blk. WrapGenTxId blk -&gt; GenTxId blk
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraGenTxId xs -&gt; NS WrapGenTxId xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 forall (xs :: [*]). OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraGenTxId</span></span><span>
 </span><span id="line-48"></span><span>      </span><span class="annot"><span class="annottext">(OneEraGenTxId xs -&gt; NS WrapGenTxId xs)
@@ -140,7 +140,7 @@ forall (xs :: [*]). OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
 forall (xs :: [*]).
 TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
 </span><span class="hs-identifier hs-var hs-var">getHardForkGenTxId</span></span></span><span>

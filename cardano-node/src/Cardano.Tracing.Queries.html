@@ -6,9 +6,9 @@
 </span><span id="line-6"></span><span>  </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Tracing.Queries.html#LedgerQueries"><span class="hs-identifier">LedgerQueries</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-7"></span><span class="hs-keyword">where</span><span>
 </span><span id="line-8"></span><span>
-</span><span id="line-9"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Int</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-operator">(.)</span></span><span class="hs-special">)</span><span>
+</span><span id="line-9"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier">Int</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator">(.)</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-10"></span><span>
-</span><span id="line-11"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
+</span><span id="line-11"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Strict</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
 </span><span id="line-12"></span><span>
 </span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Ouroboros.Consensus.HardFork.Combinator</span></span><span>
 </span><span id="line-14"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Ouroboros.Consensus.HardFork.Combinator.Embed.Unary</span></span><span>
@@ -27,31 +27,31 @@
 </span><span id="line-27"></span><span>
 </span><span id="line-28"></span><span>
 </span><span id="line-29"></span><span class="hs-keyword">class</span><span> </span><span id="LedgerQueries"><span class="annot"><a href="Cardano.Tracing.Queries.html#LedgerQueries"><span class="hs-identifier hs-var">LedgerQueries</span></a></span></span><span> </span><span id="local-6989586621679407143"><span class="annot"><a href="#local-6989586621679407143"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-30"></span><span>  </span><span id="ledgerUtxoSize"><span class="annot"><a href="Cardano.Tracing.Queries.html#ledgerUtxoSize"><span class="hs-identifier hs-type">ledgerUtxoSize</span></a></span></span><span>     </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679407143"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
-</span><span id="line-31"></span><span>  </span><span id="ledgerDelegMapSize"><span class="annot"><a href="Cardano.Tracing.Queries.html#ledgerDelegMapSize"><span class="hs-identifier hs-type">ledgerDelegMapSize</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679407143"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
+</span><span id="line-30"></span><span>  </span><span id="ledgerUtxoSize"><span class="annot"><a href="Cardano.Tracing.Queries.html#ledgerUtxoSize"><span class="hs-identifier hs-type">ledgerUtxoSize</span></a></span></span><span>     </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679407143"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span>
+</span><span id="line-31"></span><span>  </span><span id="ledgerDelegMapSize"><span class="annot"><a href="Cardano.Tracing.Queries.html#ledgerDelegMapSize"><span class="hs-identifier hs-type">ledgerDelegMapSize</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679407143"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span>
 </span><span id="line-32"></span><span>
 </span><span id="line-33"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Tracing.Queries.html#LedgerQueries"><span class="hs-identifier hs-type">LedgerQueries</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.ByronBlock</span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-34"></span><span>  </span><span id="local-6989586621679407090"><span class="annot"><span class="annottext">ledgerUtxoSize :: LedgerState ByronBlock -&gt; Int
 </span><a href="#local-6989586621679407090"><span class="hs-identifier hs-var hs-var hs-var hs-var">ledgerUtxoSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map CompactTxIn CompactTxOut -&gt; Int
 forall k a. Map k a -&gt; Int
-</span><span class="hs-identifier hs-var">Map.size</span></span><span> </span><span class="annot"><span class="annottext">(Map CompactTxIn CompactTxOut -&gt; Int)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.size</span></a></span><span> </span><span class="annot"><span class="annottext">(Map CompactTxIn CompactTxOut -&gt; Int)
 -&gt; (LedgerState ByronBlock -&gt; Map CompactTxIn CompactTxOut)
 -&gt; LedgerState ByronBlock
 -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">UTxO -&gt; Map CompactTxIn CompactTxOut
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">UTxO -&gt; Map CompactTxIn CompactTxOut
 </span><span class="hs-identifier hs-var hs-var">Byron.unUTxO</span></span><span> </span><span class="annot"><span class="annottext">(UTxO -&gt; Map CompactTxIn CompactTxOut)
 -&gt; (LedgerState ByronBlock -&gt; UTxO)
 -&gt; LedgerState ByronBlock
 -&gt; Map CompactTxIn CompactTxOut
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ChainValidationState -&gt; UTxO
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ChainValidationState -&gt; UTxO
 </span><span class="hs-identifier hs-var hs-var">Byron.cvsUtxo</span></span><span> </span><span class="annot"><span class="annottext">(ChainValidationState -&gt; UTxO)
 -&gt; (LedgerState ByronBlock -&gt; ChainValidationState)
 -&gt; LedgerState ByronBlock
 -&gt; UTxO
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState ByronBlock -&gt; ChainValidationState
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState ByronBlock -&gt; ChainValidationState
 </span><span class="hs-identifier hs-var hs-var">Byron.byronLedgerState</span></span><span>
 </span><span id="line-35"></span><span>  </span><span id="local-6989586621679407085"><span class="annot"><span class="annottext">ledgerDelegMapSize :: LedgerState ByronBlock -&gt; Int
 </span><a href="#local-6989586621679407085"><span class="hs-identifier hs-var hs-var hs-var hs-var">ledgerDelegMapSize</span></a></span></span><span> </span><span class="annot"><span class="annottext">LedgerState ByronBlock
@@ -64,14 +64,14 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-39"></span><span>      </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.UTxO</span></span><span> </span><span id="local-6989586621679407079"><span class="annot"><span class="annottext">Map (TxIn (Crypto era)) (TxOut era)
 </span><a href="#local-6989586621679407079"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Map (TxIn (Crypto era)) (TxOut era) -&gt; Int
 forall k a. Map k a -&gt; Int
-</span><span class="hs-identifier hs-var">Map.size</span></span><span> </span><span class="annot"><span class="annottext">Map (TxIn (Crypto era)) (TxOut era)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.size</span></a></span><span> </span><span class="annot"><span class="annottext">Map (TxIn (Crypto era)) (TxOut era)
 </span><a href="#local-6989586621679407079"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-40"></span><span>    </span><span class="annot"><span class="annottext">(UTxO era -&gt; Int)
 -&gt; (LedgerState (ShelleyBlock era) -&gt; UTxO era)
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">UTxOState era -&gt; UTxO era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">UTxOState era -&gt; UTxO era
 forall era. UTxOState era -&gt; UTxO era
 </span><span class="hs-identifier hs-var hs-var">Shelley._utxo</span></span><span>
 </span><span id="line-41"></span><span>    </span><span class="annot"><span class="annottext">(UTxOState era -&gt; UTxO era)
@@ -79,7 +79,7 @@ forall era. UTxOState era -&gt; UTxO era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; UTxO era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState era -&gt; UTxOState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState era -&gt; UTxOState era
 forall era. LedgerState era -&gt; UTxOState era
 </span><span class="hs-identifier hs-var hs-var">Shelley._utxoState</span></span><span>
 </span><span id="line-42"></span><span>    </span><span class="annot"><span class="annottext">(LedgerState era -&gt; UTxOState era)
@@ -87,7 +87,7 @@ forall era. LedgerState era -&gt; UTxOState era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; UTxOState era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">EpochState era -&gt; LedgerState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">EpochState era -&gt; LedgerState era
 forall era. EpochState era -&gt; LedgerState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.esLState</span></span><span>
 </span><span id="line-43"></span><span>    </span><span class="annot"><span class="annottext">(EpochState era -&gt; LedgerState era)
@@ -95,7 +95,7 @@ forall era. EpochState era -&gt; LedgerState era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; LedgerState era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NewEpochState era -&gt; EpochState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NewEpochState era -&gt; EpochState era
 forall era. NewEpochState era -&gt; EpochState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.nesEs</span></span><span>
 </span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">(NewEpochState era -&gt; EpochState era)
@@ -103,7 +103,7 @@ forall era. NewEpochState era -&gt; EpochState era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; EpochState era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState (ShelleyBlock era) -&gt; NewEpochState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState (ShelleyBlock era) -&gt; NewEpochState era
 forall era. LedgerState (ShelleyBlock era) -&gt; NewEpochState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.shelleyLedgerState</span></span><span>
 </span><span id="line-45"></span><span>  </span><span id="local-6989586621679407073"><span class="annot"><span class="annottext">ledgerDelegMapSize :: LedgerState (ShelleyBlock era) -&gt; Int
@@ -113,7 +113,7 @@ forall era. LedgerState (ShelleyBlock era) -&gt; NewEpochState era
   (KeyHash 'StakePool (Crypto era))
 -&gt; Int
 forall k a. Map k a -&gt; Int
-</span><span class="hs-identifier hs-var">Map.size</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.size</span></a></span><span>
 </span><span id="line-47"></span><span>    </span><span class="annot"><span class="annottext">(Map
    (Credential 'Staking (Crypto era))
    (KeyHash 'StakePool (Crypto era))
@@ -125,7 +125,7 @@ forall k a. Map k a -&gt; Int
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DState (Crypto era)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">DState (Crypto era)
 -&gt; Map
      (Credential 'Staking (Crypto era))
      (KeyHash 'StakePool (Crypto era))
@@ -143,7 +143,7 @@ DState crypto
      (Credential 'Staking (Crypto era))
      (KeyHash 'StakePool (Crypto era))
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DPState (Crypto era) -&gt; DState (Crypto era)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">DPState (Crypto era) -&gt; DState (Crypto era)
 forall crypto. DPState crypto -&gt; DState crypto
 </span><span class="hs-identifier hs-var hs-var">Shelley._dstate</span></span><span>
 </span><span id="line-49"></span><span>    </span><span class="annot"><span class="annottext">(DPState (Crypto era) -&gt; DState (Crypto era))
@@ -151,7 +151,7 @@ forall crypto. DPState crypto -&gt; DState crypto
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; DState (Crypto era)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState era -&gt; DPState (Crypto era)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState era -&gt; DPState (Crypto era)
 forall era. LedgerState era -&gt; DPState (Crypto era)
 </span><span class="hs-identifier hs-var hs-var">Shelley._delegationState</span></span><span>
 </span><span id="line-50"></span><span>    </span><span class="annot"><span class="annottext">(LedgerState era -&gt; DPState (Crypto era))
@@ -159,7 +159,7 @@ forall era. LedgerState era -&gt; DPState (Crypto era)
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; DPState (Crypto era)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">EpochState era -&gt; LedgerState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">EpochState era -&gt; LedgerState era
 forall era. EpochState era -&gt; LedgerState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.esLState</span></span><span>
 </span><span id="line-51"></span><span>    </span><span class="annot"><span class="annottext">(EpochState era -&gt; LedgerState era)
@@ -167,7 +167,7 @@ forall era. EpochState era -&gt; LedgerState era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; LedgerState era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NewEpochState era -&gt; EpochState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NewEpochState era -&gt; EpochState era
 forall era. NewEpochState era -&gt; EpochState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.nesEs</span></span><span>
 </span><span id="line-52"></span><span>    </span><span class="annot"><span class="annottext">(NewEpochState era -&gt; EpochState era)
@@ -175,7 +175,7 @@ forall era. NewEpochState era -&gt; EpochState era
 -&gt; LedgerState (ShelleyBlock era)
 -&gt; EpochState era
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState (ShelleyBlock era) -&gt; NewEpochState era
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState (ShelleyBlock era) -&gt; NewEpochState era
 forall era. LedgerState (ShelleyBlock era) -&gt; NewEpochState era
 </span><span class="hs-identifier hs-var hs-var">Shelley.shelleyLedgerState</span></span></span><span>
 </span><span id="line-53"></span><span>
@@ -189,7 +189,7 @@ forall blk. LedgerQueries blk =&gt; LedgerState blk -&gt; Int
 -&gt; LedgerState (HardForkBlock '[x])
 -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState (HardForkBlock '[x]) -&gt; LedgerState x
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState (HardForkBlock '[x]) -&gt; LedgerState x
 forall (f :: * -&gt; *) blk.
 (Isomorphic f, NoHardForks blk) =&gt;
 f (HardForkBlock '[blk]) -&gt; f blk
@@ -202,7 +202,7 @@ forall blk. LedgerQueries blk =&gt; LedgerState blk -&gt; Int
 -&gt; LedgerState (HardForkBlock '[x])
 -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">LedgerState (HardForkBlock '[x]) -&gt; LedgerState x
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">LedgerState (HardForkBlock '[x]) -&gt; LedgerState x
 forall (f :: * -&gt; *) blk.
 (Isomorphic f, NoHardForks blk) =&gt;
 f (HardForkBlock '[blk]) -&gt; f blk

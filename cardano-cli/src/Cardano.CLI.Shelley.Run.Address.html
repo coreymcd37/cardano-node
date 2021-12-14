@@ -15,11 +15,11 @@
 </span><span id="line-15"></span><span>
 </span><span id="line-16"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">System.Console.ANSI</span></span><span>
 </span><span id="line-17"></span><span>
-</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Char8</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
-</span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
-</span><span id="line-20"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text.IO</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Char8</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text.IO</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-21"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">System.Console.ANSI</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">ANSI</span></span><span>
-</span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">System.IO</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">IO</span></span><span>
+</span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">System.IO</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">IO</span></span><span>
 </span><span id="line-23"></span><span>
 </span><span id="line-24"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">firstExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">newExceptT</span></span><span class="hs-special">)</span><span>
 </span><span id="line-25"></span><span>
@@ -56,9 +56,9 @@ show :: ShelleyAddressCmdError -&gt; String
 $cshow :: ShelleyAddressCmdError -&gt; String
 showsPrec :: Int -&gt; ShelleyAddressCmdError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ShelleyAddressCmdError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-45"></span><span>
-</span><span id="line-46"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#renderShelleyAddressCmdError"><span class="hs-identifier hs-type">renderShelleyAddressCmdError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-46"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#renderShelleyAddressCmdError"><span class="hs-identifier hs-type">renderShelleyAddressCmdError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span>
 </span><span id="line-47"></span><span id="renderShelleyAddressCmdError"><span class="annot"><span class="annottext">renderShelleyAddressCmdError :: ShelleyAddressCmdError -&gt; Text
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#renderShelleyAddressCmdError"><span class="hs-identifier hs-var hs-var">renderShelleyAddressCmdError</span></a></span></span><span> </span><span id="local-6989586621679317574"><span class="annot"><span class="annottext">ShelleyAddressCmdError
 </span><a href="#local-6989586621679317574"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -67,14 +67,14 @@ $cshowsPrec :: Int -&gt; ShelleyAddressCmdError -&gt; ShowS
 </span><span id="line-49"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdAddressInfoError"><span class="hs-identifier hs-type">ShelleyAddressCmdAddressInfoError</span></a></span><span> </span><span id="local-6989586621679317573"><span class="annot"><span class="annottext">ShelleyAddressInfoError
 </span><a href="#local-6989586621679317573"><span class="hs-identifier hs-var">addrInfoErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-50"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShelleyAddressInfoError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShelleyAddressInfoError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">ShelleyAddressInfoError
 </span><a href="#local-6989586621679317573"><span class="hs-identifier hs-var">addrInfoErr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-51"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdReadKeyFileError"><span class="hs-identifier hs-type">ShelleyAddressCmdReadKeyFileError</span></a></span><span> </span><span id="local-6989586621679317570"><span class="annot"><span class="annottext">FileError InputDecodeError
 </span><a href="#local-6989586621679317570"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-52"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError InputDecodeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError InputDecodeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError InputDecodeError
 </span><a href="#local-6989586621679317570"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
@@ -86,18 +86,18 @@ forall e. Error e =&gt; e -&gt; String
 </span><span id="line-55"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdReadScriptFileError"><span class="hs-identifier hs-type">ShelleyAddressCmdReadScriptFileError</span></a></span><span> </span><span id="local-6989586621679317568"><span class="annot"><span class="annottext">FileError ScriptDecodeError
 </span><a href="#local-6989586621679317568"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-56"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError ScriptDecodeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError ScriptDecodeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError ScriptDecodeError
 </span><a href="#local-6989586621679317568"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-57"></span><span>    </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdWriteFileError"><span class="hs-identifier hs-type">ShelleyAddressCmdWriteFileError</span></a></span><span> </span><span id="local-6989586621679317567"><span class="annot"><span class="annottext">FileError ()
 </span><a href="#local-6989586621679317567"><span class="hs-identifier hs-var">fileErr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError () -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError () -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError ()
 </span><a href="#local-6989586621679317567"><span class="hs-identifier hs-var">fileErr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-58"></span><span>
-</span><span id="line-59"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressCmd"><span class="hs-identifier hs-type">runAddressCmd</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#AddressCmd"><span class="hs-identifier hs-type">AddressCmd</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-59"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressCmd"><span class="hs-identifier hs-type">runAddressCmd</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#AddressCmd"><span class="hs-identifier hs-type">AddressCmd</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-60"></span><span id="runAddressCmd"><span class="annot"><span class="annottext">runAddressCmd :: AddressCmd -&gt; ExceptT ShelleyAddressCmdError IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressCmd"><span class="hs-identifier hs-var hs-var">runAddressCmd</span></a></span></span><span> </span><span id="local-6989586621679317566"><span class="annot"><span class="annottext">AddressCmd
 </span><a href="#local-6989586621679317566"><span class="hs-identifier hs-var">cmd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -160,7 +160,7 @@ Functor m =&gt;
 -&gt; ExceptT ShelleyAddressInfoError IO ()
 -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe OutputFile -&gt; ExceptT ShelleyAddressInfoError IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe OutputFile -&gt; ExceptT ShelleyAddressInfoError IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Address.Info.html#runAddressInfo"><span class="hs-identifier hs-var">runAddressInfo</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679317545"><span class="hs-identifier hs-var">txt</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe OutputFile
 </span><a href="#local-6989586621679317544"><span class="hs-identifier hs-var">mOFp</span></a></span><span>
@@ -168,7 +168,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-68"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressKeyGen"><span class="hs-identifier hs-type">runAddressKeyGen</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#AddressKeyType"><span class="hs-identifier hs-type">AddressKeyType</span></a></span><span>
 </span><span id="line-69"></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Types.html#VerificationKeyFile"><span class="hs-identifier hs-type">VerificationKeyFile</span></a></span><span>
 </span><span id="line-70"></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.CLI.Types.html#SigningKeyFile"><span class="hs-identifier hs-type">SigningKeyFile</span></a></span><span>
-</span><span id="line-71"></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-71"></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span id="runAddressKeyGen"><span class="annot"><span class="annottext">runAddressKeyGen :: AddressKeyType
 -&gt; VerificationKeyFile
 -&gt; SigningKeyFile
@@ -208,12 +208,12 @@ AsType keyrole -&gt; ExceptT ShelleyAddressCmdError IO ()
 </span><a href="#local-6989586621679317530"><span class="hs-identifier hs-var">skey</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (SigningKey keyrole)
 -&gt; ExceptT ShelleyAddressCmdError IO (SigningKey keyrole)
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO (SigningKey keyrole)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (SigningKey keyrole)
  -&gt; ExceptT ShelleyAddressCmdError IO (SigningKey keyrole))
 -&gt; IO (SigningKey keyrole)
 -&gt; ExceptT ShelleyAddressCmdError IO (SigningKey keyrole)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AsType keyrole -&gt; IO (SigningKey keyrole)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AsType keyrole -&gt; IO (SigningKey keyrole)
 forall keyrole.
 Key keyrole =&gt;
 AsType keyrole -&gt; IO (SigningKey keyrole)
@@ -242,7 +242,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
 </span><span id="line-83"></span><span>        </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
@@ -250,7 +250,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; SigningKey keyrole
 -&gt; IO (Either (FileError ()) ())
@@ -261,7 +261,7 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317539"><span class="hs-identifier hs-var">skeyPath</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
 </span><a href="#local-6989586621679317523"><span class="hs-identifier hs-var">skeyDesc</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">SigningKey keyrole
 </span><a href="#local-6989586621679317530"><span class="hs-identifier hs-var">skey</span></a></span><span>
 </span><span id="line-84"></span><span>      </span><span class="annot"><span class="annottext">(FileError () -&gt; ShelleyAddressCmdError)
@@ -280,7 +280,7 @@ Functor m =&gt;
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError ()) ()) -&gt; ExceptT (FileError ()) IO ()
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">newExceptT</span></span><span>
 </span><span id="line-86"></span><span>        </span><span class="annot"><span class="annottext">(IO (Either (FileError ()) ())
@@ -288,7 +288,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; IO (Either (FileError ()) ())
 -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String
 -&gt; Maybe TextEnvelopeDescr
 -&gt; VerificationKey keyrole
 -&gt; IO (Either (FileError ()) ())
@@ -299,7 +299,7 @@ String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">writeFileTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317541"><span class="hs-identifier hs-var">vkeyPath</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeDescr -&gt; Maybe TextEnvelopeDescr
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeDescr
 </span><a href="#local-6989586621679317522"><span class="hs-identifier hs-var">vkeyDesc</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">VerificationKey keyrole
 </span><a href="#local-6989586621679317527"><span class="hs-identifier hs-var">vkey</span></a></span><span>
 </span><span id="line-87"></span><span>
@@ -313,8 +313,8 @@ forall a. a -&gt; Maybe a
 </span><span id="line-91"></span><span>
 </span><span id="line-92"></span><span>
 </span><span id="line-93"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressKeyHash"><span class="hs-identifier hs-type">runAddressKeyHash</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyTextOrFile"><span class="hs-identifier hs-type">VerificationKeyTextOrFile</span></a></span><span>
-</span><span id="line-94"></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
-</span><span id="line-95"></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-94"></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
+</span><span id="line-95"></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-96"></span><span id="runAddressKeyHash"><span class="annot"><span class="annottext">runAddressKeyHash :: VerificationKeyTextOrFile
 -&gt; Maybe OutputFile -&gt; ExceptT ShelleyAddressCmdError IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressKeyHash"><span class="hs-identifier hs-var hs-var">runAddressKeyHash</span></a></span></span><span> </span><span id="local-6989586621679317521"><span class="annot"><span class="annottext">VerificationKeyTextOrFile
@@ -336,7 +336,7 @@ Functor m =&gt;
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
 -&gt; ExceptT ShelleyAddressCmdError IO SomeAddressVerificationKey
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-98"></span><span>            </span><span class="annot"><span class="annottext">VerificationKeyTextOrFile
 -&gt; ExceptT
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
@@ -361,7 +361,7 @@ forall a. SerialiseAsRawBytes a =&gt; a -&gt; ByteString
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey keyrole -&gt; Hash keyrole
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey keyrole -&gt; Hash keyrole
 forall keyrole.
 Key keyrole =&gt;
 VerificationKey keyrole -&gt; Hash keyrole
@@ -370,32 +370,32 @@ VerificationKey keyrole -&gt; Hash keyrole
 </span><span id="line-102"></span><span>
 </span><span id="line-103"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe OutputFile
 </span><a href="#local-6989586621679317520"><span class="hs-identifier hs-var">mOutputFp</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-104"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span> </span><span id="local-6989586621679317513"><span class="annot"><span class="annottext">String
+</span><span id="line-104"></span><span>    </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span> </span><span id="local-6989586621679317513"><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317513"><span class="hs-identifier hs-var">fpath</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
 -&gt; IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ByteString -&gt; IO ()
-</span><span class="hs-identifier hs-var">BS.writeFile</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ByteString -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BS.writeFile</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317513"><span class="hs-identifier hs-var">fpath</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679317518"><span class="hs-identifier hs-var">hexKeyHash</span></a></span><span>
 </span><span id="line-105"></span><span>    </span><span class="annot"><span class="annottext">Maybe OutputFile
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
 -&gt; IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO ()
-</span><span class="hs-identifier hs-var">BS.putStrLn</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BS.putStrLn</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679317518"><span class="hs-identifier hs-var">hexKeyHash</span></a></span><span>
 </span><span id="line-106"></span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressBuild"><span class="hs-identifier hs-type">runAddressBuild</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#PaymentVerifier"><span class="hs-identifier hs-type">PaymentVerifier</span></a></span><span>
-</span><span id="line-109"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
+</span><span id="line-109"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
 </span><span id="line-110"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">NetworkId</span></a></span><span>
-</span><span id="line-111"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
-</span><span id="line-112"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-111"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
+</span><span id="line-112"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-113"></span><span id="runAddressBuild"><span class="annot"><span class="annottext">runAddressBuild :: PaymentVerifier
 -&gt; Maybe StakeVerifier
 -&gt; NetworkId
@@ -427,7 +427,7 @@ Functor m =&gt;
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
 -&gt; ExceptT ShelleyAddressCmdError IO SomeAddressVerificationKey
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-117"></span><span>        </span><span class="annot"><span class="annottext">VerificationKeyTextOrFile
 -&gt; ExceptT
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
@@ -441,7 +441,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="#local-6989586621679317500"><span class="hs-identifier hs-var">vk</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-121"></span><span>          </span><span class="annot"><span class="annottext">AddressAny -&gt; ExceptT ShelleyAddressCmdError IO AddressAny
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ByronAddr -&gt; AddressAny
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Address ByronAddr -&gt; AddressAny
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AddressByron</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NetworkId -&gt; VerificationKey ByronKey -&gt; Address ByronAddr
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">makeByronAddress</span></a></span><span> </span><span class="annot"><span class="annottext">NetworkId
 </span><a href="#local-6989586621679317508"><span class="hs-identifier hs-var">nw</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey ByronKey
@@ -454,7 +454,7 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
 -&gt; ExceptT ShelleyAddressCmdError IO AddressAny
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
 -&gt; Maybe StakeVerifier
 -&gt; NetworkId
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
@@ -470,7 +470,7 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
 -&gt; ExceptT ShelleyAddressCmdError IO AddressAny
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
 -&gt; Maybe StakeVerifier
 -&gt; NetworkId
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
@@ -490,7 +490,7 @@ VerificationKey keyroleA -&gt; VerificationKey keyroleB
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
 -&gt; ExceptT ShelleyAddressCmdError IO AddressAny
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey PaymentKey
 -&gt; Maybe StakeVerifier
 -&gt; NetworkId
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
@@ -505,10 +505,10 @@ VerificationKey keyroleA -&gt; VerificationKey keyroleB
 </span><span id="line-131"></span><span>
 </span><span id="line-132"></span><span>      </span><span class="annot"><span class="annottext">Text -&gt; ExceptT ShelleyAddressCmdError IO Text
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; ExceptT ShelleyAddressCmdError IO Text)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; ExceptT ShelleyAddressCmdError IO Text)
 -&gt; Text -&gt; ExceptT ShelleyAddressCmdError IO Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AddressAny -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AddressAny -&gt; Text
 forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">serialiseAddress</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AddressAny
 </span><a href="#local-6989586621679317502"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">AddressAny</span></a></span><span class="hs-special">)</span><span>
@@ -530,7 +530,7 @@ Functor m =&gt;
 -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 -&gt; ExceptT ShelleyAddressCmdError IO ScriptInAnyLang
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-137"></span><span>          </span><span class="annot"><span class="annottext">String -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 </span><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier hs-var">readFileScriptInAnyLang</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317485"><span class="hs-identifier hs-var">fp</span></a></span><span>
@@ -551,7 +551,7 @@ forall addr. SerialiseAddress addr =&gt; addr -&gt; Text
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NetworkId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">NetworkId
 -&gt; PaymentCredential
 -&gt; StakeAddressReference
 -&gt; Address ShelleyAddr
@@ -561,36 +561,36 @@ cat b c -&gt; cat a b -&gt; cat a c
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#makeStakeAddressRef"><span class="hs-identifier hs-var">makeStakeAddressRef</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 </span><a href="#local-6989586621679317509"><span class="hs-identifier hs-var">mbStakeVerifier</span></a></span><span>
 </span><span id="line-142"></span><span>
 </span><span id="line-143"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe OutputFile
 </span><a href="#local-6989586621679317507"><span class="hs-identifier hs-var">mOutFp</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-144"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span> </span><span id="local-6989586621679317475"><span class="annot"><span class="annottext">String
+</span><span id="line-144"></span><span>    </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span> </span><span id="local-6989586621679317475"><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317475"><span class="hs-identifier hs-var">fpath</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
 -&gt; IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text -&gt; IO ()
-</span><span class="hs-identifier hs-var">Text.writeFile</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.writeFile</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317475"><span class="hs-identifier hs-var">fpath</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679317506"><span class="hs-identifier hs-var">outText</span></a></span><span>
 </span><span id="line-145"></span><span>    </span><span class="annot"><span class="annottext">Maybe OutputFile
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; ExceptT ShelleyAddressCmdError IO ())
 -&gt; IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; IO ()
-</span><span class="hs-identifier hs-var">Text.putStr</span></span><span>          </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.putStr</span></a></span><span>          </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679317506"><span class="hs-identifier hs-var">outText</span></a></span><span>
 </span><span id="line-146"></span><span>
 </span><span id="line-147"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#makeStakeAddressRef"><span class="hs-identifier hs-type">makeStakeAddressRef</span></a></span><span>
-</span><span id="line-148"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
-</span><span id="line-149"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">StakeAddressReference</span></a></span><span>
+</span><span id="line-148"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
+</span><span id="line-149"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">StakeAddressReference</span></a></span><span>
 </span><span id="line-150"></span><span id="makeStakeAddressRef"><span class="annot"><span class="annottext">makeStakeAddressRef :: Maybe StakeVerifier
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#makeStakeAddressRef"><span class="hs-identifier hs-var hs-var">makeStakeAddressRef</span></a></span></span><span> </span><span id="local-6989586621679317472"><span class="annot"><span class="annottext">Maybe StakeVerifier
@@ -598,12 +598,12 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-151"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 </span><a href="#local-6989586621679317472"><span class="hs-identifier hs-var">mbStakeVerifier</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-152"></span><span>    </span><span class="annot"><span class="annottext">Maybe StakeVerifier
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">NoStakeAddress</span></a></span><span>
-</span><span id="line-153"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679317470"><span class="annot"><span class="annottext">StakeVerifier
+</span><span id="line-153"></span><span>    </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span id="local-6989586621679317470"><span class="annot"><span class="annottext">StakeVerifier
 </span><a href="#local-6989586621679317470"><span class="hs-identifier hs-var">stakeVerifier</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">StakeVerifier
 </span><a href="#local-6989586621679317470"><span class="hs-identifier hs-var">stakeVerifier</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-154"></span><span>      </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifierKey"><span class="hs-identifier hs-type">StakeVerifierKey</span></a></span><span> </span><span id="local-6989586621679317468"><span class="annot"><span class="annottext">VerificationKeyOrFile StakeKey
@@ -627,16 +627,16 @@ Functor m =&gt;
 -&gt; ExceptT
      ShelleyAddressCmdError IO (Maybe (VerificationKey StakeKey))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-156"></span><span>          </span><span class="annot"><span class="annottext">(VerificationKey StakeKey -&gt; Maybe (VerificationKey StakeKey))
 -&gt; ExceptT
      (FileError InputDecodeError) IO (VerificationKey StakeKey)
 -&gt; ExceptT
      (FileError InputDecodeError) IO (Maybe (VerificationKey StakeKey))
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakeKey -&gt; Maybe (VerificationKey StakeKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fmap</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakeKey -&gt; Maybe (VerificationKey StakeKey)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(ExceptT (FileError InputDecodeError) IO (VerificationKey StakeKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(ExceptT (FileError InputDecodeError) IO (VerificationKey StakeKey)
  -&gt; ExceptT
       (FileError InputDecodeError) IO (Maybe (VerificationKey StakeKey)))
 -&gt; ExceptT
@@ -644,7 +644,7 @@ forall a. a -&gt; Maybe a
 -&gt; ExceptT
      (FileError InputDecodeError) IO (Maybe (VerificationKey StakeKey))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (VerificationKey StakeKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">IO (Either (FileError InputDecodeError) (VerificationKey StakeKey))
 -&gt; ExceptT
      (FileError InputDecodeError) IO (VerificationKey StakeKey)
 forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
@@ -657,7 +657,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; ExceptT
      (FileError InputDecodeError) IO (VerificationKey StakeKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">AsType StakeKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">AsType StakeKey
 -&gt; VerificationKeyOrFile StakeKey
 -&gt; IO
      (Either (FileError InputDecodeError) (VerificationKey StakeKey))
@@ -675,17 +675,17 @@ AsType keyrole
 </span><span id="line-158"></span><span>        </span><span class="annot"><span class="annottext">StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="annot"><span class="annottext">(StakeAddressReference
  -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference)
 -&gt; StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
 -&gt; (VerificationKey StakeKey -&gt; StakeAddressReference)
 -&gt; Maybe (VerificationKey StakeKey)
 -&gt; StakeAddressReference
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
-</span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">maybe</span></a></span><span> </span><span class="annot"><span class="annottext">StakeAddressReference
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">NoStakeAddress</span></a></span><span>
 </span><span id="line-159"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="annottext">StakeCredential -&gt; StakeAddressReference
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">StakeAddressByValue</span></a></span><span> </span><span class="annot"><span class="annottext">(StakeCredential -&gt; StakeAddressReference)
@@ -695,7 +695,7 @@ forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Hash StakeKey -&gt; StakeCredential
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Hash StakeKey -&gt; StakeCredential
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">StakeCredentialByKey</span></a></span><span> </span><span class="annot"><span class="annottext">(Hash StakeKey -&gt; StakeCredential)
 -&gt; (VerificationKey StakeKey -&gt; Hash StakeKey)
 -&gt; VerificationKey StakeKey
@@ -703,7 +703,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakeKey -&gt; Hash StakeKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey StakeKey -&gt; Hash StakeKey
 forall keyrole.
 Key keyrole =&gt;
 VerificationKey keyrole -&gt; Hash keyrole
@@ -728,7 +728,7 @@ Functor m =&gt;
 -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 -&gt; ExceptT ShelleyAddressCmdError IO ScriptInAnyLang
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-165"></span><span>            </span><span class="annot"><span class="annottext">String -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 </span><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier hs-var">readFileScriptInAnyLang</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679317461"><span class="hs-identifier hs-var">fp</span></a></span><span>
@@ -742,15 +742,15 @@ forall lang. Script lang -&gt; ScriptHash
 </span><span id="line-168"></span><span>        </span><span class="annot"><span class="annottext">StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">StakeCredential -&gt; StakeAddressReference
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">StakeCredential -&gt; StakeAddressReference
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">StakeAddressByValue</span></a></span><span> </span><span class="annot"><span class="annottext">StakeCredential
 </span><a href="#local-6989586621679317458"><span class="hs-identifier hs-var">stakeCred</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-169"></span><span>
 </span><span id="line-170"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#buildShelleyAddress"><span class="hs-identifier hs-type">buildShelleyAddress</span></a></span><span>
 </span><span id="line-171"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">PaymentKey</span></a></span><span>
-</span><span id="line-172"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
+</span><span id="line-172"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#StakeVerifier"><span class="hs-identifier hs-type">StakeVerifier</span></a></span><span>
 </span><span id="line-173"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">NetworkId</span></a></span><span>
-</span><span id="line-174"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ShelleyAddr</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-174"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Address</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ShelleyAddr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-175"></span><span id="buildShelleyAddress"><span class="annot"><span class="annottext">buildShelleyAddress :: VerificationKey PaymentKey
 -&gt; Maybe StakeVerifier
 -&gt; NetworkId
@@ -774,7 +774,7 @@ VerificationKey keyrole -&gt; Hash keyrole
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 -&gt; ExceptT ShelleyAddressCmdError IO (Address ShelleyAddr)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 -&gt; ExceptT ShelleyAddressCmdError IO StakeAddressReference
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#makeStakeAddressRef"><span class="hs-identifier hs-var">makeStakeAddressRef</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 </span><a href="#local-6989586621679317455"><span class="hs-identifier hs-var">mbStakeVerifier</span></a></span><span>
@@ -806,7 +806,7 @@ show :: SomeAddressVerificationKey -&gt; String
 $cshow :: SomeAddressVerificationKey -&gt; String
 showsPrec :: Int -&gt; SomeAddressVerificationKey -&gt; ShowS
 $cshowsPrec :: Int -&gt; SomeAddressVerificationKey -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-191"></span><span>
 </span><span id="line-192"></span><span id="local-6989586621679317651"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#foldSomeAddressVerificationKey"><span class="hs-identifier hs-type">foldSomeAddressVerificationKey</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679317652"><span class="annot"><a href="#local-6989586621679317652"><span class="hs-identifier hs-type">keyrole</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Key</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679317652"><span class="hs-identifier hs-type">keyrole</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span>
 </span><span id="line-193"></span><span>                                   </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679317652"><span class="hs-identifier hs-type">keyrole</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679317651"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
@@ -840,7 +840,7 @@ forall keyrole. Key keyrole =&gt; VerificationKey keyrole -&gt; a
 </span><span id="line-199"></span><span>
 </span><span id="line-200"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#readAddressVerificationKeyTextOrFile"><span class="hs-identifier hs-type">readAddressVerificationKeyTextOrFile</span></a></span><span>
 </span><span id="line-201"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyTextOrFile"><span class="hs-identifier hs-type">VerificationKeyTextOrFile</span></a></span><span>
-</span><span id="line-202"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyTextOrFileError"><span class="hs-identifier hs-type">VerificationKeyTextOrFileError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#SomeAddressVerificationKey"><span class="hs-identifier hs-type">SomeAddressVerificationKey</span></a></span><span>
+</span><span id="line-202"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Key.html#VerificationKeyTextOrFileError"><span class="hs-identifier hs-type">VerificationKeyTextOrFileError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#SomeAddressVerificationKey"><span class="hs-identifier hs-type">SomeAddressVerificationKey</span></a></span><span>
 </span><span id="line-203"></span><span id="readAddressVerificationKeyTextOrFile"><span class="annot"><span class="annottext">readAddressVerificationKeyTextOrFile :: VerificationKeyTextOrFile
 -&gt; ExceptT
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
@@ -860,7 +860,7 @@ forall (m :: * -&gt; *) x a. m (Either x a) -&gt; ExceptT x m a
 -&gt; ExceptT
      VerificationKeyTextOrFileError IO SomeAddressVerificationKey
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-205"></span><span>      </span><span class="annot"><span class="annottext">[FromSomeType SerialiseAsBech32 SomeAddressVerificationKey]
 -&gt; [FromSomeType HasTextEnvelope SomeAddressVerificationKey]
 -&gt; VerificationKeyTextOrFile
@@ -967,8 +967,8 @@ forall a. AsType a -&gt; AsType (VerificationKey a)
 </span><span id="line-229"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#runAddressBuildScript"><span class="hs-identifier hs-type">runAddressBuildScript</span></a></span><span>
 </span><span id="line-230"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.CLI.Types.html#ScriptFile"><span class="hs-identifier hs-type">ScriptFile</span></a></span><span>
 </span><span id="line-231"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">NetworkId</span></a></span><span>
-</span><span id="line-232"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
-</span><span id="line-233"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-232"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Commands.html#OutputFile"><span class="hs-identifier hs-type">OutputFile</span></a></span><span>
+</span><span id="line-233"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#ShelleyAddressCmdError"><span class="hs-identifier hs-type">ShelleyAddressCmdError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-234"></span><span id="runAddressBuildScript"><span class="annot"><span class="annottext">runAddressBuildScript :: ScriptFile
 -&gt; NetworkId
 -&gt; Maybe OutputFile
@@ -979,7 +979,7 @@ forall a. AsType a -&gt; AsType (VerificationKey a)
 </span><a href="#local-6989586621679317430"><span class="hs-identifier hs-var">mOutputFile</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-235"></span><span>  </span><span class="annot"><span class="annottext">IO () -&gt; ExceptT ShelleyAddressCmdError IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
-</span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">liftIO</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#deprecationWarning"><span class="hs-identifier hs-var">deprecationWarning</span></a></span><span>
 </span><span id="line-236"></span><span>  </span><span class="annot"><span class="annottext">PaymentVerifier
 -&gt; Maybe StakeVerifier
@@ -990,26 +990,26 @@ forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><a href="Cardano.CLI.Shelley.Key.html#PaymentVerifierScriptFile"><span class="hs-identifier hs-var">PaymentVerifierScriptFile</span></a></span><span> </span><span class="annot"><span class="annottext">ScriptFile
 </span><a href="#local-6989586621679317432"><span class="hs-identifier hs-var">scriptFile</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe StakeVerifier
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">NetworkId
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="annot"><span class="annottext">NetworkId
 </span><a href="#local-6989586621679317431"><span class="hs-identifier hs-var">networkId</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe OutputFile
 </span><a href="#local-6989586621679317430"><span class="hs-identifier hs-var">mOutputFile</span></a></span><span>
 </span><span id="line-237"></span><span>
-</span><span id="line-238"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#deprecationWarning"><span class="hs-identifier hs-type">deprecationWarning</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-238"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Address.html#deprecationWarning"><span class="hs-identifier hs-type">deprecationWarning</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-239"></span><span id="deprecationWarning"><span class="annot"><span class="annottext">deprecationWarning :: IO ()
 </span><a href="Cardano.CLI.Shelley.Run.Address.html#deprecationWarning"><span class="hs-identifier hs-var hs-var">deprecationWarning</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-240"></span><span>  </span><span class="annot"><span class="annottext">Handle -&gt; [SGR] -&gt; IO ()
 </span><span class="hs-identifier hs-var">ANSI.hSetSGR</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><span class="hs-identifier hs-var">IO.stderr</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ConsoleLayer -&gt; ColorIntensity -&gt; Color -&gt; SGR
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">IO.stderr</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ConsoleLayer -&gt; ColorIntensity -&gt; Color -&gt; SGR
 </span><span class="hs-identifier hs-var">SetColor</span></span><span> </span><span class="annot"><span class="annottext">ConsoleLayer
 </span><span class="hs-identifier hs-var">Foreground</span></span><span> </span><span class="annot"><span class="annottext">ColorIntensity
 </span><span class="hs-identifier hs-var">Vivid</span></span><span> </span><span class="annot"><span class="annottext">Color
 </span><span class="hs-identifier hs-var">Yellow</span></span><span class="hs-special">]</span><span>
 </span><span id="line-241"></span><span>  </span><span class="annot"><span class="annottext">Handle -&gt; String -&gt; IO ()
-</span><span class="hs-identifier hs-var">IO.hPutStrLn</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><span class="hs-identifier hs-var">IO.stderr</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">IO.hPutStrLn</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">IO.stderr</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;WARNING: This CLI command is deprecated.  Please use 'address build' command instead.&quot;</span></span><span>
 </span><span id="line-242"></span><span>  </span><span class="annot"><span class="annottext">Handle -&gt; [SGR] -&gt; IO ()
 </span><span class="hs-identifier hs-var">ANSI.hSetSGR</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><span class="hs-identifier hs-var">IO.stderr</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">SGR
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">IO.stderr</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">SGR
 </span><span class="hs-identifier hs-var">Reset</span></span><span class="hs-special">]</span><span>
 </span><span id="line-243"></span></pre></body></html>

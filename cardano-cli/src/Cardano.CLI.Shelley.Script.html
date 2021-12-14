@@ -4,11 +4,11 @@
 </span><span id="line-4"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier">readFileScriptInAnyLang</span></a></span><span>
 </span><span id="line-5"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-6"></span><span>
-</span><span id="line-7"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ExceptT</span></span><span class="hs-special">)</span><span>
-</span><span id="line-8"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-7"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier">ExceptT</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-8"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-9"></span><span>
-</span><span id="line-10"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.ByteString</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ByteString</span></span><span class="hs-special">)</span><span>
-</span><span id="line-11"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Char8</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
+</span><span id="line-10"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">ByteString</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-11"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Char8</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
 </span><span id="line-12"></span><span>
 </span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">firstExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">handleIOExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">hoistEither</span></span><span class="hs-special">)</span><span>
 </span><span id="line-14"></span><span>
@@ -38,7 +38,7 @@ show :: ScriptDecodeError -&gt; String
 $cshow :: ScriptDecodeError -&gt; String
 showsPrec :: Int -&gt; ScriptDecodeError -&gt; ShowS
 $cshowsPrec :: Int -&gt; ScriptDecodeError -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span>
 </span><span id="line-27"></span><span>
 </span><span id="line-28"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">Error</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeError"><span class="hs-identifier hs-type">ScriptDecodeError</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-29"></span><span>  </span><span id="local-6989586621679314111"><span class="annot"><span class="annottext">displayError :: ScriptDecodeError -&gt; String
@@ -47,7 +47,7 @@ $cshowsPrec :: Int -&gt; ScriptDecodeError -&gt; ShowS
 </span><span id="line-30"></span><span>    </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Error decoding script: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
-</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">++</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeError
 </span><a href="#local-6989586621679314109"><span class="hs-identifier hs-var">err</span></a></span><span>
@@ -56,7 +56,7 @@ forall e. Error e =&gt; e -&gt; String
 </span><span id="line-32"></span><span>    </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Syntax error in script: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
-</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">++</span></a></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError -&gt; String
 forall e. Error e =&gt; e -&gt; String
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError
 </span><a href="#local-6989586621679314108"><span class="hs-identifier hs-var">err</span></a></span><span>
@@ -67,8 +67,8 @@ forall e. Error e =&gt; e -&gt; String
 </span><span id="line-37"></span><span class="hs-comment">-- or alternatively it can be a JSON format file for one of the simple script</span><span>
 </span><span id="line-38"></span><span class="hs-comment">-- language versions.</span><span>
 </span><span id="line-39"></span><span class="hs-comment">--</span><span>
-</span><span id="line-40"></span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier hs-type">readFileScriptInAnyLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
-</span><span id="line-41"></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileError</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeError"><span class="hs-identifier hs-type">ScriptDecodeError</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span>
+</span><span id="line-40"></span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier hs-type">readFileScriptInAnyLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">FilePath</span></a></span><span>
+</span><span id="line-41"></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/transformers-0.5.6.2/src"><span class="hs-identifier hs-type">ExceptT</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileError</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeError"><span class="hs-identifier hs-type">ScriptDecodeError</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">IO</span></a></span><span>
 </span><span id="line-42"></span><span>                                   </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ScriptInAnyLang</span></a></span><span>
 </span><span id="line-43"></span><span id="readFileScriptInAnyLang"><span class="annot"><span class="annottext">readFileScriptInAnyLang :: String -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 </span><a href="Cardano.CLI.Shelley.Script.html#readFileScriptInAnyLang"><span class="hs-identifier hs-var hs-var">readFileScriptInAnyLang</span></a></span></span><span> </span><span id="local-6989586621679314106"><span class="annot"><span class="annottext">String
@@ -88,8 +88,8 @@ forall e. String -&gt; IOException -&gt; FileError e
 -&gt; IO ByteString
 -&gt; ExceptT (FileError ScriptDecodeError) IO ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; IO ByteString
-</span><span class="hs-identifier hs-var">BS.readFile</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; IO ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">BS.readFile</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="#local-6989586621679314106"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-45"></span><span>  </span><span class="annot"><span class="annottext">(ScriptDecodeError -&gt; FileError ScriptDecodeError)
 -&gt; ExceptT ScriptDecodeError IO ScriptInAnyLang
@@ -105,7 +105,7 @@ forall e. String -&gt; e -&gt; FileError e
 -&gt; ExceptT ScriptDecodeError IO ScriptInAnyLang
 -&gt; ExceptT (FileError ScriptDecodeError) IO ScriptInAnyLang
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Either ScriptDecodeError ScriptInAnyLang
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Either ScriptDecodeError ScriptInAnyLang
 -&gt; ExceptT ScriptDecodeError IO ScriptInAnyLang
 forall (m :: * -&gt; *) x a. Monad m =&gt; Either x a -&gt; ExceptT x m a
 </span><span class="hs-identifier hs-var">hoistEither</span></span><span> </span><span class="annot"><span class="annottext">(Either ScriptDecodeError ScriptInAnyLang
@@ -113,14 +113,14 @@ forall (m :: * -&gt; *) x a. Monad m =&gt; Either x a -&gt; ExceptT x m a
 -&gt; Either ScriptDecodeError ScriptInAnyLang
 -&gt; ExceptT ScriptDecodeError IO ScriptInAnyLang
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-46"></span><span>    </span><span class="annot"><span class="annottext">ByteString -&gt; Either ScriptDecodeError ScriptInAnyLang
 </span><a href="Cardano.CLI.Shelley.Script.html#deserialiseScriptInAnyLang"><span class="hs-identifier hs-var">deserialiseScriptInAnyLang</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679314105"><span class="hs-identifier hs-var">scriptBytes</span></a></span><span>
 </span><span id="line-47"></span><span>
 </span><span id="line-48"></span><span>
-</span><span id="line-49"></span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#deserialiseScriptInAnyLang"><span class="hs-identifier hs-type">deserialiseScriptInAnyLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
-</span><span id="line-50"></span><span>                           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeError"><span class="hs-identifier hs-type">ScriptDecodeError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ScriptInAnyLang</span></a></span><span>
+</span><span id="line-49"></span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#deserialiseScriptInAnyLang"><span class="hs-identifier hs-type">deserialiseScriptInAnyLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
+</span><span id="line-50"></span><span>                           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Either</span></a></span><span> </span><span class="annot"><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeError"><span class="hs-identifier hs-type">ScriptDecodeError</span></a></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ScriptInAnyLang</span></a></span><span>
 </span><span id="line-51"></span><span id="deserialiseScriptInAnyLang"><span class="annot"><span class="annottext">deserialiseScriptInAnyLang :: ByteString -&gt; Either ScriptDecodeError ScriptInAnyLang
 </span><a href="Cardano.CLI.Shelley.Script.html#deserialiseScriptInAnyLang"><span class="hs-identifier hs-var hs-var">deserialiseScriptInAnyLang</span></a></span></span><span> </span><span id="local-6989586621679314101"><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679314101"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
@@ -135,7 +135,7 @@ AsType a -&gt; ByteString -&gt; Either JsonDecodeError a
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromJSON</span></a></span><span> </span><span class="annot"><span class="annottext">AsType TextEnvelope
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsTextEnvelope</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679314101"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-56"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError
+</span><span id="line-56"></span><span>      </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError
 </span><span class="hs-identifier">_</span></span><span>   </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-57"></span><span>        </span><span class="hs-comment">-- The SimpleScript language has the property that it is backwards</span><span>
 </span><span id="line-58"></span><span>        </span><span class="hs-comment">-- compatible, so we can parse as the latest version and then downgrade</span><span>
@@ -151,20 +151,20 @@ forall lang. AsType lang -&gt; AsType (SimpleScript lang)
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSimpleScript</span></a></span><span> </span><span class="annot"><span class="annottext">AsType SimpleScriptV2
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSimpleScriptV2</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679314101"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-61"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679314096"><span class="annot"><span class="annottext">JsonDecodeError
+</span><span id="line-61"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span>  </span><span id="local-6989586621679314096"><span class="annot"><span class="annottext">JsonDecodeError
 </span><a href="#local-6989586621679314096"><span class="hs-identifier hs-var">err</span></a></span></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptDecodeError -&gt; Either ScriptDecodeError ScriptInAnyLang
 forall a b. a -&gt; Either a b
-</span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">JsonDecodeError -&gt; ScriptDecodeError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Left</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">JsonDecodeError -&gt; ScriptDecodeError
 </span><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeSimpleScriptError"><span class="hs-identifier hs-var">ScriptDecodeSimpleScriptError</span></a></span><span> </span><span class="annot"><span class="annottext">JsonDecodeError
 </span><a href="#local-6989586621679314096"><span class="hs-identifier hs-var">err</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-62"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679314095"><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2
+</span><span id="line-62"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span id="local-6989586621679314095"><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2
 </span><a href="#local-6989586621679314095"><span class="hs-identifier hs-var">script</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptInAnyLang -&gt; Either ScriptDecodeError ScriptInAnyLang
 forall a b. b -&gt; Either a b
-</span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2 -&gt; ScriptInAnyLang
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Right</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2 -&gt; ScriptInAnyLang
 </span><a href="#local-6989586621679314094"><span class="hs-identifier hs-var">toMinimumSimpleScriptVersion</span></a></span><span> </span><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2
 </span><a href="#local-6989586621679314095"><span class="hs-identifier hs-var">script</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-63"></span><span>
-</span><span id="line-64"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679314093"><span class="annot"><span class="annottext">TextEnvelope
+</span><span id="line-64"></span><span>      </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span id="local-6989586621679314093"><span class="annot"><span class="annottext">TextEnvelope
 </span><a href="#local-6989586621679314093"><span class="hs-identifier hs-var">te</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-65"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">[FromSomeType HasTextEnvelope ScriptInAnyLang]
 -&gt; TextEnvelope -&gt; Either TextEnvelopeError ScriptInAnyLang
@@ -174,16 +174,16 @@ forall b.
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromTextEnvelopeAnyOf</span></a></span><span> </span><span class="annot"><span class="annottext">[FromSomeType HasTextEnvelope ScriptInAnyLang]
 </span><a href="#local-6989586621679314091"><span class="hs-identifier hs-var">textEnvTypes</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelope
 </span><a href="#local-6989586621679314093"><span class="hs-identifier hs-var">te</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-66"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679314090"><span class="annot"><span class="annottext">TextEnvelopeError
+</span><span id="line-66"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Left</span></a></span><span>  </span><span id="local-6989586621679314090"><span class="annot"><span class="annottext">TextEnvelopeError
 </span><a href="#local-6989586621679314090"><span class="hs-identifier hs-var">err</span></a></span></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptDecodeError -&gt; Either ScriptDecodeError ScriptInAnyLang
 forall a b. a -&gt; Either a b
-</span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeError -&gt; ScriptDecodeError
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Left</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TextEnvelopeError -&gt; ScriptDecodeError
 </span><a href="Cardano.CLI.Shelley.Script.html#ScriptDecodeTextEnvelopeError"><span class="hs-identifier hs-var">ScriptDecodeTextEnvelopeError</span></a></span><span> </span><span class="annot"><span class="annottext">TextEnvelopeError
 </span><a href="#local-6989586621679314090"><span class="hs-identifier hs-var">err</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-67"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679314089"><span class="annot"><span class="annottext">ScriptInAnyLang
+</span><span id="line-67"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Right</span></a></span><span> </span><span id="local-6989586621679314089"><span class="annot"><span class="annottext">ScriptInAnyLang
 </span><a href="#local-6989586621679314089"><span class="hs-identifier hs-var">script</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptInAnyLang -&gt; Either ScriptDecodeError ScriptInAnyLang
 forall a b. b -&gt; Either a b
-</span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">ScriptInAnyLang
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Right</span></a></span><span> </span><span class="annot"><span class="annottext">ScriptInAnyLang
 </span><a href="#local-6989586621679314089"><span class="hs-identifier hs-var">script</span></a></span><span>
 </span><span id="line-68"></span><span>
 </span><span id="line-69"></span><span>  </span><span class="hs-keyword">where</span><span>
@@ -263,7 +263,7 @@ SimpleScriptVersion lang'
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">SimpleScriptV1</span></a></span><span> </span><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2
 </span><a href="#local-6989586621679314078"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-89"></span><span>        </span><span class="annot"><span class="annottext">Maybe (SimpleScript SimpleScriptV1)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptLanguage SimpleScriptV2
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptLanguage SimpleScriptV2
 -&gt; Script SimpleScriptV2 -&gt; ScriptInAnyLang
 forall lang. ScriptLanguage lang -&gt; Script lang -&gt; ScriptInAnyLang
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ScriptInAnyLang</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SimpleScriptVersion SimpleScriptV2 -&gt; ScriptLanguage SimpleScriptV2
@@ -277,7 +277,7 @@ SimpleScriptVersion lang -&gt; SimpleScript lang -&gt; Script lang
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">SimpleScript</span></a></span><span> </span><span class="annot"><span class="annottext">SimpleScriptVersion SimpleScriptV2
 </span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">SimpleScriptV2</span></a></span><span> </span><span class="annot"><span class="annottext">SimpleScript SimpleScriptV2
 </span><a href="#local-6989586621679314078"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-91"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679314075"><span class="annot"><span class="annottext">SimpleScript SimpleScriptV1
+</span><span id="line-91"></span><span>        </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Just</span></a></span><span> </span><span id="local-6989586621679314075"><span class="annot"><span class="annottext">SimpleScript SimpleScriptV1
 </span><a href="#local-6989586621679314075"><span class="hs-identifier hs-var">s'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ScriptLanguage SimpleScriptV1
 -&gt; Script SimpleScriptV1 -&gt; ScriptInAnyLang
 forall lang. ScriptLanguage lang -&gt; Script lang -&gt; ScriptInAnyLang

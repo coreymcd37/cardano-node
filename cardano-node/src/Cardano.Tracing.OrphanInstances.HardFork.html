@@ -17,7 +17,7 @@
 </span><span id="line-17"></span><span>
 </span><span id="line-18"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Cardano.Tracing.OrphanInstances.HardFork</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-19"></span><span>
-</span><span id="line-20"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">All</span></span><span class="hs-special">)</span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">All</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-21"></span><span>
 </span><span id="line-22"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span>
 </span><span id="line-23"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.SOP.Strict</span></span><span>
@@ -61,7 +61,7 @@ forall a. Condense a =&gt; a -&gt; String
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ShortByteString -&gt; Hash Any Any
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ShortByteString -&gt; Hash Any Any
 forall h a. ShortByteString -&gt; Hash h a
 </span><span class="hs-identifier hs-var">Crypto.UnsafeHash</span></span><span> </span><span class="annot"><span class="annottext">(ShortByteString -&gt; Hash Any Any)
 -&gt; (OneEraHash xs -&gt; ShortByteString)
@@ -70,7 +70,7 @@ forall h a. ShortByteString -&gt; Hash h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraHash xs -&gt; ShortByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraHash xs -&gt; ShortByteString
 forall k (xs :: [k]). OneEraHash xs -&gt; ShortByteString
 </span><span class="hs-identifier hs-var hs-var">getOneEraHash</span></span></span><span>
 </span><span id="line-57"></span><span>
@@ -94,7 +94,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject Header)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject Header)
 -&gt; (forall a. Compose ToObject Header a =&gt; Header a -&gt; K Object a)
 -&gt; NS Header xs
 -&gt; NS (K Object) xs
@@ -106,14 +106,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject Header)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (Header a -&gt; Object) -&gt; Header a -&gt; K Object a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; Header a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; Header a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679413137"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -124,7 +124,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraHeader xs -&gt; NS Header xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraHeader xs -&gt; NS Header xs
 forall (xs :: [*]). OneEraHeader xs -&gt; NS Header xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraHeader</span></span><span>
 </span><span id="line-67"></span><span>        </span><span class="annot"><span class="annottext">(OneEraHeader xs -&gt; NS Header xs)
@@ -134,7 +134,7 @@ forall (xs :: [*]). OneEraHeader xs -&gt; NS Header xs
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Header (HardForkBlock xs) -&gt; OneEraHeader xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Header (HardForkBlock xs) -&gt; OneEraHeader xs
 forall (xs :: [*]). Header (HardForkBlock xs) -&gt; OneEraHeader xs
 </span><span class="hs-identifier hs-var hs-var">getHardForkHeader</span></span></span><span>
 </span><span id="line-68"></span><span>
@@ -159,7 +159,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject GenTx)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject GenTx)
 -&gt; (forall a. Compose ToObject GenTx a =&gt; GenTx a -&gt; K Object a)
 -&gt; NS GenTx xs
 -&gt; NS (K Object) xs
@@ -171,14 +171,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject GenTx)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">GenTx</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">GenTx</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (GenTx a -&gt; Object) -&gt; GenTx a -&gt; K Object a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; GenTx a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; GenTx a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679413125"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -189,7 +189,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraGenTx xs -&gt; NS GenTx xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraGenTx xs -&gt; NS GenTx xs
 forall (xs :: [*]). OneEraGenTx xs -&gt; NS GenTx xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraGenTx</span></span><span>
 </span><span id="line-79"></span><span>        </span><span class="annot"><span class="annottext">(OneEraGenTx xs -&gt; NS GenTx xs)
@@ -199,7 +199,7 @@ forall (xs :: [*]). OneEraGenTx xs -&gt; NS GenTx xs
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">GenTx (HardForkBlock xs) -&gt; OneEraGenTx xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">GenTx (HardForkBlock xs) -&gt; OneEraGenTx xs
 forall (xs :: [*]). GenTx (HardForkBlock xs) -&gt; OneEraGenTx xs
 </span><span class="hs-identifier hs-var hs-var">getHardForkGenTx</span></span></span><span>
 </span><span id="line-80"></span><span>
@@ -218,7 +218,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToJSON WrapGenTxId)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToJSON WrapGenTxId)
 -&gt; (forall a.
     Compose ToJSON WrapGenTxId a =&gt;
     WrapGenTxId a -&gt; K Value a)
@@ -232,14 +232,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToJSON WrapGenTxId)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapGenTxId</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; K Value a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapGenTxId</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; K Value a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Value -&gt; K Value a)
 -&gt; (WrapGenTxId a -&gt; Value) -&gt; WrapGenTxId a -&gt; K Value a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId a -&gt; Value
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId a -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span class="hs-special">)</span><span>
 </span><span id="line-85"></span><span>        </span><span class="annot"><span class="annottext">(NS WrapGenTxId xs -&gt; NS (K Value) xs)
@@ -249,7 +249,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraGenTxId xs -&gt; NS WrapGenTxId xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 forall (xs :: [*]). OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraGenTxId</span></span><span>
 </span><span id="line-86"></span><span>        </span><span class="annot"><span class="annottext">(OneEraGenTxId xs -&gt; NS WrapGenTxId xs)
@@ -259,7 +259,7 @@ forall (xs :: [*]). OneEraGenTxId xs -&gt; NS WrapGenTxId xs
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
 forall (xs :: [*]).
 TxId (GenTx (HardForkBlock xs)) -&gt; OneEraGenTxId xs
 </span><span class="hs-identifier hs-var hs-var">getHardForkGenTxId</span></span></span><span>
@@ -275,7 +275,7 @@ forall a. ToJSON a =&gt; a -&gt; Value
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId blk -&gt; TxId (GenTx blk)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapGenTxId blk -&gt; TxId (GenTx blk)
 forall blk. WrapGenTxId blk -&gt; GenTxId blk
 </span><span class="hs-identifier hs-var hs-var">unwrapGenTxId</span></span></span><span>
 </span><span id="line-90"></span><span>
@@ -344,7 +344,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapApplyTxErr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapApplyTxErr)
 -&gt; (forall a.
     Compose ToObject WrapApplyTxErr a =&gt;
     WrapApplyTxErr a -&gt; K Object a)
@@ -358,14 +358,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapApplyTxErr)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapApplyTxErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapApplyTxErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapApplyTxErr a -&gt; Object) -&gt; WrapApplyTxErr a -&gt; K Object a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapApplyTxErr a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapApplyTxErr a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679413075"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -376,7 +376,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraApplyTxErr xs -&gt; NS WrapApplyTxErr xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraApplyTxErr xs -&gt; NS WrapApplyTxErr xs
 forall (xs :: [*]). OneEraApplyTxErr xs -&gt; NS WrapApplyTxErr xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraApplyTxErr</span></span></span><span>
 </span><span id="line-112"></span><span>
@@ -393,7 +393,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapApplyTxErr blk -&gt; ApplyTxErr blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapApplyTxErr blk -&gt; ApplyTxErr blk
 forall blk. WrapApplyTxErr blk -&gt; ApplyTxErr blk
 </span><span class="hs-identifier hs-var hs-var">unwrapApplyTxErr</span></span></span><span>
 </span><span id="line-115"></span><span>
@@ -463,7 +463,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerErr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerErr)
 -&gt; (forall a.
     Compose ToObject WrapLedgerErr a =&gt;
     WrapLedgerErr a -&gt; K Object a)
@@ -477,14 +477,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerErr)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapLedgerErr a -&gt; Object) -&gt; WrapLedgerErr a -&gt; K Object a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerErr a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerErr a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679413048"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -495,7 +495,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerError xs -&gt; NS WrapLedgerErr xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerError xs -&gt; NS WrapLedgerErr xs
 forall (xs :: [*]). OneEraLedgerError xs -&gt; NS WrapLedgerErr xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraLedgerError</span></span></span><span>
 </span><span id="line-138"></span><span>
@@ -512,7 +512,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapLedgerErr blk -&gt; LedgerError blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapLedgerErr blk -&gt; LedgerError blk
 forall blk. WrapLedgerErr blk -&gt; LedgerError blk
 </span><span class="hs-identifier hs-var hs-var">unwrapLedgerErr</span></span></span><span>
 </span><span id="line-141"></span><span>
@@ -673,7 +673,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerWarning)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerWarning)
 -&gt; (forall a.
     Compose ToObject WrapLedgerWarning a =&gt;
     WrapLedgerWarning a -&gt; K Object a)
@@ -687,7 +687,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerWarning)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerWarning</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerWarning</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapLedgerWarning a -&gt; Object)
@@ -696,7 +696,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerWarning a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerWarning a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679413011"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -707,7 +707,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerWarning xs -&gt; NS WrapLedgerWarning xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerWarning xs -&gt; NS WrapLedgerWarning xs
 forall (xs :: [*]).
 OneEraLedgerWarning xs -&gt; NS WrapLedgerWarning xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraLedgerWarning</span></span></span><span>
@@ -725,7 +725,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapLedgerWarning blk -&gt; LedgerWarning blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapLedgerWarning blk -&gt; LedgerWarning blk
 forall blk. WrapLedgerWarning blk -&gt; LedgerWarning blk
 </span><span class="hs-identifier hs-var hs-var">unwrapLedgerWarning</span></span></span><span>
 </span><span id="line-191"></span><span>
@@ -898,7 +898,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerUpdate)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerUpdate)
 -&gt; (forall a.
     Compose ToObject WrapLedgerUpdate a =&gt;
     WrapLedgerUpdate a -&gt; K Object a)
@@ -912,7 +912,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapLedgerUpdate)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerUpdate</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapLedgerUpdate</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapLedgerUpdate a -&gt; Object)
@@ -921,7 +921,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerUpdate a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapLedgerUpdate a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412956"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -932,7 +932,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerUpdate xs -&gt; NS WrapLedgerUpdate xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraLedgerUpdate xs -&gt; NS WrapLedgerUpdate xs
 forall (xs :: [*]). OneEraLedgerUpdate xs -&gt; NS WrapLedgerUpdate xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraLedgerUpdate</span></span></span><span>
 </span><span id="line-241"></span><span>
@@ -949,7 +949,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapLedgerUpdate blk -&gt; LedgerUpdate blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapLedgerUpdate blk -&gt; LedgerUpdate blk
 forall blk. WrapLedgerUpdate blk -&gt; LedgerUpdate blk
 </span><span class="hs-identifier hs-var hs-var">unwrapLedgerUpdate</span></span></span><span>
 </span><span id="line-244"></span><span>
@@ -1019,7 +1019,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapEnvelopeErr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapEnvelopeErr)
 -&gt; (forall a.
     Compose ToObject WrapEnvelopeErr a =&gt;
     WrapEnvelopeErr a -&gt; K Object a)
@@ -1033,14 +1033,14 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapEnvelopeErr)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapEnvelopeErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapEnvelopeErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapEnvelopeErr a -&gt; Object) -&gt; WrapEnvelopeErr a -&gt; K Object a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapEnvelopeErr a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapEnvelopeErr a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412929"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -1051,7 +1051,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraEnvelopeErr xs -&gt; NS WrapEnvelopeErr xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraEnvelopeErr xs -&gt; NS WrapEnvelopeErr xs
 forall (xs :: [*]). OneEraEnvelopeErr xs -&gt; NS WrapEnvelopeErr xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraEnvelopeErr</span></span></span><span>
 </span><span id="line-267"></span><span>
@@ -1068,7 +1068,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapEnvelopeErr blk -&gt; OtherHeaderEnvelopeError blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapEnvelopeErr blk -&gt; OtherHeaderEnvelopeError blk
 forall blk. WrapEnvelopeErr blk -&gt; OtherHeaderEnvelopeError blk
 </span><span class="hs-identifier hs-var hs-var">unwrapEnvelopeErr</span></span></span><span>
 </span><span id="line-270"></span><span>
@@ -1138,7 +1138,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapValidationErr)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapValidationErr)
 -&gt; (forall a.
     Compose ToObject WrapValidationErr a =&gt;
     WrapValidationErr a -&gt; K Object a)
@@ -1152,7 +1152,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapValidationErr)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapValidationErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapValidationErr</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
 -&gt; (WrapValidationErr a -&gt; Object)
@@ -1161,7 +1161,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapValidationErr a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapValidationErr a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412902"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -1172,7 +1172,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraValidationErr xs -&gt; NS WrapValidationErr xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraValidationErr xs -&gt; NS WrapValidationErr xs
 forall (xs :: [*]).
 OneEraValidationErr xs -&gt; NS WrapValidationErr xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraValidationErr</span></span></span><span>
@@ -1190,7 +1190,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapValidationErr blk -&gt; ValidationErr (BlockProtocol blk)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapValidationErr blk -&gt; ValidationErr (BlockProtocol blk)
 forall blk.
 WrapValidationErr blk -&gt; ValidationErr (BlockProtocol blk)
 </span><span class="hs-identifier hs-var hs-var">unwrapValidationErr</span></span></span><span>
@@ -1219,7 +1219,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapCannotForge)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapCannotForge)
 -&gt; (forall a.
     Compose ToObject WrapCannotForge a =&gt;
     WrapCannotForge a -&gt; K Object a)
@@ -1233,7 +1233,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapCannotForge)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapCannotForge</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapCannotForge</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-309"></span><span>              </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
@@ -1241,7 +1241,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapCannotForge a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapCannotForge a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412888"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -1252,7 +1252,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraCannotForge xs -&gt; NS WrapCannotForge xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraCannotForge xs -&gt; NS WrapCannotForge xs
 forall (xs :: [*]). OneEraCannotForge xs -&gt; NS WrapCannotForge xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraCannotForge</span></span></span><span>
 </span><span id="line-311"></span><span>
@@ -1269,7 +1269,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapCannotForge blk -&gt; CannotForge blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapCannotForge blk -&gt; CannotForge blk
 forall blk. WrapCannotForge blk -&gt; CannotForge blk
 </span><span class="hs-identifier hs-var hs-var">unwrapCannotForge</span></span></span><span>
 </span><span id="line-314"></span><span>
@@ -1319,7 +1319,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateInfo)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateInfo)
 -&gt; (forall a.
     Compose ToObject WrapForgeStateInfo a =&gt;
     WrapForgeStateInfo a -&gt; K Object a)
@@ -1333,7 +1333,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateInfo)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateInfo</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateInfo</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-334"></span><span>                    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
@@ -1343,7 +1343,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapForgeStateInfo a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapForgeStateInfo a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412874"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -1354,14 +1354,14 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateInfo xs -&gt; NS WrapForgeStateInfo xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateInfo xs -&gt; NS WrapForgeStateInfo xs
 forall (xs :: [*]).
 OneEraForgeStateInfo xs -&gt; NS WrapForgeStateInfo xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraForgeStateInfo</span></span><span>
 </span><span id="line-336"></span><span>            </span><span class="annot"><span class="annottext">(OneEraForgeStateInfo xs -&gt; Object)
 -&gt; OneEraForgeStateInfo xs -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateInfo xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateInfo xs
 </span><a href="#local-6989586621679412873"><span class="hs-identifier hs-var">forgeStateInfo</span></a></span></span><span>
 </span><span id="line-337"></span><span>
 </span><span id="line-338"></span><span id="local-6989586621679412870"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679412867"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ForgeStateInfo</span></span><span> </span><span class="annot"><a href="#local-6989586621679412870"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateInfo</span></span><span> </span><span class="annot"><a href="#local-6989586621679412870"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -1377,7 +1377,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapForgeStateInfo blk -&gt; ForgeStateInfo blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapForgeStateInfo blk -&gt; ForgeStateInfo blk
 forall blk. WrapForgeStateInfo blk -&gt; ForgeStateInfo blk
 </span><span class="hs-identifier hs-var hs-var">unwrapForgeStateInfo</span></span></span><span>
 </span><span id="line-340"></span><span>
@@ -1427,7 +1427,7 @@ h (K a) xs -&gt; CollapseTo h a
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateUpdateError)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateUpdateError)
 -&gt; (forall a.
     Compose ToObject WrapForgeStateUpdateError a =&gt;
     WrapForgeStateUpdateError a -&gt; K Object a)
@@ -1441,7 +1441,7 @@ proxy c
 -&gt; (forall (a :: k). c a =&gt; f a -&gt; f' a) -&gt; h f xs -&gt; h f' xs
 </span><span class="hs-identifier hs-var">hcmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy (Compose ToObject WrapForgeStateUpdateError)
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateUpdateError</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Proxy</span></a></span><span> </span><span class="hs-glyph">@</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-operator hs-type">`Compose`</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateUpdateError</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-360"></span><span>                    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Object -&gt; K Object a
 forall k a (b :: k). a -&gt; K a b
 </span><span class="hs-identifier hs-var">K</span></span><span> </span><span class="annot"><span class="annottext">(Object -&gt; K Object a)
@@ -1451,7 +1451,7 @@ forall k a (b :: k). a -&gt; K a b
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapForgeStateUpdateError a -&gt; Object
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; WrapForgeStateUpdateError a -&gt; Object
 forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 </span><span class="hs-identifier hs-var">toObject</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><a href="#local-6989586621679412858"><span class="hs-identifier hs-var">verb</span></a></span><span class="hs-special">)</span><span>
@@ -1463,14 +1463,14 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateUpdateError xs -&gt; NS WrapForgeStateUpdateError xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateUpdateError xs -&gt; NS WrapForgeStateUpdateError xs
 forall (xs :: [*]).
 OneEraForgeStateUpdateError xs -&gt; NS WrapForgeStateUpdateError xs
 </span><span class="hs-identifier hs-var hs-var">getOneEraForgeStateUpdateError</span></span><span>
 </span><span id="line-362"></span><span>            </span><span class="annot"><span class="annottext">(OneEraForgeStateUpdateError xs -&gt; Object)
 -&gt; OneEraForgeStateUpdateError xs -&gt; Object
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateUpdateError xs
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">OneEraForgeStateUpdateError xs
 </span><a href="#local-6989586621679412857"><span class="hs-identifier hs-var">forgeStateUpdateError</span></a></span></span><span>
 </span><span id="line-363"></span><span>
 </span><span id="line-364"></span><span id="local-6989586621679412854"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679412851"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ForgeStateUpdateError</span></span><span> </span><span class="annot"><a href="#local-6989586621679412854"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">WrapForgeStateUpdateError</span></span><span> </span><span class="annot"><a href="#local-6989586621679412854"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -1486,7 +1486,7 @@ forall a. ToObject a =&gt; TracingVerbosity -&gt; a -&gt; Object
 forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
 Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">WrapForgeStateUpdateError blk -&gt; ForgeStateUpdateError blk
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">WrapForgeStateUpdateError blk -&gt; ForgeStateUpdateError blk
 forall blk.
 WrapForgeStateUpdateError blk -&gt; ForgeStateUpdateError blk
 </span><span class="hs-identifier hs-var hs-var">unwrapForgeStateUpdateError</span></span></span><span>
